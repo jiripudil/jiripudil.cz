@@ -1,2 +1,5 @@
 .idea
 vendor/*
+app/config/local.neon
+log/*
+temp/*
