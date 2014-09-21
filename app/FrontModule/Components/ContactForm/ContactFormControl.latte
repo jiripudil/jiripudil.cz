@@ -1,0 +1,44 @@
+{**
+ * Components
+ * - form
+ *}
+
+<div n:snippet>
+	<div n:foreach="$flashes as $flash" class="flash flash--{$flash->type}">
+		<span n:if="$flash->type === 'success'" class="fa fa-check"></span>
+		<span n:if="$flash->type === 'error'" class="fa fa-exclamation-triangle"></span>
+		{$flash->message}
+	</div>
+
+	{form form class => 'contactForm-form'}
+		<div n:foreach="$form->errors as $error" class="flash flash-error"><span class="fa fa-exclamation-triangle"></span> {$error}</div>
+
+		<p>
+			{label email /}
+			{input email}
+		</p>
+		<p>
+			{label text /}
+			{input text}
+		</p>
+		<p>
+			{label url /}
+			{input url}
+		</p>
+		<p>
+			{input cc}
+		</p>
+		<p>
+			{input send class => 'btn'}
+		</p>
+
+		<script>
+			$(function () {
+				var $input = $('#' + {$form['url']->htmlId});
+				$input.val('');
+				$input.attr('value', null);
+				$input.parents('p').addClass('hidden');
+			});
+		</script>
+	{/form}
+</div>

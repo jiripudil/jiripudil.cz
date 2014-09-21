@@ -2,6 +2,7 @@
 
 namespace jiripudil\FrontModule\Presenters;
 
+use jiripudil\FrontModule\Components\ContactForm\TContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\HeadControl;
 use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Queries\PostsQuery;
@@ -16,6 +17,8 @@ class HomepagePresenter extends Presenter
 	use TBasePresenter {
 		beforeRender as baseBeforeRender;
 	}
+
+	use TContactFormControlFactory;
 
 
 	/** @var EntityManager @autowire */

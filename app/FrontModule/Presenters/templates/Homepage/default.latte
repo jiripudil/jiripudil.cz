@@ -1,0 +1,55 @@
+{block #content}
+
+<div class="header">
+	<span class="header-intro">Hello, I am</span>
+	<h1 class="header-name">Jiří Pudil</h1>
+	<p class="header-motto">I turn <img src="{$basePath}/static/img/coffee.png" width="32" height="32" alt="coffee" title="coffee"> into <strong>&lt;code&gt;</strong></p>
+</div>
+
+<div class="sep cf"></div>
+
+<p class="pitch">I&rsquo;m a <strong>web developer</strong> based in a lovely city of <img src="{$basePath}/static/img/brno.png" width="32" height="32" alt="Brno"> <strong>Brno</strong>, Czech Republic.</p>
+
+<p class="availability">I am currently <span class="busy">busy</span> building award-winning websites at <a href="http://www.peckadesign.cz"><img src="{$basePath}static/img/peckadesign.gif" alt="PeckaDesign" title="PeckaDesign"></a></p>
+<p class="contact-btn"><a href="#contact" class="btn">Get in touch anyway!</a></p>
+
+<div class="sep"></div>
+
+<div class="feature feature--blog" n:if="$latestPost">
+	<h2 class="feature-heading">Read my blog</h2>
+	<div class="post post--feature">
+		<h3 class="post-title"><a n:href="Blog:post post => $latestPost">{$latestPost->title}</a></h3>
+		<div class="post-info"><time datetime="{$latestPost->datetime|date:'Y-m-d H:i'}" title="{$latestPost->datetime|date:'M j, Y \@ H:ia'}">{$latestPost->datetime|date:'M j, Y \@ H:ia'}</time></div>
+		<p>{$latestPost->perex}</p>
+	</div>
+	<p n:if="$postsCount" class="feature-more"><a n:href="Blog:" class="btn">and {$postsCount} more posts!</a></p>
+</div>
+
+<div class="sep"></div>
+
+<h2>Who I am and what I do</h2>
+<p>I&rsquo;ve been developing in PHP since 2009 and I&rsquo;m most proficient with <a href="//nette.org">Nette</a> and Doctrine&nbsp;2. I&rsquo;ve also fallen in love with JavaScript, both client-side with all the cool HTML5 features, and server-side with tools like NPM, Gulp, and Bower.</p>
+<p>I use common sense at work and enjoy participating in the design process of web development as well. I strive to make websites as easy to use and navigate as possible. Thanks to my short experience with journalism, I am also quite potent at writing appealing copies.</p>
+<p>My primary focus is still development, though.</p>
+
+<div class="sep"></div>
+
+<h2 id="contact">Get in touch!</h2>
+
+<div class="contactForm">
+	{control contactForm}
+</div>
+
+<div class="contactList">
+	<ul class="contacts">
+		<li class="contactList-item"><span>email</span> <a href="mailto:me&#64;jiripudil.cz">me&#64;jiripudil.cz</a></li>
+		<li class="contactList-item"><span>phone</span> <a href="tel:+420606351567">+420 606 351 567</a></li>
+		<li class="contactList-item"><span>hangouts</span> <a href="gtalk:chat?jid=me&#64;jiripudil.cz">me&#64;jiripudil.cz</a></li>
+		<li class="contactList-item contactList-item--social"><i class="fa fa-skype"></i> <a href="skype:jiripudil?call" title="Skype">jiripudil</a></li>
+		<li class="contactList-item contactList-item--social"><i class="fa fa-linkedin-square"></i> <a href="https://linkedin.com/in/jiripudil" title="LinkedIn">jiripudil</a></li>
+		<li class="contactList-item contactList-item--social"><i class="fa fa-twitter-square"></i> <a href="https://twitter.com/jiripudil" title="Twitter">jiripudil</a></li>
+		<li class="contactList-item contactList-item--social"><i class="fa fa-github-square"></i> <a href="https://github.com/jiripudil" title="Github">jiripudil</a></li>
+	</ul>
+
+	<p>or <a href="{$basePath}static/vcard.vcf" class="btn"><span class="fa fa-download"></span> get my vCard</a></p>
+</div>
