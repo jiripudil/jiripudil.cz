@@ -4,6 +4,7 @@ namespace jiripudil\Model\User;
 
 use Doctrine\ORM\Mapping as ORM;
 use Kdyby\Doctrine\Entities\BaseEntity;
+use Nette\Security\IIdentity;
 
 
 /**
@@ -16,7 +17,7 @@ use Kdyby\Doctrine\Entities\BaseEntity;
  * @property string $name
  * @property string $website
  */
-class User extends BaseEntity
+class User extends BaseEntity implements IIdentity
 {
 
 	/**
@@ -50,5 +51,23 @@ class User extends BaseEntity
 	 * @var string
 	 */
 	protected $website;
+
+
+	/**
+	 * @return int
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	public function getRoles()
+	{
+		return [];
+	}
 
 }

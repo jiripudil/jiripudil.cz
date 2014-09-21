@@ -8,8 +8,7 @@
 		"kdyby/console": "2.3.*@dev",
 		"kdyby/doctrine": "2.1.*@dev",
 		"kdyby/autowired": "1.0.*@dev",
-		"zenify/doctrine-migrations": ">= 0.9.2",
-		"zenify/doctrine-identity-entity": ">= 2.3.2"
+		"zenify/doctrine-migrations": ">= 0.9.2"
 	},
 	"require-dev": {
 		"nette/tester": ">= 1.2.0",
