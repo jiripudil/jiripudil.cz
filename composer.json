@@ -1,0 +1,19 @@
+{
+	"require": {
+		"php": ">= 5.5.0",
+		"nette/nette": ">= 2.2.3",
+		"nextras/secured-links": ">= 1.2.0",
+		"kdyby/annotations": "2.1.*@dev",
+		"kdyby/events": "2.2.*@dev",
+		"kdyby/console": "2.3.*@dev",
+		"kdyby/doctrine": "2.1.*@dev",
+		"kdyby/autowired": "1.0.*@dev",
+		"zenify/doctrine-migrations": ">= 0.9.2",
+		"zenify/doctrine-identity-entity": ">= 2.3.2"
+	},
+	"require-dev": {
+		"nette/tester": ">= 1.2.0",
+		"apigen/apigen": ">= 2.8.0"
+	},
+	"minimum-stability": "dev"
+}
