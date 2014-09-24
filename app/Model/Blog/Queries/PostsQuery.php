@@ -24,7 +24,7 @@ class PostsQuery extends QueryObject
 	protected function doCreateQuery(Kdyby\Persistence\Queryable $dao)
 	{
 		$queryBuilder = $dao->createQueryBuilder('p')
-			->innerJoin('p.tags', 't')
+			->leftJoin('p.tags', 't')
 			->where('p.published = :published', TRUE)
 			->andWhere('p.datetime <= :now', new \DateTime)
 			->orderBy('p.datetime', 'DESC');

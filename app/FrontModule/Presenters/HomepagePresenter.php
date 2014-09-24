@@ -4,6 +4,7 @@ namespace jiripudil\FrontModule\Presenters;
 
 use jiripudil\FrontModule\Components\ContactForm\TContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\HeadControl;
+use jiripudil\Latte\TimeAgoFilter;
 use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Queries\PostsQuery;
 use jiripudil\Presenters\TBasePresenter;
@@ -28,7 +29,7 @@ class HomepagePresenter extends Presenter
 	public function renderDefault()
 	{
 		$this->template->latestPost = $this->em->getDao(Post::class)->fetchOne(new PostsQuery);
-		$this->template->postsCounts = $this->em->getDao(Post::class)->fetch(new PostsQuery)->getTotalCount() - 1;
+		$this->template->postsCount = $this->em->getDao(Post::class)->fetch(new PostsQuery)->getTotalCount() - 1;
 	}
 
 
@@ -39,6 +40,8 @@ class HomepagePresenter extends Presenter
 		/** @var HeadControl $head */
 		$head = $this['head'];
 		$head->setTitle('Jiří Pudil – Nette-positive web developer');
+
+		$this->template->addFilter('ago', new TimeAgoFilter);
 	}
 
 }
