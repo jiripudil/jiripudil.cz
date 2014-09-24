@@ -3,3 +3,6 @@ vendor/*
 app/config/local.neon
 log/*
 temp/*
+node_modules/*
+www/*.css
+www/*.map
