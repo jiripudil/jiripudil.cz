@@ -23,7 +23,7 @@ class TimeAgoFilter extends Object
 			$diff /= $lengths[$i];
 		}
 
-		$diff = round($diff);
+		$diff = (int) round($diff);
 
 		if ($diff < 30 && $periods[$i] === 'second') {
 			return 'a moment ago';

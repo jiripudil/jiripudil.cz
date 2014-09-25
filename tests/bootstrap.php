@@ -9,11 +9,14 @@ if ( ! class_exists('Tester\Assert')) {
 	exit(1);
 }
 
+$tempDir = __DIR__ . '/temp';
+
 Tester\Environment::setup();
+Tester\Helpers::purge($tempDir);
 
 $configurator = new Nette\Configurator;
 
-$configurator->setTempDirectory(__DIR__ . '/temp');
+$configurator->setTempDirectory($tempDir);
 $configurator->setDebugMode(FALSE);
 
 $robotLoader = $configurator->createRobotLoader()
