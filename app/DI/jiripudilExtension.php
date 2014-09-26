@@ -4,6 +4,7 @@ namespace jiripudil\DI;
 
 use jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\IHeadControlFactory;
+use jiripudil\FrontModule\Components\Paging\IPagingControlFactory;
 use jiripudil\Http\UserStorage;
 use jiripudil\Routers\RouterFactory;
 use jiripudil\Security;
@@ -36,6 +37,8 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 			->setImplement(IHeadControlFactory::class);
 		$builder->addDefinition($this->prefix('contactForm'))
 			->setImplement(IContactFormControlFactory::class);
+		$builder->addDefinition($this->prefix('pagingControl'))
+			->setImplement(IPagingControlFactory::class);
 	}
 
 

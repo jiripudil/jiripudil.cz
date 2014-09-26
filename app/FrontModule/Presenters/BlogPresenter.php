@@ -3,6 +3,7 @@
 namespace jiripudil\FrontModule\Presenters;
 
 use jiripudil\FrontModule\Components\Head\HeadControl;
+use jiripudil\FrontModule\Components\Paging\TPagingControlFactory;
 use jiripudil\Latte\TimeAgoFilter;
 use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Queries\PostsQuery;
@@ -10,6 +11,7 @@ use jiripudil\Model\Blog\Tag;
 use jiripudil\Presenters\TBasePresenter;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Presenter;
+use Nette\Utils\Paginator;
 
 
 class BlogPresenter extends Presenter
@@ -19,6 +21,8 @@ class BlogPresenter extends Presenter
 		beforeRender as baseBeforeRender;
 	}
 
+	use TPagingControlFactory;
+
 
 	/** @var EntityManager @autowire */
 	protected $em;
@@ -26,21 +30,30 @@ class BlogPresenter extends Presenter
 
 	public function actionDefault(Tag $tag = NULL)
 	{
-		/** @var HeadControl $head */
-		$head = $this['head'];
-		$head->addTitlePart('Blog');
-		if ($tag !== NULL) {
-			$head->addTitlePart('#' . $tag->name);
-		}
-
+		/** @var Paginator $paginator */
+		$paginator = $this['paging']->getPaginator();
 		$posts = $this->em->getDao(Post::class)->fetch((new PostsQuery())->setTag($tag));
+		$posts->applyPaginator($paginator, 10);
+
+		$this['paging']->addLinks($this['head']);
 
 		$this->template->posts = $posts;
 		$this->template->tag = $tag;
 	}
 
 
-	public function actionPost(Post $post)
+	public function renderDefault(Tag $tag = NULL)
+	{
+		/** @var HeadControl $head */
+		$head = $this['head'];
+		$head->addTitlePart('Blog');
+		if ($tag !== NULL) {
+			$head->addTitlePart('#' . $tag->name);
+		}
+	}
+
+
+	public function renderPost(Post $post)
 	{
 		/** @var HeadControl $head */
 		$head = $this['head'];
