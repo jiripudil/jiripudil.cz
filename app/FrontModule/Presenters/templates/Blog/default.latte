@@ -6,15 +6,16 @@
 
 {foreach $posts as $post}
 	<div class="post">
-		<h3 class="post-title"><a n:href="Blog:post post => $post">{$post->title}</a></h3>
+		<h3 class="post-title"><a n:href="post post => $post">{$post->title}</a></h3>
 		<div class="post-info">
 			<time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ H:ia'}">{$post->datetime|ago}</time>
 			{if count($post->tags)}
-				&bull; <a n:foreach="$post->tags as $tag" n:href="default $tag">#{$tag->name}</a>
+				&bull; <a n:foreach="$post->tags as $tag" n:href="this tag => $tag">#{$tag->name}</a>
 			{/if}
 		</div>
 		<p>{$post->perex}</p>
 	</div>
+	<p><a n:href="post post => $post" class="btn">Read more</a></p>
 	<div class="sep"></div>
 {/foreach}
 

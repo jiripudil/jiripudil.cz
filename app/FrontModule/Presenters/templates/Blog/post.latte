@@ -7,7 +7,7 @@
 	<div class="post-info">
 		<time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ H:ia'}">{$post->datetime|ago}</time>
 		{if count($post->tags)}
-			&bull; <a n:foreach="$post->tags as $tag" n:href="default $tag">#{$tag->name}</a>
+			&bull; <a n:foreach="$post->tags as $tag" n:href="default tag => $tag">#{$tag->name}</a>
 		{/if}
 	</div>
 	<p class="post-perex">{$post->perex}</p>
