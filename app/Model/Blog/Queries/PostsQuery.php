@@ -7,14 +7,22 @@ use Kdyby;
 use Kdyby\Doctrine\QueryObject;
 
 
-/**
- * @method void setTag(Tag $tag)
- */
 class PostsQuery extends QueryObject
 {
 
 	/** @var Tag */
 	protected $tag;
+
+
+	/**
+	 * @param Tag|NULL $tag
+	 * @return PostsQuery
+	 */
+	public function setTag(Tag $tag = NULL)
+	{
+		$this->tag = $tag;
+		return $this;
+	}
 
 
 	/**

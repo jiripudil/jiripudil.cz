@@ -1,0 +1,16 @@
+{block #content}
+
+{** TODO minimalist header *}
+
+<div class="post">
+	<h1 class="post-title post-title--top">{$post->title}</h1>
+	<div class="post-info">
+		<time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ H:ia'}">{$post->datetime|ago}</time>
+		{if count($post->tags)}
+			&bull; <a n:foreach="$post->tags as $tag" n:href="default $tag">#{$tag->name}</a>
+		{/if}
+	</div>
+	<p class="post-perex">{$post->perex}</p>
+
+	{$post->text}
+</div>
