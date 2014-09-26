@@ -4,6 +4,7 @@ namespace jiripudil\FrontModule\Presenters;
 
 use jiripudil\FrontModule\Components\Head\HeadControl;
 use jiripudil\FrontModule\Components\Paging\TPagingControlFactory;
+use jiripudil\Latte\TexyFilter;
 use jiripudil\Latte\TimeAgoFilter;
 use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Queries\PostsQuery;
@@ -26,6 +27,9 @@ class BlogPresenter extends Presenter
 
 	/** @var EntityManager @autowire */
 	protected $em;
+
+	/** @var TexyFilter @autowire */
+	protected $texyFilter;
 
 
 	public function actionDefault(Tag $tag = NULL)
@@ -69,6 +73,7 @@ class BlogPresenter extends Presenter
 		$this->baseBeforeRender();
 
 		$this->template->addFilter('ago', new TimeAgoFilter);
+		$this->template->addFilter('texy', $this->texyFilter);
 	}
 
 }

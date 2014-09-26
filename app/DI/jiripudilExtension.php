@@ -2,10 +2,13 @@
 
 namespace jiripudil\DI;
 
+use FSHL;
 use jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\IHeadControlFactory;
 use jiripudil\FrontModule\Components\Paging\IPagingControlFactory;
 use jiripudil\Http\UserStorage;
+use jiripudil\Latte\TexyFactory;
+use jiripudil\Latte\TexyFilter;
 use jiripudil\Routers\RouterFactory;
 use jiripudil\Security;
 use Kdyby\Doctrine\DI\IEntityProvider;
@@ -31,6 +34,16 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 			->setClass(Security\NativeHasher::class);
 		$builder->addDefinition($this->prefix('authenticator'))
 			->setClass(Security\Authenticator::class);
+
+		// templating
+		$builder->addDefinition($this->prefix('fshlOutput'))
+			->setClass(FSHL\Output\Html::class);
+		$builder->addDefinition($this->prefix('fshlHighlighter'))
+			->setClass(FSHL\Highlighter::class);
+		$builder->addDefinition($this->prefix('texyFactory'))
+			->setClass(TexyFactory::class);
+		$builder->addDefinition($this->prefix('texyFilter'))
+			->setClass(TexyFilter::class);
 
 		// factories
 		$builder->addDefinition($this->prefix('headControl'))

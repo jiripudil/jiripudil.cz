@@ -20,7 +20,7 @@
 	<div class="post post--feature">
 		<h3 class="post-title"><a n:href="Blog:post post => $latestPost">{$latestPost->title}</a></h3>
 		<div class="post-info"><time datetime="{$latestPost->datetime|date:'Y-m-d H:i'}" title="{$latestPost->datetime|date:'M j, Y \@ H:ia'}">{$latestPost->datetime|ago}</time></div>
-		<p>{$latestPost->perex}</p>
+		<p>{$latestPost->perex|noescape}</p>
 	</div>
 	<p n:if="$postsCount" class="feature-more"><a n:href="Blog:" class="btn">and {$postsCount} more posts!</a></p>
 </div>

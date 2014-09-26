@@ -13,7 +13,7 @@
 				&bull; <a n:foreach="$post->tags as $tag" n:href="this tag => $tag">#{$tag->name}</a>
 			{/if}
 		</div>
-		<p>{$post->perex}</p>
+		<p>{$post->perex|noescape}</p>
 	</div>
 	<p><a n:href="post post => $post" class="btn">Read more</a></p>
 	<div class="sep"></div>
