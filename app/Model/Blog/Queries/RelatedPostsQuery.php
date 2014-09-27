@@ -34,7 +34,7 @@ class RelatedPostsQuery extends QueryObject
 		if ($this->post->tags) {
 			$tagIds = array_map(function ($tag) { return $tag->id; }, $this->post->tags);
 
-			$qb->addSelect('COUNT(t.id) AS tagCount')
+			$qb->addSelect('t, COUNT(t.id) AS tagCount')
 				->innerJoin('p.tags', 't', Kdyby\Doctrine\Dql\Join::WITH, 't.id IN (:tags)')
 				->orderBy('tagCount', 'DESC')
 				->groupBy('p.id')

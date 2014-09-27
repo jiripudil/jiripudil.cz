@@ -29,6 +29,8 @@ class PostBySlugQuery extends QueryObject
 	protected function doCreateQuery(Kdyby\Persistence\Queryable $dao)
 	{
 		return $dao->createQueryBuilder('p')
+			->select('p, t')
+			->innerJoin('p.tags', 't')
 			->where('p.slug = :slug', $this->slug);
 	}
 
