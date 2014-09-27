@@ -16,3 +16,26 @@
 		{$post->text|texy|noescape}
 	</div>
 </div>
+
+<div class="sep"></div>
+
+<div class="share">
+	<p>This post took <strong>{$post->cupsDrunk} cups</strong> of coffee to write. If you liked it, you can <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=E69A5VVCFVVDC&lc=US&item_name=Ji%c5%99%c3%ad%20Pudil&currency_code=CZK&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" class="btn"><em class="fa fa-coffee"></em> buy me one!</a></p>
+</div>
+
+<div class="sep"></div>
+
+<div class="feature feature--blog" n:if="$relatedPost">
+	<h2 class="feature-heading">More on my blog</h2>
+	<div class="post post--feature">
+		<h3 class="post-title"><a n:href="Blog:post post => $relatedPost">{$relatedPost->title}</a></h3>
+		<div class="post-info">
+			<time datetime="{$relatedPost->datetime|date:'Y-m-d H:i'}" title="{$relatedPost->datetime|date:'M j, Y \@ H:ia'}">{$relatedPost->datetime|ago}</time>
+			{if count($relatedPost->tags)}
+				&bull; <a n:foreach="$relatedPost->tags as $tag" n:href="default tag => $tag">#{$tag->name}</a>
+			{/if}
+		</div>
+		<p>{$relatedPost->perex|noescape}</p>
+	</div>
+	<p n:if="$postsCount" class="feature-more"><a n:href="Blog:" class="btn">and {$postsCount} more posts!</a></p>
+</div>

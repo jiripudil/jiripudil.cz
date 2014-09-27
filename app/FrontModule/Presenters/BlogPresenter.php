@@ -8,6 +8,7 @@ use jiripudil\Latte\TexyFilter;
 use jiripudil\Latte\TimeAgoFilter;
 use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Queries\PostsQuery;
+use jiripudil\Model\Blog\Queries\RelatedPostsQuery;
 use jiripudil\Model\Blog\Tag;
 use jiripudil\Presenters\TBasePresenter;
 use Kdyby\Doctrine\EntityManager;
@@ -65,6 +66,13 @@ class BlogPresenter extends Presenter
 		$head->addTitlePart($post->title);
 
 		$this->template->post = $post;
+
+		$relatedPost = $this->em->getDao(Post::class)->fetchOne(new RelatedPostsQuery($post));
+
+		if ($relatedPost) {
+			$this->template->relatedPost = $relatedPost[0];
+			$this->template->postsCount = $this->em->getDao(Post::class)->fetch(new PostsQuery)->getTotalCount() - 2;
+		}
 	}
 
 
