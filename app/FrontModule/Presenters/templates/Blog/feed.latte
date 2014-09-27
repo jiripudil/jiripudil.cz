@@ -1,0 +1,18 @@
+{layout none}
+{contentType xml}
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Blog – Jiří Pudil</title>
+		<link>{link //default}</link>
+		<description></description>
+	</channel>
+
+	<item n:foreach="$posts as $post">
+		<title>{$post->title}</title>
+		<link>{link //post post => $post}</link>
+		<comments>{link //post#disqus_thread post => $post}</comments>
+		<description>{$post->perex|noescape}</description>
+		<pubDate>{$post->datetime|date:'D, d M Y H:i:s O'}</pubDate>
+	</item>
+</rss>

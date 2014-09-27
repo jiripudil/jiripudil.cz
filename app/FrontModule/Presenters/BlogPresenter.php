@@ -76,6 +76,13 @@ class BlogPresenter extends Presenter
 	}
 
 
+	public function renderFeed()
+	{
+		$this->getHttpResponse()->setContentType('application/xml');
+		$this->template->posts = $this->em->getDao(Post::class)->fetch(new PostsQuery)->applyPaging(0, 10);
+	}
+
+
 	protected function beforeRender()
 	{
 		$this->baseBeforeRender();

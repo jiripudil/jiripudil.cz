@@ -48,6 +48,9 @@ class RouterFactory extends Object
 			]
 		]);
 
+		// blog/rss
+		$router[] = new Route('blog/rss', 'Front:Blog:feed');
+
 		// blog/<slug>
 		$router[] = new Route('blog/<post>', [
 			'module' => 'Front',
