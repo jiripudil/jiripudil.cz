@@ -70,7 +70,7 @@ class BlogPresenter extends Presenter
 		$relatedPost = $this->em->getDao(Post::class)->fetchOne(new RelatedPostsQuery($post));
 
 		if ($relatedPost) {
-			$this->template->relatedPost = $relatedPost[0];
+			$this->template->relatedPost = $relatedPost instanceof Post ? $relatedPost : $relatedPost[0];
 			$this->template->postsCount = $this->em->getDao(Post::class)->fetch(new PostsQuery)->getTotalCount() - 2;
 		}
 	}

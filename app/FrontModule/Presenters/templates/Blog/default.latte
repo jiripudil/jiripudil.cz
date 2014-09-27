@@ -8,10 +8,11 @@
 	<div class="post">
 		<h3 class="post-title"><a n:href="post post => $post">{$post->title}</a></h3>
 		<div class="post-info">
-			<time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ H:ia'}">{$post->datetime|ago}</time>
+			<em class="fa fa-calendar" title="Published"></em> <time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ H:ia'}">{$post->datetime|ago}</time>
 			{if count($post->tags)}
-				&bull; <a n:foreach="$post->tags as $tag" n:href="this tag => $tag">#{$tag->name}</a>
+				&bull; <em class="fa fa-tags" title="Tags"></em> <a n:foreach="$post->tags as $tag" n:href="this tag => $tag">#{$tag->name}</a>
 			{/if}
+			&bull; <em class="fa fa-comments" title="Comments"></em> <a n:href="post#disqus_thread post => $post" data-disqus-identifier="{$post->id}">0 comments</a>
 		</div>
 		<p>{$post->perex|noescape}</p>
 	</div>
@@ -21,3 +22,15 @@
 
 
 {control paging}
+
+
+<script type="text/javascript">
+	var disqus_shortname = 'jiripudil';
+
+	(function () {
+		var s = document.createElement('script'); s.async = true;
+		s.type = 'text/javascript';
+		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+</script>
