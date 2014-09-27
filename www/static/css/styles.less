@@ -166,6 +166,34 @@ p img {
 	margin: .5em 0 1.5em;
 }
 
+.header--inline {
+	margin-bottom: 2em;
+}
+
+.header--inline-name {
+	display: inline-block;
+	font-family: @sans-font;
+	font-weight: 700;
+	font-size: 1.4em;
+	margin-right: .5em;
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			background: inherit;
+			color: #000;
+		}
+	}
+}
+
+.header--inline-motto {
+	display: inline;
+	font-family: @sans-font;
+	font-size: 1.2em;
+	color: @color-coffee;
+}
+
 
 /***** home *****/
 
@@ -249,6 +277,10 @@ p img {
 	&:not(:last-child) {
 		margin-right: 1em;
 	}
+}
+
+.share {
+	text-align: center;
 }
 
 
