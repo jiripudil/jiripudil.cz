@@ -3,6 +3,7 @@
 namespace jiripudil\DI;
 
 use FSHL;
+use jiripudil\Caching\TexyCache;
 use jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\IHeadControlFactory;
 use jiripudil\FrontModule\Components\Paging\IPagingControlFactory;
@@ -40,6 +41,8 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 			->setClass(FSHL\Output\Html::class);
 		$builder->addDefinition($this->prefix('fshlHighlighter'))
 			->setClass(FSHL\Highlighter::class);
+		$builder->addDefinition($this->prefix('texyCache'))
+			->setClass(TexyCache::class);
 		$builder->addDefinition($this->prefix('texyFactory'))
 			->setClass(TexyFactory::class);
 		$builder->addDefinition($this->prefix('texyFilter'))

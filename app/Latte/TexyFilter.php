@@ -3,6 +3,7 @@
 namespace jiripudil\Latte;
 
 use FSHL;
+use jiripudil\Caching\TexyCache;
 use Nette\Object;
 use Texy;
 
@@ -15,6 +16,9 @@ class TexyFilter extends Object
 
 	/** @var FSHL\Highlighter */
 	private $highlighter;
+
+	/** @var TexyCache */
+	private $cache;
 
 	private $highlights = [
 		'block/code' => TRUE,
@@ -31,9 +35,10 @@ class TexyFilter extends Object
 	];
 
 
-	public function __construct(TexyFactory $texyFactory, FSHL\Highlighter $highlighter)
+	public function __construct(TexyFactory $texyFactory, FSHL\Highlighter $highlighter, TexyCache $texyCache)
 	{
 		$this->highlighter = $highlighter;
+		$this->cache = $texyCache;
 		$this->texy = $texyFactory->create();
 
 		$this->texy->addHandler('block', function (Texy\HandlerInvocation $invocation, $blockType, $content, $lang, $modifier) {
@@ -87,7 +92,9 @@ class TexyFilter extends Object
 	 */
 	public function __invoke($input)
 	{
-		return $this->texy->process($input);
+		return $this->cache->load($input, function () use ($input) {
+			return $this->texy->process($input);
+		});
 	}
 
 }
