@@ -31,6 +31,8 @@ trait TBasePresenter
 		$head->addStyle('static/css/styles.css');
 		$head->addScript('static/js/scripts.js');
 
+		$head->setFavicon('favicon.ico');
+
 		$head->addMeta('http-equiv', 'X-UA-Compatible', 'IE=edge,chrome=1');
 		$head->addMeta('viewport', 'width=device-width');
 		$head->addMeta('property', 'fb:admins', '1625947532');
