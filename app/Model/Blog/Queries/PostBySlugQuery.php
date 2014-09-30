@@ -30,7 +30,7 @@ class PostBySlugQuery extends QueryObject
 	{
 		return $dao->createQueryBuilder('p')
 			->select('p, t')
-			->innerJoin('p.tags', 't')
+			->leftJoin('p.tags', 't')
 			->where('p.slug = :slug', $this->slug);
 	}
 
