@@ -3,6 +3,7 @@
 namespace jiripudil\DI;
 
 use FSHL;
+use jiripudil\AdminModule\Components\LoginForm\ILoginFormControlFactory;
 use jiripudil\Caching\TexyCache;
 use jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\IHeadControlFactory;
@@ -55,6 +56,8 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 			->setImplement(IContactFormControlFactory::class);
 		$builder->addDefinition($this->prefix('pagingControl'))
 			->setImplement(IPagingControlFactory::class);
+		$builder->addDefinition($this->prefix('loginForm'))
+			->setImplement(ILoginFormControlFactory::class);
 	}
 
 

@@ -1,0 +1,15 @@
+{form form class => 'loginForm'}
+	<div n:foreach="$form->errors as $error" class="flash flash--error"><span class="fa fa-exclamation-triangle"></span> {$error}</div>
+
+	<p>
+		{label email /}
+		{input email}
+	</p>
+	<p>
+		{label password /}
+		{input password}
+	</p>
+	<p>
+		{input login class => 'btn'}
+	</p>
+{/form}

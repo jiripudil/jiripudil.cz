@@ -66,6 +66,14 @@ class RouterFactory extends Object
 			]
 		]);
 
+
+		// admin
+		$router[] = new Route('admin[/<presenter>[/<action>[/<id>]]]', [
+			'module' => 'Admin',
+			'presenter' => 'Dashboard',
+			'action' => 'default',
+		]);
+
 		$router[] = new Route('<presenter>[/<action>[/<id>]]', 'Front:Homepage:default');
 		$router[] = new Route('index.php', 'Front:Homepage:default', Route::ONE_WAY);
 
