@@ -5,6 +5,7 @@ namespace jiripudil\DI;
 use FSHL;
 use jiripudil\AdminModule\Components\LoginForm\ILoginFormControlFactory;
 use jiripudil\Caching\TexyCache;
+use jiripudil\Console\CreateUserCommand;
 use jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\IHeadControlFactory;
 use jiripudil\FrontModule\Components\Paging\IPagingControlFactory;
@@ -13,6 +14,7 @@ use jiripudil\Latte\TexyFactory;
 use jiripudil\Latte\TexyFilter;
 use jiripudil\Routers\RouterFactory;
 use jiripudil\Security;
+use Kdyby\Console\DI\ConsoleExtension;
 use Kdyby\Doctrine\DI\IEntityProvider;
 use Nette\DI\CompilerExtension;
 
@@ -27,8 +29,7 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 		// routing
 		$builder->addDefinition($this->prefix('routerFactory'))
 			->setClass(RouterFactory::class);
-		$builder->removeDefinition('router');
-		$builder->addDefinition($this->prefix('router'))
+		$builder->getDefinition('router')
 			->setFactory('@' . $this->prefix('routerFactory') . '::createRouter');
 
 		// security
@@ -58,6 +59,11 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 			->setImplement(IPagingControlFactory::class);
 		$builder->addDefinition($this->prefix('loginForm'))
 			->setImplement(ILoginFormControlFactory::class);
+
+		// console
+		$builder->addDefinition($this->prefix('createUserCommand'))
+			->setClass(CreateUserCommand::class)
+			->addTag(ConsoleExtension::COMMAND_TAG);
 	}
 
 

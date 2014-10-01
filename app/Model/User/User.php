@@ -14,8 +14,6 @@ use Nette\Security\IIdentity;
  * @property-read int $id
  * @property string $email
  * @property string $password
- * @property string $name
- * @property string $website
  */
 class User extends BaseEntity implements IIdentity
 {
@@ -40,17 +38,12 @@ class User extends BaseEntity implements IIdentity
 	 */
 	protected $password;
 
-	/**
-	 * @ORM\Column(type="string", length=128)
-	 * @var string
-	 */
-	protected $name;
 
-	/**
-	 * @ORM\Column(type="string", length=255, nullable=true)
-	 * @var string
-	 */
-	protected $website;
+	public function __construct($email, $password)
+	{
+		$this->email = $email;
+		$this->password = $password;
+	}
 
 
 	/**
