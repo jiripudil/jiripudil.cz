@@ -2,6 +2,8 @@
 
 namespace jiripudil\Model\Blog\Queries;
 
+use Doctrine\ORM\QueryBuilder;
+use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Tag;
 use Kdyby;
 use Kdyby\Doctrine\QueryObject;
@@ -10,37 +12,76 @@ use Kdyby\Doctrine\QueryObject;
 class PostsQuery extends QueryObject
 {
 
-	/** @var Tag */
-	protected $tag;
+	/** @var callable[] */
+	protected $filters = [];
 
 
 	/**
-	 * @param Tag|NULL $tag
+	 * @param Tag $tag
 	 * @return PostsQuery
 	 */
-	public function setTag(Tag $tag = NULL)
+	public function withTag(Tag $tag)
 	{
-		$this->tag = $tag;
+		$this->filters[] = function (QueryBuilder $queryBuilder) use ($tag) {
+			$queryBuilder->andWhere('t.id = :tag', $tag->id);
+		};
+
+		return $this;
+	}
+
+
+	/**
+	 * @return PostsQuery
+	 */
+	public function onlyPublished()
+	{
+		$this->filters[] = function (QueryBuilder $queryBuilder) {
+			$queryBuilder->andWhere('p.published = :published', TRUE)
+				->andWhere('p.datetime <= :now', new \DateTime);
+		};
+
+		return $this;
+	}
+
+
+	/**
+	 * @param Post $post
+	 * @return PostsQuery
+	 */
+	public function relatedTo(Post $post)
+	{
+		$this->filters[] = function (QueryBuilder $queryBuilder) use ($post) {
+			$queryBuilder->andWhere('NOT p.id = :id', $post->id);
+
+			if ($post->tags) {
+				$tagIds = array_map(function ($tag) { return $tag->id; }, $post->tags);
+
+				$queryBuilder->addSelect('COUNT(t.id) AS tagCount')
+					->andWhere('t.id IN (:tags)', $tagIds)
+					->orderBy('tagCount', 'DESC')
+					->groupBy('p.id');
+			}
+		};
+
 		return $this;
 	}
 
 
 	/**
 	 * @param Kdyby\Persistence\Queryable $dao
-	 * @return \Doctrine\ORM\Query|\Doctrine\ORM\QueryBuilder
+	 * @return \Doctrine\ORM\Query|QueryBuilder
 	 */
 	protected function doCreateQuery(Kdyby\Persistence\Queryable $dao)
 	{
 		$queryBuilder = $dao->createQueryBuilder('p')
-			->select('p, t')
-			->leftJoin('p.tags', 't')
-			->where('p.published = :published', TRUE)
-			->andWhere('p.datetime <= :now', new \DateTime)
-			->orderBy('p.datetime', 'DESC');
+			->select('p,t ')
+			->leftJoin('p.tags', 't');
 
-		if ($this->tag !== NULL) {
-			$queryBuilder->andWhere('t.id = :tag', $this->tag->id);
+		foreach ($this->filters as $filter) {
+			$filter($queryBuilder);
 		}
+
+		$queryBuilder->addOrderBy('p.datetime', 'DESC');
 
 		return $queryBuilder;
 	}

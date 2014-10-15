@@ -35,9 +35,14 @@ class BlogPresenter extends Presenter
 
 	public function actionDefault(Tag $tag = NULL)
 	{
+		$query = (new PostsQuery())->onlyPublished();
+		if ($tag !== NULL) {
+			$query->withTag($tag);
+		}
+
 		/** @var Paginator $paginator */
 		$paginator = $this['paging']->getPaginator();
-		$posts = $this->em->getDao(Post::class)->fetch((new PostsQuery())->setTag($tag));
+		$posts = $this->em->getDao(Post::class)->fetch($query);
 		$posts->applyPaginator($paginator, 10);
 
 		$this['paging']->addLinks($this['head']);
@@ -67,11 +72,11 @@ class BlogPresenter extends Presenter
 
 		$this->template->post = $post;
 
-		$relatedPost = $this->em->getDao(Post::class)->fetchOne(new RelatedPostsQuery($post));
+		$relatedPost = $this->em->getDao(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->relatedTo($post));;
 
 		if ($relatedPost) {
 			$this->template->relatedPost = $relatedPost instanceof Post ? $relatedPost : $relatedPost[0];
-			$this->template->postsCount = $this->em->getDao(Post::class)->fetch(new PostsQuery)->getTotalCount() - 2;
+			$this->template->postsCount = $this->em->getDao(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 2;
 		}
 	}
 
@@ -79,7 +84,7 @@ class BlogPresenter extends Presenter
 	public function renderFeed()
 	{
 		$this->getHttpResponse()->setContentType('application/xml');
-		$this->template->posts = $this->em->getDao(Post::class)->fetch(new PostsQuery)->applyPaging(0, 10);
+		$this->template->posts = $this->em->getDao(Post::class)->fetch((new PostsQuery)->onlyPublished())->applyPaging(0, 10);
 	}
 
 

@@ -31,7 +31,9 @@ class PostBySlugQuery extends QueryObject
 		return $dao->createQueryBuilder('p')
 			->select('p, t')
 			->leftJoin('p.tags', 't')
-			->where('p.slug = :slug', $this->slug);
+			->where('p.slug = :slug', $this->slug)
+			->andWhere('p.published = :published', TRUE)
+			->andWhere('p.datetime <= :now', new \DateTime);
 	}
 
 }
