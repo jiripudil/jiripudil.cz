@@ -28,8 +28,8 @@ class HomepagePresenter extends Presenter
 
 	public function renderDefault()
 	{
-		$this->template->latestPost = $this->em->getDao(Post::class)->fetchOne(new PostsQuery);
-		$this->template->postsCount = $this->em->getDao(Post::class)->fetch(new PostsQuery)->getTotalCount() - 1;
+		$this->template->latestPost = $this->em->getDao(Post::class)->fetchOne((new PostsQuery)->onlyPublished());
+		$this->template->postsCount = $this->em->getDao(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 1;
 	}
 
 

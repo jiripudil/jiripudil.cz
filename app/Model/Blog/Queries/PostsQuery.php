@@ -68,13 +68,26 @@ class PostsQuery extends QueryObject
 
 
 	/**
+	 * @return PostsQuery
+	 */
+	public function fetchJoinTags()
+	{
+		$this->filters[] = function (QueryBuilder $queryBuilder) {
+			$queryBuilder->addSelect('t');
+		};
+
+		return $this;
+	}
+
+
+	/**
 	 * @param Kdyby\Persistence\Queryable $dao
 	 * @return \Doctrine\ORM\Query|QueryBuilder
 	 */
 	protected function doCreateQuery(Kdyby\Persistence\Queryable $dao)
 	{
 		$queryBuilder = $dao->createQueryBuilder('p')
-			->select('p,t ')
+			->select('p')
 			->leftJoin('p.tags', 't');
 
 		foreach ($this->filters as $filter) {

@@ -29,7 +29,7 @@ class PostBySlugQuery extends QueryObject
 	protected function doCreateQuery(Kdyby\Persistence\Queryable $dao)
 	{
 		return $dao->createQueryBuilder('p')
-			->select('p, t')
+			->select('p')
 			->leftJoin('p.tags', 't')
 			->where('p.slug = :slug', $this->slug)
 			->andWhere('p.published = :published', TRUE)

@@ -35,7 +35,7 @@ class BlogPresenter extends Presenter
 
 	public function actionDefault(Tag $tag = NULL)
 	{
-		$query = (new PostsQuery())->onlyPublished();
+		$query = (new PostsQuery())->onlyPublished()->fetchJoinTags();
 		if ($tag !== NULL) {
 			$query->withTag($tag);
 		}
