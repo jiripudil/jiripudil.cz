@@ -3,6 +3,7 @@
 namespace jiripudil\Presenters;
 
 use jiripudil\FrontModule\Components\Head\THeadControlFactory;
+use Kdyby\Autowired\AutowireComponentFactories;
 use Nette\Application\BadRequestException;
 use Nette\Application\UI\Presenter;
 use Tracy\Debugger;
@@ -11,7 +12,7 @@ use Tracy\Debugger;
 class ErrorPresenter extends Presenter
 {
 
-	use THeadControlFactory;
+	use TBasePresenter;
 
 
 	public function renderDefault(\Exception $exception)
@@ -20,13 +21,13 @@ class ErrorPresenter extends Presenter
 			$this->payload->error = TRUE;
 			$this->terminate();
 
-		} elseif ($e instanceof BadRequestException) {
-			$code = $e->getCode();
+		} elseif ($exception instanceof BadRequestException) {
+			$code = $exception->getCode();
 			$this->setView(in_array($code, [403, 404, 500]) ? $code : '4xx');
 
 			$this['head']->setTitle('Oops, an error! – Jiří Pudil');
 
-			Debugger::log("HTTP code $code: {$e->getMessage()} in {$e->getFile()}:{$e->getLine()}", 'access');
+			Debugger::log("HTTP code $code: {$exception->getMessage()} in {$exception->getFile()}:{$exception->getLine()}", 'access');
 
 		} else {
 			$this->setView('500');
@@ -34,7 +35,7 @@ class ErrorPresenter extends Presenter
 			$this['head']->addMeta('robots', 'noindex');
 			$this['head']->setTitle('Oops, an error! – Jiří Pudil');
 
-			Debugger::log($e, Debugger::ERROR);
+			Debugger::log($exception, Debugger::ERROR);
 		}
 	}
 
