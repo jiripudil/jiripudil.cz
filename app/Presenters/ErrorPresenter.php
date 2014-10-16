@@ -14,7 +14,7 @@ class ErrorPresenter extends Presenter
 	use THeadControlFactory;
 
 
-	public function renderDefault(\Exception $e)
+	public function renderDefault(\Exception $exception)
 	{
 		if ($this->isAjax()) {
 			$this->payload->error = TRUE;
