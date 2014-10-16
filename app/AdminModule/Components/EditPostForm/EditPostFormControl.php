@@ -8,11 +8,15 @@ use jiripudil\Model\Blog\Tag;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Control;
 use Nette\Application\UI\Form;
+use Nette\Utils\DateTime;
 use Nette\Utils\Strings;
 
 
 class EditPostFormControl extends Control
 {
+
+	/** @var callable[] */
+	public $onSave = [];
 
 	/** @var EntityManager */
 	private $em;
@@ -64,15 +68,30 @@ class EditPostFormControl extends Control
 	{
 		$values = $form->values;
 
-		if ($values->id === NULL) {
-			//
-		}
+		$post = $values->id === NULL ? new Post : $this->em->getReference(Post::class, $values->id);
+		$post->title = $values->title;
+		$post->slug = $values->slug;
+		$post->perex = $values->perex;
+		$post->text = $values->text;
+		$post->datetime = DateTime::from($values->datetime);
+		$post->cupsDrunk = $values->cupsDrunk;
+		$post->published = $values->published;
+		$post->commentsAllowed = $values->commentsAllowed;
+		$post->tags = array_map(function ($tagId) {
+			return $this->em->getReference(Tag::class, $tagId);
+		}, $values->tags);
+
+		$this->em->persist($post);
+		$this->em->flush();
+
+		$this->onSave($post);
 	}
 
 
 	public function setPost(Post $post)
 	{
 		$this['form']->setDefaults([
+			'id' => $post->id,
 			'title' => $post->title,
 			'slug' => $post->slug,
 			'perex' => $post->perex,

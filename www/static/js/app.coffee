@@ -24,4 +24,8 @@ $ ->
 
 	$.nette.init()
 
+	$(document).on 'click', '[data-confirm]', (e) ->
+		if ! confirm $(this).data 'confirm'
+			e.preventDefault()
+
 	return

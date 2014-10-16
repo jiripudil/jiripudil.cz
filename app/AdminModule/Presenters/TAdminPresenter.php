@@ -2,6 +2,7 @@
 
 namespace jiripudil\AdminModule\Presenters;
 
+use jiripudil\AdminModule\Components\FlashMessages\TFlashMessagesControlFactory;
 use jiripudil\FrontModule\Components\Head\HeadControl;
 use jiripudil\FrontModule\Components\Head\THeadControlFactory;
 use Kdyby\Autowired\AutowireComponentFactories;
@@ -17,6 +18,7 @@ trait TAdminPresenter
 	use SecuredLinksPresenterTrait;
 
 	use THeadControlFactory;
+	use TFlashMessagesControlFactory;
 
 
 	protected function beforeRender()

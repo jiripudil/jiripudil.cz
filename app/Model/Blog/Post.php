@@ -97,4 +97,21 @@ class Post extends BaseEntity
 		$this->tags = new ArrayCollection;
 	}
 
+
+	/**
+	 * @param Tag[] $tags
+	 */
+	public function setTags(array $tags)
+	{
+		foreach ($this->tags as $tag) {
+			$this->removeTag($tag);
+			$tag->removePost($this);
+		}
+
+		foreach ($tags as $tag) {
+			$this->addTag($tag);
+			$tag->addPost($this);
+		}
+	}
+
 }

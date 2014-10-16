@@ -27,6 +27,11 @@ class BlogPresenter extends Presenter
 			$post = $this->em->getDao(Post::class)->find($id);
 			$this['editPostForm']->setPost($post);
 		}
+
+		$this['editPostForm']->onSave[] = function () {
+			$this['flashes']->flashMessage('Saved.', 'success');
+			$this->redirect('this');
+		};
 	}
 
 
@@ -56,8 +61,8 @@ class BlogPresenter extends Presenter
 			$this->em->flush();
 		}
 
-		$this->flashMessage('This post is history.', 'success');
-		$this->redirect('this');
+		$this['flashes']->flashMessage('This post is history.', 'success');
+		$this->redirect('Dashboard:');
 	}
 
 }

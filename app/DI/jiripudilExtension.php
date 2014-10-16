@@ -4,6 +4,7 @@ namespace jiripudil\DI;
 
 use FSHL;
 use jiripudil\AdminModule\Components\EditPostForm\IEditPostFormControlFactory;
+use jiripudil\AdminModule\Components\FlashMessages\IFlashMessagesControlFactory;
 use jiripudil\AdminModule\Components\LoginForm\ILoginFormControlFactory;
 use jiripudil\AdminModule\Components\Tags\ITagsControlFactory;
 use jiripudil\Caching\TexyCache;
@@ -59,6 +60,8 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 			->setImplement(IContactFormControlFactory::class);
 		$builder->addDefinition($this->prefix('pagingControl'))
 			->setImplement(IPagingControlFactory::class);
+		$builder->addDefinition($this->prefix('flashesControl'))
+			->setImplement(IFlashMessagesControlFactory::class);
 		$builder->addDefinition($this->prefix('loginForm'))
 			->setImplement(ILoginFormControlFactory::class);
 		$builder->addDefinition($this->prefix('tagsControl'))

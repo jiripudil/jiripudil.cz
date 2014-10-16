@@ -17,6 +17,12 @@ class TagsControl extends Control
 	use TBaseControl;
 
 
+	/** @var callable[] */
+	public $onSave = [];
+
+	/** @var callable[] */
+	public $onDelete = [];
+
 	/** @var EntityManager */
 	private $em;
 
@@ -45,8 +51,7 @@ class TagsControl extends Control
 			$this->em->flush();
 		}
 
-		$this->flashMessage('Deleted.', 'success');
-		$this->redirect('this');
+		$this->onDelete();
 	}
 
 
@@ -73,8 +78,7 @@ class TagsControl extends Control
 		$this->em->persist($tag);
 		$this->em->flush();
 
-		$this->flashMessage('Tag saved.', 'success');
-		$this->redirect('this');
+		$this->onSave($tag);
 	}
 
 

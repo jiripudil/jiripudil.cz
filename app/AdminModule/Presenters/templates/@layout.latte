@@ -4,6 +4,7 @@
 
 <body>
 	<div class="container">
+		{if isset($presenter['flashes'])}{control flashes}{/if}
 		{include #content}
 	</div>
 </body>

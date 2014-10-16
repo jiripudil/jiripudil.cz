@@ -24,6 +24,19 @@ class DashboardPresenter extends Presenter
 	protected $em;
 
 
+	public function actionDefault()
+	{
+		$this['tags']->onSave[] = function () {
+			$this['flashes']->flashMessage('Tag saved.', 'success');
+			$this->redirect('this');
+		};
+		$this['tags']->onDelete[] = function () {
+			$this['flashes']->flashMessage('Tag deleted.', 'success');
+			$this->redirect('this');
+		};
+	}
+
+
 	public function renderDefault()
 	{
 		/** @var Paginator $paginator */

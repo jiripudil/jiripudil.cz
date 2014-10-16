@@ -2,12 +2,6 @@
 
 <h1>Dashboard</h1>
 
-<div n:foreach="$flashes as $flash" class="flash flash--{$flash->type}">
-	<span n:if="$flash->type === 'success'" class="fa fa-check"></span>
-	<span n:if="$flash->type === 'error'" class="fa fa-exclamation-triangle"></span>
-	{$flash->message}
-</div>
-
 <h2>Posts</h2>
 <p>
 	<a n:href="Blog:edit" class="btn"><span class="fa fa-plus" title="Add new"></span> New</a>
