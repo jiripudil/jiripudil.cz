@@ -29,14 +29,15 @@ class TexyCache extends Object
 	public function load($input, callable $fallback)
 	{
 		$key = md5($input);
-		return $this->cache->load($key, $fallback);
-	}
+		$result = $this->cache->load($key);
+		if ($result === NULL) {
+			$result = $this->cache->save($key, call_user_func($fallback, $input), [
+				Cache::EXPIRATION => '1 week',
+				Cache::SLIDING => TRUE,
+			]);
+		}
 
-
-	public function invalidate(Post $post)
-	{
-		$key = md5($post->text);
-		$this->cache->remove($key);
+		return $result;
 	}
 
 }
