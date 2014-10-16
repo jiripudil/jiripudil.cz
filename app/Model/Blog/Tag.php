@@ -39,8 +39,9 @@ class Tag extends BaseEntity
 	protected $posts;
 
 
-	public function __construct()
+	public function __construct($name)
 	{
+		$this->name = $name;
 		$this->posts = new ArrayCollection;
 	}
 

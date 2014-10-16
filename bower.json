@@ -3,6 +3,7 @@
 	"private": true,
 	"dependencies": {
 		"jquery": "~2.1",
-		"nette.ajax.js": "1.2.3-RC1"
+		"nette.ajax.js": "1.2.3-RC1",
+		"selectize": "~0.11"
 	}
 }

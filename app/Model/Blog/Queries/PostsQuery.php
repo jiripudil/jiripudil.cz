@@ -23,7 +23,7 @@ class PostsQuery extends QueryObject
 	public function withTag(Tag $tag)
 	{
 		$this->filters[] = function (QueryBuilder $queryBuilder) use ($tag) {
-			$queryBuilder->andWhere('t.id = :tag', $tag->id);
+			$queryBuilder->andWhere(':tag MEMBER OF p.tags', $tag->id);
 		};
 
 		return $this;

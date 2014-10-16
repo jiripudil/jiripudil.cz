@@ -1,0 +1,85 @@
+{form form class => 'adminForm'}
+	<div n:foreach="$form->errors as $error" class="flash flash--error"><span class="fa fa-exclamation-triangle"></span> {$error}</div>
+
+	<p>
+		{label title /}
+		{input title}
+	</p>
+	<p>
+		{label slug /}
+		/blog/{input slug}
+	</p>
+	<p>
+		{label perex /}
+		{input perex}
+	</p>
+	<p>
+		{label text /}
+		{input text}
+	</p>
+	<p>
+		{label datetime /}
+		{input datetime}
+	</p>
+	<p>
+		{label cupsDrunk /}
+		{input cupsDrunk}
+	</p>
+	<p>
+		{label tags /}
+		{input tags}
+	</p>
+	<p>
+		{input published}
+	</p>
+	<p>
+		{input commentsAllowed}
+	</p>
+	<p>
+		{input save class => 'btn'}
+	</p>
+
+	<script>
+		$(function () {
+			// generate slug
+			$('#' + {$form['title']->htmlId}).on('change', function (e) {
+				var data = {};
+				var titleKey = {$control->name} + '-title';
+				data[titleKey] = $(this).val();
+
+				$.nette.ajax({
+					url: {link slugify!},
+					data: data,
+					success: function (payload) {
+						if (payload.slug) {
+							$('#' + {$form['slug']->htmlId}).val(payload.slug);
+						}
+					}
+				});
+			});
+
+			// tab indent in text
+			$('#' + {$form['text']->htmlId}).on('keydown', function (e) {
+				var keyCode = e.keyCode || e.which;
+				if (keyCode === 9 && e.altKey) {
+					e.preventDefault();
+					var start = $(this).get(0).selectionStart;
+					var end = $(this).get(0).selectionEnd;
+
+					$(this).val($(this).val().substring(0, start)
+						+ "\t"
+						+ $(this).val().substring(end));
+
+					$(this).get(0).selectionStart = $(this).get(0).selectionEnd = start + 1;
+				}
+			});
+
+			// selectize
+			$('#' + {$form['tags']->htmlId}).selectize({
+				plugins: ['remove_button'],
+				persist: true,
+				hideSelected: true
+			});
+		});
+	</script>
+{/form}

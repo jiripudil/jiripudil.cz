@@ -3,7 +3,9 @@
 namespace jiripudil\DI;
 
 use FSHL;
+use jiripudil\AdminModule\Components\EditPostForm\IEditPostFormControlFactory;
 use jiripudil\AdminModule\Components\LoginForm\ILoginFormControlFactory;
+use jiripudil\AdminModule\Components\Tags\ITagsControlFactory;
 use jiripudil\Caching\TexyCache;
 use jiripudil\Console\CreateUserCommand;
 use jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory;
@@ -59,6 +61,10 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 			->setImplement(IPagingControlFactory::class);
 		$builder->addDefinition($this->prefix('loginForm'))
 			->setImplement(ILoginFormControlFactory::class);
+		$builder->addDefinition($this->prefix('tagsControl'))
+			->setImplement(ITagsControlFactory::class);
+		$builder->addDefinition($this->prefix('editPostControl'))
+			->setImplement(IEditPostFormControlFactory::class);
 
 		// console
 		$builder->addDefinition($this->prefix('createUserCommand'))

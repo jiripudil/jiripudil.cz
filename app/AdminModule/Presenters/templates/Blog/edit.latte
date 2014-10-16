@@ -1,0 +1,11 @@
+{block #content}
+
+<h1>Edit post</h1>
+
+<div n:foreach="$flashes as $flash" class="flash flash--{$flash->type}">
+	<span n:if="$flash->type === 'success'" class="fa fa-check"></span>
+	<span n:if="$flash->type === 'error'" class="fa fa-exclamation-triangle"></span>
+	{$flash->message}
+</div>
+
+{control editPostForm}

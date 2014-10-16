@@ -29,6 +29,7 @@ gulp.task 'scripts', ['coffee'], ->
 	gulp.src [
 		'bower_components/jquery/dist/jquery.min.js'
 		'bower_components/nette.ajax.js/nette.ajax.js'
+		'bower_components/selectize/dist/js/standalone/selectize.min.js'
 		'www/static/js/app.js'
 	]
 		.pipe plugins.sourcemaps.init()

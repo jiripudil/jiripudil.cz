@@ -18,7 +18,8 @@ class TagsQuery extends QueryObject
 		return $dao->createQueryBuilder('t')
 			->select('t, COUNT(p.id) AS postsCount')
 			->leftJoin('t.posts', 'p')
-			->orderBy('t.name', 'ASC');
+			->orderBy('t.name', 'ASC')
+			->groupBy('t.id');
 	}
 
 }

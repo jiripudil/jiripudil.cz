@@ -1,0 +1,13 @@
+{block #content}
+
+<h1>Delete post</h1>
+
+<div n:foreach="$flashes as $flash" class="flash flash--{$flash->type}">
+	<span n:if="$flash->type === 'success'" class="fa fa-check"></span>
+	<span n:if="$flash->type === 'error'" class="fa fa-exclamation-triangle"></span>
+	{$flash->message}
+</div>
+
+<p>Are you sure you really want to delete the wonderful post titled <strong>{$post->title}</strong>?</p>
+<p>(It took you <strong>{$post->cupsDrunk}</strong> cups of coffee!)</p>
+<p><a n:href="delete! $post->id" class="btn"><span class="fa fa-times"></span> Yes, delete it!</a></p>
