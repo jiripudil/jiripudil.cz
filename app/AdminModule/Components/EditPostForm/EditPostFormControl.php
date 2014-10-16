@@ -2,6 +2,7 @@
 
 namespace jiripudil\AdminModule\Components\EditPostForm;
 
+use jiripudil\Latte\TexyFilter;
 use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Queries\TagsQuery;
 use jiripudil\Model\Blog\Tag;
@@ -21,10 +22,14 @@ class EditPostFormControl extends Control
 	/** @var EntityManager */
 	private $em;
 
+	/** @var TexyFilter */
+	private $texy;
 
-	public function __construct(EntityManager $em)
+
+	public function __construct(EntityManager $em, TexyFilter $texy)
 	{
 		$this->em = $em;
+		$this->texy = $texy;
 	}
 
 
@@ -111,6 +116,17 @@ class EditPostFormControl extends Control
 
 		if ($this->presenter->ajax) {
 			$this->presenter->payload->slug = $slug;
+			$this->presenter->sendPayload();
+		}
+	}
+
+
+	public function handlePreview($input)
+	{
+		$preview = call_user_func($this->texy, $input);
+
+		if ($this->presenter->ajax) {
+			$this->presenter->payload->preview = $preview;
 			$this->presenter->sendPayload();
 		}
 	}

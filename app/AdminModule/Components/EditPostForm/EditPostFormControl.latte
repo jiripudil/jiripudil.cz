@@ -15,7 +15,15 @@
 	</p>
 	<p>
 		{label text /}
-		{input text}
+		<div class="post-edit">
+			{input text}
+			<a href="#" class="js-preview-open btn"><span class="fa fa-eye"></span> preview</a>
+		</div>
+		<div class="post-preview hidden">
+			<a href="#" class="js-preview-close btn"><span class="fa fa-pencil-square-o"></span> edit</a>
+			<div class="post-preview-content"></div>
+			<hr>
+		</div>
 	</p>
 	<p>
 		{label datetime /}
@@ -43,7 +51,7 @@
 		$(function () {
 			// generate slug
 			$('#' + {$form['title']->htmlId}).on('change', function (e) {
-				var data = {};
+				var data = { };
 				var titleKey = {$control->name} + '-title';
 				data[titleKey] = $(this).val();
 
@@ -56,6 +64,34 @@
 						}
 					}
 				});
+			});
+
+			// Texy preview
+			$('.js-preview-open').on('click', function (e) {
+				e.preventDefault();
+
+				var data = { };
+				var inputKey = {$control->name} + '-input';
+				data[inputKey] = $('#' + {$form['text']->htmlId}).val();
+
+				$.nette.ajax({
+					url: {link preview!},
+					data: data,
+					type: 'post',
+					success: function (payload) {
+						if (payload.preview) {
+							$('.post-edit').addClass('hidden');
+							$('.post-preview').removeClass('hidden');
+							$('.post-preview-content').html(payload.preview);
+						}
+					}
+				});
+			});
+
+			$('.js-preview-close').on('click', function (e) {
+				e.preventDefault();
+				$('.post-edit').removeClass('hidden');
+				$('.post-preview').addClass('hidden');
 			});
 
 			// tab indent in text
