@@ -41,6 +41,10 @@ a {
 .container {
 	max-width: 800px;
 	margin: 0 auto;
+
+	@media (max-width: 640px) {
+		padding: 0 .5em;
+	}
 }
 
 .sep {
@@ -233,6 +237,10 @@ p img {
 .feature {
 	margin: 0 -1.5em;
 	border-bottom: 1px solid #ccc;
+
+	@media (max-width: 640px) {
+		margin: 0;
+	}
 }
 
 .feature-heading {
@@ -328,10 +336,12 @@ code .neon-key { color: #00f; }
 /***** contact *****/
 
 .contactForm {
-	float: left;
-	width: 65%;
-	box-sizing: border-box;
-	padding-right: 10px;
+	@media (min-width: 640px) {
+		float: left;
+		width: 65%;
+		box-sizing: border-box;
+		padding-right: 10px;
+	}
 }
 
 .contactForm-form {
@@ -359,8 +369,10 @@ code .neon-key { color: #00f; }
 }
 
 .contactList {
-	float: right;
-	width: 30%;
+	@media (min-width: 640px) {
+		float: right;
+		width: 30%;
+	}
 }
 
 .contacts {
