@@ -16,6 +16,7 @@ git pull upstream master >>$LOG_FILE 2>&1
 # install & compile stuff
 composer install >>$LOG_FILE 2>&1
 npm install >>$LOG_FILE 2>&1
+gulp bower >>$LOG_FILE 2>&1
 gulp build >>$LOG_FILE 2>&1
 
 # clear cache

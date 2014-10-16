@@ -42,4 +42,4 @@ gulp.task 'watch', ->
 	gulp.watch 'www/static/css/*.less', ['less']
 	gulp.watch 'www/static/js/*.coffee', ['scripts']
 
-gulp.task 'build', ['bower', 'less', 'scripts']
+gulp.task 'build', ['less', 'scripts']
