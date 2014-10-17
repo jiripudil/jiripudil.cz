@@ -73,7 +73,7 @@ class EditPostFormControl extends Control
 	{
 		$values = $form->values;
 
-		$post = $values->id === NULL ? new Post : $this->em->getReference(Post::class, $values->id);
+		$post = empty($values->id) ? new Post : $this->em->getReference(Post::class, $values->id);
 		$post->title = $values->title;
 		$post->slug = $values->slug;
 		$post->perex = $values->perex;

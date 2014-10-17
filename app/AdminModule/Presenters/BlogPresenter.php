@@ -30,7 +30,7 @@ class BlogPresenter extends Presenter
 
 		$this['editPostForm']->onSave[] = function () {
 			$this['flashes']->flashMessage('Saved.', 'success');
-			$this->redirect('this');
+			$this->redirect('Dashboard:');
 		};
 	}
 
