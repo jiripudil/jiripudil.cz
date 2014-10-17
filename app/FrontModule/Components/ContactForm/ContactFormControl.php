@@ -67,13 +67,14 @@ class ContactFormControl extends Control
 
 		$message = new Message;
 		$message->setFrom($values->email);
+		$message->addReplyTo($values->email);
 		$message->addTo('me@jiripudil.cz');
 		if ($values->cc) {
 			$message->addCc($values->email);
 		}
 
 		$message->setSubject('Message via jiripudil.cz');
-		$message->setBody($values->text); // TODO setHtml() via Texy!
+		$message->setBody($values->text);
 
 		try {
 			$this->mailer->send($message);
