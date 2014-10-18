@@ -5,7 +5,7 @@
 <div class="post">
 	<h1 class="post-title post-title--top">{$post->title}</h1>
 	<div class="post-info">
-		<em class="fa fa-calendar" title="Published"></em> <time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ H:ia'}">{$post->datetime|ago}</time>
+		<em class="fa fa-calendar" title="Published"></em> <time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ g:ia'}">{$post->datetime|ago}</time>
 		{if count($post->tags)}
 			&bull; <em class="fa fa-tags" title="Tags"></em> <a n:foreach="$post->tags as $tag" n:href="default tag => $tag">#{$tag->name}</a>
 		{/if}
@@ -57,7 +57,7 @@
 		</div>
 		<p>{$relatedPost->perex|noescape}</p>
 	</div>
-	<p n:if="$postsCount" class="feature-more"><a n:href="Blog:" class="btn">and {$postsCount} more posts!</a></p>
+	<p n:if="$postsCount" class="feature-more"><a n:href="Blog:" class="btn">and {$postsCount} more post{if $postsCount > 1}s{/if}!</a></p>
 </div>
 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54267314718f5e22" async></script>

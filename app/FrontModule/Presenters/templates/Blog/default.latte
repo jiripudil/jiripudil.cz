@@ -8,7 +8,7 @@
 	<div class="post">
 		<h3 class="post-title"><a n:href="post post => $post">{$post->title}</a></h3>
 		<div class="post-info">
-			<em class="fa fa-calendar" title="Published"></em> <time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ H:ia'}">{$post->datetime|ago}</time>
+			<em class="fa fa-calendar" title="Published"></em> <time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ g:ia'}">{$post->datetime|ago}</time>
 			{if count($post->tags)}
 				&bull; <em class="fa fa-tags" title="Tags"></em> <a n:foreach="$post->tags as $tag" n:href="this tag => $tag">#{$tag->name}</a>
 			{/if}
