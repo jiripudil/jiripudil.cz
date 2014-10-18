@@ -50,7 +50,7 @@
 	<div class="post post--feature">
 		<h3 class="post-title"><a n:href="Blog:post post => $relatedPost">{$relatedPost->title}</a></h3>
 		<div class="post-info">
-			<time datetime="{$relatedPost->datetime|date:'Y-m-d H:i'}" title="{$relatedPost->datetime|date:'M j, Y \@ H:ia'}">{$relatedPost->datetime|ago}</time>
+			<time datetime="{$relatedPost->datetime|date:'Y-m-d H:i'}" title="{$relatedPost->datetime|date:'M j, Y \@ g:ia'}">{$relatedPost->datetime|ago}</time>
 			{if count($relatedPost->tags)}
 				&bull; <a n:foreach="$relatedPost->tags as $tag" n:href="default tag => $tag">#{$tag->name}</a>
 			{/if}
