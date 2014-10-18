@@ -1,4 +1,5 @@
 gulp = require 'gulp'
+streamee = require 'streamee'
 loadPlugins = require 'gulp-load-plugins'
 plugins = loadPlugins()
 
@@ -18,25 +19,23 @@ gulp.task 'less', ->
 		.pipe plugins.sourcemaps.write()
 		.pipe gulp.dest 'www/static/css'
 
-gulp.task 'coffee', ->
-	gulp.src 'www/static/js/*.coffee'
-		.pipe plugins.sourcemaps.init()
-		.pipe plugins.coffee()
-		.pipe plugins.sourcemaps.write()
-		.pipe gulp.dest 'www/static/js'
-
-gulp.task 'scripts', ['coffee'], ->
-	gulp.src [
-		'bower_components/jquery/dist/jquery.min.js'
-		'bower_components/nette.ajax.js/nette.ajax.js'
-		'bower_components/selectize/dist/js/standalone/selectize.min.js'
-		'www/static/js/app.js'
+gulp.task 'scripts', ->
+	streamee.concatenate [
+		gulp.src [
+			'bower_components/jquery/dist/jquery.min.js'
+			'bower_components/nette.ajax.js/nette.ajax.js'
+			'bower_components/selectize/dist/js/standalone/selectize.min.js'
+		]
+		gulp.src 'www/static/js/*.coffee'
+			.pipe plugins.sourcemaps.init()
+			.pipe plugins.coffee()
+			.pipe plugins.sourcemaps.write()
 	]
-		.pipe plugins.sourcemaps.init()
-		.pipe plugins.concat('scripts.js')
-		.pipe plugins.uglify()
-		.pipe plugins.sourcemaps.write()
-		.pipe gulp.dest 'www/static/js'
+	.pipe plugins.sourcemaps.init()
+	.pipe plugins.concat('scripts.js')
+	.pipe plugins.uglify()
+	.pipe plugins.sourcemaps.write()
+	.pipe gulp.dest 'www/static/js'
 
 gulp.task 'watch', ->
 	gulp.watch 'www/static/css/*.less', ['less']
