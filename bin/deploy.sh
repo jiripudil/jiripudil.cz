@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# cd to root
-cd ..
+# cd to root dir
+cd ${0%/*}
 
 # init log
 LOG_FILE=log/deploy_$(date +%Y-%m-%d-%H-%M-%S).log
@@ -21,7 +21,7 @@ gulp build >>$LOG_FILE 2>&1
 
 # clear cache
 rm -rf temp/cache
-php -r 'opcache_reset();'
+service php-fpm reload # clears opcache
 
 # run db migrations
 php www/index.php migrations:migrate >>$LOG_FILE 2>&1
