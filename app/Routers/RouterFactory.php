@@ -32,6 +32,7 @@ class RouterFactory extends Object
 	public function createRouter()
 	{
 		$router = new RouteList;
+		Route::$defaultFlags = Route::SECURED;
 
 		// blog/tag/<tag>
 		$router[] = new Route('blog[/tag/<tag>]', [
