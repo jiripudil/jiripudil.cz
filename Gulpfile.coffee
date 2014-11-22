@@ -9,14 +9,12 @@ gulp.task 'bower', ->
 
 gulp.task 'less', ->
 	gulp.src 'www/static/css/*.less'
-		.pipe plugins.sourcemaps.init()
 		.pipe plugins.less
 			paths: ['bower_components']
 			cleancss: yes
 		.pipe plugins.autoprefixer
 			browsers: ['last 2 versions', 'ie >= 8']
 			cascade: no
-		.pipe plugins.sourcemaps.write()
 		.pipe gulp.dest 'www/static/css'
 
 gulp.task 'scripts', ->
@@ -27,14 +25,10 @@ gulp.task 'scripts', ->
 			'bower_components/selectize/dist/js/standalone/selectize.min.js'
 		]
 		gulp.src 'www/static/js/*.coffee'
-			.pipe plugins.sourcemaps.init()
 			.pipe plugins.coffee()
-			.pipe plugins.sourcemaps.write()
 	]
-	.pipe plugins.sourcemaps.init()
 	.pipe plugins.concat('scripts.js')
 	.pipe plugins.uglify()
-	.pipe plugins.sourcemaps.write()
 	.pipe gulp.dest 'www/static/js'
 
 gulp.task 'watch', ->
