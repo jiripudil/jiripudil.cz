@@ -2,14 +2,14 @@
 
 namespace jiripudil\AdminModule\Components\EditPostForm;
 
+use jiripudil\DoctrineForms\Controls\ToManyMultiSelect;
+use jiripudil\Forms\Controls\DateTimeInput;
+use jiripudil\Forms\EntityForm;
+use jiripudil\Forms\IEntityFormFactory;
 use jiripudil\Latte\TexyFilter;
 use jiripudil\Model\Blog\Post;
-use jiripudil\Model\Blog\Queries\TagsQuery;
-use jiripudil\Model\Blog\Tag;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Control;
-use Nette\Application\UI\Form;
-use Nette\Utils\DateTime;
 use Nette\Utils\Strings;
 
 
@@ -19,23 +19,31 @@ class EditPostFormControl extends Control
 	/** @var callable[] */
 	public $onSave = [];
 
+	/** @var Post */
+	private $post;
+
 	/** @var EntityManager */
 	private $em;
 
 	/** @var TexyFilter */
 	private $texy;
 
+	/** @var IEntityFormFactory */
+	private $formFactory;
 
-	public function __construct(EntityManager $em, TexyFilter $texy)
+
+	public function __construct(Post $post, EntityManager $em, TexyFilter $texy, IEntityFormFactory $entityFormFactory)
 	{
+		$this->post = $post;
 		$this->em = $em;
 		$this->texy = $texy;
+		$this->formFactory = $entityFormFactory;
 	}
 
 
 	protected function createComponentForm()
 	{
-		$form = new Form;
+		$form = $this->formFactory->create();
 
 		$form->addText('title', 'Title')
 			->setRequired('Please enter title.');
@@ -45,68 +53,32 @@ class EditPostFormControl extends Control
 			->setRequired('Please enter perex.');
 		$form->addTextArea('text', 'Text')
 			->setRequired('Please enter text.');
-		$form->addText('datetime', 'Published on')
-			->setType('datetime')
+
+		$dateInput = (new DateTimeInput('Published on'))
 			->setRequired('Please enter date of publishing.');
+		$form->addComponent($dateInput, 'datetime');
+
 		$form->addText('cupsDrunk', 'Cups of coffee')
 			->setType('number');
 		$form->addCheckbox('published', 'Published');
 		$form->addCheckbox('commentsAllowed', 'Allow comments');
 
-		$items = [];
-		$tags = $this->em->getDao(Tag::class)->fetch(new TagsQuery());
-		foreach ($tags as $tag) {
-			$items[$tag[0]->id] = $tag[0]->name;
-		}
-		$form->addMultiSelect('tags', 'Tags', $items);
+		$form->addMultiSelect('tags', 'Tags')
+			->setOption(ToManyMultiSelect::ITEMS_TITLE, 'name')
+			->setOption(ToManyMultiSelect::ITEMS_ADDER, 'addTag')
+			->setOption(ToManyMultiSelect::ITEMS_REMOVER, 'removeTag');
 
-		$form->addHidden('id');
 		$form->addProtection('Your CSRF token has expired. Please re-submit the form.');
 		$form->addSubmit('save', 'Save');
-		$form->onSuccess[] = $this->processForm;
+		$form->onSuccess[] = function (EntityForm $form) {
+			$this->em->persist($post = $form->getEntity());
+			$this->em->flush();
+			$this->onSave($post);
+		};
+
+		$form->bindEntity($this->post);
 
 		return $form;
-	}
-
-
-	public function processForm(Form $form)
-	{
-		$values = $form->values;
-
-		$post = empty($values->id) ? new Post : $this->em->getReference(Post::class, $values->id);
-		$post->title = $values->title;
-		$post->slug = $values->slug;
-		$post->perex = $values->perex;
-		$post->text = $values->text;
-		$post->datetime = DateTime::from($values->datetime);
-		$post->cupsDrunk = $values->cupsDrunk;
-		$post->published = $values->published;
-		$post->commentsAllowed = $values->commentsAllowed;
-		$post->tags = array_map(function ($tagId) {
-			return $this->em->getReference(Tag::class, $tagId);
-		}, $values->tags);
-
-		$this->em->persist($post);
-		$this->em->flush();
-
-		$this->onSave($post);
-	}
-
-
-	public function setPost(Post $post)
-	{
-		$this['form']->setDefaults([
-			'id' => $post->id,
-			'title' => $post->title,
-			'slug' => $post->slug,
-			'perex' => $post->perex,
-			'text' => $post->text,
-			'datetime' => $post->datetime->format('Y-m-d G:i:s'),
-			'cupsDrunk' => $post->cupsDrunk,
-			'published' => $post->published,
-			'commentsAllowed' => $post->commentsAllowed,
-			'tags' => array_map(function ($tag) { return $tag->id; }, $post->tags),
-		]);
 	}
 
 
@@ -143,15 +115,21 @@ class EditPostFormControl extends Control
 
 interface IEditPostFormControlFactory
 {
-	/** @return EditPostFormControl */
-	function create();
+	/**
+	 * @param Post $post
+	 * @return EditPostFormControl
+	 */
+	function create($post);
 }
 
 
 trait TEditPostFormControlFactory
 {
+	/** @var Post */
+	protected $post;
+
 	protected function createComponentEditPostForm(IEditPostFormControlFactory $factory)
 	{
-		return $factory->create();
+		return $factory->create($this->post);
 	}
 }
