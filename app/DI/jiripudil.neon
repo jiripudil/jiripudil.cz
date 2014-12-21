@@ -1,0 +1,30 @@
+services:
+	# router
+	- jiripudil\Routers\RouterFactory
+	router: @jiripudil\Routers\RouterFactory::createRouter
+
+	# security
+	- jiripudil\Security\NativeHasher
+	- jiripudil\Security\Authenticator
+	nette.userStorage: jiripudil\Http\UserStorage
+
+	# templating
+	- FSHL\Output\Html
+	- FSHL\Highlighter
+	- jiripudil\Caching\TexyCache
+	- jiripudil\Latte\TexyFactory
+	- jiripudil\Latte\TexyFilter
+
+	# console
+	-
+		class: jiripudil\Console\CreateUserCommand
+		tags: [kdyby.console.command]
+
+	# factories
+	- jiripudil\FrontModule\Components\Head\IHeadControlFactory
+	- jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory
+	- jiripudil\FrontModule\Components\Paging\IPagingControlFactory
+	- jiripudil\AdminModule\Components\FlashMessages\IFlashMessagesControlFactory
+	- jiripudil\AdminModule\Components\LoginForm\ILoginFormControlFactory
+	- jiripudil\AdminModule\Components\Tags\ITagsControlFactory
+	- jiripudil\AdminModule\Components\EditPostForm\IEditPostFormControlFactory
