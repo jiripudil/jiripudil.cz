@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # cd to root dir
-cd ${0%/*}
+cd ${0%/*}/..
 
 # init log
 LOG_FILE=log/deploy_$(date +%Y-%m-%d-%H-%M-%S).log
