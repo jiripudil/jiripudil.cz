@@ -4,9 +4,6 @@ loadPlugins = require 'gulp-load-plugins'
 plugins = loadPlugins()
 
 
-gulp.task 'bower', ->
-	plugins.bower()
-
 gulp.task 'less', ->
 	gulp.src 'www/static/css/*.less'
 		.pipe plugins.less
