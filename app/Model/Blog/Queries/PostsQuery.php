@@ -56,7 +56,7 @@ class PostsQuery extends QueryObject
 			if ($post->tags) {
 				$tagIds = array_map(function ($tag) { return $tag->id; }, $post->tags);
 
-				$queryBuilder->addSelect('COUNT(t.id) AS tagCount')
+				$queryBuilder->addSelect('COUNT(t.id) AS HIDDEN tagCount')
 					->andWhere('t.id IN (:tags)', $tagIds)
 					->orderBy('tagCount', 'DESC')
 					->groupBy('p.id');
