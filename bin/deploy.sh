@@ -14,7 +14,7 @@ mv www/.maintenance.html www/maintenance.html
 git pull upstream master >>$LOG_FILE 2>&1
 
 # install & compile stuff
-composer install >>$LOG_FILE 2>&1
+composer install -n >>$LOG_FILE 2>&1
 npm install >>$LOG_FILE 2>&1
 bower install >>$LOG_FILE 2>&1
 gulp build >>$LOG_FILE 2>&1
@@ -24,7 +24,7 @@ rm -rf temp/cache
 service php-fpm reload # clears opcache
 
 # run db migrations
-php www/index.php migrations:migrate >>$LOG_FILE 2>&1
+php www/index.php migrations:migrate --no-interaction >>$LOG_FILE 2>&1
 
 # disable maintenance page
 mv www/maintenance.html www/.maintenance.html
