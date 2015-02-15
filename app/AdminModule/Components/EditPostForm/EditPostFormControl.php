@@ -119,7 +119,7 @@ interface IEditPostFormControlFactory
 	 * @param Post $post
 	 * @return EditPostFormControl
 	 */
-	function create($post);
+	function create(Post $post);
 }
 
 

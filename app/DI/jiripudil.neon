@@ -30,7 +30,4 @@ services:
 	- jiripudil\AdminModule\Components\FlashMessages\IFlashMessagesControlFactory
 	- jiripudil\AdminModule\Components\LoginForm\ILoginFormControlFactory
 	- jiripudil\AdminModule\Components\Tags\ITagsControlFactory
-	-
-		implement: jiripudil\AdminModule\Components\EditPostForm\IEditPostFormControlFactory
-		parameters: [post]
-		arguments: [%post%]
+	- jiripudil\AdminModule\Components\EditPostForm\IEditPostFormControlFactory
