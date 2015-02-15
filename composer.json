@@ -11,6 +11,8 @@
 		"kdyby/autowired": "~1.2.0",
 		"doctrine/migrations": "1.0.0-ALPHA1 as 1.0.99-dev",
 		"zenify/doctrine-migrations": "~2.0.2",
+		"kdyby/validator": "dev-master",
+		"kdyby/doctrine-forms": "dev-master",
 		"dg/texy": "~2.6.0",
 		"kukulich/fshl": "~2.1.0"
 	},

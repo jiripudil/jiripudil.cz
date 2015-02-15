@@ -23,10 +23,7 @@ class BlogPresenter extends Presenter
 
 	public function actionEdit($id = NULL)
 	{
-		if ($id !== NULL) {
-			$post = $this->em->getDao(Post::class)->find($id);
-			$this['editPostForm']->setPost($post);
-		}
+		$this->post = $id !== NULL ? $this->em->getDao(Post::class)->find($id) : new Post;
 
 		$this['editPostForm']->onSave[] = function () {
 			$this['flashes']->flashMessage('Saved.', 'success');

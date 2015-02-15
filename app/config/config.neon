@@ -20,6 +20,9 @@ extensions:
 	doctrine: Kdyby\Doctrine\DI\OrmExtension
 	autowired: Kdyby\Autowired\DI\AutowiredExtension
 	migrations: Zenify\DoctrineMigrations\DI\MigrationsExtension
+	validator: Kdyby\Validator\DI\ValidatorExtension
+	translation: Kdyby\Translation\DI\TranslationExtension
+	forms: Kdyby\DoctrineForms\DI\FormsExtension
 	jiripudil: jiripudil\DI\jiripudilExtension
 
 
