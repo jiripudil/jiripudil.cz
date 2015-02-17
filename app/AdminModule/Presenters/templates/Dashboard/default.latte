@@ -10,7 +10,7 @@
 	<tbody>
 		<tr n:foreach="$posts as $post">
 			<td>
-				<span n:class="fa, $post->published ? fa-eye : fa-eye-slash"></span>
+				<a n:href=":Front:Blog:post post => $post" n:class="fa, $post->published ? fa-eye : fa-eye-slash"></a>
 				<strong>{$post->title}</strong>
 			</td>
 			<td style="text-align:center">{$post->datetime|date:'Y-m-d'}</td>

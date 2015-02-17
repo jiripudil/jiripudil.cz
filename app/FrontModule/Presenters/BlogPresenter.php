@@ -63,6 +63,14 @@ class BlogPresenter extends Presenter
 	}
 
 
+	public function actionPost(Post $post)
+	{
+		if ( ! $this->user->loggedIn && (! $post->published || $post->datetime > new \DateTime)) {
+			$this->error();
+		}
+	}
+
+
 	public function renderPost(Post $post)
 	{
 		/** @var HeadControl $head */
