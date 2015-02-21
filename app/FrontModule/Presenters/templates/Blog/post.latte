@@ -22,27 +22,29 @@
 <div class="sep"></div>
 
 <div class="share">
-	<p>This post took <strong>{$post->cupsDrunk} cups</strong> of coffee to write. If you liked it, you can <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=E69A5VVCFVVDC&lc=US&item_name=Ji%c5%99%c3%ad%20Pudil&currency_code=CZK&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" class="btn"><em class="fa fa-coffee"></em> buy me one!</a></p>
+	<p>This post took <strong>{$post->cupsDrunk} cup{if $post->cupsDrunk > 1}s{/if}</strong> of coffee to write. If you liked it, you can <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=E69A5VVCFVVDC&lc=US&item_name=Ji%c5%99%c3%ad%20Pudil&currency_code=CZK&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" class="btn"><em class="fa fa-coffee"></em> buy me one!</a></p>
 	<p>And don't forget to <a href="//twitter.com/intent/tweet?url={link //this|url}" class="btn btn--twitter"><em class="fa fa-twitter"></em> tweet it!</a></p>
 </div>
 
 <div class="sep"></div>
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-	var disqus_shortname = 'jiripudil';
-	var disqus_identifier = {$post->id};
-	var disqus_title = {$post->title};
-	var disqus_url = {link //this};
+{if $post->commentsAllowed}
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		var disqus_shortname = 'jiripudil';
+		var disqus_identifier = {$post->id};
+		var disqus_title = {$post->title};
+		var disqus_url = {link //this};
 
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+{/if}
 
 
 <div class="sep"></div>
