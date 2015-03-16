@@ -26,11 +26,18 @@ class BlogPresenter extends Presenter
 	use TPagingControlFactory;
 
 
-	/** @var EntityManager @autowire */
-	protected $em;
+	/** @var EntityManager */
+	private $em;
 
-	/** @var TexyFilter @autowire */
-	protected $texyFilter;
+	/** @var TexyFilter */
+	private $texyFilter;
+
+
+	public function __construct(EntityManager $em, TexyFilter $texyFilter)
+	{
+		$this->em = $em;
+		$this->texyFilter = $texyFilter;
+	}
 
 
 	public function actionDefault(Tag $tag = NULL)
@@ -42,7 +49,7 @@ class BlogPresenter extends Presenter
 
 		/** @var Paginator $paginator */
 		$paginator = $this['paging']->getPaginator();
-		$posts = $this->em->getDao(Post::class)->fetch($query);
+		$posts = $this->em->getRepository(Post::class)->fetch($query);
 		$posts->applyPaginator($paginator, 10);
 
 		$this['paging']->addLinks($this['head']);
@@ -65,7 +72,7 @@ class BlogPresenter extends Presenter
 
 	public function actionPost(Post $post)
 	{
-		if ( ! $this->user->loggedIn && (! $post->published || $post->datetime > new \DateTime)) {
+		if ( ! $this->user->loggedIn && ! $post->isPubliclyAvailable()) {
 			$this->error();
 		}
 	}
@@ -80,11 +87,11 @@ class BlogPresenter extends Presenter
 
 		$this->template->post = $post;
 
-		$relatedPost = $this->em->getDao(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->relatedTo($post));;
+		$relatedPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->relatedTo($post));;
 
 		if ($relatedPost) {
 			$this->template->relatedPost = $relatedPost;
-			$this->template->postsCount = $this->em->getDao(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 2;
+			$this->template->postsCount = $this->em->getRepository(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 2;
 		}
 	}
 
@@ -92,7 +99,7 @@ class BlogPresenter extends Presenter
 	public function renderFeed()
 	{
 		$this->getHttpResponse()->setContentType('application/xml');
-		$this->template->posts = $this->em->getDao(Post::class)->fetch((new PostsQuery)->onlyPublished())->applyPaging(0, 10);
+		$this->template->posts = $this->em->getRepository(Post::class)->fetch((new PostsQuery)->onlyPublished())->applyPaging(0, 10);
 	}
 
 

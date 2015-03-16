@@ -23,6 +23,7 @@ use Kdyby\Doctrine\Entities\BaseEntity;
  * @property \DateTime $datetime
  * @property int $cupsDrunk
  * @property bool $published
+ * @property-read bool $publiclyAvailable
  * @property bool $commentsAllowed
  * @property Tag[]|ArrayCollection $tags
  */
@@ -112,6 +113,15 @@ class Post extends BaseEntity
 			$this->addTag($tag);
 			$tag->addPost($this);
 		}
+	}
+
+
+	/**
+	 * @return bool
+	 */
+	public function isPubliclyAvailable()
+	{
+		return $this->published && $this->datetime <= new \DateTime();
 	}
 
 }

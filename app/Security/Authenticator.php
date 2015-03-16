@@ -8,7 +8,6 @@ use Kdyby\Doctrine\EntityDao;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Object;
 use Nette\Security\AuthenticationException;
-use Nette\Security\User as NUser;
 
 
 class Authenticator extends Object
@@ -20,15 +19,11 @@ class Authenticator extends Object
 	/** @var IHasher */
 	private $hasher;
 
-	/** @var NUser */
-	private $user;
 
-
-	public function __construct(EntityManager $em, IHasher $hasher, NUser $user)
+	public function __construct(EntityManager $em, IHasher $hasher)
 	{
-		$this->userDao = $em->getDao(User::class);
+		$this->userDao = $em->getRepository(User::class);
 		$this->hasher = $hasher;
-		$this->user = $user;
 	}
 
 
@@ -49,8 +44,6 @@ class Authenticator extends Object
 		if ( ! $this->hasher->verify($password, $user->password)) {
 			throw new AuthenticationException;
 		}
-
-		$this->user->login($user);
 
 		return $user;
 	}

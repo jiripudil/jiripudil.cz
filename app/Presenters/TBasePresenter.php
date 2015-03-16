@@ -12,7 +12,6 @@ use Nextras\Application\UI\SecuredLinksPresenterTrait;
 trait TBasePresenter
 {
 
-	use AutowireProperties;
 	use AutowireComponentFactories;
 	use SecuredLinksPresenterTrait;
 

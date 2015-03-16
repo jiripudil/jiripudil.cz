@@ -13,7 +13,6 @@ use Nextras\Application\UI\SecuredLinksPresenterTrait;
 trait TAdminPresenter
 {
 
-	use AutowireProperties;
 	use AutowireComponentFactories;
 	use SecuredLinksPresenterTrait;
 

@@ -41,7 +41,7 @@ class CreateUserCommand extends Command
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		// 1) exit with error if e-mail is already taken
-		$user = $this->em->getDao(User::class)->fetchOne(new UserByEmailQuery($email = $input->getArgument('email')));
+		$user = $this->em->getRepository(User::class)->fetchOne(new UserByEmailQuery($email = $input->getArgument('email')));
 		if ($user !== NULL) {
 			$output->writeln('<error>A user with given e-mail already exists.</error>');
 			exit(1);

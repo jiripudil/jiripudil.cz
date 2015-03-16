@@ -8,6 +8,7 @@ use jiripudil\Model\Blog\Post;
 use jiripudil\Model\Blog\Queries\PostsQuery;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Presenter;
+use Nette\Utils\Paginator;
 
 
 class DashboardPresenter extends Presenter
@@ -20,8 +21,14 @@ class DashboardPresenter extends Presenter
 	use TPagingControlFactory;
 
 
-	/** @var EntityManager @autowire */
-	protected $em;
+	/** @var EntityManager */
+	private $em;
+
+
+	public function __construct(EntityManager $em)
+	{
+		$this->em = $em;
+	}
 
 
 	public function actionDefault()
@@ -41,7 +48,7 @@ class DashboardPresenter extends Presenter
 	{
 		/** @var Paginator $paginator */
 		$paginator = $this['paging']->getPaginator();
-		$posts = $this->em->getDao(Post::class)->fetch((new PostsQuery())->fetchJoinTags());
+		$posts = $this->em->getRepository(Post::class)->fetch((new PostsQuery())->fetchJoinTags());
 		$posts->applyPaginator($paginator, 25);
 
 		$this->template->posts = $posts;

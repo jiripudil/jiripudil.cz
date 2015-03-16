@@ -33,14 +33,14 @@ class TagsControl extends Control
 	public function __construct(EntityManager $em)
 	{
 		$this->em = $em;
-		$this->dao = $em->getDao(Tag::class);
+		$this->dao = $em->getRepository(Tag::class);
 	}
 
 
 	/** @secured */
 	public function handleDelete($id)
 	{
-		$tag = $this->em->getReference(Tag::class, $id);
+		$tag = $this->em->find(Tag::class, $id);
 
 		if ($tag) {
 			foreach ($tag->posts as $post) {

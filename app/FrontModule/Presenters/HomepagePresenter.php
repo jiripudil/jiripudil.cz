@@ -22,14 +22,20 @@ class HomepagePresenter extends Presenter
 	use TContactFormControlFactory;
 
 
-	/** @var EntityManager @autowire */
-	protected $em;
+	/** @var EntityManager */
+	private $em;
+
+
+	public function __construct(EntityManager $em)
+	{
+		$this->em = $em;
+	}
 
 
 	public function renderDefault()
 	{
-		$this->template->latestPost = $this->em->getDao(Post::class)->fetchOne((new PostsQuery)->onlyPublished());
-		$this->template->postsCount = $this->em->getDao(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 1;
+		$this->template->latestPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished());
+		$this->template->postsCount = $this->em->getRepository(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 1;
 	}
 
 

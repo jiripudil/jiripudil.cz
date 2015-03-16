@@ -6,6 +6,7 @@ use jiripudil\Security\Authenticator;
 use Nette\Application\UI\Control;
 use Nette\Application\UI\Form;
 use Nette\Security\AuthenticationException;
+use Nette\Security\User;
 
 
 class LoginFormControl extends Control
@@ -14,10 +15,14 @@ class LoginFormControl extends Control
 	/** @var Authenticator */
 	private $authenticator;
 
+	/** @var User */
+	private $userContext;
 
-	public function __construct(Authenticator $authenticator)
+
+	public function __construct(Authenticator $authenticator, User $userContext)
 	{
 		$this->authenticator = $authenticator;
+		$this->userContext = $userContext;
 	}
 
 
@@ -44,7 +49,8 @@ class LoginFormControl extends Control
 		$values = $form->values;
 
 		try {
-			$this->authenticator->authenticate($values->email, $values->password);
+			$identity = $this->authenticator->authenticate($values->email, $values->password);
+			$this->userContext->login($identity);
 			$this->presenter->redirect('Dashboard:');
 
 		} catch (AuthenticationException $e) {

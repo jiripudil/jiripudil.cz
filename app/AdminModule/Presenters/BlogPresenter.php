@@ -17,13 +17,19 @@ class BlogPresenter extends Presenter
 	use TEditPostFormControlFactory;
 
 
-	/** @var EntityManager @autowire */
-	protected $em;
+	/** @var EntityManager */
+	private $em;
+
+
+	public function __construct(EntityManager $em)
+	{
+		$this->em = $em;
+	}
 
 
 	public function actionEdit($id = NULL)
 	{
-		$this->post = $id !== NULL ? $this->em->getDao(Post::class)->find($id) : new Post;
+		$this->post = $id !== NULL ? $this->em->find(Post::class, $id) : new Post;
 
 		$this['editPostForm']->onSave[] = function () {
 			$this['flashes']->flashMessage('Saved.', 'success');
@@ -34,7 +40,7 @@ class BlogPresenter extends Presenter
 
 	public function renderDelete($id)
 	{
-		$post = $this->em->getDao(Post::class)->find($id);
+		$post = $this->em->find(Post::class, $id);
 
 		if ($post === NULL) {
 			$this->redirect('Dashboard:');
@@ -47,7 +53,7 @@ class BlogPresenter extends Presenter
 	/** @secured */
 	public function handleDelete($id)
 	{
-		$post = $this->em->getDao(Post::class)->find($id);
+		$post = $this->em->find(Post::class, $id);
 
 		if ($post !== NULL) {
 			foreach ($post->tags as $tag) {
