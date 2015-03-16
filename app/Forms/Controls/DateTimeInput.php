@@ -57,8 +57,8 @@ class DateTimeInput extends BaseControl
 	{
 		$control = Html::el('input', [
 			'name' => $this->getHtmlName(),
-			'value' => $this->date !== NULL ? $this->date->format('Y-m-d H:i:s') : NULL,
-			'type' => 'datetime',
+			'value' => $this->date !== NULL ? $this->date->format('Y-m-d\TH:i') : NULL,
+			'type' => 'datetime-local',
 		]);
 
 		if ($this->disabled) {
