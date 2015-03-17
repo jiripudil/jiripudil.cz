@@ -1147,12 +1147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kdyby/DoctrineForms.git",
-                "reference": "82f791196cbfc586cadc3391cceec7538a2571e3"
+                "reference": "51ba5bcea2d72d27a2076c97e0d4fdb288b17556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kdyby/DoctrineForms/zipball/82f791196cbfc586cadc3391cceec7538a2571e3",
-                "reference": "82f791196cbfc586cadc3391cceec7538a2571e3",
+                "url": "https://api.github.com/repos/Kdyby/DoctrineForms/zipball/51ba5bcea2d72d27a2076c97e0d4fdb288b17556",
+                "reference": "51ba5bcea2d72d27a2076c97e0d4fdb288b17556",
                 "shasum": ""
             },
             "require": {
@@ -1228,7 +1228,7 @@
                 "nette",
                 "validation"
             ],
-            "time": "2014-10-05 16:13:55"
+            "time": "2015-03-16 00:04:43"
         },
         {
             "name": "kdyby/events",
@@ -1405,12 +1405,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kdyby/Validator.git",
-                "reference": "fcc6017fe88ba370bd9fd0669bc8fa2155ad5701"
+                "reference": "f69620c0e66da583f3a35d7b868031fa9ef6641f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kdyby/Validator/zipball/fcc6017fe88ba370bd9fd0669bc8fa2155ad5701",
-                "reference": "fcc6017fe88ba370bd9fd0669bc8fa2155ad5701",
+                "url": "https://api.github.com/repos/Kdyby/Validator/zipball/f69620c0e66da583f3a35d7b868031fa9ef6641f",
+                "reference": "f69620c0e66da583f3a35d7b868031fa9ef6641f",
                 "shasum": ""
             },
             "require": {
@@ -1422,30 +1422,28 @@
                 "symfony/validator": "~2.5"
             },
             "require-dev": {
-                "jakub-onderka/php-parallel-lint": "~0.7",
-                "latte/latte": "~2.2@dev",
-                "nette/application": "~2.2@dev",
-                "nette/bootstrap": "~2.2@dev",
-                "nette/caching": "~2.2@dev",
+                "latte/latte": "~2.3@dev",
+                "nette/application": "~2.3@dev",
+                "nette/bootstrap": "~2.3@dev",
+                "nette/caching": "~2.3@dev",
                 "nette/component-model": "~2.2@dev",
-                "nette/database": "~2.2@dev",
+                "nette/database": "~2.3@dev",
                 "nette/deprecated": "~2.2@dev",
-                "nette/di": "~2.2@dev",
-                "nette/finder": "~2.2@dev",
-                "nette/forms": "~2.2@dev",
-                "nette/http": "~2.2@dev",
-                "nette/mail": "~2.2@dev",
-                "nette/neon": "~2.2@dev",
-                "nette/nette": "~2.2@dev",
-                "nette/php-generator": "~2.2@dev",
-                "nette/reflection": "~2.2@dev",
-                "nette/robot-loader": "~2.2@dev",
-                "nette/safe-stream": "~2.2@dev",
-                "nette/security": "~2.2@dev",
-                "nette/tester": "@dev",
+                "nette/di": "~2.3@dev",
+                "nette/finder": "~2.3@dev",
+                "nette/forms": "~2.3@dev",
+                "nette/http": "~2.3@dev",
+                "nette/mail": "~2.3@dev",
+                "nette/neon": "~2.3@dev",
+                "nette/php-generator": "~2.3@dev",
+                "nette/reflection": "~2.3@dev",
+                "nette/robot-loader": "~2.3@dev",
+                "nette/safe-stream": "~2.3@dev",
+                "nette/security": "~2.3@dev",
+                "nette/tester": "~1.3@rc",
                 "nette/tokenizer": "~2.2@dev",
-                "nette/utils": "~2.2@dev",
-                "tracy/tracy": "~2.2@dev"
+                "nette/utils": "~2.3@dev",
+                "tracy/tracy": "~2.3@dev"
             },
             "type": "library",
             "extra": {
@@ -1485,7 +1483,7 @@
                 "nette",
                 "validation"
             ],
-            "time": "2014-10-02 10:36:24"
+            "time": "2015-03-16 00:04:43"
         },
         {
             "name": "kukulich/fshl",
