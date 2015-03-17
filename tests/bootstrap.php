@@ -9,22 +9,8 @@ if ( ! class_exists('Tester\Assert')) {
 	exit(1);
 }
 
-$tempDir = __DIR__ . '/temp';
-
 Tester\Environment::setup();
-Tester\Helpers::purge($tempDir);
+date_default_timezone_set('Europe/Prague');
 
-$configurator = new Nette\Configurator;
-
-$configurator->setTempDirectory($tempDir);
-$configurator->setDebugMode(FALSE);
-
-$robotLoader = $configurator->createRobotLoader()
-	->addDirectory(__DIR__ . '/../app')
-	->register();
-$composer->addClassMap($robotLoader->getIndexedClasses());
-
-$configurator->addConfig(__DIR__ . '/../app/config/config.neon');
-$configurator->addConfig(__DIR__ . '/tests.neon');
-
-return $configurator->createContainer();
+define('TEMP_DIR', __DIR__ . '/temp/' . (isset($_SERVER['argv']) ? md5(serialize($_SERVER['argv'])) : getmypid()));
+Tester\Helpers::purge(TEMP_DIR);

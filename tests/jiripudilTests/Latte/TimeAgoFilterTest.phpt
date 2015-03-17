@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Test: TimeAgoFilter test
+ * TEST: TimeAgoFilter
+ * @testCase
  */
 
 namespace jiripudilTests\Latte;
@@ -10,7 +11,7 @@ use jiripudil\Latte\TimeAgoFilter;
 use Tester;
 use Tester\Assert;
 
-$container = require_once __DIR__ . '/../../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 
 class TimeAgoFilterTest extends Tester\TestCase
