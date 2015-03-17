@@ -1,6 +1,6 @@
 <?php
 
-namespace jiripudil\Model\Blog;
+namespace jiripudil\Entities\Blog;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -87,7 +87,7 @@ class Post extends BaseEntity
 	protected $commentsAllowed;
 
 	/**
-	 * @ORM\ManyToMany(targetEntity="jiripudil\Model\Blog\Tag", inversedBy="posts")
+	 * @ORM\ManyToMany(targetEntity="jiripudil\Entities\Blog\Tag", inversedBy="posts")
 	 * @var Tag[]|ArrayCollection
 	 */
 	protected $tags;

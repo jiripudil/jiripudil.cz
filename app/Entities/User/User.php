@@ -1,6 +1,6 @@
 <?php
 
-namespace jiripudil\Model\User;
+namespace jiripudil\Entities\User;
 
 use Doctrine\ORM\Mapping as ORM;
 use Kdyby\Doctrine\Entities\BaseEntity;

@@ -4,8 +4,8 @@ namespace jiripudil\AdminModule\Presenters;
 
 use jiripudil\AdminModule\Components\Tags\TTagsControlFactory;
 use jiripudil\FrontModule\Components\Paging\TPagingControlFactory;
-use jiripudil\Model\Blog\Post;
-use jiripudil\Model\Blog\Queries\PostsQuery;
+use jiripudil\Entities\Blog\Post;
+use jiripudil\Entities\Blog\Queries\PostsQuery;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Presenter;
 use Nette\Utils\Paginator;

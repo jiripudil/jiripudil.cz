@@ -3,7 +3,7 @@
 namespace jiripudil\AdminModule\Presenters;
 
 use jiripudil\AdminModule\Components\EditPostForm\TEditPostFormControlFactory;
-use jiripudil\Model\Blog\Post;
+use jiripudil\Entities\Blog\Post;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Presenter;
 

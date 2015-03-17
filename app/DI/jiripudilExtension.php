@@ -42,7 +42,7 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 	public function getEntityMappings()
 	{
 		return [
-			'jiripudil' => __DIR__ . '/../Model',
+			'jiripudil' => __DIR__ . '/../Entities',
 		];
 	}
 

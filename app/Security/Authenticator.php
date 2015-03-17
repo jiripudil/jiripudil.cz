@@ -2,8 +2,8 @@
 
 namespace jiripudil\Security;
 
-use jiripudil\Model\User\Queries\UserByEmailQuery;
-use jiripudil\Model\User\User;
+use jiripudil\Entities\User\Queries\UserByEmailQuery;
+use jiripudil\Entities\User\User;
 use Kdyby\Doctrine\EntityDao;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Object;

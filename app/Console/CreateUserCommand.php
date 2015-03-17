@@ -2,8 +2,8 @@
 
 namespace jiripudil\Console;
 
-use jiripudil\Model\User\Queries\UserByEmailQuery;
-use jiripudil\Model\User\User;
+use jiripudil\Entities\User\Queries\UserByEmailQuery;
+use jiripudil\Entities\User\User;
 use jiripudil\Security\IHasher;
 use Kdyby\Doctrine\EntityManager;
 use Symfony\Component\Console\Command\Command;

@@ -2,7 +2,6 @@
 
 namespace jiripudil\Caching;
 
-use jiripudil\Model\Blog\Post;
 use Nette\Caching\Cache;
 use Nette\Caching\IStorage;
 use Nette\Object;

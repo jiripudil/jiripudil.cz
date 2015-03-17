@@ -2,10 +2,10 @@
 
 namespace jiripudil\Routers;
 
-use jiripudil\Model\Blog\Post;
-use jiripudil\Model\Blog\Queries\PostBySlugQuery;
-use jiripudil\Model\Blog\Queries\TagByNameQuery;
-use jiripudil\Model\Blog\Tag;
+use jiripudil\Entities\Blog\Post;
+use jiripudil\Entities\Blog\Queries\PostBySlugQuery;
+use jiripudil\Entities\Blog\Queries\TagByNameQuery;
+use jiripudil\Entities\Blog\Tag;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\IRouter;
 use Nette\Application\Routers\Route;

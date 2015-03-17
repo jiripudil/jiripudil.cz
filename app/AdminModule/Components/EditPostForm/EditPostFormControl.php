@@ -7,7 +7,7 @@ use jiripudil\Forms\Controls\DateTimeInput;
 use jiripudil\Forms\EntityForm;
 use jiripudil\Forms\IEntityFormFactory;
 use jiripudil\Latte\TexyFilter;
-use jiripudil\Model\Blog\Post;
+use jiripudil\Entities\Blog\Post;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Control;
 use Nette\Utils\Strings;

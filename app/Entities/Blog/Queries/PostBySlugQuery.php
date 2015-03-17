@@ -1,6 +1,6 @@
 <?php
 
-namespace jiripudil\Model\Blog\Queries;
+namespace jiripudil\Entities\Blog\Queries;
 
 use Kdyby;
 use Kdyby\Doctrine\QueryObject;

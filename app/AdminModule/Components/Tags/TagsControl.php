@@ -3,8 +3,8 @@
 namespace jiripudil\AdminModule\Components\Tags;
 
 use jiripudil\Components\TBaseControl;
-use jiripudil\Model\Blog\Queries\TagsQuery;
-use jiripudil\Model\Blog\Tag;
+use jiripudil\Entities\Blog\Queries\TagsQuery;
+use jiripudil\Entities\Blog\Tag;
 use Kdyby\Doctrine\EntityDao;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Control;

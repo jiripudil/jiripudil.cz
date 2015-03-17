@@ -2,7 +2,7 @@
 
 namespace jiripudil\Http;
 
-use jiripudil\Model\User\User;
+use jiripudil\Entities\User\User;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Http\Session;
 use Nette\Http\UserStorage as NUserStorage;

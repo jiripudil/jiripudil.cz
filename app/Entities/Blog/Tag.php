@@ -1,6 +1,6 @@
 <?php
 
-namespace jiripudil\Model\Blog;
+namespace jiripudil\Entities\Blog;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -33,7 +33,7 @@ class Tag extends BaseEntity
 	protected $name;
 
 	/**
-	 * @ORM\ManyToMany(targetEntity="jiripudil\Model\Blog\Post", mappedBy="tags")
+	 * @ORM\ManyToMany(targetEntity="jiripudil\Entities\Blog\Post", mappedBy="tags")
 	 * @var Post[]|ArrayCollection
 	 */
 	protected $posts;

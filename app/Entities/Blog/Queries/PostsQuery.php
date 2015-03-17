@@ -1,10 +1,10 @@
 <?php
 
-namespace jiripudil\Model\Blog\Queries;
+namespace jiripudil\Entities\Blog\Queries;
 
 use Doctrine\ORM\QueryBuilder;
-use jiripudil\Model\Blog\Post;
-use jiripudil\Model\Blog\Tag;
+use jiripudil\Entities\Blog\Post;
+use jiripudil\Entities\Blog\Tag;
 use Kdyby;
 use Kdyby\Doctrine\QueryObject;
 
