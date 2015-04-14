@@ -8,6 +8,10 @@ services:
 	- jiripudil\Security\Authenticator
 	nette.userStorage: jiripudil\Http\UserStorage
 
+	# sitemap
+	- jiripudil\Sitemap\SitemapGenerator(safe://%wwwDir%/sitemap.xml)
+	- {class: jiripudil\Sitemap\SitemapListener, tags: [kdyby.subscriber]}
+
 	# templating
 	- FSHL\Output\Html
 	- FSHL\Highlighter
@@ -16,14 +20,11 @@ services:
 	- jiripudil\Latte\TexyFilter
 
 	# console
-	-
-		class: jiripudil\Console\CreateUserCommand
-		tags: [kdyby.console.command]
+	- {class: jiripudil\Console\CreateUserCommand, tags: [kdyby.console.command]}
+	- {class: jiripudil\Console\GenerateSitemapCommand, tags: [kdyby.console.command]}
 
 	# factories
-	-
-		implement: jiripudil\Forms\IEntityFormFactory
-		inject: yes
+	- {implement: jiripudil\Forms\IEntityFormFactory, inject: yes}
 	- jiripudil\FrontModule\Components\Head\IHeadControlFactory
 	- jiripudil\FrontModule\Components\ContactForm\IContactFormControlFactory
 	- jiripudil\FrontModule\Components\Paging\IPagingControlFactory
