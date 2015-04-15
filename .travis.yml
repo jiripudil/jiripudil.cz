@@ -13,6 +13,7 @@ before_script:
   - composer self-update
   - composer install --no-interaction --prefer-source --dev
   - php ./vendor/bin/parallel-lint -e php,phpt --exclude ./vendor .
+  - php ./www/index.php orm:validate-schema -n --skip-sync
 
 script: ./vendor/bin/tester -c ./tests/php-unix.ini ./tests/jiripudilTests
 
