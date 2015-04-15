@@ -21,7 +21,7 @@ class NativeHasherTest extends Tester\TestCase
 	private $hasher;
 
 
-	public function setUp()
+	protected function setUp()
 	{
 		$this->hasher = new NativeHasher();
 	}

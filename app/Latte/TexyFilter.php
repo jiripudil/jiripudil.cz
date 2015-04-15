@@ -91,7 +91,7 @@ class TexyFilter extends Object
 	 */
 	public function __invoke($input)
 	{
-		return $this->cache->load($input, function () use ($input) {
+		return $this->cache->load($input, function ($input) {
 			return $this->texy->process($input);
 		});
 	}

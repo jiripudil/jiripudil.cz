@@ -12,6 +12,9 @@ services:
 	- jiripudil\Sitemap\SitemapGenerator(safe://%wwwDir%/sitemap.xml)
 	- {class: jiripudil\Sitemap\SitemapListener, tags: [kdyby.subscriber]}
 
+	# caching
+	- jiripudil\Caching\CacheFactory
+
 	# templating
 	- FSHL\Output\Html
 	- FSHL\Highlighter

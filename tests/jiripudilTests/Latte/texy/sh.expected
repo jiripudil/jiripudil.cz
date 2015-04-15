@@ -1,0 +1,6 @@
+
+<h2>Title of the document</h2>
+
+<p>Some paragraph.</p>
+
+<pre><code>$ ./configure &amp;&amp; make &amp;&amp; make install</code></pre>

@@ -1,0 +1,9 @@
+
+<h2>Title of the document</h2>
+
+<p>Some paragraph.</p>
+
+<pre><code><span class="php-keyword1">echo</span> <span
+class="php-quote">'code sample'</span>;
+<span
+class="php-keyword1">exit</span>(<span class="php-num">4</span>);</code></pre>

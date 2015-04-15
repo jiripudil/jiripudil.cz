@@ -14,9 +14,9 @@ class TexyCache extends Object
 	private $cache;
 
 
-	public function __construct(IStorage $cacheStorage)
+	public function __construct(CacheFactory $cacheFactory, IStorage $cacheStorage)
 	{
-		$this->cache = new Cache($cacheStorage, 'Texy');
+		$this->cache = $cacheFactory->create($cacheStorage, 'Texy');
 	}
 
 

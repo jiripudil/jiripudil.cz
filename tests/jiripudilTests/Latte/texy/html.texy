@@ -1,0 +1,9 @@
+## Title of the document
+
+Some paragraph.
+
+/--html
+<div class="foo">
+	<img src="example.png" />
+</div>
+\--
