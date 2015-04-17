@@ -28,8 +28,6 @@ class TexyCacheTest extends Tester\TestCase
 	{
 		$data = 'foo';
 
-		$storage = \Mockery::mock(IStorage::class);
-
 		$cache = \Mockery::mock(Cache::class);
 		$cache->shouldReceive('load')
 			->with(md5($data))
@@ -37,10 +35,10 @@ class TexyCacheTest extends Tester\TestCase
 
 		$factory = \Mockery::mock(CacheFactory::class);
 		$factory->shouldReceive('create')
-			->with($storage, 'Texy')
+			->with('Texy')
 			->andReturn($cache);
 
-		$texyCache = new TexyCache($factory, $storage);
+		$texyCache = new TexyCache($factory);
 
 		$result = $texyCache->load($data, function ($input) use ($data) {
 			$this->fallbackCalled = TRUE;
@@ -56,8 +54,6 @@ class TexyCacheTest extends Tester\TestCase
 	{
 		$data = 'foo';
 
-		$storage = \Mockery::mock(IStorage::class);
-
 		$cache = \Mockery::mock(Cache::class);
 		$cache->shouldReceive('load')
 			->with(md5($data))
@@ -69,10 +65,10 @@ class TexyCacheTest extends Tester\TestCase
 
 		$factory = \Mockery::mock(CacheFactory::class);
 		$factory->shouldReceive('create')
-			->with($storage, 'Texy')
+			->with('Texy')
 			->andReturn($cache);
 
-		$texyCache = new TexyCache($factory, $storage);
+		$texyCache = new TexyCache($factory);
 
 		$result = $texyCache->load($data, function ($input) use ($data) {
 			$this->fallbackCalled = TRUE;

@@ -22,11 +22,12 @@ class CacheFactoryTest extends Tester\TestCase
 	public function testWithNamespace()
 	{
 		$storage = \Mockery::mock(IStorage::class);
-		$factory = new CacheFactory();
+		$factory = new CacheFactory($storage);
 
 		$ns = 'CacheNS';
-		$cache = $factory->create($storage, $ns);
+		$cache = $factory->create($ns);
 		Assert::type(Cache::class, $cache);
+		Assert::same($storage, $cache->getStorage());
 		Assert::same($ns, $cache->getNamespace());
 	}
 
@@ -34,10 +35,40 @@ class CacheFactoryTest extends Tester\TestCase
 	public function testNullNamespace()
 	{
 		$storage = \Mockery::mock(IStorage::class);
-		$factory = new CacheFactory();
+		$factory = new CacheFactory($storage);
 
-		$cache = $factory->create($storage);
+		$cache = $factory->create();
 		Assert::type(Cache::class, $cache);
+		Assert::same($storage, $cache->getStorage());
+		Assert::same('', $cache->getNamespace());
+	}
+
+
+	public function testWithCustomStorage()
+	{
+		$storage = \Mockery::mock(IStorage::class);
+		$storage2 = \Mockery::mock(IStorage::class);
+		$factory = new CacheFactory($storage);
+
+		$ns = 'CacheNS';
+		$cache = $factory->create($ns, $storage2);
+		Assert::type(Cache::class, $cache);
+		Assert::notSame($storage, $cache->getStorage());
+		Assert::same($storage2, $cache->getStorage());
+		Assert::same($ns, $cache->getNamespace());
+	}
+
+
+	public function testNullNamespaceWithCustomStorage()
+	{
+		$storage = \Mockery::mock(IStorage::class);
+		$storage2 = \Mockery::mock(IStorage::class);
+		$factory = new CacheFactory($storage);
+
+		$cache = $factory->create(NULL, $storage2);
+		Assert::type(Cache::class, $cache);
+		Assert::notSame($storage, $cache->getStorage());
+		Assert::same($storage2, $cache->getStorage());
 		Assert::same('', $cache->getNamespace());
 	}
 

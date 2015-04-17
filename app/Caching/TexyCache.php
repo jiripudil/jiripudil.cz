@@ -3,7 +3,6 @@
 namespace jiripudil\Caching;
 
 use Nette\Caching\Cache;
-use Nette\Caching\IStorage;
 use Nette\Object;
 
 
@@ -14,9 +13,9 @@ class TexyCache extends Object
 	private $cache;
 
 
-	public function __construct(CacheFactory $cacheFactory, IStorage $cacheStorage)
+	public function __construct(CacheFactory $cacheFactory)
 	{
-		$this->cache = $cacheFactory->create($cacheStorage, 'Texy');
+		$this->cache = $cacheFactory->create('Texy');
 	}
 
 
