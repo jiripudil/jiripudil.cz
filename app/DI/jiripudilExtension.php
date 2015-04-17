@@ -30,7 +30,7 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 		$initialize = $class->methods['initialize'];
 
 		$initialize->addBody('$this->getService(?)->registerMapper($this->getService(?));', [
-			'forms.entityFormMapper',
+			'doctrineForms.entityFormMapper',
 			$this->prefix('toManyMultiSelectMapper'),
 		]);
 	}

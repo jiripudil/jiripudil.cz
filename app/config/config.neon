@@ -22,7 +22,7 @@ extensions:
 	migrations: Zenify\DoctrineMigrations\DI\MigrationsExtension
 	validator: Kdyby\Validator\DI\ValidatorExtension
 	translation: Kdyby\Translation\DI\TranslationExtension
-	forms: Kdyby\DoctrineForms\DI\FormsExtension
+	doctrineForms: Kdyby\DoctrineForms\DI\FormsExtension
 	jiripudil: jiripudil\DI\jiripudilExtension
 
 
