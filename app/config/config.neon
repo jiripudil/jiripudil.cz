@@ -23,7 +23,16 @@ extensions:
 	validator: Kdyby\Validator\DI\ValidatorExtension
 	translation: Kdyby\Translation\DI\TranslationExtension
 	doctrineForms: Kdyby\DoctrineForms\DI\FormsExtension
+	monolog: Kdyby\Monolog\DI\MonologExtension
 	jiripudil: jiripudil\DI\jiripudilExtension
+
+
+monolog:
+	name: jiripudil.cz
+	registerFallback: %debugMode%
+	handlers:
+		- Monolog\Handler\StreamHandler(%appDir%/../log/error.log)
+		- Monolog\Handler\SyslogHandler(jiripudil.cz, local4)
 
 
 migrations:
