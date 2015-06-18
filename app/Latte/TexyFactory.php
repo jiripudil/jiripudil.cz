@@ -17,6 +17,7 @@ class TexyFactory extends Object
 
 		$texy->setOutputMode(\Texy::HTML5);
 		$texy->allowedTags = \Texy::ALL;
+		$texy->tabWidth = 4;
 		$texy->headingModule->top = 2;
 		$texy->typographyModule->locale = 'en';
 
