@@ -31,6 +31,7 @@ class TexyFilter extends Object
 		'block/sql' => FSHL\Lexer\Sql::class,
 		'block/html' => FSHL\Lexer\Html::class,
 		'block/htmlcb' => FSHL\Lexer\Html::class,
+		'block/java' => FSHL\Lexer\Java::class,
 	];
 
 
