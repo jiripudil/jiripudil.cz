@@ -7,7 +7,7 @@
 class="html-tagin"> class=</span><span
 class="html-quote">&quot;foo&quot;</span><span
 class="html-tag">&gt;</span>
-        <span class="html-tag">&lt;img</span><span
+    <span class="html-tag">&lt;img</span><span
 class="html-tagin"> src=</span><span
 class="html-quote">&quot;example.png&quot;</span><span
 class="html-tagin"> </span><span class="html-tag">/&gt;</span>

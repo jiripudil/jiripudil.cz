@@ -5,6 +5,6 @@
 
 <pre><code><span class="neon-section">extensions</span><span
 class="neon-sep">:</span><span class="neon-section">
-        </span><span
+    </span><span
 class="neon-sep">-</span><span class="neon-value"> FooExtension(</span><span
 class="neon-var">%wwwDir%</span><span class="neon-value">)</span></code></pre>
