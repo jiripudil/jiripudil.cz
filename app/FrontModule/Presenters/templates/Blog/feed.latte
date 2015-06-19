@@ -6,13 +6,14 @@
 		<title>Blog – Jiří Pudil</title>
 		<link>{link //default}</link>
 		<description></description>
-	</channel>
 
-	<item n:foreach="$posts as $post">
-		<title>{$post->title}</title>
-		<link>{link //post post => $post}</link>
-		<comments>{link //post#disqus_thread post => $post}</comments>
-		<description>{$post->perex|noescape}</description>
-		<pubDate>{$post->datetime|date:'D, d M Y H:i:s O'}</pubDate>
-	</item>
+		<item n:foreach="$posts as $post">
+			<title>{$post->title}</title>
+			<link>{link //post post => $post}</link>
+			<comments>{link //post#disqus_thread post => $post}</comments>
+			<description>{$post->perex|noescape}</description>
+			<category n:foreach="$post->tags as $tag">{$tag->name}</category>
+			<pubDate>{$post->datetime|date:'D, d M Y H:i:s O'}</pubDate>
+		</item>
+	</channel>
 </rss>
