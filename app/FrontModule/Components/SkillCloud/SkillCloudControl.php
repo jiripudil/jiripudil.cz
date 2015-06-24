@@ -65,7 +65,7 @@ class SkillCloudControl extends Control
 				'color' => '#F0DB4F',
 			],
 			'nginx' => [
-				'weight' => 0.6,
+				'weight' => 0.8,
 				'color' => '#009900',
 			],
 		];
