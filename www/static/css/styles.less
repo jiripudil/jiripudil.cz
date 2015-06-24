@@ -38,6 +38,18 @@ a {
 	}
 }
 
+.cf {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
 .container {
 	max-width: 800px;
 	margin: 0 auto;
@@ -83,6 +95,9 @@ p img {
 	color: #fff;
 	text-decoration: none;
 	cursor: pointer;
+
+	-moz-appearance: none;
+	-webkit-appearance: none;
 
 	&:hover {
 		background: @color-coffee;
@@ -243,7 +258,7 @@ p img {
 	margin: 0 -1.5em;
 	border-bottom: 1px solid #ccc;
 
-	@media (max-width: 640px) {
+	@media (max-width: 860px) {
 		margin: 0;
 	}
 }
@@ -371,6 +386,45 @@ pre > code {
 .sql-value { color: #448ccb; }
 .sql-num { color: #d24; }
 .sql-comment { color: #929292; }
+
+
+/***** skill cloud *****/
+
+.profile {
+	@media (min-width: 640px) {
+		float: left;
+		width: 65%;
+		box-sizing: border-box;
+		padding-right: 10px;
+	}
+}
+
+.skills {
+	@media (min-width: 640px) {
+		float: right;
+		width: 30%;
+	}
+}
+
+.skillCloud {
+	font-size: 2.25em;
+	line-height: 1.1;
+	font-family: @sans-font;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.skillCloud-item {
+	display: inline-block;
+	font-weight: bold;
+	margin: 0 .1em;
+
+	&:before {
+		content: '#';
+		font-weight: normal;
+		margin-right: -.05em;
+	}
+}
 
 
 /***** contact *****/
