@@ -22,7 +22,10 @@
 <div class="sep"></div>
 
 <div class="share">
-	<p>This post took <strong>{$post->cupsDrunk} cup{if $post->cupsDrunk > 1}s{/if}</strong> of coffee to write. If you liked it, you can <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=E69A5VVCFVVDC&lc=US&item_name=Ji%c5%99%c3%ad%20Pudil&currency_code=CZK&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" class="btn"><em class="fa fa-coffee"></em> buy me one!</a></p>
+	<p>
+		This post took <span class="coffee">{$post->cupsDrunk} <span class="fa fa-coffee" title="cup{if $post->cupsDrunk > 1}s{/if}"></span> of coffee</span> to write. If you liked it, you can buy me one!
+		<script id='fb7d4fa'>(function(i) { var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=jiri.pudil&button=compact&url=' + encodeURIComponent({link //this});f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s); } )('fb7d4fa');</script>
+	</p>
 	<p>And don't forget to <a href="//twitter.com/intent/tweet?url={link //this|url}" class="btn btn--twitter"><em class="fa fa-twitter"></em> tweet it!</a></p>
 </div>
 
