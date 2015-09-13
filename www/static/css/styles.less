@@ -499,6 +499,41 @@ pre > code {
 .fa-linkedin-square { color: #007bb6; }
 .fa-twitter-square { color: #00aced; }
 
+.businessInfo {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	margin-top: .5em;
+}
+
+.businessInfo-item {
+	margin: 1em 0;
+
+	span {
+		display: block;
+		font-family: @sans-font;
+		font-size: .9em;
+		color: #999;
+	}
+}
+
+.businessInfo-item-w1 {
+	flex: 0 1 48%;
+
+	@media (min-width: 640px) {
+		flex: 0 1 24%;
+	}
+}
+
+.businessInfo-item-w2 {
+	flex: 0 1 100%;
+
+	@media (min-width: 640px) {
+		flex: 0 1 48%;
+	}
+}
+
 .footer {
 	.post-info;
 }
