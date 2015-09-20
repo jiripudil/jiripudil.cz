@@ -28,4 +28,23 @@ $ ->
 		if ! confirm $(this).data 'confirm'
 			e.preventDefault()
 
+	# webfont loader
+	window.WebFontConfig =
+		google:
+			families: [
+				'PT Sans:400,700:latin,latin-ext'
+				'Lora:400,700:latin,latin-ext'
+			]
+		custom:
+			families: 'FontAwesome'
+			urls: ['https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css']
+
+	((d) ->
+		wf = d.createElement 'script'
+		s = d.scripts[0]
+		wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js'
+		s.parentNode.insertBefore wf, s
+		return
+	) document
+
 	return
