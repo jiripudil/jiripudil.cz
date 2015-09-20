@@ -3,7 +3,10 @@
 namespace jiripudil\Entities\User;
 
 use Doctrine\ORM\Mapping as ORM;
-use Kdyby\Doctrine\Entities\BaseEntity;
+use jiripudil\Security\IHasher;
+use Nette\Object;
+use Nette\Security\AuthenticationException;
+use Nette\Security\IAuthenticator;
 use Nette\Security\IIdentity;
 
 
@@ -15,7 +18,7 @@ use Nette\Security\IIdentity;
  * @property string $email
  * @property string $password
  */
-class User extends BaseEntity implements IIdentity
+class User extends Object implements IIdentity
 {
 
 	/**
@@ -24,25 +27,30 @@ class User extends BaseEntity implements IIdentity
 	 * @ORM\Id
 	 * @var int
 	 */
-	protected $id;
+	private $id;
 
 	/**
 	 * @ORM\Column(type="string", length=255)
 	 * @var string
 	 */
-	protected $email;
+	private $email;
 
 	/**
 	 * @ORM\Column(type="string", length=255)
 	 * @var string
 	 */
-	protected $password;
+	private $password;
 
 
-	public function __construct($email, $password)
+	/**
+	 * @param string $email
+	 * @param string $password
+	 * @param IHasher $hasher
+	 */
+	public function __construct($email, $password, IHasher $hasher)
 	{
 		$this->email = $email;
-		$this->password = $password;
+		$this->password = $hasher->hash($password);
 	}
 
 
@@ -61,6 +69,42 @@ class User extends BaseEntity implements IIdentity
 	public function getRoles()
 	{
 		return [];
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getEmail()
+	{
+		return $this->email;
+	}
+
+
+	/**
+	 * @param string $oldPassword
+	 * @param string $newPassword
+	 * @param IHasher $hasher
+	 * @throws AuthenticationException
+	 */
+	public function changePassword($oldPassword, $newPassword, IHasher $hasher)
+	{
+		if ( ! $hasher->verify($oldPassword, $this->password)) {
+			throw new AuthenticationException(NULL, IAuthenticator::INVALID_CREDENTIAL);
+		}
+
+		$this->password = $hasher->hash($newPassword);
+	}
+
+
+	/**
+	 * @param string $password
+	 * @param IHasher $hasher
+	 * @return bool
+	 */
+	public function verifyPassword($password, IHasher $hasher)
+	{
+		return $hasher->verify($password, $this->password);
 	}
 
 }

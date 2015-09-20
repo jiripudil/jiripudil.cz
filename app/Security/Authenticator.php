@@ -4,17 +4,18 @@ namespace jiripudil\Security;
 
 use jiripudil\Entities\User\Queries\UserByEmailQuery;
 use jiripudil\Entities\User\User;
-use Kdyby\Doctrine\EntityDao;
 use Kdyby\Doctrine\EntityManager;
+use Kdyby\Doctrine\EntityRepository;
 use Nette\Object;
 use Nette\Security\AuthenticationException;
+use Nette\Security\IAuthenticator;
 
 
 class Authenticator extends Object
 {
 
-	/** @var EntityDao */
-	private $userDao;
+	/** @var EntityRepository */
+	private $userRepository;
 
 	/** @var IHasher */
 	private $hasher;
@@ -22,7 +23,7 @@ class Authenticator extends Object
 
 	public function __construct(EntityManager $em, IHasher $hasher)
 	{
-		$this->userDao = $em->getRepository(User::class);
+		$this->userRepository = $em->getRepository(User::class);
 		$this->hasher = $hasher;
 	}
 
@@ -33,16 +34,17 @@ class Authenticator extends Object
 	 * @return User
 	 * @throws AuthenticationException
 	 */
-	function authenticate($email, $password)
+	public function authenticate($email, $password)
 	{
 		/** @var User $user */
-		$user = $this->userDao->fetchOne(new UserByEmailQuery($email));
+		$user = $this->userRepository->findOneBy(['email' => $email]);
+
 		if ($user === NULL) {
-			throw new AuthenticationException;
+			throw new AuthenticationException(NULL, IAuthenticator::IDENTITY_NOT_FOUND);
 		}
 
-		if ( ! $this->hasher->verify($password, $user->password)) {
-			throw new AuthenticationException;
+		if ( ! $user->verifyPassword($password, $this->hasher)) {
+			throw new AuthenticationException(NULL, IAuthenticator::INVALID_CREDENTIAL);
 		}
 
 		return $user;
