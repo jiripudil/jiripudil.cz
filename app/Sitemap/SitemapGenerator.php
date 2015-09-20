@@ -44,8 +44,8 @@ class SitemapGenerator extends Object
 		fwrite($sitemap, '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL);
 
 		$posts = $this->postsDao->fetch((new PostsQuery())->onlyPublished());
-		$latestPost = reset(iterator_to_array($posts->getIterator()));
-		$tags = $this->tagsDao->fetch(new TagsQuery);
+		$latestPost = $posts->getIterator()->current();
+		$tags = $this->tagsDao->fetch(new TagsQuery());
 
 		$home = Html::el('url');
 		$home->create('loc')->setText($this->linkGenerator->link('Front:Homepage:'));
