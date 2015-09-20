@@ -28,7 +28,7 @@ trait TBasePresenter
 		$head->setTitle('Jiří Pudil');
 		$head->setTitleReversed(TRUE);
 		$head->addStyle('static/css/styles.css');
-		$head->addScript('static/js/scripts.js');
+		$head->addScript('static/js/scripts.js', TRUE);
 		$head->addFeed(HeadControl::FEED_RSS, $this->link(':Front:Blog:feed'), 'Blog – Jiří Pudil');
 
 		$head->setFavicon('favicon.ico');
