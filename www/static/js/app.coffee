@@ -35,9 +35,6 @@ $ ->
 				'PT Sans:400,700:latin,latin-ext'
 				'Lora:400,700:latin,latin-ext'
 			]
-		custom:
-			families: 'FontAwesome'
-			urls: ['https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css']
 		timeout: 2000
 
 	((d) ->
