@@ -52,7 +52,7 @@
 
 <div class="sep"></div>
 
-<div class="feature feature--blog" n:if="$relatedPost">
+<div class="feature feature--blog" n:ifset="$relatedPost">
 	<h2 class="feature-heading">More on my blog</h2>
 	<div class="post post--feature">
 		<h3 class="post-title"><a n:href="Blog:post post => $relatedPost">{$relatedPost->title}</a></h3>
