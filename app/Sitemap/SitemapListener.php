@@ -26,12 +26,14 @@ class SitemapListener extends Object implements Subscriber
 	public function getSubscribedEvents()
 	{
 		return [
-			Events::postPersist,
+			Events::postPersist => 'generateSitemap',
+			Events::postUpdate => 'generateSitemap',
+			Events::postRemove => 'generateSitemap',
 		];
 	}
 
 
-	public function postPersist(LifecycleEventArgs $args)
+	public function generateSitemap(LifecycleEventArgs $args)
 	{
 		if ($args->getObject() instanceof Post || $args->getObject() instanceof Tag) {
 			$this->generator->generateSitemap();
