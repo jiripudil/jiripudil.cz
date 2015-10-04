@@ -1,7 +1,15 @@
 BEGIN:VCARD
+VERSION:4.0
 N:Pudil;Jiří;;;
-ADR;INTL;PARCEL;WORK:;;;Brno;;;Czech Republic
-EMAIL;INTERNET:me@jiripudil.cz
-TEL;CELL:+420606351567
-URL;WORK:http://jiripudil.cz
+FN:Jiří Pudil
+GENDER:M
+ADR;TYPE=work:;;Hálkova 926;Humpolec;;39601;Czech Republic
+ADR;TYPE=home:;;Jaselská 195/12;Brno;;60200;Czech Republic
+TEL;VALUE=uri;TYPE=cell:tel:+420606351567
+EMAIL:me@jiripudil.cz
+IMPP;TYPE=work:skype:jiripudil
+URL;TYPE=work:https://jiripudil.cz
+URL:https://herecsrymy.cz
+SOURCE:https://jiripudil.cz/static/vcard.vcf
+REV:20151004T150000+0200
 END:VCARD
