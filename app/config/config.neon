@@ -23,6 +23,7 @@ extensions:
 	translation: Kdyby\Translation\DI\TranslationExtension
 	doctrineForms: Kdyby\DoctrineForms\DI\FormsExtension
 	monolog: Kdyby\Monolog\DI\MonologExtension
+	fakeSession: Kdyby\FakeSession\DI\FakeSessionExtension
 	jiripudil: jiripudil\DI\jiripudilExtension
 
 

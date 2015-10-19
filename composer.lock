@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "147fed73e5966a09baa9594b32a6a64c",
-    "content-hash": "2e1618264b631d817574f78d1b328949",
+    "hash": "48f29918fca312fd9e2e34a74ddea5bf",
+    "content-hash": "6b50bb6f94c95d9a649ab3a8a92b9915",
     "packages": [
         {
             "name": "dg/texy",
@@ -599,7 +599,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/f4f5bdf6cc84011513ca6b582f85330a09a5037b",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/089dbbcee1906524f4667c9db06ee9afef476fa0",
                 "reference": "f4f5bdf6cc84011513ca6b582f85330a09a5037b",
                 "shasum": ""
             },
@@ -1327,6 +1327,53 @@
                 "nette"
             ],
             "time": "2015-04-04 16:29:31"
+        },
+        {
+            "name": "kdyby/fake-session",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kdyby/FakeSession.git",
+                "reference": "385fe90f8ede04c25c9fd8c24b3a4e4ac0fcb2d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kdyby/FakeSession/zipball/385fe90f8ede04c25c9fd8c24b3a4e4ac0fcb2d3",
+                "reference": "385fe90f8ede04c25c9fd8c24b3a4e4ac0fcb2d3",
+                "shasum": ""
+            },
+            "require": {
+                "nette/di": "~2.2@dev",
+                "nette/http": "~2.2@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kdyby\\FakeSession\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Procházka",
+                    "email": "filip@prochazka.su",
+                    "homepage": "http://filip-prochazka.com"
+                }
+            ],
+            "description": "FakeSession class for Nette Framework",
+            "homepage": "http://kdyby.org",
+            "keywords": [
+                "http",
+                "kdyby",
+                "nette",
+                "session"
+            ],
+            "time": "2015-02-16 16:31:32"
         },
         {
             "name": "kdyby/monolog",
