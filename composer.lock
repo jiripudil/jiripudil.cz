@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "48f29918fca312fd9e2e34a74ddea5bf",
-    "content-hash": "6b50bb6f94c95d9a649ab3a8a92b9915",
+    "hash": "d1b252e0b46ac0f1a1d05e47a1df9d0a",
+    "content-hash": "beeb1883fc020ac1e4dd2bd4227942e3",
     "packages": [
         {
             "name": "dg/texy",
@@ -595,12 +595,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "f4f5bdf6cc84011513ca6b582f85330a09a5037b"
+                "reference": "089dbbcee1906524f4667c9db06ee9afef476fa0"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/migrations/zipball/089dbbcee1906524f4667c9db06ee9afef476fa0",
-                "reference": "f4f5bdf6cc84011513ca6b582f85330a09a5037b",
+                "reference": "089dbbcee1906524f4667c9db06ee9afef476fa0",
                 "shasum": ""
             },
             "require": {
@@ -658,7 +658,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-10-10 08:39:52"
+            "time": "2015-10-18 16:33:54"
         },
         {
             "name": "doctrine/orm",
@@ -2154,16 +2154,16 @@
         },
         {
             "name": "nette/forms",
-            "version": "v2.3.5",
+            "version": "v2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/forms.git",
-                "reference": "f89c58b1d318e4324e3c905b4d7fc45c4ec626b6"
+                "reference": "5e07a7b7180e5e88db9d44e12f1677e36b4f164b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/forms/zipball/f89c58b1d318e4324e3c905b4d7fc45c4ec626b6",
-                "reference": "f89c58b1d318e4324e3c905b4d7fc45c4ec626b6",
+                "url": "https://api.github.com/repos/nette/forms/zipball/5e07a7b7180e5e88db9d44e12f1677e36b4f164b",
+                "reference": "5e07a7b7180e5e88db9d44e12f1677e36b4f164b",
                 "shasum": ""
             },
             "require": {
@@ -2205,7 +2205,7 @@
             ],
             "description": "Nette Forms: greatly facilitates web forms",
             "homepage": "https://nette.org",
-            "time": "2015-10-12 13:52:41"
+            "time": "2015-10-19 01:41:55"
         },
         {
             "name": "nette/http",
@@ -3321,16 +3321,16 @@
         },
         {
             "name": "jakub-onderka/php-parallel-lint",
-            "version": "v0.8",
+            "version": "v0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JakubOnderka/PHP-Parallel-Lint.git",
-                "reference": "2b242dcdbdd7369d2a746518ac31bb30c514b728"
+                "reference": "1b693fb455201cacf595163c92bfb1adfa2158d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JakubOnderka/PHP-Parallel-Lint/zipball/2b242dcdbdd7369d2a746518ac31bb30c514b728",
-                "reference": "2b242dcdbdd7369d2a746518ac31bb30c514b728",
+                "url": "https://api.github.com/repos/JakubOnderka/PHP-Parallel-Lint/zipball/1b693fb455201cacf595163c92bfb1adfa2158d8",
+                "reference": "1b693fb455201cacf595163c92bfb1adfa2158d8",
                 "shasum": ""
             },
             "require": {
@@ -3364,7 +3364,7 @@
             ],
             "description": "This tool check syntax of PHP files about 20x faster than serial check.",
             "homepage": "https://github.com/JakubOnderka/PHP-Parallel-Lint",
-            "time": "2014-10-05 10:19:39"
+            "time": "2015-06-16 10:17:07"
         },
         {
             "name": "mockery/mockery",
@@ -3433,16 +3433,16 @@
         },
         {
             "name": "nette/tester",
-            "version": "v1.4.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tester.git",
-                "reference": "0e9059c051fd685d76e675efb577840b0bb6a288"
+                "reference": "e4cd7409ee25b6c16bc80717ef58abe4cb589cff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tester/zipball/0e9059c051fd685d76e675efb577840b0bb6a288",
-                "reference": "0e9059c051fd685d76e675efb577840b0bb6a288",
+                "url": "https://api.github.com/repos/nette/tester/zipball/e4cd7409ee25b6c16bc80717ef58abe4cb589cff",
+                "reference": "e4cd7409ee25b6c16bc80717ef58abe4cb589cff",
                 "shasum": ""
             },
             "require": {
@@ -3454,7 +3454,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -3471,21 +3471,21 @@
             "authors": [
                 {
                     "name": "David Grudl",
-                    "homepage": "http://davidgrudl.com"
+                    "homepage": "https://davidgrudl.com"
                 },
                 {
                     "name": "Nette Community",
-                    "homepage": "http://nette.org/contributors"
+                    "homepage": "https://nette.org/contributors"
                 }
             ],
             "description": "An easy-to-use PHP unit testing framework.",
-            "homepage": "http://nette.org",
+            "homepage": "https://tester.nette.org",
             "keywords": [
                 "nette",
                 "testing",
                 "unit"
             ],
-            "time": "2015-03-27 14:19:31"
+            "time": "2015-10-19 16:03:47"
         }
     ],
     "aliases": [],
