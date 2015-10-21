@@ -23,7 +23,7 @@
 		</p>
 		<p>
 			{label url /}
-			{input url}
+			{input url data-antispam => TRUE}
 		</p>
 		<p>
 			{input cc}
@@ -31,14 +31,5 @@
 		<p>
 			{input send class => 'btn'}
 		</p>
-
-		<script>
-			$(function () {
-				var $input = $('#' + {$form['url']->htmlId});
-				$input.val('');
-				$input.attr('value', null);
-				$input.parents('p').addClass('hidden');
-			});
-		</script>
 	{/form}
 </div>

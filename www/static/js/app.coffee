@@ -22,11 +22,22 @@ $ ->
 		buttonSelector: 'input.ajax[type="submit"], button.ajax[type="submit"], input.ajax[type="image"]'
 	}
 
-	$.nette.init()
+	$.nette.ext 'confirm', {
+		init: ->
+			$(document).on 'click', '[data-confirm]', (e) ->
+				if ! confirm $(this).data 'confirm'
+					e.preventDefault()
+	}
 
-	$(document).on 'click', '[data-confirm]', (e) ->
-		if ! confirm $(this).data 'confirm'
-			e.preventDefault()
+	$.nette.ext 'antispam', {
+		init: ->
+			$input = $ '[data-antispam]'
+			$input.val ''
+			$input.attr 'value', null
+			$input.parents('p').addClass 'hidden'
+	}
+
+	$.nette.init()
 
 	# webfont loader
 	window.WebFontConfig =
