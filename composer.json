@@ -28,7 +28,7 @@
 		"zenify/doctrine-migrations": "~2.1.0",
 		"kdyby/validator": "dev-master",
 		"kdyby/doctrine-forms": "dev-master",
-		"dg/texy": "~2.7.0",
+		"dg/texy": "~2.8.0",
 		"kukulich/fshl": "~2.1.0"
 	},
 	"require-dev": {

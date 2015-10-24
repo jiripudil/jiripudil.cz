@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d1b252e0b46ac0f1a1d05e47a1df9d0a",
-    "content-hash": "beeb1883fc020ac1e4dd2bd4227942e3",
+    "hash": "9437a57c0baa15de2661fbbcee841561",
+    "content-hash": "4b734ed7ab95addca320b3e720bc127d",
     "packages": [
         {
             "name": "dg/texy",
-            "version": "v2.7.1",
+            "version": "v2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dg/texy.git",
-                "reference": "bfb2c910db5b3db45b0634fa08b8d628db473996"
+                "reference": "cd7be41a3e2389979157bd31a8f87176755162ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/texy/zipball/bfb2c910db5b3db45b0634fa08b8d628db473996",
-                "reference": "bfb2c910db5b3db45b0634fa08b8d628db473996",
+                "url": "https://api.github.com/repos/dg/texy/zipball/cd7be41a3e2389979157bd31a8f87176755162ad",
+                "reference": "cd7be41a3e2389979157bd31a8f87176755162ad",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.0"
+                "php": ">=5.4.4"
             },
             "replace": {
                 "dg/texy": "self.version"
@@ -36,7 +36,7 @@
                     "src/"
                 ],
                 "files": [
-                    "src/compatibility.php"
+                    "src/texy.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -64,7 +64,7 @@
                 "wiki",
                 "xhtml"
             ],
-            "time": "2015-10-06 13:15:50"
+            "time": "2015-10-20 20:56:43"
         },
         {
             "name": "doctrine/annotations",
@@ -599,7 +599,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/089dbbcee1906524f4667c9db06ee9afef476fa0",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/68cc7bf629a7c1fc0696e583cc8ed46f897d0afb",
                 "reference": "089dbbcee1906524f4667c9db06ee9afef476fa0",
                 "shasum": ""
             },

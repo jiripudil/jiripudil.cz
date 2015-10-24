@@ -5,12 +5,13 @@ namespace jiripudil\Latte;
 use FSHL;
 use jiripudil\Caching\TexyCache;
 use Nette\Object;
+use Texy;
 
 
 class TexyFilter extends Object
 {
 
-	/** @var \Texy */
+	/** @var Texy\Texy */
 	private $texy;
 
 	/** @var FSHL\Highlighter */
@@ -41,7 +42,7 @@ class TexyFilter extends Object
 		$this->cache = $texyCache;
 		$this->texy = $texyFactory->create();
 
-		$this->texy->addHandler('block', function (\TexyHandlerInvocation $invocation, $blockType, $content, $lang, $modifier) {
+		$this->texy->addHandler('block', function (Texy\HandlerInvocation $invocation, $blockType, $content, $lang, $modifier) {
 			if (isset($this->highlights[$blockType])) {
 				list(, $lang) = explode('/', $blockType);
 
@@ -59,9 +60,9 @@ class TexyFilter extends Object
 				$content = htmlspecialchars($content);
 			}
 
-			$elPre = \TexyHtml::el('pre');
+			$elPre = Texy\HtmlElement::el('pre');
 			if ($modifier) $modifier->decorate($texy, $elPre);
-			$elPre->create('code', $texy->protect($content, \Texy::CONTENT_MARKUP));
+			$elPre->create('code', $texy->protect($content, Texy\Texy::CONTENT_MARKUP));
 
 			return $elPre;
 		});
@@ -69,7 +70,7 @@ class TexyFilter extends Object
 
 
 	/**
-	 * @return \Texy
+	 * @return Texy\Texy
 	 */
 	public function getTexy()
 	{
