@@ -1564,7 +1564,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kdyby/Validator/zipball/64f0acdfcb51e14e2a26a8b18e3c23600609f089",
+                "url": "https://api.github.com/repos/Kdyby/Validator/zipball/95fa998386f70084b437a32895a6edc47999cd9e",
                 "reference": "64f0acdfcb51e14e2a26a8b18e3c23600609f089",
                 "shasum": ""
             },
@@ -3433,16 +3433,16 @@
         },
         {
             "name": "nette/tester",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tester.git",
-                "reference": "e4cd7409ee25b6c16bc80717ef58abe4cb589cff"
+                "reference": "b0f312e7ab9a70bbd5c92568e2a20dd46be9a529"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tester/zipball/e4cd7409ee25b6c16bc80717ef58abe4cb589cff",
-                "reference": "e4cd7409ee25b6c16bc80717ef58abe4cb589cff",
+                "url": "https://api.github.com/repos/nette/tester/zipball/b0f312e7ab9a70bbd5c92568e2a20dd46be9a529",
+                "reference": "b0f312e7ab9a70bbd5c92568e2a20dd46be9a529",
                 "shasum": ""
             },
             "require": {
@@ -3485,7 +3485,7 @@
                 "testing",
                 "unit"
             ],
-            "time": "2015-10-19 16:03:47"
+            "time": "2015-10-26 05:38:30"
         }
     ],
     "aliases": [],
