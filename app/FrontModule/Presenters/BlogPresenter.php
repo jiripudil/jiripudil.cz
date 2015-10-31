@@ -87,7 +87,7 @@ class BlogPresenter extends Presenter
 
 		$this->template->post = $post;
 
-		$relatedPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->relatedTo($post));;
+		$relatedPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->relatedTo($post)->onlyOne());
 
 		if ($relatedPost) {
 			$this->template->relatedPost = $relatedPost;

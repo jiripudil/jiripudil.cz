@@ -23,7 +23,8 @@ class PostsQuery extends QueryObject
 	public function withTag(Tag $tag)
 	{
 		$this->filters[] = function (QueryBuilder $queryBuilder) use ($tag) {
-			$queryBuilder->andWhere(':tag MEMBER OF p.tags', $tag->id);
+			$queryBuilder->andWhere(':tag MEMBER OF p.tags')
+				->setParameter('tag', $tag->id);
 		};
 
 		return $this;
@@ -36,8 +37,9 @@ class PostsQuery extends QueryObject
 	public function onlyPublished()
 	{
 		$this->filters[] = function (QueryBuilder $queryBuilder) {
-			$queryBuilder->andWhere('p.published = :published', TRUE)
-				->andWhere('p.datetime <= :now', new \DateTime);
+			$queryBuilder->andWhere('p.published = TRUE')
+				->andWhere('p.datetime <= :now')
+				->setParameter('now', new \DateTime());
 		};
 
 		return $this;
@@ -51,13 +53,14 @@ class PostsQuery extends QueryObject
 	public function relatedTo(Post $post)
 	{
 		$this->filters[] = function (QueryBuilder $queryBuilder) use ($post) {
-			$queryBuilder->andWhere('NOT p.id = :id', $post->id);
+			$queryBuilder->andWhere('NOT p.id = :id')
+				->setParameter('id', $post->id);
 
 			if ($post->tags) {
 				$tagIds = array_map(function ($tag) { return $tag->id; }, $post->tags);
 
 				$queryBuilder->addSelect('COUNT(t.id) AS HIDDEN tagCount')
-					->andWhere('t.id IN (:tags)', $tagIds)
+					->andWhere('t.id IN (:tags)')->setParameter('tags', $tagIds)
 					->orderBy('tagCount', 'DESC')
 					->groupBy('p.id');
 			}
@@ -74,6 +77,16 @@ class PostsQuery extends QueryObject
 	{
 		$this->filters[] = function (QueryBuilder $queryBuilder) {
 			$queryBuilder->addSelect('t');
+		};
+
+		return $this;
+	}
+
+
+	public function onlyOne()
+	{
+		$this->filters[] = function (QueryBuilder $queryBuilder) {
+			$queryBuilder->setMaxResults(1);
 		};
 
 		return $this;

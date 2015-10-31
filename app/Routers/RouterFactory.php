@@ -41,7 +41,7 @@ class RouterFactory extends Object
 			'action' => 'default',
 			'tag' => [
 				Route::FILTER_IN => function ($tag) {
-					return $this->em->getRepository(Tag::class)->fetchOne(new TagByNameQuery($tag));
+					return $this->em->getRepository(Tag::class)->findOneBy(['name' => $tag]);
 				},
 				Route::FILTER_OUT => function ($tag) {
 					return $tag instanceof Tag ? $tag->name : $tag;
@@ -59,7 +59,7 @@ class RouterFactory extends Object
 			'action' => 'post',
 			'post' => [
 				Route::FILTER_IN => function ($post) {
-					return $this->em->getRepository(Post::class)->fetchOne(new PostBySlugQuery($post));
+					return $this->em->getRepository(Post::class)->findOneBy(['slug' => $post]);
 				},
 				Route::FILTER_OUT => function ($post) {
 					return $post->slug;

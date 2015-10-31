@@ -35,7 +35,7 @@ class HomepagePresenter extends Presenter
 
 	public function renderDefault()
 	{
-		$this->template->latestPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished());
+		$this->template->latestPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->onlyOne());
 		$this->template->postsCount = $this->em->getRepository(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 1;
 	}
 
