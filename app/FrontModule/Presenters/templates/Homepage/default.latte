@@ -19,7 +19,12 @@
 	<h2 class="feature-heading">Read my blog</h2>
 	<div class="post post--feature">
 		<h3 class="post-title"><a n:href="Blog:post post => $latestPost">{$latestPost->title}</a></h3>
-		<div class="post-info"><em class="fa fa-calendar" title="Published"></em> <time datetime="{$latestPost->datetime|date:'Y-m-d H:i'}" title="{$latestPost->datetime|date:'M j, Y \@ g:ia'}">{$latestPost->datetime|ago}</time></div>
+		<div class="post-info">
+			<em class="fa fa-calendar" title="Published"></em> <time datetime="{$latestPost->datetime|date:'Y-m-d H:i'}" title="{$latestPost->datetime|date:'M j, Y \@ g:ia'}">{$latestPost->datetime|ago}</time>
+			{if count($latestPost->tags)}
+				&bull; <em class="fa fa-tags" title="Tags"></em> <a n:foreach="$latestPost->tags as $tag" n:href="default tag => $tag">#{$tag->name}</a>
+			{/if}
+		</div>
 		<p>{$latestPost->perex|noescape}</p>
 	</div>
 	<p n:if="$postsCount" class="feature-more"><a n:href="Blog:" class="btn">and {$postsCount} more post{if $postsCount > 1}s{/if}!</a></p>
