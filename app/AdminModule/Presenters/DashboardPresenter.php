@@ -48,7 +48,7 @@ class DashboardPresenter extends Presenter
 	{
 		/** @var Paginator $paginator */
 		$paginator = $this['paging']->getPaginator();
-		$posts = $this->em->getRepository(Post::class)->fetch((new PostsQuery())->fetchJoinTags());
+		$posts = $this->em->getRepository(Post::class)->fetch((new PostsQuery()));
 		$posts->applyPaginator($paginator, 25);
 
 		$this->template->posts = $posts;

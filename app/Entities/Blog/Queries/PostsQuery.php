@@ -7,6 +7,7 @@ use jiripudil\Entities\Blog\Post;
 use jiripudil\Entities\Blog\Tag;
 use Kdyby;
 use Kdyby\Doctrine\QueryObject;
+use Kdyby\Persistence\Queryable;
 
 
 class PostsQuery extends QueryObject
@@ -71,35 +72,12 @@ class PostsQuery extends QueryObject
 
 
 	/**
-	 * @return PostsQuery
-	 */
-	public function fetchJoinTags()
-	{
-		$this->filters[] = function (QueryBuilder $queryBuilder) {
-			$queryBuilder->addSelect('t');
-		};
-
-		return $this;
-	}
-
-
-	public function onlyOne()
-	{
-		$this->filters[] = function (QueryBuilder $queryBuilder) {
-			$queryBuilder->setMaxResults(1);
-		};
-
-		return $this;
-	}
-
-
-	/**
 	 * @param Kdyby\Persistence\Queryable $dao
 	 * @return \Doctrine\ORM\Query|QueryBuilder
 	 */
 	protected function doCreateQuery(Kdyby\Persistence\Queryable $dao)
 	{
-		$queryBuilder = $dao->createQueryBuilder('p')
+		$queryBuilder = $dao->createQueryBuilder('p', 'p.id')
 			->select('p')
 			->leftJoin('p.tags', 't');
 
@@ -110,6 +88,18 @@ class PostsQuery extends QueryObject
 		$queryBuilder->addOrderBy('p.datetime', 'DESC');
 
 		return $queryBuilder;
+	}
+
+
+	public function postFetch(Queryable $repository, \Iterator $iterator)
+	{
+		$ids = array_keys(iterator_to_array($iterator, TRUE));
+
+		$repository->createQueryBuilder('p')
+			->select('PARTIAL p.{id}, t')
+			->leftJoin('p.tags', 't')
+			->andWhere('p.id IN (:ids)')->setParameter('ids', $ids)
+			->getQuery()->getResult();
 	}
 
 }

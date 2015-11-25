@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9fb1c1f34d4c60171f64a69e91aca45",
-    "content-hash": "40f586227e28312adccf8edf2c999124",
+    "hash": "99b07d6141fff0e71ea652c5af3d5aad",
+    "content-hash": "1feac31020a7fc11f0854ddec6b3a457",
     "packages": [
         {
             "name": "dg/texy",
@@ -599,7 +599,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/68cc7bf629a7c1fc0696e583cc8ed46f897d0afb",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/503ea5cc9c8ae38790a6899d842aaa92d55258bb",
                 "reference": "68cc7bf629a7c1fc0696e583cc8ed46f897d0afb",
                 "shasum": ""
             },
@@ -987,16 +987,16 @@
         },
         {
             "name": "kdyby/doctrine",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kdyby/Doctrine.git",
-                "reference": "72bf8837dc93a965ee5df52dd89382a029469ff8"
+                "reference": "69c63fe943d1fade98d8879a9e3aa8fc9e7b5c4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kdyby/Doctrine/zipball/72bf8837dc93a965ee5df52dd89382a029469ff8",
-                "reference": "72bf8837dc93a965ee5df52dd89382a029469ff8",
+                "url": "https://api.github.com/repos/Kdyby/Doctrine/zipball/69c63fe943d1fade98d8879a9e3aa8fc9e7b5c4b",
+                "reference": "69c63fe943d1fade98d8879a9e3aa8fc9e7b5c4b",
                 "shasum": ""
             },
             "require": {
@@ -1074,7 +1074,7 @@
                 "nette",
                 "orm"
             ],
-            "time": "2015-10-30 22:54:12"
+            "time": "2015-11-14 14:11:04"
         },
         {
             "name": "kdyby/doctrine-cache",
@@ -3592,7 +3592,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">= 5.5.0"
+        "php": ">= 5.6.0"
     },
     "platform-dev": []
 }

@@ -42,7 +42,7 @@ class BlogPresenter extends Presenter
 
 	public function actionDefault(Tag $tag = NULL)
 	{
-		$query = (new PostsQuery())->onlyPublished()->fetchJoinTags();
+		$query = (new PostsQuery())->onlyPublished();
 		if ($tag !== NULL) {
 			$query->withTag($tag);
 		}
@@ -87,7 +87,7 @@ class BlogPresenter extends Presenter
 
 		$this->template->post = $post;
 
-		$relatedPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->relatedTo($post)->onlyOne());
+		$relatedPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished()->relatedTo($post));
 
 		if ($relatedPost) {
 			$this->template->relatedPost = $relatedPost;

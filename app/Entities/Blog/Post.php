@@ -88,6 +88,7 @@ class Post extends BaseEntity
 
 	/**
 	 * @ORM\ManyToMany(targetEntity="jiripudil\Entities\Blog\Tag", inversedBy="posts")
+	 * @ORM\OrderBy({"name" = "ASC"})
 	 * @var Tag[]|ArrayCollection
 	 */
 	protected $tags;
