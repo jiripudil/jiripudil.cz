@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "dg/texy",
-            "version": "v2.8.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dg/texy.git",
-                "reference": "0f3cb9d8bfb63349c1f554f905397d6b9fa3af4e"
+                "reference": "e21cbfcff0a542cf691082df7427911495524ded"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/texy/zipball/0f3cb9d8bfb63349c1f554f905397d6b9fa3af4e",
-                "reference": "0f3cb9d8bfb63349c1f554f905397d6b9fa3af4e",
+                "url": "https://api.github.com/repos/dg/texy/zipball/e21cbfcff0a542cf691082df7427911495524ded",
+                "reference": "e21cbfcff0a542cf691082df7427911495524ded",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
                 "wiki",
                 "xhtml"
             ],
-            "time": "2015-10-25 17:40:46"
+            "time": "2015-11-07 22:17:49"
         },
         {
             "name": "doctrine/annotations",
@@ -136,16 +136,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.5.0",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "eb8a73619af4f1c8711e2ce482f5de3643258a1f"
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/eb8a73619af4f1c8711e2ce482f5de3643258a1f",
-                "reference": "eb8a73619af4f1c8711e2ce482f5de3643258a1f",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/47c7128262da274f590ae6f86eb137a7a64e82af",
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af",
                 "shasum": ""
             },
             "require": {
@@ -202,7 +202,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-10-28 11:27:45"
+            "time": "2015-12-03 10:50:37"
         },
         {
             "name": "doctrine/collections",
@@ -416,16 +416,16 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
                 "shasum": ""
             },
             "require": {
@@ -437,7 +437,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -479,7 +479,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-12-20 21:24:13"
+            "time": "2015-11-06 14:35:42"
         },
         {
             "name": "doctrine/instantiator",
@@ -595,19 +595,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "68cc7bf629a7c1fc0696e583cc8ed46f897d0afb"
+                "reference": "b386d2a17634192fc406acc4090d58eb6e903ca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/503ea5cc9c8ae38790a6899d842aaa92d55258bb",
-                "reference": "68cc7bf629a7c1fc0696e583cc8ed46f897d0afb",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/b386d2a17634192fc406acc4090d58eb6e903ca5",
+                "reference": "b386d2a17634192fc406acc4090d58eb6e903ca5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "~2.2",
                 "php": ">=5.4.0",
-                "symfony/console": "~2.3",
-                "symfony/yaml": "~2.3"
+                "symfony/console": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "require-dev": {
                 "doctrine/coding-standard": "dev-master",
@@ -655,20 +655,20 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-10-22 11:55:15"
+            "time": "2015-11-26 11:16:07"
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945"
+                "reference": "464b5fdbfbbeb4a65465ac173c4c5d90960f41ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/e6a83bedbe67579cb0bfb688e982e617943a2945",
-                "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/464b5fdbfbbeb4a65465ac173c4c5d90960f41ff",
+                "reference": "464b5fdbfbbeb4a65465ac173c4c5d90960f41ff",
                 "shasum": ""
             },
             "require": {
@@ -679,12 +679,12 @@
                 "doctrine/instantiator": "~1.0.1",
                 "ext-pdo": "*",
                 "php": ">=5.4",
-                "symfony/console": "~2.5"
+                "symfony/console": "~2.5|~3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
                 "satooshi/php-coveralls": "dev-master",
-                "symfony/yaml": "~2.1"
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -732,7 +732,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-08-31 12:59:39"
+            "time": "2015-11-23 12:44:25"
         },
         {
             "name": "kdyby/annotations",
@@ -1682,16 +1682,16 @@
         },
         {
             "name": "latte/latte",
-            "version": "v2.3.6",
+            "version": "v2.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "91b1381c8b3a55517819be07baf2bdb888c5eb1e"
+                "reference": "3140733d6ab0531b25500cb2f2e7c4abbfa5d725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/91b1381c8b3a55517819be07baf2bdb888c5eb1e",
-                "reference": "91b1381c8b3a55517819be07baf2bdb888c5eb1e",
+                "url": "https://api.github.com/repos/nette/latte/zipball/3140733d6ab0531b25500cb2f2e7c4abbfa5d725",
+                "reference": "3140733d6ab0531b25500cb2f2e7c4abbfa5d725",
                 "shasum": ""
             },
             "require": {
@@ -1733,7 +1733,7 @@
                 "templating",
                 "twig"
             ],
-            "time": "2015-10-12 18:41:46"
+            "time": "2015-12-02 22:05:24"
         },
         {
             "name": "monolog/monolog",
@@ -1814,16 +1814,16 @@
         },
         {
             "name": "nette/application",
-            "version": "v2.3.7",
+            "version": "v2.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/application.git",
-                "reference": "8e87ae81c2098abd7895bfd96d9fac1cd332abc3"
+                "reference": "32023ed31791cdf05be8816528ae5921dc841b5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/application/zipball/8e87ae81c2098abd7895bfd96d9fac1cd332abc3",
-                "reference": "8e87ae81c2098abd7895bfd96d9fac1cd332abc3",
+                "url": "https://api.github.com/repos/nette/application/zipball/32023ed31791cdf05be8816528ae5921dc841b5a",
+                "reference": "32023ed31791cdf05be8816528ae5921dc841b5a",
                 "shasum": ""
             },
             "require": {
@@ -1872,20 +1872,20 @@
             ],
             "description": "Nette Application MVC Component",
             "homepage": "https://nette.org",
-            "time": "2015-10-13 14:33:28"
+            "time": "2015-12-03 04:12:02"
         },
         {
             "name": "nette/bootstrap",
-            "version": "v2.3.3",
+            "version": "v2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/bootstrap.git",
-                "reference": "8e2db45c39a1fa24f88e94c7b2a62ad09e9a306e"
+                "reference": "e32964df66f2c5a3a50b229204f583d20c1f6829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/bootstrap/zipball/8e2db45c39a1fa24f88e94c7b2a62ad09e9a306e",
-                "reference": "8e2db45c39a1fa24f88e94c7b2a62ad09e9a306e",
+                "url": "https://api.github.com/repos/nette/bootstrap/zipball/e32964df66f2c5a3a50b229204f583d20c1f6829",
+                "reference": "e32964df66f2c5a3a50b229204f583d20c1f6829",
                 "shasum": ""
             },
             "require": {
@@ -1929,29 +1929,29 @@
             "authors": [
                 {
                     "name": "David Grudl",
-                    "homepage": "http://davidgrudl.com"
+                    "homepage": "https://davidgrudl.com"
                 },
                 {
                     "name": "Nette Community",
-                    "homepage": "http://nette.org/contributors"
+                    "homepage": "https://nette.org/contributors"
                 }
             ],
             "description": "Nette Bootstrap",
-            "homepage": "http://nette.org",
-            "time": "2015-07-11 21:07:11"
+            "homepage": "https://nette.org",
+            "time": "2015-11-16 20:18:31"
         },
         {
             "name": "nette/caching",
-            "version": "v2.4.2",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/caching.git",
-                "reference": "ce04a24e03230a3ad163540aab46635c220163ed"
+                "reference": "f60c1767fe5a4b2b45edf2a98cf9dc70c15ea1b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/caching/zipball/ce04a24e03230a3ad163540aab46635c220163ed",
-                "reference": "ce04a24e03230a3ad163540aab46635c220163ed",
+                "url": "https://api.github.com/repos/nette/caching/zipball/f60c1767fe5a4b2b45edf2a98cf9dc70c15ea1b1",
+                "reference": "f60c1767fe5a4b2b45edf2a98cf9dc70c15ea1b1",
                 "shasum": ""
             },
             "require": {
@@ -1963,9 +1963,9 @@
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "latte/latte": "~2.4",
+                "latte/latte": "~2.3.0",
                 "nette/di": "~2.3",
-                "nette/tester": "~1.4"
+                "nette/tester": "~1.6"
             },
             "type": "library",
             "extra": {
@@ -1987,16 +1987,16 @@
             "authors": [
                 {
                     "name": "David Grudl",
-                    "homepage": "http://davidgrudl.com"
+                    "homepage": "https://davidgrudl.com"
                 },
                 {
                     "name": "Nette Community",
-                    "homepage": "http://nette.org/contributors"
+                    "homepage": "https://nette.org/contributors"
                 }
             ],
             "description": "Nette Caching Component",
-            "homepage": "http://nette.org",
-            "time": "2015-09-07 11:57:44"
+            "homepage": "https://nette.org",
+            "time": "2015-11-29 21:35:25"
         },
         {
             "name": "nette/component-model",
@@ -2050,29 +2050,29 @@
         },
         {
             "name": "nette/di",
-            "version": "v2.3.6",
+            "version": "v2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/di.git",
-                "reference": "efa1d13f016b58b4a9200802c9c5b14d10d72e85"
+                "reference": "7595c0bc17125b6ac3bb8f857b7c9b1be743c762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/di/zipball/efa1d13f016b58b4a9200802c9c5b14d10d72e85",
-                "reference": "efa1d13f016b58b4a9200802c9c5b14d10d72e85",
+                "url": "https://api.github.com/repos/nette/di/zipball/7595c0bc17125b6ac3bb8f857b7c9b1be743c762",
+                "reference": "7595c0bc17125b6ac3bb8f857b7c9b1be743c762",
                 "shasum": ""
             },
             "require": {
                 "nette/neon": "^2.3.3",
                 "nette/php-generator": "^2.3.3",
-                "nette/utils": "~2.3",
+                "nette/utils": "^2.3.5",
                 "php": ">=5.3.1"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "nette/tester": "~1.3"
+                "nette/tester": "^1.6"
             },
             "type": "library",
             "autoload": {
@@ -2089,16 +2089,16 @@
             "authors": [
                 {
                     "name": "David Grudl",
-                    "homepage": "http://davidgrudl.com"
+                    "homepage": "https://davidgrudl.com"
                 },
                 {
                     "name": "Nette Community",
-                    "homepage": "http://nette.org/contributors"
+                    "homepage": "https://nette.org/contributors"
                 }
             ],
             "description": "Nette Dependency Injection Component",
-            "homepage": "http://nette.org",
-            "time": "2015-09-14 18:18:24"
+            "homepage": "https://nette.org",
+            "time": "2015-11-13 12:34:13"
         },
         {
             "name": "nette/finder",
@@ -2261,16 +2261,16 @@
         },
         {
             "name": "nette/mail",
-            "version": "v2.3.3",
+            "version": "v2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/mail.git",
-                "reference": "4ea303d96c6a80ffe357baf59d387f4fe2cfd412"
+                "reference": "3b8ba96407029d94d83177086bcb5e1fe0046929"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/mail/zipball/4ea303d96c6a80ffe357baf59d387f4fe2cfd412",
-                "reference": "4ea303d96c6a80ffe357baf59d387f4fe2cfd412",
+                "url": "https://api.github.com/repos/nette/mail/zipball/3b8ba96407029d94d83177086bcb5e1fe0046929",
+                "reference": "3b8ba96407029d94d83177086bcb5e1fe0046929",
                 "shasum": ""
             },
             "require": {
@@ -2312,7 +2312,7 @@
             ],
             "description": "Nette Mail: Sending E-mails",
             "homepage": "https://nette.org",
-            "time": "2015-10-05 12:58:01"
+            "time": "2015-11-29 22:09:25"
         },
         {
             "name": "nette/neon",
@@ -2363,16 +2363,16 @@
         },
         {
             "name": "nette/php-generator",
-            "version": "v2.3.4",
+            "version": "v2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/php-generator.git",
-                "reference": "846028e9d885d2d8ec60823d995e1291bbe3eb69"
+                "reference": "224730a45e0cd6e76e692997a3d981a592f80b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/php-generator/zipball/846028e9d885d2d8ec60823d995e1291bbe3eb69",
-                "reference": "846028e9d885d2d8ec60823d995e1291bbe3eb69",
+                "url": "https://api.github.com/repos/nette/php-generator/zipball/224730a45e0cd6e76e692997a3d981a592f80b5d",
+                "reference": "224730a45e0cd6e76e692997a3d981a592f80b5d",
                 "shasum": ""
             },
             "require": {
@@ -2409,7 +2409,7 @@
             ],
             "description": "Nette PHP Generator",
             "homepage": "https://nette.org",
-            "time": "2015-10-09 14:34:13"
+            "time": "2015-11-29 22:14:37"
         },
         {
             "name": "nette/reflection",
@@ -2624,16 +2624,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v2.3.6",
+            "version": "v2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "c9dfaec788eb65d5ef10cefed0ae63bc76febaa8"
+                "reference": "6f1ed73088c28a24acc9657ca14b3418a270e24b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/c9dfaec788eb65d5ef10cefed0ae63bc76febaa8",
-                "reference": "c9dfaec788eb65d5ef10cefed0ae63bc76febaa8",
+                "url": "https://api.github.com/repos/nette/utils/zipball/6f1ed73088c28a24acc9657ca14b3418a270e24b",
+                "reference": "6f1ed73088c28a24acc9657ca14b3418a270e24b",
                 "shasum": ""
             },
             "require": {
@@ -2675,7 +2675,7 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2015-10-05 12:18:24"
+            "time": "2015-11-30 00:11:35"
         },
         {
             "name": "nextras/secured-links",
@@ -2774,32 +2774,35 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.7.6",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "831f88908b51b9ce945f5e6f402931d1ac544423"
+                "reference": "f21c97aec1b5302d2dc0d17047ea8f4e4ff93aae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/831f88908b51b9ce945f5e6f402931d1ac544423",
-                "reference": "831f88908b51b9ce945f5e6f402931d1ac544423",
+                "url": "https://api.github.com/repos/symfony/config/zipball/f21c97aec1b5302d2dc0d17047ea8f4e4ff93aae",
+                "reference": "f21c97aec1b5302d2dc0d17047ea8f4e4ff93aae",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9",
-                "symfony/filesystem": "~2.3"
+                "symfony/filesystem": "~2.3|~3.0.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Config\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2817,29 +2820,30 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-11-23 20:38:01"
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.6",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "5efd632294c8320ea52492db22292ff853a43766"
+                "reference": "d232bfc100dfd32b18ccbcab4bcc8f28697b7e41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/5efd632294c8320ea52492db22292ff853a43766",
-                "reference": "5efd632294c8320ea52492db22292ff853a43766",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d232bfc100dfd32b18ccbcab4bcc8f28697b7e41",
+                "reference": "d232bfc100dfd32b18ccbcab4bcc8f28697b7e41",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.3.9",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1",
-                "symfony/process": "~2.1"
+                "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/process": "~2.1|~3.0.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -2849,13 +2853,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Console\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2873,20 +2880,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-20 14:38:46"
+            "time": "2015-11-30 12:35:10"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.7.6",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "87a5db5ea887763fa3a31a5471b512ff1596d9b8"
+                "reference": "a5eb815363c0388e83247e7e9853e5dbc14999cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/87a5db5ea887763fa3a31a5471b512ff1596d9b8",
-                "reference": "87a5db5ea887763fa3a31a5471b512ff1596d9b8",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a5eb815363c0388e83247e7e9853e5dbc14999cc",
+                "reference": "a5eb815363c0388e83247e7e9853e5dbc14999cc",
                 "shasum": ""
             },
             "require": {
@@ -2894,10 +2901,10 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/config": "~2.0,>=2.0.5",
-                "symfony/dependency-injection": "~2.6",
-                "symfony/expression-language": "~2.6",
-                "symfony/stopwatch": "~2.3"
+                "symfony/config": "~2.0,>=2.0.5|~3.0.0",
+                "symfony/dependency-injection": "~2.6|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/stopwatch": "~2.3|~3.0.0"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -2906,13 +2913,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\EventDispatcher\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2930,35 +2940,38 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-10-30 20:15:42"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.7.6",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "56fd6df73be859323ff97418d97edc1d756df6df"
+                "reference": "692d98d813e4ef314b9c22775c86ddbeb0f44884"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/56fd6df73be859323ff97418d97edc1d756df6df",
-                "reference": "56fd6df73be859323ff97418d97edc1d756df6df",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/692d98d813e4ef314b9c22775c86ddbeb0f44884",
+                "reference": "692d98d813e4ef314b9c22775c86ddbeb0f44884",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Filesystem\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2976,20 +2989,76 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-18 20:23:18"
+            "time": "2015-11-23 10:41:47"
         },
         {
-            "name": "symfony/property-access",
-            "version": "v2.7.6",
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/property-access.git",
-                "reference": "368b784738fa932e6d86866038312b03e073a824"
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "0b6a8940385311a24e060ec1fe35680e17c74497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/368b784738fa932e6d86866038312b03e073a824",
-                "reference": "368b784738fa932e6d86866038312b03e073a824",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/0b6a8940385311a24e060ec1fe35680e17c74497",
+                "reference": "0b6a8940385311a24e060ec1fe35680e17c74497",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2015-11-04 20:28:58"
+        },
+        {
+            "name": "symfony/property-access",
+            "version": "v2.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/property-access.git",
+                "reference": "8820a541404c43838c113d6d7580bd02e0ba198a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/8820a541404c43838c113d6d7580bd02e0ba198a",
+                "reference": "8820a541404c43838c113d6d7580bd02e0ba198a",
                 "shasum": ""
             },
             "require": {
@@ -2998,13 +3067,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\PropertyAccess\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3033,33 +3105,34 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2015-10-23 14:47:27"
+            "time": "2015-11-18 13:45:00"
         },
         {
             "name": "symfony/translation",
-            "version": "v2.7.6",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "6ccd9289ec1c71d01a49d83480de3b5293ce30c8"
+                "reference": "6772657767649fc3b31df12705194fb4af11ef98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/6ccd9289ec1c71d01a49d83480de3b5293ce30c8",
-                "reference": "6ccd9289ec1c71d01a49d83480de3b5293ce30c8",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/6772657767649fc3b31df12705194fb4af11ef98",
+                "reference": "6772657767649fc3b31df12705194fb4af11ef98",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.3.9",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
                 "symfony/config": "<2.7"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/config": "~2.7",
-                "symfony/intl": "~2.4",
-                "symfony/yaml": "~2.2"
+                "symfony/config": "~2.8",
+                "symfony/intl": "~2.4|~3.0.0",
+                "symfony/yaml": "~2.2|~3.0.0"
             },
             "suggest": {
                 "psr/log": "To use logging capability in translator",
@@ -3069,13 +3142,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Translation\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3093,59 +3169,61 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-27 15:38:06"
+            "time": "2015-11-18 13:45:00"
         },
         {
             "name": "symfony/validator",
-            "version": "v2.7.6",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "df9021e689aa3d08367881e7f8917219fabe5e64"
+                "reference": "31d33902bb8670d337b3e69e6d83ba300232dca8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/df9021e689aa3d08367881e7f8917219fabe5e64",
-                "reference": "df9021e689aa3d08367881e7f8917219fabe5e64",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/31d33902bb8670d337b3e69e6d83ba300232dca8",
+                "reference": "31d33902bb8670d337b3e69e6d83ba300232dca8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/translation": "~2.4"
+                "php": ">=5.5.9",
+                "symfony/translation": "~2.8|~3.0"
             },
             "require-dev": {
                 "doctrine/annotations": "~1.0",
                 "doctrine/cache": "~1.0",
-                "doctrine/common": "~2.3",
                 "egulias/email-validator": "~1.2,>=1.2.1",
-                "symfony/config": "~2.2",
-                "symfony/expression-language": "~2.4",
-                "symfony/http-foundation": "~2.1",
-                "symfony/intl": "~2.4",
-                "symfony/property-access": "~2.3",
-                "symfony/yaml": "~2.0,>=2.0.5"
+                "symfony/config": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/http-foundation": "~2.8|~3.0",
+                "symfony/intl": "~2.8|~3.0",
+                "symfony/property-access": "~2.8|~3.0",
+                "symfony/yaml": "~2.8|~3.0"
             },
             "suggest": {
                 "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
                 "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
                 "egulias/email-validator": "Strict (RFC compliant) email validation",
                 "symfony/config": "",
-                "symfony/expression-language": "For using the 2.4 Expression validator",
+                "symfony/expression-language": "For using the Expression validator",
                 "symfony/http-foundation": "",
                 "symfony/intl": "",
-                "symfony/property-access": "For using the 2.4 Validator API",
+                "symfony/property-access": "For using the Expression validator",
                 "symfony/yaml": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Validator\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3163,20 +3241,20 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-18 20:23:18"
+            "time": "2015-11-20 17:45:52"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.7.6",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "eca9019c88fbe250164affd107bc8057771f3f4d"
+                "reference": "f79824187de95064a2f5038904c4d7f0227fedb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/eca9019c88fbe250164affd107bc8057771f3f4d",
-                "reference": "eca9019c88fbe250164affd107bc8057771f3f4d",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/f79824187de95064a2f5038904c4d7f0227fedb5",
+                "reference": "f79824187de95064a2f5038904c4d7f0227fedb5",
                 "shasum": ""
             },
             "require": {
@@ -3185,13 +3263,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Yaml\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3209,7 +3290,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-11-30 12:35:10"
         },
         {
             "name": "symnedi/event-dispatcher",
@@ -3266,16 +3347,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.3.6",
+            "version": "v2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "79831c75b6f48fcb897d25ccae5deec358cb2142"
+                "reference": "eddb369f320b86fe37838bbbfb12d79ddd21d134"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/79831c75b6f48fcb897d25ccae5deec358cb2142",
-                "reference": "79831c75b6f48fcb897d25ccae5deec358cb2142",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/eddb369f320b86fe37838bbbfb12d79ddd21d134",
+                "reference": "eddb369f320b86fe37838bbbfb12d79ddd21d134",
                 "shasum": ""
             },
             "require": {
@@ -3317,32 +3398,32 @@
                 "debugger",
                 "nette"
             ],
-            "time": "2015-10-28 23:49:21"
+            "time": "2015-11-30 00:50:47"
         },
         {
             "name": "zenify/doctrine-migrations",
-            "version": "v2.3.2",
+            "version": "v2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Zenify/DoctrineMigrations.git",
-                "reference": "ab3a9cfa696d0f30e838a1783ff3873197a6b4b4"
+                "reference": "bc3c0aad99330be90ae2a29d5916753bc1a820b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Zenify/DoctrineMigrations/zipball/ab3a9cfa696d0f30e838a1783ff3873197a6b4b4",
-                "reference": "ab3a9cfa696d0f30e838a1783ff3873197a6b4b4",
+                "url": "https://api.github.com/repos/Zenify/DoctrineMigrations/zipball/bc3c0aad99330be90ae2a29d5916753bc1a820b1",
+                "reference": "bc3c0aad99330be90ae2a29d5916753bc1a820b1",
                 "shasum": ""
             },
             "require": {
                 "doctrine/migrations": "~1.0",
                 "nette/di": "~2.3",
                 "php": ">=5.6",
-                "symfony/console": "~2.7",
+                "symfony/console": "~2.7|~3.0",
                 "symnedi/event-dispatcher": "~0.3.1"
             },
             "require-dev": {
                 "kdyby/console": "~2.4",
-                "kdyby/doctrine": "~2.3",
+                "kdyby/doctrine": "~2.3|~3.0",
                 "kdyby/events": "~2.4",
                 "nette/bootstrap": "~2.3",
                 "tracy/tracy": "~2.3"
@@ -3364,7 +3445,7 @@
                 }
             ],
             "description": "Implementation of Doctrine Migrations to Nette",
-            "time": "2015-10-27 22:02:52"
+            "time": "2015-11-22 23:45:28"
         }
     ],
     "packages-dev": [
