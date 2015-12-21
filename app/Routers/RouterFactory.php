@@ -7,9 +7,11 @@ use jiripudil\Entities\Blog\Queries\PostBySlugQuery;
 use jiripudil\Entities\Blog\Queries\TagByNameQuery;
 use jiripudil\Entities\Blog\Tag;
 use Kdyby\Doctrine\EntityManager;
+use Nette\Application\BadRequestException;
 use Nette\Application\IRouter;
 use Nette\Application\Routers\Route;
 use Nette\Application\Routers\RouteList;
+use Nette\Http\IResponse;
 use Nette\Object;
 
 
@@ -74,6 +76,11 @@ class RouterFactory extends Object
 			'presenter' => 'Dashboard',
 			'action' => 'default',
 		]);
+
+		// archiv => 410
+		$router[] = new Route('archiv[/<foo .+>]', function () {
+			throw new BadRequestException(NULL, IResponse::S410_GONE);
+		});
 
 		$router[] = new Route('<presenter>[/<action>[/<id>]]', 'Front:Homepage:default');
 		$router[] = new Route('index.php', 'Front:Homepage:default', Route::ONE_WAY);

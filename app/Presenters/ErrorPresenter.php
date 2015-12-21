@@ -23,7 +23,7 @@ class ErrorPresenter extends Presenter
 
 		} elseif ($exception instanceof BadRequestException) {
 			$code = $exception->getCode();
-			$this->setView(in_array($code, [403, 404, 500]) ? $code : '4xx');
+			$this->setView(in_array($code, [403, 404, 410, 500]) ? $code : '4xx');
 
 			$this['head']->setTitle('Oops, an error! – Jiří Pudil');
 
