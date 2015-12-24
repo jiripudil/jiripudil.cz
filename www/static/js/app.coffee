@@ -37,6 +37,16 @@ $ ->
 			$input.parents('p').addClass 'hidden'
 	}
 
+	$.nette.ext 'cookieLaw', {
+		init: ->
+			$(document).on 'click', '.cookieLaw-ok', (e) ->
+				date = new Date()
+				date.setFullYear(date.getFullYear() + 10)
+				document.cookie = 'cookies-allowed=1;path=/;expires=' + date.toUTCString() + ';secure'
+				$('.cookieLaw').css 'display', 'none'
+				e.preventDefault()
+	}
+
 	$.nette.init()
 
 	# webfont loader

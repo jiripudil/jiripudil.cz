@@ -33,7 +33,6 @@ body {
 	.serif();
 	font-size: 1.2em;
 	line-height: 1.5;
-	padding-top: 3em;
 	color: #222;
 }
 
@@ -63,9 +62,24 @@ a {
 	}
 }
 
+.cookieLaw {
+	.sans();
+	font-size: .9em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: .25em;
+	border-bottom: 1px solid #ccc;
+
+	a:not(.btn) {
+		font-size: .8em;
+	}
+}
+
 .container {
 	max-width: 800px;
-	margin: 0 auto;
+	margin: 3em auto 0;
 
 	@media (max-width: 640px) {
 		padding: 0 .5em;
