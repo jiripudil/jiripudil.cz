@@ -40,6 +40,10 @@ class SkillCloudControl extends Control
 				'weight' => 1.0,
 				'color' => '#8892BF',
 			],
+//			'symfony' => [
+//				'weight' => 0.4,
+//				'color' => '#7ABA20',
+//			],
 			'redis' => [
 				'weight' => 0.4,
 				'color' => '#D82C20',
@@ -52,21 +56,29 @@ class SkillCloudControl extends Control
 				'weight' => 0.8,
 				'color' => '#F14E32',
 			],
-			'mysql' => [
+			'nginx' => [
 				'weight' => 0.8,
-				'color' => '#E48E00',
-			],
-			'elasticsearch' => [
-				'weight' => 0.4,
-				'color' => '#5E8830',
+				'color' => '#009900',
 			],
 			'javascript' => [
 				'weight' => 0.6,
 				'color' => '#F0DB4F',
 			],
-			'nginx' => [
+			'elasticsearch' => [
+				'weight' => 0.4,
+				'color' => '#5E8830',
+			],
+			'mysql' => [
 				'weight' => 0.8,
-				'color' => '#009900',
+				'color' => '#E48E00',
+			],
+			'reactjs' => [
+				'weight' => 0.6,
+				'color' => '#61DAFB',
+			],
+			'webpack' => [
+				'weight' => 0.4,
+				'color' => '#7EA9E8',
 			],
 		];
 	}
