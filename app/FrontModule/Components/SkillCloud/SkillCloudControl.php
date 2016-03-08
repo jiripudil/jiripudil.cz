@@ -68,17 +68,21 @@ class SkillCloudControl extends Control
 				'weight' => 0.4,
 				'color' => '#5E8830',
 			],
+			'docker' => [
+				'weight' => 0.6,
+				'color' => '#56BEEE',
+			],
 			'mysql' => [
 				'weight' => 0.8,
 				'color' => '#E48E00',
 			],
-			'reactjs' => [
-				'weight' => 0.6,
-				'color' => '#61DAFB',
-			],
 			'webpack' => [
 				'weight' => 0.4,
 				'color' => '#7EA9E8',
+			],
+			'reactjs' => [
+				'weight' => 0.6,
+				'color' => '#61DAFB',
 			],
 		];
 	}
