@@ -116,6 +116,16 @@
 				persist: true,
 				hideSelected: true
 			});
+
+			// prevent unload
+			var initialValue = $('.post-edit textarea').val();
+			$(window).on('beforeunload', function (e) {
+				if ($('.post-edit textarea').val() !== initialValue) {
+					var message = 'There are unsaved changes. Do you want to discard those changes and leave?';
+					e.originalEvent.returnValue = message;
+					return message;
+				}
+			});
 		});
 	</script>
 {/form}
