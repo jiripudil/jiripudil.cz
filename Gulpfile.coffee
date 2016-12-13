@@ -12,10 +12,22 @@ gulp.task 'less', ->
 			paths: ['bower_components']
 			cleancss: yes
 		.pipe plugins.autoprefixer
-			browsers: ['last 2 versions', 'ie >= 8']
+			browsers: ['last 2 versions', 'ie >= 10']
 			cascade: no
 		.on 'error', gutil.log
 		.pipe plugins.plumber.stop()
+		.pipe gulp.dest 'www/static/css'
+
+gulp.task 'sass', ->
+	gulp.src 'www/static/css/2017/index.scss'
+		.pipe plugins.plumber()
+		.pipe plugins.sass().on('error', plugins.sass.logError)
+		.pipe plugins.autoprefixer
+			browsers: ['last 2 versions', 'ie >= 10']
+			cascade: no
+		.on 'error', gutil.log
+		.pipe plugins.plumber.stop()
+		.pipe plugins.rename '2017.css'
 		.pipe gulp.dest 'www/static/css'
 
 gulp.task 'scripts', ->
@@ -37,6 +49,7 @@ gulp.task 'scripts', ->
 
 gulp.task 'watch', ->
 	gulp.watch 'www/static/css/*.less', ['less']
+	gulp.watch 'www/static/css/**/*.scss', ['sass']
 	gulp.watch 'www/static/js/*.coffee', ['scripts']
 
-gulp.task 'build', ['less', 'scripts']
+gulp.task 'build', ['less', 'sass', 'scripts']

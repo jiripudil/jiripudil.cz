@@ -18,7 +18,8 @@ extensions:
 	annotations: Kdyby\Annotations\DI\AnnotationsExtension
 	doctrine: Kdyby\Doctrine\DI\OrmExtension
 	autowired: Kdyby\Autowired\DI\AutowiredExtension
-	eventDispatcher: Symnedi\EventDispatcher\DI\EventDispatcherExtension
+	containerAdapter: Arachne\ContainerAdapter\DI\ContainerAdapterExtension
+	eventDispatcher: Arachne\EventDispatcher\DI\EventDispatcherExtension
 	migrations: Zenify\DoctrineMigrations\DI\MigrationsExtension
 	validator: Kdyby\Validator\DI\ValidatorExtension
 	translation: Kdyby\Translation\DI\TranslationExtension

@@ -7,14 +7,6 @@ use Nette\Http\IRequest;
 use Nette\Utils\Html;
 
 
-/**
- * @method string getTitleSeparator()
- * @method setTitleSeparator(string)
- * @method bool isTitleReversed()
- * @method setTitleReversed(bool)
- * @method string getTitleSnippetName()
- * @method setTitleSnippetName(string)
- */
 class HeadControl extends Control
 {
 
@@ -74,6 +66,15 @@ class HeadControl extends Control
 	public function setTitle($title)
 	{
 		$this->titleParts = [$title];
+	}
+
+
+	/**
+	 * @param bool $reversed
+	 */
+	public function setTitleReversed($reversed)
+	{
+		$this->titleReversed = $reversed;
 	}
 
 
@@ -197,7 +198,7 @@ class HeadControl extends Control
 		// meta tags
 		$head->create('meta', ['charset' => 'utf-8']);
 		foreach ($this->meta as $meta) {
-			$head->add($meta);
+			$head->addHtml($meta);
 		}
 
 		// title
@@ -207,22 +208,22 @@ class HeadControl extends Control
 
 		// favicon
 		if ($this->favicon !== NULL) {
-			$head->add($this->favicon);
+			$head->addHtml($this->favicon);
 		}
 
 		// links
 		foreach ($this->links as $link) {
-			$head->add($link);
+			$head->addHtml($link);
 		}
 
 		// styles
 		foreach ($this->styles as $style) {
-			$head->add($style);
+			$head->addHtml($style);
 		}
 
 		// scripts
 		foreach ($this->scripts as $script) {
-			$head->add($script);
+			$head->addHtml($script);
 		}
 
 		echo $head;

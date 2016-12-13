@@ -1,41 +1,47 @@
 {block #content}
 
-{include '../@header.latte'}
+<div class="container">
+	{include '../@header.latte'}
 
-<h1 class="sectionTitle">{if $tag}#{$tag->name} – {/if}Blog</h1>
+	<h1 class="blog-title">{if $tag}#{$tag->name} – {/if}Blog</h1>
 
-{foreach $posts as $post}
-	<div class="post">
-		<h3 class="post-title"><a n:href="post post => $post">{$post->title}</a></h3>
-		<div class="post-info">
-			<em class="fa fa-calendar" title="Published"></em> <time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ g:ia'}">{$post->datetime|ago}</time>
-			{if count($post->tags)}
-				&bull; <em class="fa fa-tags" title="Tags"></em> <a n:foreach="$post->tags as $tag" n:href="this tag => $tag">#{$tag->name}</a>
-			{/if}
-			&bull; <em class="fa fa-comments" title="Comments"></em> <a n:href="post#disqus_thread post => $post" data-disqus-identifier="{$post->id}">0 comments</a>
-		</div>
-		<p>{$post->perex|noescape}</p>
+	<div class="subscribe">
+		<a n:href="Blog:feed" class="btn btn--rss"><em class="fa fa-rss"></em> Subscribe!</a>
 	</div>
-	<p><a n:href="post post => $post" class="btn">Read more</a></p>
-	<div class="sep"></div>
-{/foreach}
 
+	<div class="post" n:foreach="$posts as $post">
+		<h2 class="post-title"><a n:href="Blog:post post => $post">{$post->title}</a></h2>
+		<p class="post-perex">{$post->perex|noescape}</p>
+		<div class="post-info">
+			<ul class="post-info-tags">
+				<li n:foreach="$post->tags as $postTag">
+					<a n:href="Blog: tag => $postTag">#{$postTag->name}</a>
+				</li>
+			</ul>
+			<div class="post-info-date">
+				<span class="fa fa-calendar" title="Published"></span>
+				<time datetime="{$post->datetime|date:'Y-m-d H:i'}" title="{$post->datetime|date:'M j, Y \@ g:ia'}">{$post->datetime|ago}</time>
+			</div>
+			<div class="post-info-comments">
+				<span class="fa fa-comments" title="Comments"></span>
+				<a n:href="post#disqus_thread post => $post" data-disqus-identifier="{$post->id}">0 comments</a>
+			</div>
+		</div>
+		<div class="post-more">
+			<a n:href="post post => $post">Read more</a>
+		</div>
+	</div>
 
-{control paging}
+	{control paging}
 
+	<script type="text/javascript">
+		var disqus_shortname = 'jiripudil';
 
-<div class="share">
-	<p><a n:href="Blog:feed" class="btn btn--rss"><em class="fa fa-rss"></em> Subscribe!</a></p>
+		(function () {
+			var s = document.createElement('script'); s.async = true;
+			s.type = 'text/javascript';
+			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	</script>
 </div>
-
-
-<script type="text/javascript">
-	var disqus_shortname = 'jiripudil';
-
-	(function () {
-		var s = document.createElement('script'); s.async = true;
-		s.type = 'text/javascript';
-		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-	}());
-</script>

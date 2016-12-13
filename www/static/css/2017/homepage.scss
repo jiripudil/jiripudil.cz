@@ -1,0 +1,306 @@
+// header
+
+.header {
+	text-align: center;
+	margin-bottom: 1.5em;
+
+	.header-name {
+		font-family: $font-family-sans;
+		font-weight: 700;
+		font-size: 2.5em;
+		line-height: 1;
+		margin: 0;
+	}
+
+	.header-motto {
+		font-family: $font-family-sans;
+		font-size: 1.5em;
+		line-height: 1;
+		color: $color-coffee;
+		margin: .5em 0 1.5em;
+	}
+}
+
+// availability
+
+.availability {
+	font-size: 1.1em;
+	margin-bottom: 1.5em;
+	text-align: center;
+
+	.busy, .available, .somewhat { font-weight: bold; padding: .25em .5em; }
+	.busy { background: #c20a0b; color: #fff; }
+	.available { background: #0bc20a; color: #fff; }
+	.somewhat { background: #92c210; color: #fff; }
+}
+
+// contacts
+
+.contact {
+	color: #545454;
+	font-family: $font-family-sans;
+	text-align: center;
+
+	span {
+		color: #222;
+	}
+
+	.contact-social {
+		font-size: 1.5em;
+		margin: 0 0 .5em 0;
+		padding-left: 0;
+
+		li {
+			display: inline;
+			list-style-type: none;
+
+			&:not(:last-child) {
+				margin-right: .1em;
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.fa-linkedin { color: #007bb6; }
+		.fa-twitter { color: #00aced; }
+		.fa-github { color: #000; }
+	}
+
+	.contact-common {
+		margin: 0;
+		padding-left: 0;
+
+		li {
+			list-style-type: none;
+			margin-bottom: .25em;
+		}
+	}
+}
+
+// profile
+
+.profile {
+	display: flex;
+	margin-bottom: 3em;
+
+	@media (max-width: $breakpoint) {
+		display: block;
+	}
+
+	.profile-content {
+		flex: 1 0 70%;
+		padding-right: 2em;
+
+		@media (max-width: $breakpoint) {
+			padding-right: 0;
+		}
+
+		h2 {
+			font-size: 1.5em;
+			font-weight: bold;
+			font-family: monospace;
+			margin-bottom: 1em;
+
+			&::after {
+				content: '|';
+				color: #999;
+				animation: blink 1.25s steps(1, end) infinite;
+			}
+		}
+
+		@keyframes blink {
+			0% { opacity: 1; }
+			50% { opacity: 0; }
+			100% { opacity: 0; }
+		}
+
+		.timeline {
+			position: relative;
+			margin: 1em 0 1.5em 0;
+
+			&::before {
+				content: '';
+				width: 8px;
+				height: 100%;
+				position: absolute;
+				left: 24px;
+				top: 0;
+				z-index: -1;
+
+				background: $color-coffee-light-roast;
+			}
+
+			.record {
+				display: flex;
+				margin-bottom: .5em;
+
+				.logo {
+					margin-right: 1em;
+
+					img {
+						width: 56px;
+						height: 56px;
+						background: #fff;
+					}
+				}
+
+				.info {
+					padding-top: .7em;
+
+					.year {
+						font-weight: bold;
+						color: $color-coffee;
+						display: inline-block;
+						text-align: center;
+						width: 64px;
+					}
+
+					.name {
+						display: inline-block;
+						font-family: $font-family-sans;
+					}
+				}
+
+				li {
+					list-style: square;
+					margin-bottom: .25em;
+				}
+			}
+		}
+	}
+
+	.profile-skills {
+		flex: 1 0 30%;
+
+		.skill-set {
+			padding-left: 0;
+
+			li {
+				list-style-type: none;
+				margin-bottom: .5em;
+
+				@media (max-width: $breakpoint) {
+					display: inline-block;
+					margin-bottom: 0;
+				}
+
+				.skill-name {
+					font-weight: bold;
+					font-size: .9em;
+
+					@media (max-width: $breakpoint) {
+						display: inline;
+					}
+				}
+
+				.skill-meter {
+					background: #d3d3d3;
+					width: 100%;
+					height: 8px;
+					position: relative;
+					z-index: 1;
+
+					@media (max-width: $breakpoint) {
+						display: none;
+					}
+
+					&::before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 0;
+						height: 100%;
+						z-index: 2;
+					}
+
+					&.skill-meter-1::before {
+						width: 20%;
+					}
+
+					&.skill-meter-2::before {
+						width: 40%;
+					}
+
+					&.skill-meter-3::before {
+						width: 60%;
+					}
+
+					&.skill-meter-4::before {
+						width: 80%;
+					}
+
+					&.skill-meter-5::before {
+						width: 100%;
+					}
+				}
+
+				$skills: (
+						docker: #56beee,
+						doctrine2: #fc6a31,
+						elasticsearch: #5e8830,
+						git: #f14e32,
+						gulp: #cf4646,
+						javascript: #f0db4f,
+						linux: #d70751,
+						mysql: #e48e00,
+						nettefw: #3484d2,
+						nginx: #090,
+						php: #8892bf,
+						postgresql: #336791,
+						rabbitmq: #f26822,
+						reactjs: #61dafb,
+						redis: #d82c20,
+				);
+				@each $skill, $color in $skills {
+					&.skill-#{$skill} {
+						.skill-name { color: #{$color}; }
+						.skill-meter::before { background: #{$color}; }
+					}
+				}
+			}
+		}
+	}
+}
+
+// business info
+
+.business {
+	border-top: 1px solid #eaeaea;
+	padding: 1.5em 0;
+	font-size: .9em;
+	color: #666;
+
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width: $breakpoint) {
+		display: block;
+	}
+
+	.business-address, .business-account, .business-registration {
+		flex-basis: 33%;
+	}
+}
+
+// keys
+
+.keys {
+	text-align: center;
+	font-size: .9em;
+	color: #666;
+
+	.key {
+		margin-bottom: .5em;
+
+		a {
+			background: #eaeaea;
+			color: #000;
+			text-decoration: none;
+			font-family: monospace;
+			font-size: .9em;
+			padding: .25em .5em;
+		}
+	}
+}

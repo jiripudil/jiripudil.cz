@@ -2,9 +2,7 @@
 
 namespace jiripudil\FrontModule\Presenters;
 
-use jiripudil\FrontModule\Components\ContactForm\TContactFormControlFactory;
 use jiripudil\FrontModule\Components\Head\HeadControl;
-use jiripudil\FrontModule\Components\SkillCloud\SkillCloudControl;
 use jiripudil\Latte\TimeAgoFilter;
 use jiripudil\Entities\Blog\Post;
 use jiripudil\Entities\Blog\Queries\PostsQuery;
@@ -19,8 +17,6 @@ class HomepagePresenter extends Presenter
 	use TBasePresenter {
 		beforeRender as baseBeforeRender;
 	}
-
-	use TContactFormControlFactory;
 
 
 	/** @var EntityManager */
@@ -37,12 +33,6 @@ class HomepagePresenter extends Presenter
 	{
 		$this->template->latestPost = $this->em->getRepository(Post::class)->fetchOne((new PostsQuery)->onlyPublished());
 		$this->template->postsCount = $this->em->getRepository(Post::class)->fetch((new PostsQuery)->onlyPublished())->getTotalCount() - 1;
-	}
-
-
-	protected function createComponentSkillCloud()
-	{
-		return new SkillCloudControl();
 	}
 
 

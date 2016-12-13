@@ -64,7 +64,7 @@ class TagsControl extends Control
 		$form->addSubmit('save', 'Save');
 
 		$form->addProtection('Your CSRF token has expired. Please re-submit the form.');
-		$form->onSuccess[] = $this->processAddForm;
+		$form->onSuccess[] = [$this, 'processAddForm'];
 
 		return $form;
 	}

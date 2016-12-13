@@ -38,7 +38,7 @@ class LoginFormControl extends Control
 			->setRequired('Please enter your password.');
 
 		$form->addSubmit('login', 'Login');
-		$form->onSuccess[] = $this->process;
+		$form->onSuccess[] = [$this, 'process'];
 
 		return $form;
 	}
