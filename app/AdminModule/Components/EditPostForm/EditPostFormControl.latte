@@ -1,4 +1,4 @@
-{form form class => 'adminForm'}
+{form form class => 'adminForm js-edit-post-form'}
 	<div n:foreach="$form->errors as $error" class="flash flash--error"><span class="fa fa-exclamation-triangle"></span> {$error}</div>
 
 	<p>
@@ -44,7 +44,7 @@
 		{input commentsAllowed}
 	</p>
 	<p>
-		{input save class => 'btn'}
+		{input save class => 'btn js-edit-post-save-button'}
 	</p>
 
 	<script>
@@ -118,9 +118,16 @@
 			});
 
 			// prevent unload
+			var checkUnsavedChanges = true;
+			var disableChangesCheck = function () {
+				checkUnsavedChanges = false;
+			};
+			$('.js-edit-post-save-button').on('click', disableChangesCheck)
+			$('.js-edit-post-form').on('submit', disableChangesCheck);
+
 			var initialValue = $('.post-edit textarea').val();
 			$(window).on('beforeunload', function (e) {
-				if ($('.post-edit textarea').val() !== initialValue) {
+				if (!!checkUnsavedChanges && $('.post-edit textarea').val() !== initialValue) {
 					var message = 'There are unsaved changes. Do you want to discard those changes and leave?';
 					e.originalEvent.returnValue = message;
 					return message;
