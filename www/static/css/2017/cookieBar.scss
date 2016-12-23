@@ -1,0 +1,22 @@
+.cookieLaw {
+	font-family: monospace;
+	font-size: .9em;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 42;
+	width: 100%;
+	padding: .5em 1em;
+	background: #262929;
+	color: #dddee0;
+
+	&::before {
+		color: #808080;
+		content: '$ ';
+	}
+
+	a {
+		color: #c079ed;
+		font-style: italic;
+	}
+}
