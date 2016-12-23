@@ -23,6 +23,7 @@ class ErrorPresenter extends Presenter
 
 		} elseif ($exception instanceof BadRequestException) {
 			$code = $exception->getCode();
+			$this->getHttpResponse()->setCode($code);
 			$this->setView(in_array($code, [403, 404, 410, 500]) ? $code : '4xx');
 
 			$this['head']->setTitle('Oops, an error! – Jiří Pudil');
@@ -30,6 +31,7 @@ class ErrorPresenter extends Presenter
 			Debugger::log("HTTP code $code: {$exception->getMessage()} in {$exception->getFile()}:{$exception->getLine()}", 'access');
 
 		} else {
+			$this->getHttpResponse()->setCode(500);
 			$this->setView('500');
 
 			$this['head']->addMeta('robots', 'noindex');
