@@ -86,7 +86,7 @@ class EditPostFormControl extends Control
 	{
 		$slug = Strings::webalize($title);
 
-		if ($this->presenter->ajax) {
+		if ($this->presenter->isAjax()) {
 			$this->presenter->payload->slug = $slug;
 			$this->presenter->sendPayload();
 		}
@@ -97,7 +97,7 @@ class EditPostFormControl extends Control
 	{
 		$preview = call_user_func($this->texy, $input);
 
-		if ($this->presenter->ajax) {
+		if ($this->presenter->isAjax()) {
 			$this->presenter->payload->preview = $preview;
 			$this->presenter->sendPayload();
 		}
