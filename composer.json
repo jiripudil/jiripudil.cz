@@ -28,7 +28,8 @@
 		"kdyby/validator": "dev-master",
 		"kdyby/doctrine-forms": "dev-master",
 		"dg/texy": "~2.9.0",
-		"kukulich/fshl": "~2.1.0"
+		"kukulich/fshl": "~2.1.0",
+		"sentry/sentry": "~1.6.0"
 	},
 	"require-dev": {
 		"nette/tester": "~1.7.0",
