@@ -4,7 +4,6 @@ namespace jiripudil\Entities\User;
 
 use Doctrine\ORM\Mapping as ORM;
 use jiripudil\Security\IHasher;
-use Nette\Object;
 use Nette\Security\AuthenticationException;
 use Nette\Security\IAuthenticator;
 use Nette\Security\IIdentity;
@@ -18,7 +17,7 @@ use Nette\Security\IIdentity;
  * @property string $email
  * @property string $password
  */
-class User extends Object implements IIdentity
+class User implements IIdentity
 {
 
 	/**

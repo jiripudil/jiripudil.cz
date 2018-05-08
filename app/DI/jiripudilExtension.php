@@ -17,22 +17,6 @@ class jiripudilExtension extends CompilerExtension implements IEntityProvider
 
 		$config = $this->loadFromFile(__DIR__ . '/jiripudil.neon');
 		$this->compiler->parseServices($builder, $config);
-
-		// doctrine forms
-		$builder->addDefinition($this->prefix('toManyMultiSelectMapper'))
-			->setClass(ToManyMultiSelect::class);
-	}
-
-
-	public function afterCompile(Code\ClassType $class)
-	{
-		/** @var Code\Method $initialize */
-		$initialize = $class->methods['initialize'];
-
-		$initialize->addBody('$this->getService(?)->registerMapper($this->getService(?));', [
-			'doctrineForms.entityFormMapper',
-			$this->prefix('toManyMultiSelectMapper'),
-		]);
 	}
 
 

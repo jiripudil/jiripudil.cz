@@ -2,10 +2,8 @@
 
 namespace jiripudil\Latte;
 
-use Nette\Object;
 
-
-class TimeAgoFilter extends Object
+class TimeAgoFilter
 {
 
 	/**

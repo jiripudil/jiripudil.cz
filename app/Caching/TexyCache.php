@@ -3,10 +3,9 @@
 namespace jiripudil\Caching;
 
 use Nette\Caching\Cache;
-use Nette\Object;
 
 
-class TexyCache extends Object
+class TexyCache
 {
 
 	/** @var Cache */

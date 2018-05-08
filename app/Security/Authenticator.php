@@ -2,16 +2,14 @@
 
 namespace jiripudil\Security;
 
-use jiripudil\Entities\User\Queries\UserByEmailQuery;
 use jiripudil\Entities\User\User;
 use Kdyby\Doctrine\EntityManager;
 use Kdyby\Doctrine\EntityRepository;
-use Nette\Object;
 use Nette\Security\AuthenticationException;
 use Nette\Security\IAuthenticator;
 
 
-class Authenticator extends Object
+class Authenticator
 {
 
 	/** @var EntityRepository */

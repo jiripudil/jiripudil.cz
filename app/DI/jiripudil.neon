@@ -27,7 +27,6 @@ services:
 	- {class: jiripudil\Console\GenerateSitemapCommand, tags: [kdyby.console.command]}
 
 	# factories
-	- {implement: jiripudil\Forms\IEntityFormFactory, inject: yes}
 	- jiripudil\FrontModule\Components\Head\IHeadControlFactory
 	- jiripudil\FrontModule\Components\Paging\IPagingControlFactory
 	- jiripudil\AdminModule\Components\FlashMessages\IFlashMessagesControlFactory

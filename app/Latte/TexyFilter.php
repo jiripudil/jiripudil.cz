@@ -4,11 +4,10 @@ namespace jiripudil\Latte;
 
 use FSHL;
 use jiripudil\Caching\TexyCache;
-use Nette\Object;
 use Texy;
 
 
-class TexyFilter extends Object
+class TexyFilter
 {
 
 	/** @var Texy\Texy */

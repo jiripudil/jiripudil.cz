@@ -2,7 +2,7 @@
 
 namespace jiripudil\AdminModule\Components\EditPostForm;
 
-use jiripudil\DoctrineForms\Controls\ToManyMultiSelect;
+use jiripudil\Entities\Blog\Tag;
 use jiripudil\Forms\Controls\DateTimeInput;
 use jiripudil\Forms\EntityForm;
 use jiripudil\Forms\IEntityFormFactory;
@@ -10,6 +10,8 @@ use jiripudil\Latte\TexyFilter;
 use jiripudil\Entities\Blog\Post;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\UI\Control;
+use Nette\Application\UI\Form;
+use Nette\Utils\ArrayHash;
 use Nette\Utils\Strings;
 
 
@@ -28,22 +30,18 @@ class EditPostFormControl extends Control
 	/** @var TexyFilter */
 	private $texy;
 
-	/** @var IEntityFormFactory */
-	private $formFactory;
 
-
-	public function __construct(Post $post, EntityManager $em, TexyFilter $texy, IEntityFormFactory $entityFormFactory)
+	public function __construct(Post $post, EntityManager $em, TexyFilter $texy)
 	{
 		$this->post = $post;
 		$this->em = $em;
 		$this->texy = $texy;
-		$this->formFactory = $entityFormFactory;
 	}
 
 
 	protected function createComponentForm()
 	{
-		$form = $this->formFactory->create();
+		$form = new Form();
 
 		$form->addText('title', 'Title')
 			->setRequired('Please enter title.');
@@ -63,20 +61,43 @@ class EditPostFormControl extends Control
 		$form->addCheckbox('published', 'Published');
 		$form->addCheckbox('commentsAllowed', 'Allow comments');
 
-		$form->addMultiSelect('tags', 'Tags')
-			->setOption(ToManyMultiSelect::ITEMS_TITLE, 'name')
-			->setOption(ToManyMultiSelect::ITEMS_ADDER, 'addTag')
-			->setOption(ToManyMultiSelect::ITEMS_REMOVER, 'removeTag');
+		$tagItems = $this->em->getRepository(Tag::class)->findPairs([], 'name', [], 'id');
+		$form->addMultiSelect('tags', 'Tags', $tagItems);
 
 		$form->addProtection('Your CSRF token has expired. Please re-submit the form.');
 		$form->addSubmit('save', 'Save');
-		$form->onSuccess[] = function (EntityForm $form) {
-			$this->em->persist($post = $form->getEntity());
-			$this->em->flush();
-			$this->onSave($post);
-		};
 
-		$form->bindEntity($this->post);
+		$form->setDefaults([
+			'title' => $this->post->title,
+			'slug' => $this->post->slug,
+			'perex' => $this->post->perex,
+			'text' => $this->post->text,
+			'datetime' => $this->post->datetime,
+			'cupsDrunk' => $this->post->cupsDrunk,
+			'published' => $this->post->published,
+			'commentsAllowed' => $this->post->commentsAllowed,
+			'tags' => \array_map(function (Tag $tag): int {
+				return $tag->id;
+			}, $this->post->tags),
+		]);
+
+		$form->onSuccess[] = function (Form $form, ArrayHash $values) {
+			$this->post->title = $values->title;
+			$this->post->slug = $values->slug;
+			$this->post->perex = $values->perex;
+			$this->post->text = $values->text;
+			$this->post->datetime = $values->datetime;
+			$this->post->cupsDrunk = $values->cupsDrunk;
+			$this->post->published = $values->published;
+			$this->post->commentsAllowed = $values->commentsAllowed;
+			$this->post->setTags(\array_map(function (int $id): Tag {
+				return $this->em->find(Tag::class, $id);
+			}, $values->tags));
+
+			$this->em->persist($this->post);
+			$this->em->flush();
+			$this->onSave($this->post);
+		};
 
 		return $form;
 	}

@@ -2,11 +2,10 @@
 
 namespace jiripudil\Latte;
 
-use Nette\Object;
 use Texy\Texy;
 
 
-class TexyFactory extends Object
+class TexyFactory
 {
 
 	/**

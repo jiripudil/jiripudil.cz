@@ -9,11 +9,10 @@ use jiripudil\Entities\Blog\Tag;
 use Kdyby\Doctrine\EntityDao;
 use Kdyby\Doctrine\EntityManager;
 use Nette\Application\LinkGenerator;
-use Nette\Object;
 use Nette\Utils\Html;
 
 
-class SitemapGenerator extends Object
+class SitemapGenerator
 {
 
 	/** @var string */

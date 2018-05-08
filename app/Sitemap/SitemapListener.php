@@ -7,10 +7,9 @@ use Doctrine\ORM\Events;
 use jiripudil\Entities\Blog\Post;
 use jiripudil\Entities\Blog\Tag;
 use Kdyby\Events\Subscriber;
-use Nette\Object;
 
 
-class SitemapListener extends Object implements Subscriber
+class SitemapListener implements Subscriber
 {
 
 	/** @var SitemapGenerator */

@@ -12,10 +12,9 @@ use Nette\Application\IRouter;
 use Nette\Application\Routers\Route;
 use Nette\Application\Routers\RouteList;
 use Nette\Http\IResponse;
-use Nette\Object;
 
 
-class RouterFactory extends Object
+class RouterFactory
 {
 
 	/** @var EntityManager */
