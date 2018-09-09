@@ -52,4 +52,4 @@ gulp.task 'watch', ->
 	gulp.watch 'www/static/css/**/*.scss', ['sass']
 	gulp.watch 'www/static/js/*.coffee', ['scripts']
 
-gulp.task 'build', ['less', 'sass', 'scripts']
+gulp.task 'build', gulp.parallel ['less', 'sass', 'scripts']
