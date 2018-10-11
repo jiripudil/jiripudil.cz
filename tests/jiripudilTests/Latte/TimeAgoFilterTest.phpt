@@ -30,7 +30,7 @@ class TimeAgoFilterTest extends Tester\TestCase
 		Assert::same('4 days ago', $timeAgoFilter(new \DateTime('-4 days -3 hours')));
 		Assert::same('2 weeks ago', $timeAgoFilter(new \DateTime('-2 weeks -2 days')));
 		Assert::same('3 months ago', $timeAgoFilter(new \DateTime('-3 months -4 days')));
-		Assert::same('ages ago', $timeAgoFilter(new \DateTime('-4 years')));
+		Assert::same('4 years ago', $timeAgoFilter(new \DateTime('-4 years')));
 	}
 
 }
