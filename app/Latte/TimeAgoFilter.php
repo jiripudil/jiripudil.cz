@@ -12,8 +12,8 @@ class TimeAgoFilter
 	 */
 	public function __invoke(\DateTime $date)
 	{
-		$periods = ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'ages'];
-		$lengths = [60, 60, 24, 7, 4.35, 12, 2, NULL];
+		$periods = ['second', 'minute', 'hour', 'day', 'week', 'month', 'year'];
+		$lengths = [60, 60, 24, 7, 4.35, 12, NULL];
 
 		$diff = (new \DateTime)->format('U') - $date->format('U');
 
@@ -29,10 +29,6 @@ class TimeAgoFilter
 
 		if ($diff === 1 && $periods[$i] === 'day') {
 			return 'yesterday';
-		}
-
-		if ($periods[$i] === 'ages') {
-			return 'ages ago';
 		}
 
 		if ($diff !== 1) {
