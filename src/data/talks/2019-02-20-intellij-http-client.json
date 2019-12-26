@@ -1,0 +1,10 @@
+{
+	"title": "Editor-based HTTP client in PHPStorm",
+	"slidesUrl": "",
+	"videoUrl": "https://www.youtube.com/watch?v=HZds_P4LBxQ",
+	"description": "This very short demo introduces the editor-based HTTP client in PhpStorm (or other JetBrains IDEs) and its capabilities, especially using response handler scripts to test a chain of successive requests.",
+	"language": "cs",
+	"event": "Péhápkaři Brno #25",
+	"eventUrl": "https://www.meetup.com/Pehapkari-Brno/events/258960849/",
+	"date": "2019-02-20"
+}

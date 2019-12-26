@@ -1,0 +1,11 @@
+@import '../../styles/mixins';
+
+.container {
+	@include container;
+	margin-top: 2rem;
+}
+
+.heading {
+	margin: 0 0 2rem;
+	font-size: 2rem;
+}

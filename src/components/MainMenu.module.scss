@@ -1,0 +1,46 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.mainMenu {
+	@include container;
+	border: 0 solid #eee;
+	border-bottom-width: 3px;
+
+	display: flex;
+	align-items: center;
+}
+
+.icon {
+	max-width: 2rem;
+	font-size: 1rem;
+}
+
+.menu {
+	margin: 0;
+	padding: 0;
+}
+
+.menuItem {
+	list-style-type: none;
+	display: inline-block;
+	margin-left: 1rem;
+}
+
+.link {
+	display: block;
+	padding: .5rem;
+	font-family: $font-family-sans;
+	font-size: .95rem;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	&:hover {
+		@extend .activeLink;
+	}
+}
+
+.activeLink {
+	color: #444;
+	margin-bottom: -3px;
+	border-bottom: 3px solid $color-coffee;
+}

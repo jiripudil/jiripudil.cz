@@ -1,7 +1,0 @@
-## Title of the document
-
-Some paragraph.
-
-/--sh
-$ ./configure && make && make install
-\--

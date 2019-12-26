@@ -1,0 +1,10 @@
+{
+	"title": "File upload for the 21st century",
+	"slidesUrl": "https://www.slideshare.net/jiripudil/file-upload-for-the-21st-century",
+	"videoUrl": "https://www.youtube.com/watch?v=ipWQ1QhN08s",
+	"description": "Handling large amounts of file uploads is quite a challenge for both ends of web development. This talk shows a solution using pure HTML5 awesomeness on the front-end and Nginx’s efficient upload module on the back-end.",
+	"language": "cs",
+	"event": "Poslední sobota #66",
+	"eventUrl": "",
+	"date": "2014-10-25"
+}

@@ -1,0 +1,10 @@
+{
+	"title": "Beyond DateTime: a bulletproof approach to date and time",
+	"slidesUrl": "https://docs.google.com/presentation/d/13kshwb5KjvsrPQa9D6zdW8rN7VHo2psFglVv9zkT8Ic/edit?usp=sharing",
+	"videoUrl": "https://www.youtube.com/watch?v=4ezAJooo_JY",
+	"description": "Pretty much every web application needs to work with date and time values in some way. But time is not as straightforward nor easy as most developers think, and the standard APIs in web languages do not make things any easier. This talk discusses different concepts of time and presents a more robust and less error-prone approach to working with date and time in PHP.",
+	"language": "cs",
+	"event": "Péhápkaři Brno #31",
+	"eventUrl": "https://www.meetup.com/Pehapkari-Brno/events/265402579/",
+	"date": "2019-10-16"
+}

@@ -1,0 +1,10 @@
+{
+	"title": "Writing truly slim APIs in Nette Framework",
+	"slidesUrl": "https://goo.gl/PWENjf",
+	"videoUrl": "https://www.facebook.com/pehapkari/videos/1491488170900988/",
+	"description": "Writing APIs using Nette Framework’s presenters can easily lead to bloated code and badly distributed responsibilites. This talk shows a different approach using Slim Framework, PSR-7 and middlewares, wired into Nette DI container to allow reuse of services.",
+	"language": "cs",
+	"event": "Poslední sobota #91",
+	"eventUrl": "https://www.facebook.com/events/481076475625278/",
+	"date": "2017-10-28"
+}

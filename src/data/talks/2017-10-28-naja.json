@@ -1,0 +1,10 @@
+{
+	"title": "Naja: modern AJAX library for Nette Framework",
+	"slidesUrl": "https://goo.gl/h2Af8E",
+	"videoUrl": "https://www.facebook.com/pehapkari/videos/1491504544232684/",
+	"description": "When I needed an AJAX library for Nette Framework, nette.ajax.js had unnecessary dependencies (jQuery) and nittro was too complex. Naja comes inbetween: it is a simple modern library, but at the same time it’s easily extensible for any use case.",
+	"language": "cs",
+	"event": "Poslední sobota #91",
+	"eventUrl": "https://www.facebook.com/events/481076475625278/",
+	"date": "2017-10-28"
+}

@@ -1,8 +1,0 @@
-## Title of the document
-
-Some paragraph.
-
-/--neon
-extensions:
-	- FooExtension(%wwwDir%)
-\--

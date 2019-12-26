@@ -1,0 +1,15 @@
+@import './variables';
+
+$container-width: 960px;
+
+@mixin container {
+	max-width: $container-width;
+	margin: 0 auto;
+	padding-left: 0;
+	padding-right: 0;
+
+	@media (max-width: $container-width) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}

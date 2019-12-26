@@ -1,0 +1,65 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.link {
+	display: block;
+	text-decoration: none;
+}
+
+.header {
+	@include container;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+.inlineHeader {
+}
+
+.picture {
+	max-width: 7rem;
+	margin-right: 2rem;
+
+	img {
+		width: 100%;
+		border-radius: 50%;
+	}
+
+	.inlineHeader & {
+		max-width: 5rem;
+		margin-right: 1rem;
+	}
+}
+
+.content {
+}
+
+.greeting {
+	color: #666;
+	font-size: .9rem;
+	margin: .5rem 0 -.5rem;
+
+	.inlineHeader & {
+		display: none;
+	}
+}
+
+.name {
+	margin: 0;
+	font-size: 2.2rem;
+	font-weight: 700;
+}
+
+.motto {
+	color: $color-coffee;
+	font-size: 1.2rem;
+	margin: .5rem 0;
+
+	code {
+		font-weight: 700;
+	}
+
+	.inlineHeader & {
+		margin-top: -.5rem;
+	}
+}

@@ -1,8 +1,0 @@
-## Title of the document
-
-Some paragraph.
-
-/--php
-echo 'code sample';
-exit(4);
-\--

@@ -1,0 +1,18 @@
+@import '../styles/mixins';
+
+.footer {
+	@include container;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-top: 1px solid #eee;
+
+	text-align: center;
+	font-size: 1rem;
+	color: #666;
+}
+
+.licenseLink {
+	text-decoration: none;
+	font-size: 1.3rem;
+	vertical-align: middle;
+}

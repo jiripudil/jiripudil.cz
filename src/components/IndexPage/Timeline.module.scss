@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.timeline {
+	position: relative;
+
+	&::before {
+		content: '';
+		width: 8px;
+		height: 100%;
+		position: absolute;
+		left: 24px;
+		top: 0;
+		z-index: -1;
+		background: $color-coffee-light-roast;
+	}
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+}
+
+.item {
+	padding-left: 5rem;
+	list-style-type: none;
+	margin-top: 3rem;
+	position: relative;
+
+	p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+}
+
+.logo {
+	position: absolute;
+	top: -1rem;
+	left: -.25rem;
+	width: 4rem;
+	height: 4rem;
+	background: #fff;
+
+	img {
+		width: 100%;
+	}
+}
+
+.year {
+	color: $color-coffee;
+	font-weight: 700;
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.company {
+	font-family: $font-family-sans;
+}

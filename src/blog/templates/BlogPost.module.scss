@@ -1,0 +1,40 @@
+@import '../../styles/mixins';
+
+.container {
+	@include container;
+	margin-top: 2rem;
+}
+
+.heading {
+	margin: 0 0 2rem;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.postBody {
+	max-width: 720px;
+	margin: 2rem auto;
+
+	pre, code {
+		font-size: 1rem;
+	}
+}
+
+.cupsOfCoffee {
+	border: 0 solid #eee;
+	border-width: 1px 0;
+	padding: 2rem 0;
+	font-size: 1.1rem;
+	text-align: center;
+}
+
+.coffee {
+	color: $color-coffee;
+	font-weight: 700;
+}
+
+.discussion {
+	margin-bottom: 2rem;
+}
+
+.relatedPost {}

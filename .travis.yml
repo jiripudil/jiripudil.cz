@@ -1,20 +1,24 @@
-language: php
+language: node_js
+node_js:
+  - lts/*
 
-php:
-  - 7.2
+before_install: cp ci/.npmrc .npmrc
 
-sudo: false
+script: yarn build
 
-before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --no-interaction --prefer-source
-  - php ./vendor/bin/parallel-lint -e php,phpt --exclude ./vendor .
+before_deploy:
+  - echo "$ENCRYPTION_PASSPHRASE" | gpg --passphrase-fd 0 --decrypt deploy/key.gpg
 
-script: ./vendor/bin/tester -p php -c ./tests/php-unix.ini ./tests/jiripudilTests
+deploy:
+  provider: pages:git
+  edge: true
+  local_dir: public
+  deploy_key: deploy/key
+  on:
+    branch: master
+    repo: jiripudil/jiripudil.cz
 
-after_failure:
-  - 'for i in $(find ./tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done'
+cache: yarn
 
-cache:
-  directories:
-    - $HOME/.composer/cache
+notifications:
+  email: false

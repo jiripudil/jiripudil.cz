@@ -1,0 +1,10 @@
+{
+	"title": "Tick tock, goes the clock",
+	"slidesUrl": "https://goo.gl/datNV4",
+	"videoUrl": "https://www.facebook.com/pehapkari/videos/vl.1642240972537590/1630943313622139/?type=1",
+	"description": "Pretty much every web application needs to work with date and time values. Time is, however, a tricky thing and there are many challenging issues one has to remember. This talk discusses them and tries to aid people towards bulletproof datetime handling.",
+	"language": "cs",
+	"event": "Péhápkaři Brno #17",
+	"eventUrl": "https://www.facebook.com/events/2022808271300282/",
+	"date": "2018-03-21"
+}
