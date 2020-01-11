@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "jiripudil.cz",
+  "description": null,
+  "icons": {
+    "60": "/icons-e9eb231ec0b920d3493210a9c5acc632/firefox_app_60x60.png",
+    "128": "/icons-e9eb231ec0b920d3493210a9c5acc632/firefox_app_128x128.png",
+    "512": "/icons-e9eb231ec0b920d3493210a9c5acc632/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": null,
+    "url": null
+  }
+}
