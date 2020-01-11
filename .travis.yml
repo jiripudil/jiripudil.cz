@@ -7,7 +7,7 @@ before_install: cp ci/.npmrc .npmrc
 script: yarn build
 
 before_deploy:
-  - echo "$ENCRYPTION_PASSPHRASE" | gpg --passphrase-fd 0 --decrypt deploy/key.gpg
+  - echo "$ENCRYPTION_PASSPHRASE" | gpg --passphrase-fd 0 --output deploy/key --decrypt deploy/key.gpg
 
 deploy:
   provider: pages:git
