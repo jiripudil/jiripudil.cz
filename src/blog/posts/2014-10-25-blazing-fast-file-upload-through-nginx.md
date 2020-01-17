@@ -25,7 +25,7 @@ But there's still plenty of room for improvement.
 
 The improvement is called [Nginx Upload Module](http://www.grid.net.ru/nginx/upload.en.html). It simply skips the part
 where the file is passed to PHP backend to be read and written once again. It saves the uploaded file to a temporary
-directory and only provides //information// about the file to PHP via POST variables that you can configure. (Besides,
+directory and only provides *information* about the file to PHP via POST variables that you can configure. (Besides,
 if you've been using Apache so far, you should get quite a performance boost just by employing Nginx.)
 
 

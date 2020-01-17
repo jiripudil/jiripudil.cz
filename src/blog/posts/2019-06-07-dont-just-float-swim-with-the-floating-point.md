@@ -145,7 +145,7 @@ BigRational::of('7/10');
 
 It provides three classes for three different use cases: one for integers of any length, one for numbers with
 finite decimal expansion, and one for all rational numbers. The last one is particularly interesting: it keeps
-track of the numerator and denominator separately, so that it can //exactly// represent numbers such as two thirds.
+track of the numerator and denominator separately, so that it can *exactly* represent numbers such as two thirds.
 
 Now if you want to add up two numbers, it's easy and quite intuitive:
 

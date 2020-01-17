@@ -56,7 +56,7 @@ on all browsers that Naja promises to support.
 
 I thought this would be much easier than it actually is: Naja, as the unit under test, needs to be able to access and
 modify the DOM and other APIs including Location and History, and also send and mock XMLHttpRequests. How to isolate
-the test //environment// from the test //runtime// in the browser is a hard nut to crack, and any help would be
+the test *environment* from the test *runtime* in the browser is a hard nut to crack, and any help would be
 appreciated :)
 
 

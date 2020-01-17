@@ -18,7 +18,7 @@ of dependencies tends to near one hundred for not-so-big applications. _One hund
 gives you a _guarantee_ of bugs and if you're unlucky, maybe even security issues.
 
 And frankly, how often do you update them? Not just the one that has a shiny new feature you want to use, but _all_
-of them? Or, in the first place, how do you even //find out// that you should update them? How do you learn about
+of them? Or, in the first place, how do you even *find out* that you should update them? How do you learn about
 new releases?
 
 We've been discussing this question recently and found out that it's a task best left to Composer itself. It has
@@ -54,7 +54,7 @@ dependencies, causing the CI job to fail. This is most important, because otherw
 to take a look at the job output. But it's also tricky:
 
 Imagine you are fixing a critical bug and you want to get it to production pronto, but then the CI server says
-"no, update this package first, there's a new //patch// version!" Oh, come on!
+"no, update this package first, there's a new *patch* version!" Oh, come on!
 
 That's why we've marked this job as allowed to fail. It needs a lot of discipline at this point: after you ignore
 the warning, push the bugfix to production and get some coffee to calm your nerves, you should revisit the failed

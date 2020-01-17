@@ -41,12 +41,12 @@ turns out it has its own way of passing time to it. Now you have two choices:
     like the lesser evil of the two.
 
 But then, a new task comes up: implement a two-factor authentication. This is usually done using TOTP codes, and the
-thing with TOTP codes is that //the first T stands for 'time-based'//. So you plug in another library: I've
+thing with TOTP codes is that *the first T stands for 'time-based'*. So you plug in another library: I've
 [written one](https://github.com/o2ps/TotpAuthenticator) myself in the past, and it suffers from the same problem:
 it depends on its own `TimeProvider`. Things are getting serious quickly.
 
 The purpose of the time provider interface is, obviously, to abstract the current system time. At the same time,
-I believe it's practical to have that aforementioned //single source of truth//, therefore the abstraction should
+I believe it's practical to have that aforementioned *single source of truth*, therefore the abstraction should
 be _application-wide_. You could as well go around passing the same `DateTimeImmutable` as an argument everywhere,
 but that's a lot of boilerplate. And while replacing this boilerplate with another boilerplate of configuring three
 different time providers to tell the same time is an option, it doesn't sound appealing.
