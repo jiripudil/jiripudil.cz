@@ -21,6 +21,7 @@
 <url> <loc>https://jiripudil.cz/blog/keeping-your-dependencies-up-to-date</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/frameworkless-application</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/dont-just-float-swim-with-the-floating-point</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jiripudil.cz/blog/body-parser-middleware-that-has-your-back</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -40,6 +41,7 @@
 <url> <loc>https://jiripudil.cz/blog/tag/frontend</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/gulp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jiripudil.cz/blog/tag/http</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/interop</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/java</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
