@@ -75,7 +75,7 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 					<DiscussionEmbed
 						shortname={site.siteMetadata.disqusShortname}
 						config={{
-							identifier: String(post.frontmatter.legacyId) || post.frontmatter.slug,
+							identifier: post.frontmatter.legacyId !== undefined ? String(post.frontmatter.legacyId) : post.frontmatter.slug,
 							title: post.frontmatter.title,
 							url: `${site.siteMetadata.siteUrl}/blog/${post.frontmatter.slug}`,
 						}}
