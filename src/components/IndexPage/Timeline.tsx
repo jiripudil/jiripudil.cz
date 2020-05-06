@@ -6,6 +6,8 @@ import rohlik from '../../images/timeline/rohlik.png';
 import muni from '../../images/timeline/muni.png';
 import grifart from '../../images/timeline/grifart.jpg';
 import smartlook from '../../images/timeline/smartlook.png';
+import ivyAssistant from '../../images/timeline/ivyAssistant.png';
+import skoleniNasBavi from '../../images/timeline/skoleniNasBavi.png';
 import oops from '../../images/timeline/oops.png';
 
 import * as styles from './Timeline.module.scss';
@@ -52,6 +54,18 @@ const timeline: TimelineItem[] = [
 		company: 'Smartlook',
 		image: smartlook,
 		description: <p>In mid-2018 I started working with Smartlook, a Czech startup providing website and mobile app analytics based on visitor recordings. With PHP being only a small part of the whole cloud-based solution, I also got in touch with React and Node.js applications written in TypeScript, and I’ve got to know Docker better.</p>,
+	},
+	{
+		year: '2020',
+		company: 'IVY assistant',
+		image: ivyAssistant,
+		description: <p>Late in 2019 I joined IVY assistant, a freshly born medicinal startup helping IVF patients stick to the scheduled treatment. I have worked on an event-sourced PHP backend, and built from scratch an administrative GUI for the clinics, written in TypeScript and React, and featuring a robust front-end encryption solution.</p>,
+	},
+	{
+		year: '2020',
+		company: 'Školení nás baví',
+		image: skoleniNasBavi,
+		description: <p>In early 2020 I started giving public workshops, organized by guys at <a href="https://www.skoleninasbavi.cz/lektori/jiri-pudil/">Školení nás baví</a>. The first workshop is all about JavaScript: it explains the good old foundations, shows the shiny new features, and sets up a Webpack-based dev stack. More workshops and topics are to come.</p>,
 	},
 	{
 		year: 'always',
