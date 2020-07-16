@@ -1,0 +1,10 @@
+{
+	"title": "Beyond DateTime: a bulletproof approach to date and time",
+	"slidesUrl": "https://docs.google.com/presentation/d/1S19LRKBkyoighUPLylhqT1R3-sVOQ8bKZiOZ3l74o5o/edit?usp=sharing",
+	"videoUrl": "https://www.youtube.com/watch?v=OfY-Sb846ps",
+	"description": "In one way or another, every web application works with date and time. But time is tricky, time zones are trickier, and the standard date-time APIs do not really make things easy. Luckily, Java has already worked it out for us! Let’s find out how to handle date and time values, display them to the user, and store them in the database, all without wasting hours on temporal bugs ever again. This talk discusses the different concepts of time, the problems of standard APIs, and presents an alternative, more robust approach inspired by Java’s proven Date and Time API.",
+	"language": "en",
+	"event": "PHP fwdays'20",
+	"eventUrl": "https://fwdays.com/en/event/php-fwdays-2020",
+	"date": "2020-05-30"
+}
