@@ -40,11 +40,12 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist-files
+          path: public/
       - uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
           keep_history: true
-          build_dir: public
+          build_dir: public/
           fqdn: jiripudil.cz
           jekyll: false
         env:
