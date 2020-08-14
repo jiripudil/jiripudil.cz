@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: '12.x'
       - run: |
-          yarn config set @fortawesome:registry https://npm.fontawesome.com/
-          yarn config set //npm.fontawesome.com/:_authToken ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
           yarn install --frozen-lockfile
       - run: yarn build
       - uses: actions/upload-artifact@v2
@@ -42,6 +42,7 @@ jobs:
       - uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
+          keep_history: true
           build_dir: public/
           fqdn: jiripudil.cz
           jekyll: false
