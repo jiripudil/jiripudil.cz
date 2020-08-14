@@ -27,7 +27,7 @@ jobs:
           yarn config set //npm.fontawesome.com/:_authToken ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
           yarn install --frozen-lockfile
       - run: yarn build
-      - run: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: dist-files
           path: public/
