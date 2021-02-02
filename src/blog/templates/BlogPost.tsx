@@ -1,4 +1,4 @@
-import {faCoffee} from '@fortawesome/pro-solid-svg-icons';
+import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {DiscussionEmbed} from 'disqus-react';
 import {graphql} from 'gatsby';
@@ -65,10 +65,14 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 					This post took
 					{' '}
 					<span className={styles.coffee}>
-						{post.frontmatter.cupsOfCoffee} <FontAwesomeIcon icon={faCoffee} title="cups" /> of coffee
+						{post.frontmatter.cupsOfCoffee} <FontAwesomeIcon icon={faCoffee} title="cups of coffee" />
 					</span>
 					{' '}
-					to write.
+					to write. If you liked it, feel free to buy me one!
+
+					<div>
+						<iframe src="https://github.com/sponsors/jiripudil/button" title="Sponsor jiripudil" height="35" width="116" style="border: 0;"></iframe>
+					</div>
 				</div>
 
 				<div className={styles.discussion}>

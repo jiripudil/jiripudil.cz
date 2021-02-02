@@ -1,4 +1,4 @@
-import {faCoffee} from '@fortawesome/pro-solid-svg-icons';
+import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Link} from 'gatsby';
 import React, {FunctionComponent} from 'react';

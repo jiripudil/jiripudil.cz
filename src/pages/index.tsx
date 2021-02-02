@@ -1,4 +1,4 @@
-import {faAddressBook, faBriefcase, faEnvelope, faEnvelopeOpenText, faKey, faMapMarkerAlt, faMoneyBill, faPhoneAlt} from '@fortawesome/pro-solid-svg-icons';
+import {faAddressBook, faBriefcase, faEnvelope, faEnvelopeOpenText, faKey, faMapMarkerAlt, faMoneyBill, faPhoneAlt} from '@fortawesome/free-solid-svg-icons';
 import {faGithub, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React, {FunctionComponent} from 'react';

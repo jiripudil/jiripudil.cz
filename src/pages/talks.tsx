@@ -1,4 +1,4 @@
-import {faCalendarAlt, faMapMarkerAlt, faPresentation, faVideo} from '@fortawesome/pro-solid-svg-icons';
+import {faCalendarAlt, faChalkboard, faMapMarkerAlt, faVideo} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {graphql} from 'gatsby';
 import React, {FunctionComponent, memo} from 'react';
@@ -88,7 +88,7 @@ const TalksPage: FunctionComponent<TalksPageProps> = (props) => {
 									</a>}
 
 									{node.slidesUrl && <a href={node.slidesUrl}>
-										<FontAwesomeIcon icon={faPresentation} />
+										<FontAwesomeIcon icon={faChalkboard} />
 										{' '}
 										slides
 									</a>}

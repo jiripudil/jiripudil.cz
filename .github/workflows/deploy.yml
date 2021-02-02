@@ -22,10 +22,7 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12.x'
-      - run: |
-          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
-          yarn install --frozen-lockfile
+      - run: yarn install --frozen-lockfile
       - run: yarn build
       - uses: actions/upload-artifact@v2
         with:

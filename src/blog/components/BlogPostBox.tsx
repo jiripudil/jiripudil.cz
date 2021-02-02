@@ -1,4 +1,4 @@
-import {faCalendarAlt, faCommentsAlt} from '@fortawesome/pro-solid-svg-icons';
+import {faCalendarAlt, faComments} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {CommentCount} from 'disqus-react';
 import {graphql, Link, useStaticQuery} from 'gatsby';
@@ -64,7 +64,7 @@ const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => {
 			</div>
 
 			<div className={styles.commentCount}>
-				<FontAwesomeIcon icon={faCommentsAlt} />
+				<FontAwesomeIcon icon={faComments} />
 				{' '}
 				<CommentCount
 					shortname={data.site.siteMetadata.disqusShortname}
