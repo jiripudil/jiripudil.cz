@@ -68,11 +68,14 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 						{post.frontmatter.cupsOfCoffee} <FontAwesomeIcon icon={faCoffee} title="cups of coffee" />
 					</span>
 					{' '}
-					to write. If you liked it, feel free to buy me one!
+					to write.
 
-					<div>
-						<iframe src="https://github.com/sponsors/jiripudil/button" title="Sponsor jiripudil" height="35" width="116" style="border: 0;"></iframe>
-					</div>
+					<p>
+						If you liked it, feel free to buy me one!
+						<div>
+							<iframe src="https://github.com/sponsors/jiripudil/button" title="Sponsor jiripudil" height="35" width="116" style={{border: 0}} />
+						</div>
+					</p>
 				</div>
 
 				<div className={styles.discussion}>
