@@ -23,6 +23,7 @@
 <url> <loc>https://jiripudil.cz/blog/dont-just-float-swim-with-the-floating-point</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/body-parser-middleware-that-has-your-back</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/do-not-bring-your-own-http-client</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jiripudil.cz/blog/di-services-do-not-need-names</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -35,6 +36,8 @@
 <url> <loc>https://jiripudil.cz/blog/tag/components</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/composer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/database</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jiripudil.cz/blog/tag/dependency-injection</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jiripudil.cz/blog/tag/design-patterns</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/doctrine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/floats</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jiripudil.cz/blog/tag/forms</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
