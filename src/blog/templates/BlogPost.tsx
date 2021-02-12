@@ -57,6 +57,7 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 					timeToRead={post.timeToRead}
 					tags={post.frontmatter.tags}
 					linkToPost={false}
+					heading={'h1'}
 				/>
 
 				<div className={styles.postBody} dangerouslySetInnerHTML={{__html: post.html}} />

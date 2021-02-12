@@ -16,6 +16,7 @@ interface BlogPostBoxProps {
 	readonly timeToRead: number
 	readonly tags: string[]
 	readonly linkToPost: boolean
+	readonly heading?: 'h1' | 'h2'
 }
 
 interface BlogPostBoxData {
@@ -39,10 +40,11 @@ const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => {
 		}
 	`);
 
+	const Heading = props.heading ?? 'h2';
 	return (
 		<div className={styles.box}>
 			<Link to={`/blog/${props.slug}`}>
-				<h2 className={styles.title}>{props.title}</h2>
+				<Heading className={styles.title}>{props.title}</Heading>
 			</Link>
 
 			<p className={styles.perex} dangerouslySetInnerHTML={{__html: props.perex}} />
