@@ -69,7 +69,7 @@ const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => {
 				<CommentCount
 					shortname={data.site.siteMetadata.disqusShortname}
 					config={{
-						identifier: props.legacyId !== undefined ? String(props.legacyId) : props.slug,
+						identifier: !!props.legacyId ? String(props.legacyId) : props.slug,
 						title: props.title,
 						url: `${data.site.siteMetadata.siteUrl}/blog/${props.slug}`,
 					}}
