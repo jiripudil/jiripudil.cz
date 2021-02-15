@@ -21,9 +21,9 @@
 }
 
 .cupsOfCoffee {
-	border: 0 solid #eee;
-	border-width: 1px 0;
-	padding: 2rem 0;
+	margin-top: 4rem;
+	background: $color-coffee-light-roast;
+	padding: 2rem 0 0.5rem;
 	font-size: 1.1rem;
 	text-align: center;
 }
@@ -31,6 +31,13 @@
 .coffee {
 	color: $color-coffee;
 	font-weight: 700;
+}
+
+.typo {
+	margin-bottom: 2rem;
+	padding: 1.4rem 0;
+	font-size: 0.95rem;
+	text-align: center;
 }
 
 .discussion {

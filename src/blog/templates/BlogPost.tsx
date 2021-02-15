@@ -33,6 +33,7 @@ interface BlogPostTemplateProps {
 				perex: string
 				tags: string[]
 			}
+			fileAbsolutePath: string
 		}
 	}
 }
@@ -79,6 +80,12 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 					</p>
 				</div>
 
+				<div className={styles.typo}>
+					Have you found a typo in the post?
+					<br/>
+					Please <a href={`https://github.com/jiripudil/jiripudil.cz/edit/master/src/blog/posts/${encodeURIComponent(post.fileAbsolutePath.split(/.*[\/|\\]/)[1])}`}>submit a pull request</a> with a fix :)
+				</div>
+
 				<div className={styles.discussion}>
 					<DiscussionEmbed
 						shortname={site.siteMetadata.disqusShortname}
@@ -122,6 +129,7 @@ export const query = graphql`
 				perex
 				tags
 			}
+			fileAbsolutePath
 		}
 	}
 `;
