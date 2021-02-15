@@ -335,8 +335,8 @@ correctly relies on the abstraction and lists the `Authenticator` interface as i
 
 ```yaml
 services:
-  LocalAuthenticator:
-    alias: Authenticator
+  LocalAuthenticator: ~
+  Authenticator: '@LocalAuthenticator'
 ```
 
 Nette Framework, on the other hand, doesn't need service names or hints. It doesn't force you to duplicate in configuration
