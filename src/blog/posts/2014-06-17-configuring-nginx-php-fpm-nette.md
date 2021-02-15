@@ -116,7 +116,7 @@ this in three lines, as opposed to Apache's mod_rewrite beast:
 
 ```
 location / {
-	try_files $uri $uri/ index.php?$args;
+	try_files $uri $uri/ index.php$is_args$args;
 }
 ```
 
