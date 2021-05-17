@@ -8,9 +8,11 @@ module.exports = {
 	},
 	plugins: [
 		{
-			resolve: 'gatsby-plugin-favicon',
+			resolve: 'gatsby-plugin-manifest',
 			options: {
-				logo: './src/images/me.jpg',
+				lang: 'en',
+				start_url: '/',
+				icon: './src/images/me.jpg',
 			},
 		},
 		{
