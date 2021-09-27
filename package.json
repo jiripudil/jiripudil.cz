@@ -2,6 +2,9 @@
 	"name": "jiripudil.cz",
 	"author": "Jiří Pudil <me@jiripudil.cz>",
 	"private": true,
+	"engines": {
+		"node": ">=16.0"
+	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",
 		"@fortawesome/free-brands-svg-icons": "^5.15.3",
@@ -35,7 +38,7 @@
 		"react-timeago": "^6.1.1"
 	},
 	"devDependencies": {
-		"@types/node": "^15.3.0",
+		"@types/node": "^16.10.1",
 		"@types/react": "^17.0.5",
 		"@types/react-dom": "^17.0.5",
 		"@types/react-helmet": "^6.1.1",

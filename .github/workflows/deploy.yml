@@ -21,7 +21,7 @@ jobs:
             ${{ runner.os }}-
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12.x'
+          node-version: '16.x'
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - uses: actions/upload-artifact@v2
