@@ -82,12 +82,6 @@ module.exports = {
 				stats: false,
 			},
 		},
-		{
-			resolve: 'gatsby-plugin-google-tagmanager',
-			options: {
-				id: 'GTM-P56LH3',
-			},
-		},
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
 		'gatsby-plugin-sharp',
