@@ -38,6 +38,7 @@ const SEO: FunctionComponent<SEOProps> = (props) => {
 		<meta property="og:description" content={props.description || data.site.siteMetadata.description} />
 		<meta property="og:type" content="website" />
 
+		<meta name="twitter:dnt" content="on" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:creator" content={data.site.siteMetadata.author} />
 		<meta name="twitter:title" content={props.title} />
