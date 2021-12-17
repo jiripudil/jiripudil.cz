@@ -1,7 +1,6 @@
-import {faCalendarAlt, faComments} from '@fortawesome/free-solid-svg-icons';
+import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {CommentCount} from 'disqus-react';
-import {graphql, Link, useStaticQuery} from 'gatsby';
+import {Link} from 'gatsby';
 import React, {FunctionComponent} from 'react';
 import TimeAgo from 'react-timeago';
 
@@ -19,27 +18,7 @@ interface BlogPostBoxProps {
 	readonly heading?: 'h1' | 'h2'
 }
 
-interface BlogPostBoxData {
-	site: {
-		siteMetadata: {
-			siteUrl: string
-			disqusShortname: string
-		}
-	}
-}
-
 const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => {
-	const data = useStaticQuery<BlogPostBoxData>(graphql`
-		query BlogPostBoxQuery {
-			site {
-				siteMetadata {
-					siteUrl
-					disqusShortname
-				}
-			}
-		}
-	`);
-
 	const Heading = props.heading ?? 'h2';
 	return (
 		<div className={styles.box}>
@@ -63,21 +42,6 @@ const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => {
 				<time dateTime={props.datetime}>
 					<TimeAgo date={props.datetime} />
 				</time>
-			</div>
-
-			<div className={styles.commentCount}>
-				<FontAwesomeIcon icon={faComments} />
-				{' '}
-				<CommentCount
-					shortname={data.site.siteMetadata.disqusShortname}
-					config={{
-						identifier: !!props.legacyId ? String(props.legacyId) : props.slug,
-						title: props.title,
-						url: `${data.site.siteMetadata.siteUrl}/blog/${props.slug}`,
-					}}
-				>
-					comments
-				</CommentCount>
 			</div>
 
 			{props.linkToPost && <Link className={styles.more} to={`/blog/${props.slug}`}>

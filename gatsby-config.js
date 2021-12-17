@@ -4,7 +4,6 @@ module.exports = {
 		description: 'A full-stack web developer from Brno',
 		author: '@jiripudil',
 		siteUrl: 'https://jiripudil.cz',
-		disqusShortname: 'jiripudil',
 	},
 	plugins: [
 		{
