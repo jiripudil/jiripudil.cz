@@ -68,17 +68,22 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 							container.removeChild(container.firstChild);
 						}
 
-						const utterances = document.createElement('script');
-						utterances.src = 'https://utteranc.es/client.js';
-						utterances.crossOrigin = 'anonymous';
-						utterances.async = true;
+						const giscus = document.createElement('script');
+						giscus.src = 'https://giscus.app/client.js';
+						giscus.crossOrigin = 'anonymous';
+						giscus.async = true;
 
-						utterances.setAttribute('data-repo', 'jiripudil/jiripudil.cz');
-						utterances.setAttribute('data-issue-term', 'og:title');
-						utterances.setAttribute('data-label', '💬 blog discussion');
-						utterances.setAttribute('data-theme', 'github-light');
+						giscus.setAttribute('data-repo', 'jiripudil/jiripudil.cz');
+						giscus.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkyNTI5NzY3Nw==');
+						giscus.setAttribute('data-category', 'Blog discussions');
+						giscus.setAttribute('data-category-id', 'DIC_kwDOAYIDDc4CAfUM');
+						giscus.setAttribute('data-mapping', 'og:title');
+						giscus.setAttribute('data-reactions-enabled', '1');
+						giscus.setAttribute('data-emit-metadata', '0');
+						giscus.setAttribute('data-theme', 'light');
+						giscus.setAttribute('data-lang', 'en');
 
-						container.appendChild(utterances);
+						container.appendChild(giscus);
 					}}
 				/>
 
