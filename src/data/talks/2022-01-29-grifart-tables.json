@@ -1,0 +1,10 @@
+{
+	"title": "Tables: statically typed access to database",
+	"slidesUrl": "",
+	"videoUrl": "https://www.youtube.com/watch?v=fE8nZdJPftI",
+	"description": "We've found a way to query the database – create, update, and delete rows, and fetch them based on complex conditions – in a way that can be statically analyzed and checked. And all this without writing a single line of boilperplate code.",
+	"language": "cs",
+	"event": "Poslední sobota s04e01",
+	"eventUrl": "https://www.facebook.com/events/979614842958484",
+	"date": "2022-01-29"
+}

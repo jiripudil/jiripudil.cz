@@ -1,0 +1,10 @@
+{
+	"title": "Generate yourself a strict application",
+	"slidesUrl": "",
+	"videoUrl": "https://www.youtube.com/watch?v=EjCGl_9IkUI",
+	"description": "A strict separation or responsibilities usually comes at a cost of writing plenty of boilerplate code: domain value objects, commands, queries, events, DTOs – all immutable and statically typed. This talk introduces a tool that can generate all this boilerplate for you.",
+	"language": "cs",
+	"event": "Poslední sobota s03e07",
+	"eventUrl": "https://www.facebook.com/events/417609573315216",
+	"date": "2021-11-27"
+}
