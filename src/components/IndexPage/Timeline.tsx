@@ -8,6 +8,7 @@ import grifart from '../../images/timeline/grifart.jpg';
 import smartlook from '../../images/timeline/smartlook.png';
 import ivyAssistant from '../../images/timeline/ivyAssistant.png';
 import skoleniNasBavi from '../../images/timeline/skoleniNasBavi.png';
+import superkoders from '../../images/timeline/superkoders.png';
 import oops from '../../images/timeline/oops.png';
 
 import * as styles from './Timeline.module.scss';
@@ -66,6 +67,12 @@ const timeline: TimelineItem[] = [
 		company: 'Školení nás baví',
 		image: skoleniNasBavi,
 		description: <p>In early 2020 I started giving public workshops, organized by guys at <a href="https://www.skoleninasbavi.cz/lektori/jiri-pudil/">Školení nás baví</a>. The first workshop is all about JavaScript: it explains the good old foundations, shows the shiny new features, and sets up a Webpack-based dev stack. More workshops and topics are to come.</p>,
+	},
+	{
+		year: '2022',
+		company: 'Superkoders',
+		image: superkoders,
+		description: <p>In January 2022, I shook hands with Superkoders, a Brno-based digital agency, to join them as a software architect, helping shape the future of their in-house content management solution.</p>,
 	},
 	{
 		year: 'always',
