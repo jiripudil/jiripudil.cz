@@ -27,7 +27,6 @@
 		"gatsby-transformer-json": "^4.4.0",
 		"gatsby-transformer-remark": "^5.4.0",
 		"gatsby-transformer-sharp": "^4.4.0",
-		"insights-js": "^1.2.10",
 		"normalize.css": "^8.0.1",
 		"prism-themes": "^1.7.0",
 		"prismjs": "^1.23.0",
