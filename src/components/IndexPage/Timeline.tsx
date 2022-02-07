@@ -59,7 +59,7 @@ const timeline: TimelineItem[] = [
 		year: '2020',
 		company: 'IVY assistant',
 		image: ivyAssistant,
-		description: <p>Late in 2019 I joined IVY assistant, a freshly born medicinal startup helping IVF patients stick to the scheduled treatment. I have worked on an event-sourced PHP backend, and built from scratch an administrative GUI for the clinics, written in TypeScript and React, and featuring a robust front-end encryption solution.</p>,
+		description: <p>Late in 2019 I joined IVY assistant, a freshly born medicinal startup helping IVF patients stick to the scheduled treatment. I have worked on an event-sourced PHP backend, and built from scratch an administrative GUI for the clinics, written in TypeScript and React, and featuring a robust front-end encryption solution. I have also done some work on mobile apps powered by Kotlin Multiplatform Mobile.</p>,
 	},
 	{
 		year: '2020',
