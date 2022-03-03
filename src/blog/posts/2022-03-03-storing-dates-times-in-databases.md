@@ -30,7 +30,7 @@ Let's see how we can use these types to represent various temporal concepts intr
 
 We'll start with the low-hanging fruits: `LocalDate` and `LocalTime` values are very simple to store because they map exactly to a `DATE` and a `TIME [WITHOUT TIME ZONE]` data types, respectively:
 
-```postgresql
+```sql
 CREATE TABLE datetimes ("date" date, "time" time);
 ```
 
@@ -58,7 +58,7 @@ $times = array_map(
 
 Similarly, a `LocalDateTime` can be stored in a `TIMESTAMP WITHOUT TIME ZONE`:
 
-```postgresql
+```sql
 CREATE TABLE datetimes (datetime timestamp without time zone);
 ```
 
@@ -93,7 +93,7 @@ $localDateTimes = array_map(
 
 Since instant is basically a (large) number of seconds since the Unix epoch, it's easy to grab the numeric value and store it in a `BIGINT` column:
 
-```postgresql
+```sql
 CREATE TABLE instants (instant bigint);
 ```
 
@@ -115,7 +115,7 @@ $instants = array_map(
 
 But it's not as comfortable for humans if you need to inspect the data manually: it puts some cognitive load on humans to parse huge numbers or compare them against each other, and you cannot really make anything of a huge numeric timestamp without converting it to a date-time value first. That's tedious if you need to reach into the database during debugging:
 
-```postgresql
+```sql
 SELECT instant FROM instants;
 ```
 
@@ -125,7 +125,7 @@ SELECT instant FROM instants;
 
 You have to convert these values in the query to get anything useful:
 
-```postgresql
+```sql
 SELECT to_timestamp(instant) FROM instants;
 ```
 
@@ -135,7 +135,7 @@ SELECT to_timestamp(instant) FROM instants;
 
 Another viable point of view, and one that I slightly prefer, is that an instant represents a timestamp, and should therefore be stored in a `TIMESTAMP [WITHOUT TIME ZONE]` data type:
 
-```postgresql
+```sql
 CREATE TABLE instants (instant timestamp without time zone);
 ```
 
@@ -160,7 +160,7 @@ $instants = array_map(
 
 In exchange, you get a formatted date and time, which is much easier to process for a human brain:
 
-```postgresql
+```sql
 SELECT instant FROM instants;
 ```
 
@@ -170,7 +170,7 @@ SELECT instant FROM instants;
 
 On top of that, `TIMESTAMP` is a better choice if you need timestamps with a higher resolution:
 
-```postgresql
+```sql
 INSERT INTO instants (instant) VALUES ('2022-03-03 07:00:00.123456');
 ```
 
@@ -181,7 +181,7 @@ The trickiest of them all is the `ZonedDateTime`. It might seem intuitive that t
 
 The sneaky quirk of the type is that it is only _aware_ of the time zone on the _input_. If you give it a value with a time zone, it normalizes it into UTC and stores that normalized value. Upon retrieval, it converts the value to the time zone as configured for the server instance:
 
-```postgresql
+```sql
 CREATE TABLE zoned ("datetime" timestamp with time zone);
 INSERT INTO zoned VALUES ('2022-03-03 08:00:00+01');
 
@@ -195,7 +195,7 @@ SELECT "datetime" FROM zoned;
 
 You can enforce a different time zone explicitly:
 
-```postgresql
+```sql
 SELECT "datetime" AT TIME ZONE 'Europe/Prague' FROM zoned;
 ```
 
@@ -207,7 +207,7 @@ But all the database ensures is that the resulting value always points to the sa
 
 The trick is to store the `LocalDateTime` value in a `TIMESTAMP WITHOUT TIME ZONE` instead, and save the time zone identifier along with it. You can use a separate column, or you can make use of PostgreSQL's composite types to store them in a single column:
 
-```postgresql
+```sql
 CREATE TABLE zoned ("datetime" timestamp without time zone, "timezone" text);
 ```
 
@@ -234,7 +234,7 @@ $zonedDateTimes = array_map(
 
 Sometimes you might have to store time intervals, such as race results or the length of a validity period. While `Duration`s (a deterministic time-based interval) and `Period`s (a calendar-based interval) are two entirely different things that cannot be mixed together, PostgreSQL defines the `INTERVAL` type to store either of them:
 
-```postgresql
+```sql
 CREATE TABLE durations (duration interval);
 CREATE TABLE periods (period interval);
 ```
@@ -251,7 +251,7 @@ $pdo->prepare('INSERT INTO periods (period) VALUES (?);')
 
 Unfortunately, PostgreSQL defaults to its own format of interval output which looks like `02:30` or `1 year 3 mons`. Unless you want to implement a parser for this format in PHP, I recommend you configure the database to use the more universal ISO 8601:
 
-```postgresql
+```sql
 SET intervalstyle = 'iso_8601';
 ```
 
