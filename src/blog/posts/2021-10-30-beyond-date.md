@@ -15,6 +15,12 @@ tags:
 - software-architecture
 - time
 ---
+> This is the second installment in a series of posts about handling date and time in web applications:
+>
+> 1. [Beyond DateTime: a domain-driven approach to date and time](/blog/beyond-datetime-domain-driven-approach)
+> 2. **Beyond Date: bulletproof date and time API in JavaScript**
+> 3. [Storing dates and times in databases: the painless way](/blog/storing-dates-times-in-databases-painlessly)
+
 As I've outlined in [the previous post](/blog/beyond-datetime-domain-driven-approach), working with date and time doesn't end with PHP. Nowadays more than ever, apps heavily rely on client-side execution. And let's be honest: JavaScript's `Date` is perhaps even a larger mess than PHP's `DateTime`.
 
 I could stop the argument there at the point I made in the previous post: `Date` is a single class used to represent many different temporal concepts, and as such it can hardly represent either of them properly. And it adds a bunch of other issues on top of that, including:

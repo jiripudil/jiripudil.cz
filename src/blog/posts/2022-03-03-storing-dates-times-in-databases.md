@@ -12,6 +12,12 @@ tags:
 - sql
 - time
 ---
+> This is the third installment in a series of posts about handling date and time in web applications:
+>
+> 1. [Beyond DateTime: a domain-driven approach to date and time](/blog/beyond-datetime-domain-driven-approach)
+> 2. [Beyond Date: bulletproof date and time API in JavaScript](/blog/beyond-date)
+> 3. **Storing dates and times in databases: the painless way**
+
 In the previous two posts, I've covered working with date and time both [in PHP](/blog/beyond-datetime-domain-driven-approach) and [in JavaScript](/blog/beyond-date), and sending temporal values back and forth between the client and the server. One of the remaining topics is about storing date and time in databases.
 
 If you haven't read the previous posts — especially the first one —, please do so now because it lays quite a lot of necessary groundwork. I'm going to refer to most of the concepts introduced there throughout this post. In fact, I think it will be best to list them one by one and discuss the most suitable SQL data type (or types) to store each of them. After all, we've already established the concepts and we know what kind of temporal data we need to represent and store.
