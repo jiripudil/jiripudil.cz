@@ -18,6 +18,28 @@
 	pre, code {
 		font-size: 1rem;
 	}
+
+	table {
+		border-collapse: collapse;
+		margin-top: 1em;
+
+		td {
+			padding: .25em .5em;
+		}
+
+		thead {
+			tr {
+				background: $color-coffee-light-roast;
+				border-bottom: 2px solid $color-coffee;
+			}
+		}
+
+		tbody {
+			tr {
+				border-bottom: 1px solid $color-coffee-light-roast;
+			}
+		}
+	}
 }
 
 .cupsOfCoffee {
