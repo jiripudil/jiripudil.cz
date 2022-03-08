@@ -23,7 +23,7 @@ Before we start, let's skim through the relevant data types we have at our dispo
 
 PostgreSQL (in line with the standard) defines three date-time data types: `DATE` for a date value without any time of day, `TIME` for a time value without specific date, and `TIMESTAMP` as a combination of the two. The latter two types come in two flavours: `WITH` and `WITHOUT TIME ZONE`. Finally, there's also `INTERVAL` for a temporal interval.
 
-Let's see how we can use these types to represent various temporal concepts introduced in the [initial post]((/blog/beyond-datetime-domain-driven-approach).
+Let's see how we can use these types to represent various temporal concepts introduced in the [initial post](/blog/beyond-datetime-domain-driven-approach).
 
 
 ## LocalDate and LocalTime
