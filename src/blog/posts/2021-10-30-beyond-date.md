@@ -20,6 +20,7 @@ tags:
 > 1. [Beyond DateTime: a domain-driven approach to date and time](/blog/beyond-datetime-domain-driven-approach)
 > 2. **Beyond Date: bulletproof date and time API in JavaScript**
 > 3. [Storing dates and times in databases: the painless way](/blog/storing-dates-times-in-databases-painlessly)
+> 4. [Your application needs a clock](/blog/your-application-needs-clock)
 
 As I've outlined in [the previous post](/blog/beyond-datetime-domain-driven-approach), working with date and time doesn't end with PHP. Nowadays more than ever, apps heavily rely on client-side execution. And let's be honest: JavaScript's `Date` is perhaps even a larger mess than PHP's `DateTime`.
 

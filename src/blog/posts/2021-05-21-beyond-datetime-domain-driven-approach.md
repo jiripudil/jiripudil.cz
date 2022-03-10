@@ -12,14 +12,14 @@ tags:
   - software-architecture
   - time
 ---
-This post is a condensed derivation of several talks that I've given at various meetups and conferences.
-
 > This is the first installment in a series of posts about handling date and time in web applications:
 >
 > 1. **Beyond DateTime: a domain-driven approach to date and time**
 > 2. [Beyond Date: bulletproof date and time API in JavaScript](/blog/beyond-date)
 > 3. [Storing dates and times in databases: the painless way](/blog/storing-dates-times-in-databases-painlessly)
+> 4. [Your application needs a clock](/blog/your-application-needs-clock)
 
+This post is a condensed derivation of several talks that I've given at various meetups and conferences.
 
 ## What is time, anyway?
 
