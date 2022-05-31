@@ -41,14 +41,20 @@
 		"@types/react-dom": "^18.0.5",
 		"@types/react-helmet": "^6.1.4",
 		"@types/react-timeago": "^4.1.2",
+		"cypress": "^9.7.0",
 		"sass": "^1.52.1",
+		"start-server-and-test": "^1.14.0",
 		"typescript": "^4.7.2"
 	},
 	"license": "BSD-3-Clause",
 	"scripts": {
 		"build": "gatsby build",
 		"develop": "gatsby develop",
-		"serve": "gatsby serve"
+		"serve": "gatsby serve --port 8000",
+		"test": "start-server-and-test develop http://localhost:8000 cypress:open",
+		"test:ci": "start-server-and-test serve http://localhost:8000 cypress:run",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run"
 	},
 	"repository": {
 		"type": "git",
