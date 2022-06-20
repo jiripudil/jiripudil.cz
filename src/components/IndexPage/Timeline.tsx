@@ -78,7 +78,7 @@ const timeline: TimelineItem[] = [
 		year: 'always',
 		company: 'giving back to the community',
 		image: oops,
-		description: <p>The community has given me so much that it’s only natural that I give back to it whenever I can. I try to help people on <a href="https://forum.nette.org/cs/profile.php?id=3206">Nette forum</a>, write <Link to="/blog">this blog</Link>, give <Link to="/talks">talks at meetups</Link>, help <a href="http://people.php.net/jiripudil">keep the PHP documentation</a> up-to-date, and <a href="https://github.com/jiripudil">contribute to</a> or even create and/or maintain a number of <a href="https://github.com/o2ps">open source projects</a>.</p>,
+		description: <p>The community has given me so much that it’s only natural that I give back to it whenever I can. I try to help people on <a href="https://forum.nette.org/cs/profile.php?id=3206">Nette forum</a>, write <Link to="/blog">this blog</Link>, give <Link to="/talks">talks at meetups</Link>, help <a href="http://people.php.net/jiripudil">keep the PHP documentation</a> up-to-date, and contribute to or even create and/or maintain a number of <a href="https://github.com/jiripudil">open source projects</a>.</p>,
 	},
 ];
 
