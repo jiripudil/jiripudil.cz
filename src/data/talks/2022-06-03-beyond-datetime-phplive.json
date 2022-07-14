@@ -1,7 +1,7 @@
 {
 	"title": "When DateTime is not enough: working with time comfortably and safely",
 	"slidesUrl": "https://docs.google.com/presentation/d/1bBGXqIdLdes1vSAAMX3wiXwMVzHHVpVXpiimuMdyy04/edit?usp=sharing",
-	"videoUrl": null,
+	"videoUrl": "https://www.youtube.com/watch?v=mMSDLvhHGDM",
 	"description": "Pretty much every web application needs to work with date and time values in some way. But time is not as straightforward nor easy as most developers think, and the standard APIs in web languages do not make things any easier. Luckily, there is an alternative, domain-driven solution, thanks to which we won't waste time on finding temporal bugs ever again!",
 	"language": "cs",
 	"event": "php.live 2022",
