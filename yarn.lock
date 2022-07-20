@@ -1163,7 +1163,7 @@
   dependencies:
     prop-types "^15.8.1"
 
-"@gatsbyjs/parcel-namer-relative-to-cwd@^1.4.0":
+"@gatsbyjs/parcel-namer-relative-to-cwd@1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-1.4.0.tgz#e1c225952922b03088a37649d06cf51b86ba4616"
   integrity sha512-oXhiaPtYTGYqGZlazYRUabWVHWx5z6sAyBVLhUnpsKcBsK815cET+mjeWDKpmvJmFTKHC72Bvy1WIEnW3++YxA==
@@ -1181,9 +1181,9 @@
     jimp "^0.16.1"
 
 "@gatsbyjs/reach-router@^1.3.6":
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/@gatsbyjs/reach-router/-/reach-router-1.3.7.tgz#d32029f2b4d91bb6977e7fd605237e3a5db20096"
-  integrity sha512-KQ5FvMb4BZUlSo+yQgd4t4WB8vkVPWfKjTpSl+Bx/FZhU6OL4lpwgfX7fXAY/18DogqyJCFiNAjV5eo3rQ5Alw==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/@gatsbyjs/reach-router/-/reach-router-1.3.8.tgz#8d338d974f991945f7f1568805e69d29188e259b"
+  integrity sha512-cENBHwX1XIcYvbe98kUXVAM3RAocq2AtGXcqd8SfKMYEMSQlpKhc8buu2vFOT2hoexSqmsf2MqmtnFKC5L6CEg==
   dependencies:
     invariant "^2.2.3"
     prop-types "^15.6.1"
@@ -1216,10 +1216,10 @@
     "@graphql-tools/utils" "^8.8.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/plugin-helpers@^2.4.2", "@graphql-codegen/plugin-helpers@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-2.5.0.tgz#83601ed1a362c05c64c4fc9c538a0f801bc6318f"
-  integrity sha512-0jM5/14EdM4yow5v8OGOnUmRqfA1gaWkh+J5berqQUpcFYfSQXD6+Idnkiju/jjIypEN7UvbPkC7BgryWVxexA==
+"@graphql-codegen/plugin-helpers@^2.4.2", "@graphql-codegen/plugin-helpers@^2.5.0", "@graphql-codegen/plugin-helpers@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-2.6.0.tgz#ae7005e6a2dcb0095ae350970c41606906048a27"
+  integrity sha512-z8uw6GdUvtKyt5YSijtj1yRqI0A2lBWdGIgTjgXaAKqSC+InlVBy+89859LlKNMrO7somdt44cbMys8r4Hbqeg==
   dependencies:
     "@graphql-tools/utils" "^8.8.0"
     change-case-all "1.0.14"
@@ -1238,33 +1238,33 @@
     tslib "~2.4.0"
 
 "@graphql-codegen/typescript-operations@^2.3.5":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.5.1.tgz#99a6f3b3086214086582d2731058ec74090da308"
-  integrity sha512-lGv+sPDXGcp/vDdIh7SoQjz8BRCZhLats4Hbqnf6gB7UtIasMvGuFDQyrKb3XAkQQYWqx/xtmEo0rBN8syV+Wg==
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.5.2.tgz#17dd6837eadb5bcd42b0c822b78f75c44a9a3c0b"
+  integrity sha512-iFZsdsF4380WrN2UQHfgLjrjyo9VFIsZuCaHe1OoC4fQQ+P3t/GfJ0aj0hc5hNwTNJZ3BzBLHSRgE6wqO4591A==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.5.0"
-    "@graphql-codegen/typescript" "^2.7.1"
-    "@graphql-codegen/visitor-plugin-common" "2.11.1"
+    "@graphql-codegen/plugin-helpers" "^2.6.0"
+    "@graphql-codegen/typescript" "^2.7.2"
+    "@graphql-codegen/visitor-plugin-common" "2.12.0"
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/typescript@^2.4.8", "@graphql-codegen/typescript@^2.7.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.7.1.tgz#e237dd8829842282245b79ce7ea024aaa3c39afb"
-  integrity sha512-qF4SBMgBnLcegba2s9+zC3NwgRhU0Kv+eS8kl9G5ldEHx9Bpu2tft+lk6fjqqhExDzJT+MEOU3Ecog3BzL2R1g==
+"@graphql-codegen/typescript@^2.4.8", "@graphql-codegen/typescript@^2.7.2":
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.7.2.tgz#ad47ad1abf8e49f455a47cb71d2d9fd149d7846d"
+  integrity sha512-lFqvLgw4oAChA9+ifC2K7Ie+mE+XvHcZqwXsm45bpF7jbmqfgjS0gvQNfu2egi6u4hdg+xL+olNxwnyhayrikw==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.5.0"
+    "@graphql-codegen/plugin-helpers" "^2.6.0"
     "@graphql-codegen/schema-ast" "^2.5.0"
-    "@graphql-codegen/visitor-plugin-common" "2.11.1"
+    "@graphql-codegen/visitor-plugin-common" "2.12.0"
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/visitor-plugin-common@2.11.1":
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.11.1.tgz#2653e25a8888767a6422a204441083299c3a83a4"
-  integrity sha512-AlrtGWKn2o89SPna75ATEHYAu95MUMucgBqLgcRvK9n/PHhVAbkDrNCH5pL03fE0HLOup3GpjX8DcnFBMU46IA==
+"@graphql-codegen/visitor-plugin-common@2.12.0":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.12.0.tgz#49b055c5c2c5c0890f2226ce9e84bb73dfd83801"
+  integrity sha512-ULhFgOY05U+dlPsXkPT2wSBaAZMtEuHPL5Q1u8xwBdHWHi/uT4L5zEcBx+If/f6UWrOw7ufjEM0L7XSupe1iCA==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.5.0"
+    "@graphql-codegen/plugin-helpers" "^2.6.0"
     "@graphql-tools/optimize" "^1.3.0"
     "@graphql-tools/relay-operation-optimizer" "^6.5.0"
     "@graphql-tools/utils" "^8.8.0"
@@ -5080,9 +5080,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.188:
-  version "1.4.194"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.194.tgz#2f83fcec5067907044a3d502ac7c3efb1fe6430b"
-  integrity sha512-ola5UH0xAP1oYY0FFUsPvwtucEzCQHucXnT7PQ1zjHJMccZhCDktEugI++JUR3YuIs7Ff7afz+OVEhVAIMhLAQ==
+  version "1.4.195"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.195.tgz#139b2d95a42a3f17df217589723a1deac71d1473"
+  integrity sha512-vefjEh0sk871xNmR5whJf9TEngX+KTKS3hOHpjoMpauKkwlGwtMz1H8IaIjAT/GNnX0TbGwAdmVoXCAzXf+PPg==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -5817,9 +5817,9 @@ fast-levenshtein@^2.0.6:
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
 
 fastest-levenshtein@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/fastest-levenshtein/-/fastest-levenshtein-1.0.12.tgz#9990f7d3a88cc5a9ffd1f1745745251700d497e2"
-  integrity sha512-On2N+BpYJ15xIC974QNVuYGMOlEVt4s0EOI3wwMqOmK1fdDY+FN/zltPV8vosq4ad4c/gJ1KHScUn/6AWIgiow==
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/fastest-levenshtein/-/fastest-levenshtein-1.0.14.tgz#9054384e4b7a78c88d01a4432dc18871af0ac859"
+  integrity sha512-tFfWHjnuUfKE186Tfgr+jtaFc0mZTApEgKDOeyN+FwOqRkO/zK/3h1AiRd8u8CY53owL3CUmGr/oI9p/RdyLTA==
 
 fastq@^1.13.0, fastq@^1.6.0:
   version "1.13.0"
@@ -6260,12 +6260,12 @@ gatsby-page-utils@^2.19.0:
     lodash "^4.17.21"
     micromatch "^4.0.5"
 
-gatsby-parcel-config@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-parcel-config/-/gatsby-parcel-config-0.10.0.tgz#51c37d2530aad27f484df8d75cc40060532afc70"
-  integrity sha512-FV+ccSeWPgicWRtycfUV1L7xyVIr6OSDnUkztnxq3Xj+OEBPC0NO2x07CA4tz16hSRDH1/qXgwY8AsHyenCidg==
+gatsby-parcel-config@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/gatsby-parcel-config/-/gatsby-parcel-config-0.10.1.tgz#58bbd2a3f789bdbb89da576aba472a8f3fb21b2c"
+  integrity sha512-KY/HgjOKY6LmG78zLATzz/xOMezPfyGeYpwg7YwmCJq+uIEZXlsSFku4uPbFSn9TM7fHNNjojqlPqAwoGjpn7A==
   dependencies:
-    "@gatsbyjs/parcel-namer-relative-to-cwd" "^1.4.0"
+    "@gatsbyjs/parcel-namer-relative-to-cwd" "1.4.0"
     "@parcel/bundler-default" "2.6.2"
     "@parcel/compressor-raw" "2.6.2"
     "@parcel/namer-default" "2.6.2"
@@ -6561,9 +6561,9 @@ gatsby-worker@^1.19.0:
     "@babel/runtime" "^7.15.4"
 
 gatsby@^4.15.1:
-  version "4.19.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.19.0.tgz#793f44b09a1b57c954f256990d50b9c4497f4d53"
-  integrity sha512-Bhga6PbDRSL3J7yIcVAWwN76cK0OeFWE4f5ggh4qEjnsL20kxW+LPwAexpZ5dVxbE1gsl1k/VDSX66Wj3vGH3A==
+  version "4.19.1"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.19.1.tgz#a55727aceeb8a8ee6a2756e517391c40ae6c8979"
+  integrity sha512-/QXVb31h8avikM4UW0l4xFLlK+nvFeKmMiNXOcGCZV9KbAjLisSdWkUxi8lWbhset8pKT3bZwelsRiHz8kQKLA==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.15.5"
@@ -6648,7 +6648,7 @@ gatsby@^4.15.1:
     gatsby-legacy-polyfills "^2.19.0"
     gatsby-link "^4.19.0"
     gatsby-page-utils "^2.19.0"
-    gatsby-parcel-config "^0.10.0"
+    gatsby-parcel-config "^0.10.1"
     gatsby-plugin-page-creator "^4.19.0"
     gatsby-plugin-typescript "^4.19.0"
     gatsby-plugin-utils "^3.13.0"
