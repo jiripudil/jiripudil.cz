@@ -1,7 +1,5 @@
 @import './variables';
 
-$container-width: 960px;
-
 @mixin container {
 	max-width: $container-width;
 	margin: 0 auto;
@@ -12,4 +10,42 @@ $container-width: 960px;
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
+}
+
+@mixin fullWidth {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+@mixin columns {
+	@include container;
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+	gap: 3rem;
+
+	@media (max-width: $breakpoint) {
+		display: block;
+	}
+}
+
+@mixin leftColumn {
+	flex: 1 1 66%;
+}
+
+@mixin rightColumn {
+	flex: 1 0 32%;
+}
+
+@mixin mainHeading {
+	font-weight: normal;
+	font-size: 1.2rem;
+	color: $color-dark;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	margin: 0;
 }

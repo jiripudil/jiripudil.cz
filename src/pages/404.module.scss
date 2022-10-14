@@ -1,0 +1,13 @@
+@import '../styles/mixins';
+
+.heading {
+	@include mainHeading;
+}
+
+.error {
+	@include container;
+
+	p {
+		font-size: 1.1rem;
+	}
+}

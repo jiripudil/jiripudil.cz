@@ -1,7 +1,11 @@
 import {graphql} from 'gatsby';
-import React, {FunctionComponent} from 'react';
+import React, {type FunctionComponent, useState} from 'react';
+import AboutMe from '../../components/AboutMe';
+import Hero from '../../components/Hero';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
+import {classNames} from '../../utils/classNames';
+import AllTags from '../components/AllTags';
 import BlogPostBox from '../components/BlogPostBox';
 import Pagination from '../components/Pagination';
 
@@ -18,12 +22,10 @@ interface BlogPageProps {
 				node: {
 					timeToRead: number
 					frontmatter: {
-						legacyId?: number
 						title: string
 						slug: string
 						datetime: string
 						perex: string
-						tags: string[]
 					}
 				}
 			}[]
@@ -32,32 +34,46 @@ interface BlogPageProps {
 }
 
 const BlogPage: FunctionComponent<BlogPageProps> = (props) => {
+	const [showTags, setShowTags] = useState(false);
+
 	return (
 		<Layout>
 			<SEO title={'Blog'} />
 
-			<div className={styles.container}>
-				<h1 className={styles.heading}>Blog</h1>
+			<Hero>
+				<div className={styles.heading}>
+					<h1 className={styles.mainHeading}>Blog</h1>
+					<div className={classNames(styles.toggleTopics, showTags && styles.toggleTopicsActive)}>
+						<button onClick={() => setShowTags(!showTags)}>Topics</button>
+					</div>
+				</div>
 
-				{props.data.posts.edges.map(({node}) => (
-					<BlogPostBox
-						key={node.frontmatter.slug}
-						legacyId={node.frontmatter.legacyId}
-						title={node.frontmatter.title}
-						slug={node.frontmatter.slug}
-						datetime={node.frontmatter.datetime}
-						perex={node.frontmatter.perex}
-						timeToRead={node.timeToRead}
-						tags={node.frontmatter.tags}
-						linkToPost={true}
+				{showTags && <AllTags />}
+			</Hero>
+
+			<div className={styles.wrapper}>
+				<div className={styles.posts}>
+					{props.data.posts.edges.map(({node}) => (
+						<BlogPostBox
+							key={node.frontmatter.slug}
+							title={node.frontmatter.title}
+							slug={node.frontmatter.slug}
+							datetime={node.frontmatter.datetime}
+							perex={node.frontmatter.perex}
+							timeToRead={node.timeToRead}
+						/>
+					))}
+
+					<Pagination
+						numberOfPages={props.pageContext.numberOfPages}
+						currentPage={props.pageContext.currentPage}
+						linkToPage={(page) => page === 1 ? '/blog' : `/blog/${page}`}
 					/>
-				))}
+				</div>
 
-				<Pagination
-					numberOfPages={props.pageContext.numberOfPages}
-					currentPage={props.pageContext.currentPage}
-					linkToPage={(page) => page === 1 ? '/blog' : `/blog/${page}`}
-				/>
+				<div className={styles.aboutMe}>
+					<AboutMe />
+				</div>
 			</div>
 		</Layout>
 	);
@@ -76,12 +92,10 @@ export const query = graphql`
 				node {
 					timeToRead
 					frontmatter {
-						legacyId
 						title
 						slug
 						datetime
 						perex
-						tags
 					}
 				}
 			}

@@ -71,10 +71,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
-				fonts: [
-					'Lora:400,700',
-					'PT Sans:400,700',
-				],
+				fonts: ['PT Sans:400,700'],
 				formats: ['woff', 'woff2'],
 				display: 'swap',
 				encode: false,

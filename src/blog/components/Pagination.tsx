@@ -1,8 +1,8 @@
+import {faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'gatsby';
-import React, {FunctionComponent} from 'react';
+import React, {type FunctionComponent} from 'react';
 import {Helmet} from 'react-helmet';
-import {classNames} from '../../utils/classNames';
-
+import Pill from '../../components/Pill';
 import * as styles from './Pagination.module.scss';
 
 interface PaginationProps {
@@ -26,15 +26,27 @@ const Pagination: FunctionComponent<PaginationProps> = (props) => {
 				{!isLast && <link rel="next" href={props.linkToPage(props.currentPage + 1)} />}
 			</Helmet>
 
-			<ul className={styles.paginator}>
-				{Array.from({length: props.numberOfPages}).map((_, index) => {
-					const page = index + 1;
-					const isCurrent = page === props.currentPage;
-					return <li key={page} className={classNames(styles.page, isCurrent && styles.currentPage)}>
-						<Link to={props.linkToPage(page)}>{page}</Link>
-					</li>;
-				})}
-			</ul>
+			<div className={styles.paginator}>
+				{!isFirst && (
+					<Pill
+						as={Link}
+						to={props.linkToPage(props.currentPage - 1)}
+						leftIcon={faAngleLeft}
+					>
+						Newer posts
+					</Pill>
+				)}
+
+				{!isLast && (
+					<Pill
+						as={Link}
+						to={props.linkToPage(props.currentPage + 1)}
+						rightIcon={faAngleRight}
+					>
+						Older posts
+					</Pill>
+				)}
+			</div>
 		</>
 	);
 };

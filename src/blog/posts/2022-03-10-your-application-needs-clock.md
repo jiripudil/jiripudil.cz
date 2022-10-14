@@ -27,7 +27,7 @@ If you've taken a look through the API of `brick/date-time` classes, you've prob
 ```php
 class Branch
 {
-    public __construct(
+    public function __construct(
         private readonly TimeZone $timeZone,
     ) {}
 
@@ -53,7 +53,7 @@ The method should look like this instead:
 ```php
 class Branch
 {
-    public __construct(
+    public function __construct(
         private readonly TimeZone $timeZone,
     ) {}
 

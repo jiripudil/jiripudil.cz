@@ -1,21 +1,25 @@
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Link} from 'gatsby';
-import React, {FunctionComponent} from 'react';
-
+import React, {type FunctionComponent} from 'react';
+import {classNames} from '../utils/classNames';
 import * as styles from './MainMenu.module.scss';
 
-interface MainMenuProps {}
+interface MainMenuProps {
+	readonly className: string;
+}
 
-const MainMenu: FunctionComponent<MainMenuProps> = (props) => (
-	<nav className={styles.mainMenu}>
-		<div className={styles.icon}>
+const MainMenu: FunctionComponent<MainMenuProps> = ({className}) => (
+	<nav className={classNames(styles.nav, className)}>
+		<input type="checkbox" id="menu-toggle" className={styles.menuToggle} />
+		<label htmlFor="menu-toggle" className={styles.menuToggleLabel}>
 			<FontAwesomeIcon icon={faBars} />
-		</div>
+		</label>
+
 		<ul className={styles.menu}>
 			<li className={styles.menuItem}>
-				<Link to="/" className={styles.link} activeClassName={styles.activeLink}>
-					About me
+				<Link to="/about" className={styles.link} activeClassName={styles.activeLink}>
+					About
 				</Link>
 			</li>
 

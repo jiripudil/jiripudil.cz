@@ -1,12 +1,14 @@
-import {faCalendarAlt, faChalkboard, faMapMarkerAlt, faVideo} from '@fortawesome/free-solid-svg-icons';
+import {faCalendarAlt, faChalkboard, faPlay} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {graphql} from 'gatsby';
-import React, {FunctionComponent, memo} from 'react';
+import React, {type FunctionComponent, memo} from 'react';
+import AboutMe from '../components/AboutMe';
+import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+import Pill from '../components/Pill';
 import SEO from '../components/SEO';
-
-import * as styles from './talks.module.scss';
 import {classNames} from '../utils/classNames';
+import * as styles from './talks.module.scss';
 
 interface TalksPageProps {
 	data: {
@@ -44,59 +46,63 @@ const TalksPage: FunctionComponent<TalksPageProps> = (props) => {
 		<Layout>
 			<SEO title={'Talks'} />
 
-			<div className={styles.container}>
+			<Hero>
 				<h1 className={styles.heading}>Talks</h1>
+			</Hero>
 
-				<p>I have given a number of talks at meetups and conferences:</p>
+			<div className={styles.wrapper}>
+				<div className={styles.talks}>
+					{props.data.talks.edges.map(({node}) => (
+						<div key={node.title} className={styles.talk}>
+							<h2>{node.title}</h2>
 
-				<ul className={styles.talks}>
-					{props.data.talks.edges.map(({node}) => {
-						return (
-							<li key={node.title} className={styles.talk}>
-								<div className={styles.title}>
-									{node.title}
-								</div>
+							<div className={styles.downloads}>
+								{node.videoUrl && (
+									<Pill
+										href={node.videoUrl}
+										className={styles.downloadPill}
+										leftIcon={faPlay}
+									>
+										Recording
+										<Flag language={node.language} />
+									</Pill>
+								)}
 
-								<p className={styles.description}>
-									{node.description}
-								</p>
+								{node.slidesUrl && (
+									<Pill
+										href={node.slidesUrl}
+										className={styles.downloadPill}
+										leftIcon={faChalkboard}
+									>
+										Slides
+									</Pill>
+								)}
+							</div>
 
+							<p>{node.description}</p>
+
+							<div className={styles.metadata}>
 								<div className={styles.event}>
-									<FontAwesomeIcon icon={faCalendarAlt} />
-									{' '}
-									<time dateTime={node.isoDate}>{node.date}</time>
-								</div>
-
-								<div className={styles.event}>
-									<FontAwesomeIcon icon={faMapMarkerAlt} />
-									{' '}
-									{node.eventUrl
+									@ {node.eventUrl
 										? <a href={node.eventUrl}>{node.event}</a>
 										: node.event
 									}
 								</div>
-
-								<div className={styles.links}>
-									<span>
-										<Flag language={node.language} />
-									</span>
-
-									{node.videoUrl && <a href={node.videoUrl}>
-										<FontAwesomeIcon icon={faVideo} />
+								<div className={styles.date}>
+									<time dateTime={node.isoDate}>
+										<FontAwesomeIcon icon={faCalendarAlt} />
 										{' '}
-										video
-									</a>}
-
-									{node.slidesUrl && <a href={node.slidesUrl}>
-										<FontAwesomeIcon icon={faChalkboard} />
-										{' '}
-										slides
-									</a>}
+										{node.date}
+									</time>
 								</div>
-							</li>
-						);
-					})}
-				</ul>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<div className={styles.aboutMe}>
+					<AboutMe />
+				</div>
 			</div>
 		</Layout>
 	);

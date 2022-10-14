@@ -1,46 +1,80 @@
 @import '../styles/mixins';
 @import '../styles/variables';
 
-.mainMenu {
-	@include container;
-	border: 0 solid #eee;
-	border-bottom-width: 3px;
-
-	display: flex;
-	align-items: center;
+.nav {
+	position: relative;
 }
 
-.icon {
-	max-width: 2rem;
-	font-size: 1rem;
+.menuToggle {
+	display: none;
+}
+
+.menuToggleLabel {
+	display: none;
+	margin-left: auto;
+
+	@media (max-width: $breakpoint) {
+		display: inline-block;
+		cursor: pointer;
+	}
 }
 
 .menu {
 	margin: 0;
 	padding: 0;
+	display: flex;
+	align-items: start;
+	gap: 2rem;
+
+	@media (max-width: $breakpoint) {
+		position: absolute;
+		top: -1rem;
+		right: 1.5rem;
+
+		background: #fff;
+		padding: 1rem 1.5rem;
+
+		opacity: 0;
+		width: 0;
+		visibility: hidden;
+		transition: all 1s ease, opacity .2s ease;
+
+		.menuToggle:checked ~ & {
+			opacity: 1;
+			width: auto;
+			visibility: visible;
+		}
+	}
 }
 
 .menuItem {
 	list-style-type: none;
-	display: inline-block;
-	margin-left: 1rem;
+	font-size: 1.3rem;
+	line-height: 1.3;
 }
 
 .link {
 	display: block;
-	padding: .5rem;
-	font-family: $font-family-sans;
-	font-size: .95rem;
-	text-transform: uppercase;
+	color: #3c4040;
 	text-decoration: none;
+	text-transform: lowercase;
 
-	&:hover {
-		@extend .activeLink;
+	&::after {
+		content: '';
+		display: block;
+		margin: auto;
+		height: 3px;
+		width: 0;
+		background: transparent;
+		transition: width .5s ease, background-color .5s ease;
 	}
-}
 
-.activeLink {
-	color: #444;
-	margin-bottom: -3px;
-	border-bottom: 3px solid $color-coffee;
+	&:hover, &.activeLink {
+		color: #222;
+
+		&::after {
+			width: 100%;
+			background: $color-accent;
+		}
+	}
 }

@@ -1,0 +1,63 @@
+@import '../../styles/variables';
+
+.tags {
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 1.5rem 0 0;
+
+		li {
+			display: inline-flex;
+			align-items: baseline;
+			margin: .25rem .5rem .25rem 0;
+
+			background: $color-light-plus;
+			font-size: 1rem;
+
+			padding: .2rem .4rem;
+			border-radius: .5rem;
+
+			&:hover {
+				background: $color-light;
+			}
+
+			&::before {
+				content: '#';
+				color: $color-dark;
+			}
+
+			a {
+				color: #222;
+				text-decoration: none;
+
+				.count {
+					font-size: .8rem;
+					color: $color-dark;
+					margin-left: .5rem;
+				}
+			}
+
+			&.activeTag {
+				background: $color-dark;
+
+				a {
+					color: #fff;
+				}
+
+				&::before {
+					color: $color-light;
+				}
+
+				.count {
+					font-size: .8rem;
+					color: $color-light;
+					margin-left: .5rem;
+				}
+			}
+
+			.clear {
+				margin-left: .5rem;
+			}
+		}
+	}
+}

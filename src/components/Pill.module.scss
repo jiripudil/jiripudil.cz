@@ -1,0 +1,22 @@
+@import '../styles/variables';
+
+.pill {
+	display: inline-flex;
+	align-items: center;
+	gap: .5rem;
+
+	font-size: 1rem;
+
+	padding: .5rem 1rem;
+	border-radius: 1.25rem;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	background: $color-dark;
+	color: #fff;
+
+	&:hover {
+		background: $color-dark-plus;
+		color: #fff;
+	}
+}

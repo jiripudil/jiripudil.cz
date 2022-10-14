@@ -1,0 +1,197 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.whoami {
+	display: flex;
+	gap: 2rem;
+
+	@media (max-width: $breakpoint) {
+		display: block;
+	}
+}
+
+.profile {
+	p {
+		margin: 1rem 0 1.5rem;
+		font-size: 1.2rem;
+		line-height: 1.7;
+	}
+}
+
+.hello {
+	@include mainHeading;
+}
+
+.recipe {
+	flex-shrink: 0;
+	padding-top: 1.25rem;
+}
+
+.pronunciation {
+	width: 65%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+
+	& > div {
+		font-size: 1.25rem;
+		color: $color-dark;
+	}
+
+	& > p {
+		font-size: 1rem;
+		line-height: 1.4;
+		margin: 0;
+	}
+
+	@media (max-width: $breakpoint) {
+		width: 100%;
+		margin-top: 1.5rem;
+	}
+}
+
+.aboutMeWrapper {
+	@include columns;
+}
+
+.aboutMe {
+	@include leftColumn;
+
+	h1, h2 {
+		@include mainHeading;
+		margin-top: 2.5rem;
+	}
+}
+
+.sidebar {
+	@include rightColumn;
+	margin-top: 2.5rem;
+}
+
+.skills {
+	margin-bottom: 2.5rem;
+
+	h2 {
+		@include mainHeading;
+		margin-top: 0;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-bottom: 1rem;
+			font-size: 1rem;
+
+			div {
+				flex: 0 0 10%;
+				text-align: center;
+				font-size: 1.3rem;
+				color: $color-accent-2;
+			}
+		}
+	}
+}
+
+.languages {
+	margin-bottom: 2.5rem;
+
+	h2 {
+		@include mainHeading;
+		margin-top: 0;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-bottom: 1rem;
+			font-size: 1rem;
+			color: $color-dark;
+
+			div {
+				flex: 0 0 10%;
+				text-align: center;
+
+				img {
+					width: 1.2rem;
+					border-radius: 50%;
+				}
+			}
+
+			strong {
+				font-size: 1.1rem;
+				color: #222;
+			}
+		}
+	}
+}
+
+.hobbies {
+	@extend .skills;
+}
+
+.contactOuterWrapper {
+	@include fullWidth;
+	background: $color-light-plus;
+	padding: 1.5rem 0;
+}
+
+.contactWrapper {
+	@include columns;
+}
+
+.contact {
+	@include leftColumn;
+
+	h2 {
+		@include mainHeading;
+		margin-bottom: 1rem;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-bottom: 1rem;
+			font-size: 1rem;
+
+			div {
+				flex: 0 0 3%;
+				text-align: center;
+				font-size: 1.3rem;
+				color: $color-accent-2;
+			}
+
+			&.twitter div {
+				color: $color-accent;
+			}
+
+			&.github div {
+				color: black;
+			}
+		}
+	}
+}
+
+.legal {
+	@include rightColumn;
+	@extend .contact;
+
+	@media (max-width: $breakpoint) {
+		margin-top: 2.5rem;
+	}
+}

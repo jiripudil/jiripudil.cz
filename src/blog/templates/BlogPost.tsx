@@ -1,10 +1,11 @@
-import {faCoffee} from '@fortawesome/free-solid-svg-icons';
+import {faCalendarAlt, faClock} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {graphql} from 'gatsby';
-import React, {FunctionComponent} from 'react';
+import {graphql, Link} from 'gatsby';
+import React, {type FunctionComponent} from 'react';
+import TimeAgo from 'react-timeago';
+import Hero from '../../components/Hero';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
-import BlogPostBox from '../components/BlogPostBox';
 import RelatedBlogPost from '../components/RelatedBlogPost';
 
 import * as styles from './BlogPost.module.scss';
@@ -18,7 +19,6 @@ interface BlogPostTemplateProps {
 			html: string
 			timeToRead: number
 			frontmatter: {
-				legacyId?: number
 				title: string
 				slug: string
 				datetime: string
@@ -37,27 +37,46 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 		<Layout>
 			<SEO title={`${post.frontmatter.title} – Blog`} />
 
-			<div className={styles.container}>
+			<Hero>
 				<div className={styles.heading}>
-					Blog
+					<h1>{post.frontmatter.title}</h1>
+					<p dangerouslySetInnerHTML={{__html: post.frontmatter.perex}}></p>
 				</div>
 
-				<BlogPostBox
-					key={post.frontmatter.slug}
-					title={post.frontmatter.title}
-					slug={post.frontmatter.slug}
-					datetime={post.frontmatter.datetime}
-					perex={post.frontmatter.perex}
-					timeToRead={post.timeToRead}
-					tags={post.frontmatter.tags}
-					linkToPost={false}
-					heading={'h1'}
-				/>
+				<div className={styles.metadata}>
+					<div className={styles.topics}>
+						<ul>
+							{post.frontmatter.tags.map((tag) => (
+								<li key={tag}>
+									<Link to={`/blog/tag/${tag}`}>
+										{tag}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
 
-				<div className={styles.postBody} dangerouslySetInnerHTML={{__html: post.html}} />
+					<div className={styles.readingTime}>
+						<FontAwesomeIcon icon={faCalendarAlt} />
+						{' '}
+						<time dateTime={post.frontmatter.datetime}>
+							<TimeAgo date={post.frontmatter.datetime} />
+						</time>
 
+						<FontAwesomeIcon icon={faClock} />
+						{' '}
+						{post.timeToRead} min read
+					</div>
+				</div>
+			</Hero>
+
+			<div
+				className={styles.postBody}
+				dangerouslySetInnerHTML={{__html: post.html}}
+			/>
+
+			<div className={styles.discussion}>
 				<div
-					className={styles.discussion}
 					ref={(container) => {
 						if (container === null) {
 							return;
@@ -86,35 +105,24 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 						container.appendChild(giscus);
 					}}
 				/>
+			</div>
 
-				<div className={styles.cupsOfCoffee}>
-					This post took
-					{' '}
-					<span className={styles.coffee}>
-						{post.frontmatter.cupsOfCoffee} <FontAwesomeIcon icon={faCoffee} title="cups of coffee" />
-					</span>
-					{' '}
-					to write.
-
-					<div>
-						If you liked it, feel free to buy me one!
-						<div>
-							<iframe src="https://github.com/sponsors/jiripudil/button" title="Sponsor jiripudil" height="35" width="116" style={{border: 0}} />
-						</div>
-					</div>
-				</div>
-
+			<div className={styles.typoWrapper}>
 				<div className={styles.typo}>
-					Have you found a typo in the post?
-					<br/>
+					<strong>Have you found a <span>tpyo</span> in the post?</strong>
+					{' '}
 					Please <a href={`https://github.com/jiripudil/jiripudil.cz/edit/master/src/blog/posts/${encodeURIComponent(post.fileAbsolutePath.split(/.*[\/|\\]/)[1])}`}>submit a pull request</a> with a fix :)
 				</div>
+			</div>
 
+			<div className={styles.relatedPostWrapper}>
 				<div className={styles.relatedPost}>
-					<RelatedBlogPost currentPost={{
-						slug: post.frontmatter.slug,
-						tags: post.frontmatter.tags,
-					}} />
+					<RelatedBlogPost
+						currentPost={{
+							slug: post.frontmatter.slug,
+							tags: post.frontmatter.tags,
+						}}
+					/>
 				</div>
 			</div>
 		</Layout>
@@ -128,7 +136,6 @@ export const query = graphql`
 			html
 			timeToRead
 			frontmatter {
-				legacyId
 				title
 				slug
 				datetime

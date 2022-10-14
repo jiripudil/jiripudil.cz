@@ -1,4 +1,4 @@
-import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
+import {faAngleRight, faCalendarAlt, faClock} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Link} from 'gatsby';
 import React, {FunctionComponent} from 'react';
@@ -7,48 +7,36 @@ import TimeAgo from 'react-timeago';
 import * as styles from './BlogPostBox.module.scss';
 
 interface BlogPostBoxProps {
-	readonly legacyId?: number
 	readonly title: string
 	readonly slug: string
 	readonly datetime: string
 	readonly perex: string
 	readonly timeToRead: number
-	readonly tags: string[]
-	readonly linkToPost: boolean
-	readonly heading?: 'h1' | 'h2'
 }
 
-const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => {
-	const Heading = props.heading ?? 'h2';
-	return (
-		<div className={styles.box}>
-			<Link to={`/blog/${props.slug}`}>
-				<Heading className={styles.title}>{props.title}</Heading>
-			</Link>
+const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => (
+	<div className={styles.blogPost}>
+		<Link to={`/blog/${props.slug}`}>
+			<h3>{props.title}</h3>
+			<p dangerouslySetInnerHTML={{__html: props.perex}} />
+			<div className={styles.bottomLine}>
+				<span className={styles.readMore}>
+					Read more
+				</span>
+				<FontAwesomeIcon icon={faAngleRight} />
 
-			<p className={styles.perex} dangerouslySetInnerHTML={{__html: props.perex}} />
+				<div className={styles.metadata}>
+					<FontAwesomeIcon icon={faCalendarAlt} />
+					<time dateTime={props.datetime}>
+						<TimeAgo date={props.datetime} />
+					</time>
 
-			<ul className={styles.tags}>
-				{props.tags.map((tag) => <li key={tag}>
-					<Link to={`/blog/tag/${tag}`}>
-						#{tag}
-					</Link>
-				</li>)}
-			</ul>
-
-			<div className={styles.publishedAt}>
-				<FontAwesomeIcon icon={faCalendarAlt} />
-				{' '}
-				<time dateTime={props.datetime}>
-					<TimeAgo date={props.datetime} />
-				</time>
+					<FontAwesomeIcon icon={faClock} />
+					{props.timeToRead} min read
+				</div>
 			</div>
-
-			{props.linkToPost && <Link className={styles.more} to={`/blog/${props.slug}`}>
-				Read more
-			</Link>}
-		</div>
-	);
-};
+		</Link>
+	</div>
+);
 
 export default BlogPostBox;

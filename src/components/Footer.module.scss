@@ -1,17 +1,48 @@
 @import '../styles/mixins';
 
+.sponsorshipWrapper {
+	@include fullWidth;
+	background: #444;
+	color: #fff;
+	margin-top: 2rem;
+	padding: 1rem 0;
+	text-align: center;
+}
+
+.sponsorship {
+	@include container;
+	font-size: 1.1rem;
+}
+
+.sponsor {
+	color: #222 !important;
+	background: #fff !important;
+	position: relative;
+	top: .1rem;
+
+	svg {
+		color: #c96198;
+		transition: transform .25s ease;
+		transform: scale(1);
+	}
+
+	&:hover svg {
+		transform: scale(1.2);
+	}
+}
+
 .footer {
 	@include container;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	border-top: 1px solid #eee;
-
+	padding: 1rem 0;
 	text-align: center;
 	font-size: 1rem;
 	color: #666;
 }
 
 .licenseLink {
+	display: inline-flex;
+	gap: .1rem;
+	color: #222;
 	text-decoration: none;
 	font-size: 1.3rem;
 	vertical-align: middle;

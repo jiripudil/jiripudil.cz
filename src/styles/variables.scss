@@ -1,8 +1,14 @@
-$font-family-serif: 'Lora', serif;
-$font-family-sans: 'PT Sans', sans-serif;
+$font-family: 'PT Sans', sans-serif;
 
-$color-coffee: #714316;
-$color-coffee-dark-roast: darken($color-coffee, 7%);
-$color-coffee-light-roast: lighten($color-coffee, 66%);
+$font-weight-normal: 400;
+$font-weight-bold: 700;
 
-$breakpoint: 640px;
+$color-dark: #005bb7;
+$color-dark-plus: #0051a4;
+$color-light: #ade8ff;
+$color-light-plus: #d6f3ff;
+$color-accent: #00aced;
+$color-accent-2: #007acc;
+
+$container-width: 1080px;
+$breakpoint: 768px;

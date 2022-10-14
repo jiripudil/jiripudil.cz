@@ -6,7 +6,7 @@
 	}
 
 	body {
-		font-family: $font-family-serif;
+		font-family: $font-family;
 		font-size: 1.2rem;
 		font-weight: 400;
 		line-height: 1.5;
@@ -14,10 +14,10 @@
 	}
 
 	a {
-		color: #222;
+		color: $color-dark;
 
 		&:hover {
-			color: #000;
+			color: $color-dark-plus;
 			text-decoration: none;
 		}
 	}

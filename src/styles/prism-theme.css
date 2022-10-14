@@ -13,7 +13,7 @@
 pre[class*="language-"],
 code[class*="language-"] {
 	color: #dddee0;
-	font-size: 13px;
+	font-size: 15px;
 	text-shadow: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	direction: ltr;
@@ -52,8 +52,8 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"] {
 	padding: .1em .3em;
 	border-radius: .3em;
-	color: #714316;
-	background: #f9ecdf;
+	color: #005bb7;
+	background: #d6f3ff;
 }
 /*********************************************************
 * Tokens

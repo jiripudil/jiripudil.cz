@@ -1,37 +1,8 @@
 @import '../../styles/variables';
 
 .paginator {
-	margin: 4rem 0 2rem;
 	padding: 0;
-	text-align: center;
-	font-size: 1.2rem;
-}
-
-.page {
-	list-style-type: none;
-	display: inline-block;
-	margin: 0 .1rem;
-
-	a {
-		display: block;
-		padding: 0 .4rem;
-		text-decoration: none;
-		background: #eaeaea;
-
-		&:hover {
-			background: $color-coffee;
-			color: #fff;
-		}
-	}
-}
-
-.currentPage {
-	a {
-		background: $color-coffee;
-		color: #fff;
-
-		&:hover {
-			background: $color-coffee-dark-roast;
-		}
-	}
+	display: flex;
+	justify-content: center;
+	gap: .5rem;
 }

@@ -1,7 +1,6 @@
 import {graphql, useStaticQuery} from 'gatsby';
 import React, {FunctionComponent} from 'react';
 import BlogPostBox from './BlogPostBox';
-
 import * as styles from './RelatedBlogPost.module.scss';
 
 interface RelatedBlogPostProps {
@@ -17,7 +16,6 @@ interface RelatedBlogPostQueryData {
 			node: {
 				timeToRead: number
 				frontmatter: {
-					legacyId?: number
 					title: string
 					slug: string
 					datetime: string
@@ -40,7 +38,6 @@ const RelatedBlogPost: FunctionComponent<RelatedBlogPostProps> = (props) => {
 					node {
 						timeToRead
 						frontmatter {
-							legacyId
 							title
 							slug
 							datetime
@@ -84,20 +81,17 @@ const RelatedBlogPost: FunctionComponent<RelatedBlogPostProps> = (props) => {
 	}
 
 	return (
-		<div className={styles.container}>
-			<div className={styles.heading}>
+		<div className={styles.relatedPost}>
+			<h2>
 				More from my blog
-			</div>
+			</h2>
 
 			<BlogPostBox
-				legacyId={relatedPost.post.frontmatter.legacyId}
 				title={relatedPost.post.frontmatter.title}
 				slug={relatedPost.post.frontmatter.slug}
 				datetime={relatedPost.post.frontmatter.datetime}
 				perex={relatedPost.post.frontmatter.perex}
 				timeToRead={relatedPost.post.timeToRead}
-				tags={relatedPost.post.frontmatter.tags}
-				linkToPost={true}
 			/>
 		</div>
 	);

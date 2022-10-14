@@ -1,0 +1,18 @@
+@import '../styles/variables';
+
+.pronounce {
+	padding: .1rem;
+	background: none;
+	box-shadow: none;
+	border: 0;
+
+	font-size: .8rem;
+	vertical-align: middle;
+	color: $color-dark;
+	cursor: pointer;
+
+	&:disabled {
+		color: grey;
+		cursor: not-allowed;
+	}
+}

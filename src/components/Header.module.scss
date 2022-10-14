@@ -1,65 +1,31 @@
 @import '../styles/mixins';
 @import '../styles/variables';
 
-.link {
-	display: block;
-	text-decoration: none;
-}
-
 .header {
 	@include container;
-	padding: 1rem;
+	padding: 2rem 0;
 	display: flex;
-	align-items: center;
-}
+	align-items: baseline;
+	gap: 3rem;
 
-.inlineHeader {
-}
-
-.picture {
-	max-width: 7rem;
-	margin-right: 2rem;
-
-	img {
-		width: 100%;
-		border-radius: 50%;
-	}
-
-	.inlineHeader & {
-		max-width: 5rem;
-		margin-right: 1rem;
+	@media (max-width: $breakpoint) {
+		justify-content: space-between;
 	}
 }
 
-.content {
-}
+.title {
+	font-size: 2rem;
+	line-height: 1;
+	font-weight: $font-weight-bold;
 
-.greeting {
-	color: #666;
-	font-size: .9rem;
-	margin: .5rem 0 -.5rem;
+	a {
+		text-decoration: none;
+		color: #222;
 
-	.inlineHeader & {
-		display: none;
+		&:hover {
+			color: #222;
+		}
 	}
 }
 
-.name {
-	margin: 0;
-	font-size: 2.2rem;
-	font-weight: 700;
-}
-
-.motto {
-	color: $color-coffee;
-	font-size: 1.2rem;
-	margin: .5rem 0;
-
-	code {
-		font-weight: 700;
-	}
-
-	.inlineHeader & {
-		margin-top: -.5rem;
-	}
-}
+.mainMenu {}

@@ -1,76 +1,186 @@
 @import '../../styles/mixins';
-
-.container {
-	@include container;
-	margin-top: 2rem;
-}
+@import '../../styles/variables';
 
 .heading {
-	margin: 0 0 2rem;
-	font-size: 2rem;
-	font-weight: 700;
+	h1 {
+		@include mainHeading;
+	}
+
+	p {
+		font-size: 1.2rem;
+		line-height: 1.6;
+		font-weight: normal;
+	}
+}
+
+.metadata {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width: $breakpoint) {
+		display: block;
+	}
+}
+
+.topics {
+	font-size: 1rem;
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		display: inline-flex;
+		align-items: baseline;
+		gap: .5rem;
+		margin-right: .5rem;
+
+		a {
+			color: #222;
+			background: $color-light-plus;
+			text-decoration: none;
+
+			padding: .2rem .4rem;
+			border-radius: .5rem;
+
+			&:hover {
+				background: $color-light;
+			}
+
+			&::before {
+				content: '#';
+				color: $color-dark;
+			}
+		}
+	}
+}
+
+.readingTime {
+	color: $color-dark;
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	font-size: 1rem;
+
+	svg {
+		margin-left: .5rem;
+	}
+
+	@media (max-width: $breakpoint) {
+		margin-top: 1.5rem;
+	}
 }
 
 .postBody {
-	max-width: 720px;
-	margin: 2rem auto;
+	max-width: 800px;
+	margin: 2.5rem auto 0;
+	padding-left: 0;
+	padding-right: 0;
 
-	pre, code {
+	@media (max-width: calc(800px + 1rem)) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	h2 {
+		font-size: 1.3rem;
+		font-weight: bold;
+		text-transform: none;
+		color: #222;
+		letter-spacing: 0;
+		margin: 3rem 0 1rem;
+	}
+
+	h3 {
+		margin: 1.5rem 0 1rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	ol, ul {
 		font-size: 1rem;
 	}
 
+	blockquote {
+		margin-left: 1.5rem;
+		border-left: .75rem solid $color-light-plus;
+		padding-left: 1.5rem;
+		margin-bottom: 1.5rem;
+
+		* {
+			font-size: 1rem;
+		}
+	}
+
+	pre {
+		border: none;
+		padding: 1rem;
+		margin: 0 -1rem 1.5rem;
+	}
+
 	table {
-		border-collapse: collapse;
-		margin-top: 1em;
+		th, td {
+			padding: .25rem .5rem;
+		}
+
+		th {
+			font-size: 1.1rem;
+		}
 
 		td {
-			padding: .25em .5em;
+			font-size: 1rem;
 		}
 
 		thead {
-			tr {
-				background: $color-coffee-light-roast;
-				border-bottom: 2px solid $color-coffee;
+			th {
+				text-align: left;
+				background: $color-light;
+				color: $color-dark-plus;
+				border-bottom: 1px solid $color-dark;
 			}
 		}
 
 		tbody {
-			tr {
-				border-bottom: 1px solid $color-coffee-light-roast;
+			tr:nth-child(even) td {
+				background: $color-light-plus;
 			}
 		}
 	}
-
-	blockquote {
-		margin-block: 0;
-		margin-inline: 1.5em;
-		padding-inline-start: 1.5em;
-		border-inline-start: .5em solid $color-coffee-light-roast;
-	}
-}
-
-.cupsOfCoffee {
-	margin-top: 4rem;
-	background: $color-coffee-light-roast;
-	padding: 2rem 0 0.5rem;
-	font-size: 1.1rem;
-	text-align: center;
-}
-
-.coffee {
-	color: $color-coffee;
-	font-weight: 700;
-}
-
-.typo {
-	margin-bottom: 2rem;
-	padding: 1.4rem 0;
-	font-size: 0.95rem;
-	text-align: center;
 }
 
 .discussion {
-	margin: 4rem 0 2rem;
+	@include container;
+	margin: 4rem auto 2rem;
 }
 
-.relatedPost {}
+.typoWrapper {
+	@include fullWidth;
+	background: $color-light-plus;
+}
+
+.typo {
+	@include container;
+	margin-bottom: 2rem;
+	padding: 1.5rem 0;
+	font-size: .95rem;
+	text-align: center;
+
+	span {
+		border-bottom: 2px dashed #e00;
+	}
+}
+
+.relatedPostWrapper {
+	@include columns;
+}
+
+.relatedPost {
+	@include leftColumn;
+}

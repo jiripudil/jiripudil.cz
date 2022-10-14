@@ -1,5 +1,5 @@
 import {graphql, useStaticQuery} from 'gatsby';
-import React, {FunctionComponent} from 'react';
+import React, {type FunctionComponent, type PropsWithChildren} from 'react';
 import {Helmet} from 'react-helmet';
 
 interface SEOProps {
@@ -7,7 +7,7 @@ interface SEOProps {
 	readonly description?: string;
 }
 
-const SEO: FunctionComponent<SEOProps> = (props) => {
+const SEO: FunctionComponent<PropsWithChildren<SEOProps>> = (props) => {
 	const data = useStaticQuery(graphql`
 		query SEOStaticQuery {
 			site {

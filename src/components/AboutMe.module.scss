@@ -1,0 +1,17 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.aboutMe {
+	background: $color-light-plus;
+	padding: 1.5rem;
+
+	h2 {
+		@include mainHeading;
+		margin-bottom: 1.5rem;
+	}
+
+	p {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+}
