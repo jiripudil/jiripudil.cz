@@ -35,13 +35,11 @@
 		padding: 1rem 1.5rem;
 
 		opacity: 0;
-		width: 0;
 		visibility: hidden;
-		transition: all 1s ease, opacity .2s ease;
+		transition: visibility 1s ease, opacity .2s ease;
 
 		.menuToggle:checked ~ & {
 			opacity: 1;
-			width: auto;
 			visibility: visible;
 		}
 	}
