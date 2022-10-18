@@ -22,8 +22,8 @@ const BlogPostBox: FunctionComponent<BlogPostBoxProps> = (props) => (
 			<div className={styles.bottomLine}>
 				<span className={styles.readMore}>
 					Read more
+					<FontAwesomeIcon icon={faAngleRight} />
 				</span>
-				<FontAwesomeIcon icon={faAngleRight} />
 
 				<div className={styles.metadata}>
 					<FontAwesomeIcon icon={faCalendarAlt} />

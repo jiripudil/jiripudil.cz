@@ -18,10 +18,10 @@ export const VoiceProvider: FunctionComponent<PropsWithChildren> = ({children}) 
 			return;
 		}
 
-		window.speechSynthesis.onvoiceschanged = () => {
+		window.speechSynthesis.addEventListener('voiceschanged', () => {
 			const voices = window.speechSynthesis.getVoices();
 			setCzechVoice(voices);
-		};
+		});
 	}, []);
 
 	return (

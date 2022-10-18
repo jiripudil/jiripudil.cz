@@ -33,14 +33,23 @@
 		align-items: center;
 		gap: .5rem;
 
+		@media (max-width: $breakpoint) {
+			flex-direction: column-reverse;
+			align-items: start;
+		}
+
 		.readMore {
 			font-size: .9rem;
 			font-weight: bold;
 			text-transform: uppercase;
-		}
 
-		svg {
-			font-size: 1rem;
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+
+			svg {
+				font-size: 1rem;
+			}
 		}
 
 		.metadata {
@@ -56,6 +65,11 @@
 
 			svg {
 				margin-left: .5rem;
+			}
+
+			@media (max-width: $breakpoint) {
+				margin-left: 0;
+				margin-bottom: .5rem;
 			}
 		}
 	}

@@ -40,6 +40,10 @@
 			list-style-type: none;
 			cursor: pointer;
 
+			&::-webkit-details-marker {
+				display: none;
+			}
+
 			&::before {
 				content: '';
 				display: block;
