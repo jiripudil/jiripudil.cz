@@ -11,7 +11,7 @@
 
 .profile {
 	p {
-		margin: 1rem 0 1.5rem;
+		margin: 1rem 0 0;
 		font-size: 1.2rem;
 		line-height: 1.7;
 	}
@@ -24,6 +24,10 @@
 .recipe {
 	flex-shrink: 0;
 	padding-top: 1.25rem;
+}
+
+.learnMore {
+	margin-top: .5rem;
 }
 
 .featuredWrapper {

@@ -2,6 +2,7 @@ export const whoami: string;
 export const profile: string;
 export const hello: string;
 export const recipe: string;
+export const learnMore: string;
 export const featuredWrapper: string;
 export const fromMyBlog: string;
 export const latestTalk: string;

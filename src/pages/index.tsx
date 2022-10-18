@@ -50,14 +50,17 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({data}) => (
 				<div className={styles.profile}>
 					<div className={styles.hello}>Hello, I am Jiří Pudil</div>
 					<p>I am a full-stack web developer from Brno, Czech Republic. I contribute to open-source projects, write a technical blog, and speak at meetups and conferences.</p>
-					<Pill as={Link} to="/about" rightIcon={faAngleRight}>
-						Learn more about me
-					</Pill>
 				</div>
 
 				<div className={styles.recipe}>
 					<Recipe />
 				</div>
+			</div>
+
+			<div className={styles.learnMore}>
+				<Pill as={Link} to="/about" rightIcon={faAngleRight}>
+					Learn more about me
+				</Pill>
 			</div>
 		</Hero>
 
