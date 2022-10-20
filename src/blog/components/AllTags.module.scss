@@ -1,6 +1,16 @@
 @import '../../styles/variables';
 
 .tags {
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+
+	&.open {
+		overflow: auto;
+		visibility: visible;
+		height: auto;
+	}
+
 	ul {
 		list-style-type: none;
 		padding: 0;

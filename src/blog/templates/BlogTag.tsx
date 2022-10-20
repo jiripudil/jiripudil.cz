@@ -1,9 +1,10 @@
 import {graphql} from 'gatsby';
-import React, {type FunctionComponent} from 'react';
+import React, {type FunctionComponent, useState} from 'react';
 import AboutMe from '../../components/AboutMe';
 import Hero from '../../components/Hero';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
+import {classNames} from '../../utils/classNames';
 import AllTags from '../components/AllTags';
 import BlogPostBox from '../components/BlogPostBox';
 import Pagination from '../components/Pagination';
@@ -34,13 +35,21 @@ interface BlogTagTemplateProps {
 }
 
 const BlogTagTemplate: FunctionComponent<BlogTagTemplateProps> = (props) => {
+	const [showTags, setShowTags] = useState(true);
+
 	return (
 		<Layout>
 			<SEO title={`Topic #${props.pageContext.tag} – Blog`} />
 
 			<Hero>
-				<h1 className={styles.mainHeading}>Blog &ndash; #{props.pageContext.tag}</h1>
-				<AllTags activeTag={props.pageContext.tag} />
+				<div className={styles.heading}>
+					<h1 className={styles.mainHeading}>Blog &ndash; #{props.pageContext.tag}</h1>
+					<div className={classNames(styles.toggleTopics, showTags && styles.toggleTopicsActive)}>
+						<button onClick={() => setShowTags(!showTags)}>Topics</button>
+					</div>
+				</div>
+
+				<AllTags isOpen={showTags} activeTag={props.pageContext.tag} />
 			</Hero>
 
 			<div className={styles.wrapper}>

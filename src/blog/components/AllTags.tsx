@@ -18,10 +18,11 @@ interface AllTagsQueryData {
 }
 
 interface AllTagsProps {
+	readonly isOpen: boolean;
 	readonly activeTag?: string;
 }
 
-export const AllTags: FunctionComponent<AllTagsProps> = ({activeTag}) => {
+export const AllTags: FunctionComponent<AllTagsProps> = ({isOpen, activeTag}) => {
 	const data = useStaticQuery<AllTagsQueryData>(graphql`
 		query AllTags {
 			posts: allMarkdownRemark(
@@ -48,7 +49,7 @@ export const AllTags: FunctionComponent<AllTagsProps> = ({activeTag}) => {
 	}
 
 	return (
-		<div className={styles.tags}>
+		<div className={classNames(styles.tags, isOpen && styles.open)}>
 			<ul>
 				{Array.from(uniqueTags).map(([tag, count]) => (
 					<li className={classNames(tag === activeTag && styles.activeTag)}>

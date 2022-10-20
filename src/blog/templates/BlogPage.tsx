@@ -48,7 +48,7 @@ const BlogPage: FunctionComponent<BlogPageProps> = (props) => {
 					</div>
 				</div>
 
-				{showTags && <AllTags />}
+				<AllTags isOpen={showTags} />
 			</Hero>
 
 			<div className={styles.wrapper}>
