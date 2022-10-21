@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {graphql, Link} from 'gatsby';
 import React, {type FunctionComponent} from 'react';
 import TimeAgo from 'react-timeago';
+import AboutMe from '../../components/AboutMe';
 import Hero from '../../components/Hero';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
@@ -123,6 +124,10 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 							tags: post.frontmatter.tags,
 						}}
 					/>
+				</div>
+
+				<div className={styles.aboutMe}>
+					<AboutMe />
 				</div>
 			</div>
 		</Layout>

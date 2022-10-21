@@ -184,4 +184,10 @@
 
 .relatedPost {
 	@include leftColumn;
+	margin-top: 1.5rem;
+}
+
+.aboutMe {
+	@include rightColumn;
+	margin-top: 1.5rem;
 }

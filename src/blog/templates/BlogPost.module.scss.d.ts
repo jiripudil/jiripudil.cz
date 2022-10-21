@@ -8,3 +8,4 @@ export const typoWrapper: string;
 export const typo: string;
 export const relatedPostWrapper: string;
 export const relatedPost: string;
+export const aboutMe: string;

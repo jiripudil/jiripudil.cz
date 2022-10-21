@@ -2,14 +2,8 @@
 @import '../../styles/variables';
 
 .relatedPost {
-	width: 65%;
-
-	@media (max-width: $breakpoint) {
-		width: 100%;
-	}
-
 	h2 {
 		@include mainHeading;
-		margin: 2.5rem 0;
+		margin: 1.5rem 0 2.5rem;
 	}
 }
