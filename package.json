@@ -3,7 +3,7 @@
 	"author": "Jiří Pudil <me@jiripudil.cz>",
 	"private": true,
 	"engines": {
-		"node": ">=16.0"
+		"node": ">=18.0"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -21,6 +21,7 @@
 		"gatsby-plugin-sharp": "^4.15.0",
 		"gatsby-plugin-sitemap": "^5.15.0",
 		"gatsby-plugin-typescript": "^4.15.0",
+		"gatsby-remark-autolink-headers": "^5.24.0",
 		"gatsby-remark-emoji": "^0.0.3",
 		"gatsby-remark-images": "^6.15.0",
 		"gatsby-remark-prismjs": "^6.15.0",

@@ -115,6 +115,7 @@ module.exports = {
 				plugins: [
 					'gatsby-remark-emoji',
 					'gatsby-remark-images',
+					'gatsby-remark-autolink-headers',
 					'gatsby-remark-prismjs',
 				],
 			},
