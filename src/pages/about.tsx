@@ -247,9 +247,9 @@ const AboutPage: FunctionComponent = () => (
 						<li>
 							<div><FontAwesomeIcon icon={faBuildingColumns} /></div>
 							<span>
-								1018058758/6100<br />
-								CZ5761000000001018058758<br />
-								EquaBank (EQBKCZPP)
+								1018058758/5500<br />
+								CZ2255000000001018058758<br />
+								Raiffeisen Bank (RZBCCZPP)
 							</span>
 						</li>
 						<li>
