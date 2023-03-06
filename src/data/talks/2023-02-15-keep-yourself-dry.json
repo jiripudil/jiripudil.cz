@@ -1,7 +1,7 @@
 {
 	"title": "Keep yourself DRY: How not to repeat yourself but not 💩 up abstraction",
 	"slidesUrl": "https://docs.google.com/presentation/d/1nNqy60KdYnN7nV1yCDvWSJBeK7WGGErzuPYq-RoDNec/edit?usp=sharing",
-	"videoUrl": null,
+	"videoUrl": "https://www.youtube.com/watch?v=BiVHCk5wl7g",
 	"description": "As developers, we deduplicate code to achieve abstraction. But far too often, abstractions tend to stick around even after requirements change in a way that renders the particular abstraction obsolete and impractical. This talk is a gentle reminder to always question your abstractions in the face of requirement changes.",
 	"language": "cs",
 	"event": "Péhápkáři Brno #39",
