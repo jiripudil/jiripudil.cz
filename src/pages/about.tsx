@@ -7,6 +7,7 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Pill from '../components/Pill';
 import Pronounce from '../components/Pronounce';
+import Recipe from '../components/Recipe';
 import SEO from '../components/SEO';
 import Timeline from '../components/Timeline';
 import {VoiceProvider} from '../components/useVoice';
@@ -108,6 +109,10 @@ const AboutPage: FunctionComponent = () => (
 			</div>
 
 			<div className={styles.sidebar}>
+				<div className={styles.recipe}>
+					<Recipe />
+				</div>
+
 				<div className={styles.skills}>
 					<h2>I&nbsp;know</h2>
 					<ul>

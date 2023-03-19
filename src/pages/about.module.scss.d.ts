@@ -3,6 +3,7 @@ export const pronunciation: string;
 export const aboutMeWrapper: string;
 export const aboutMe: string;
 export const sidebar: string;
+export const recipe: string;
 export const skills: string;
 export const languages: string;
 export const hobbies: string;
