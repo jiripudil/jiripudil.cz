@@ -8,11 +8,11 @@ interface TimelineItemProps {
 	readonly company: string;
 	readonly icon: IconDefinition;
 	readonly description: React.ReactNode;
-	readonly isLastButOne: boolean;
+	readonly isCurrent: boolean;
 	readonly isLast: boolean;
 }
 
-const TimelineItem: FunctionComponent<TimelineItemProps> = memo(({year, company, icon, description, isLast, isLastButOne}) => {
+const TimelineItem: FunctionComponent<TimelineItemProps> = memo(({year, company, icon, description, isCurrent, isLast}) => {
 	let heading = (
 		<h3>
 			<strong>
@@ -35,7 +35,7 @@ const TimelineItem: FunctionComponent<TimelineItemProps> = memo(({year, company,
 	);
 
 	if ( ! isLast) {
-		item = (<details open={isLastButOne}>{item}</details>);
+		item = (<details open={isCurrent}>{item}</details>);
 	}
 
 	return (
@@ -46,7 +46,7 @@ const TimelineItem: FunctionComponent<TimelineItemProps> = memo(({year, company,
 });
 
 interface TimelineProps {
-	readonly items: readonly Omit<TimelineItemProps, 'isLastButOne' | 'isLast'>[];
+	readonly items: readonly Omit<TimelineItemProps, 'isLast'>[];
 }
 
 const Timeline: FunctionComponent<TimelineProps> = ({items}) => (
@@ -55,7 +55,6 @@ const Timeline: FunctionComponent<TimelineProps> = ({items}) => (
 			{items.map((item, index) => (
 				<TimelineItem
 					{...item}
-					isLastButOne={index === items.length - 2}
 					isLast={index === items.length - 1}
 				/>
 			))}

@@ -7,7 +7,6 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Pill from '../components/Pill';
 import Pronounce from '../components/Pronounce';
-import Recipe from '../components/Recipe';
 import SEO from '../components/SEO';
 import Timeline from '../components/Timeline';
 import {VoiceProvider} from '../components/useVoice';
@@ -18,32 +17,23 @@ const AboutPage: FunctionComponent = () => (
 		<SEO title="About" />
 
 		<Hero>
-			<div className={styles.whoami}>
-				<div className={styles.profile}>
-					<div className={styles.hello}>Hello, I am Jiří Pudil</div>
-					<p>I am a full-stack web developer from Brno, Czech Republic. I contribute to open-source projects, write a technical blog, and speak at meetups and conferences.</p>
-				</div>
-
-				<div className={styles.recipe}>
-					<Recipe />
-				</div>
-			</div>
-
-			<div className={styles.pronunciation}>
-				<div>
-					<FontAwesomeIcon icon={faVolumeLow} />
-				</div>
-				<VoiceProvider>
-					<p>
-						In Czech, my name is pronounced /jɪr̝iː/<Pronounce text="Jiří" />, but good luck with that <a href="https://en.wikipedia.org/wiki/Voiced_dental,_alveolar_and_postalveolar_trills#Voiced_alveolar_fricative_trill">voiced alveolar fricative trill</a>. A&nbsp;more informal variant of the name is Jirka /jɪrka/<Pronounce text="Jirka" /> which doesn't have that sound. If you want to keep it on more formal terms, /jɪriː/<Pronounce text="Jiri" /> is a much better shot than /dʒɪriː/.
-					</p>
-				</VoiceProvider>
-			</div>
+			<h1 className={styles.heading}>About me</h1>
 		</Hero>
 
 		<div className={styles.aboutMeWrapper}>
 			<div className={styles.aboutMe}>
-				<h1>About me</h1>
+				<p>My name is <strong>Jiří Pudil</strong>. I am a full-stack web developer from Brno, Czech Republic. I contribute to open-source projects, write a technical blog, and speak at meetups and conferences.</p>
+				<div className={styles.pronunciation}>
+					<div>
+						<FontAwesomeIcon icon={faVolumeLow} />
+					</div>
+					<VoiceProvider>
+						<p>
+							In Czech, my name is pronounced /jɪr̝iː/<Pronounce text="Jiří" />, but good luck with that <a href="https://en.wikipedia.org/wiki/Voiced_dental,_alveolar_and_postalveolar_trills#Voiced_alveolar_fricative_trill">voiced alveolar fricative trill</a>. A&nbsp;more informal variant of the name is Jirka /jɪrka/<Pronounce text="Jirka" /> which doesn't have that sound. If you want to keep it on more formal terms, /jɪriː/<Pronounce text="Jiri" /> is a much better shot than /dʒɪriː/.
+						</p>
+					</VoiceProvider>
+				</div>
+
 				<p>I&nbsp;started playing with PHP back in 2009 and have been developing in it professionally since 2012. I&nbsp;am most proficient with Nette Framework and Doctrine ORM. I&rsquo;ve also fallen in love with TypeScript, both client-side with React.js and server-side with Node.</p>
 				<p>I&nbsp;use common sense at work and enjoy participating in the design process of web development as well. I&nbsp;strive to make websites as easy to use and navigate as possible. My primary focus is still development, though.</p>
 
@@ -55,54 +45,63 @@ const AboutPage: FunctionComponent = () => (
 							company: 'PeckaDesign',
 							icon: faBriefcase,
 							description: <p>I&nbsp;started my professional career at <a href="https://peckadesign.cz">PeckaDesign</a> in Brno. I&nbsp;spent the vast majority of my three years there working on Megapixel.cz, a&nbsp;leading Czech e-commerce site for photographers. I&nbsp;helped rethink and refactor the community gallery code, and implemented an online photolab service, handling large amounts of uploaded files via modern JavaScript (XHR2) and Nginx’s file upload module.</p>,
+							isCurrent: false,
 						},
 						{
 							year: '2015',
 							company: 'Rohlík.cz',
 							icon: faBriefcase,
 							description: <p><a href="https://www.rohlik.cz">Rohlík.cz</a> is a&nbsp;Czech startup running an electronic grocery store, at the time delivering goods in the Czech Republic’s two largest cities, Prague and Brno. Dispatching over 1500 orders each day, the project’s codebase utilized technologies such as Elasticsearch to list products without relational database lookups, or RabbitMQ to perform various tasks asynchronously.</p>,
+							isCurrent: false,
 						},
 						{
 							year: '2016',
 							company: 'Masaryk University',
 							icon: faGraduationCap,
 							description: <p>In mid-2016, I&nbsp;finished writing my thesis – a&nbsp;single-page JavaScript chatting app, with React.js on the front end and Express and MongoDB on the back end. I&nbsp;implemented Google’s Web Speech API so that users could navigate the app, dictate messages and have them read, all without using the keyboard. I&nbsp;successfully defended the thesis, passed my state exams and got a&nbsp;bachelor’s degree in Social Informatics.</p>,
+							isCurrent: false,
 						},
 						{
 							year: '2016',
 							company: 'Grifart',
 							icon: faBriefcase,
 							description: <p>Since 2016 I’ve been helping <a href="http://grifart.cz">Grifart</a>, a Brno-based company organizing medicinal congresses, rebuild their registration system so that all the processes that can be automated are automated. I&nbsp;have also occassionally worked on React.js front-ends, and I’ve helped set up infrastructure components like Nginx-based reverse proxy or a&nbsp;logging server built with the Elastic stack.</p>,
+							isCurrent: false,
 						},
 						{
 							year: '2018',
 							company: 'Smartlook',
 							icon: faBriefcase,
 							description: <p>In mid-2018 I&nbsp;started working with <a href="https://smartlook.com">Smartlook</a>, a&nbsp;Czech startup providing website and mobile app analytics based on visitor recordings. With PHP being only a&nbsp;small part of the whole cloud-based solution, I&nbsp;also got in touch with React and Node.js applications written in TypeScript, and I’ve got to know Docker better.</p>,
+							isCurrent: false,
+						},
+						{
+							year: '2020',
+							company: 'Školení nás baví',
+							icon: faChalkboardUser,
+							description: <p>In early 2020 I&nbsp;started giving public workshops, organized by guys at <a href="https://www.skoleninasbavi.cz/lektori/jiri-pudil/">Školení nás baví</a>. The first workshop is all about JavaScript: it explains the good old foundations, shows the shiny new features, and sets up a&nbsp;Webpack-based dev stack.</p>,
+							isCurrent: false,
 						},
 						{
 							year: '2020',
 							company: 'IVY assistant',
 							icon: faBriefcase,
 							description: <p>Late in 2019 I&nbsp;joined <a href="https://ivyassistant.com">IVY assistant</a>, a&nbsp;freshly born medicinal startup helping IVF patients stick to the scheduled treatment. I&nbsp;have worked on an event-sourced PHP backend, and built from scratch an administrative GUI for the clinics, written in TypeScript and React, and featuring a&nbsp;robust front-end encryption solution. I&nbsp;have also done some work on mobile apps powered by Kotlin Multiplatform Mobile.</p>,
-						},
-						{
-							year: '2020',
-							company: 'Školení nás baví',
-							icon: faChalkboardUser,
-							description: <p>In early 2020 I&nbsp;started giving public workshops, organized by guys at <a href="https://www.skoleninasbavi.cz/lektori/jiri-pudil/">Školení nás baví</a>. The first workshop is all about JavaScript: it explains the good old foundations, shows the shiny new features, and sets up a&nbsp;Webpack-based dev stack. More workshops and topics are to come.</p>,
+							isCurrent: true,
 						},
 						{
 							year: '2022',
 							company: 'Superkoders',
 							icon: faBriefcase,
 							description: <p>In January 2022, I&nbsp;shook hands with <a href="https://superkoders.com">Superkoders</a>, a&nbsp;Brno-based digital agency, to join them as a&nbsp;software architect, helping shape the future of their in-house content management solution.</p>,
+							isCurrent: true,
 						},
 						{
 							year: 'always',
 							company: 'giving back to the community',
 							icon: faPeopleGroup,
 							description: <p>The community has given me so much that it’s only natural that I&nbsp;give back to it whenever I&nbsp;can. I&nbsp;try to help people on <a href="https://forum.nette.org/cs/profile.php?id=3206">Nette forum</a>, write <Link to="/blog">this blog</Link>, <Link to="/talks">speak at meetups</Link>, help keep the <a href="http://people.php.net/jiripudil">PHP documentation up-to-date</a>, and contribute to or even create and/or maintain a&nbsp;number of <a href="https://github.com/jiripudil">open-source projects</a>.</p>,
+							isCurrent: true,
 						},
 					]}
 				/>
