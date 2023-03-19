@@ -118,7 +118,7 @@ const AboutPage: FunctionComponent = () => (
 						</li>
 						<li>
 							<div><FontAwesomeIcon icon={faDesktop} /></div>
-							TypeScript, React.js, Next.js
+							TypeScript, React.js, Next.js, Remix
 						</li>
 						<li>
 							<div><FontAwesomeIcon icon={faMobileAlt} /></div>
