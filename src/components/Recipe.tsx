@@ -7,7 +7,7 @@ import * as styles from './Recipe.module.scss';
 const Recipe: FunctionComponent = () => (
 	<div className={styles.recipe}>
 		<div className={styles.input}>
-			<FontAwesomeIcon icon={faMugHot} />
+			<FontAwesomeIcon icon={faMugHot} flip="horizontal" />
 		</div>
 		<div className={styles.flow}>
 			<FontAwesomeIcon icon={faArrowRight} />

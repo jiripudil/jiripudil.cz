@@ -39,10 +39,15 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 			<SEO title={`${post.frontmatter.title} – Blog`} />
 
 			<Hero>
-				<div className={styles.heading}>
-					<h1>{post.frontmatter.title}</h1>
-					<p dangerouslySetInnerHTML={{__html: post.frontmatter.perex}}></p>
+				<div className={styles.mainHeading}>
+					<Link to="/blog">
+						Blog
+					</Link>
 				</div>
+			</Hero>
+
+			<div className={styles.post}>
+				<h1>{post.frontmatter.title}</h1>
 
 				<div className={styles.metadata}>
 					<div className={styles.topics}>
@@ -69,12 +74,17 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 						{post.timeToRead} min read
 					</div>
 				</div>
-			</Hero>
 
-			<div
-				className={styles.postBody}
-				dangerouslySetInnerHTML={{__html: post.html}}
-			/>
+				<p
+					className={styles.lead}
+					dangerouslySetInnerHTML={{__html: post.frontmatter.perex}}
+				/>
+
+				<div
+					className={styles.postBody}
+					dangerouslySetInnerHTML={{__html: post.html}}
+				/>
+			</div>
 
 			<div className={styles.discussion}>
 				<div
@@ -102,6 +112,7 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 						giscus.setAttribute('data-emit-metadata', '0');
 						giscus.setAttribute('data-theme', 'light');
 						giscus.setAttribute('data-lang', 'en');
+						giscus.setAttribute('data-loading', 'lazy');
 
 						container.appendChild(giscus);
 					}}

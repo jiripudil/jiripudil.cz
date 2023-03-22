@@ -23,19 +23,19 @@ const AboutPage: FunctionComponent = () => (
 
 		<div className={styles.aboutMeWrapper}>
 			<div className={styles.aboutMe}>
-				<p>My name is <strong>Jiří Pudil</strong>. I am a full-stack web developer from Brno, Czech Republic. I contribute to open-source projects, write a technical blog, and speak at meetups and conferences.</p>
+				<p>My name is <strong>Jiří Pudil</strong>. I&nbsp;am a&nbsp;full-stack web developer from Brno, Czech Republic. I&nbsp;contribute to open-source projects, write a&nbsp;technical blog, and speak at meetups and conferences.</p>
 				<div className={styles.pronunciation}>
 					<div>
 						<FontAwesomeIcon icon={faVolumeLow} />
 					</div>
 					<VoiceProvider>
 						<p>
-							In Czech, my name is pronounced /jɪr̝iː/<Pronounce text="Jiří" />, but good luck with that <a href="https://en.wikipedia.org/wiki/Voiced_dental,_alveolar_and_postalveolar_trills#Voiced_alveolar_fricative_trill">voiced alveolar fricative trill</a>. A&nbsp;more informal variant of the name is Jirka /jɪrka/<Pronounce text="Jirka" /> which doesn't have that sound. If you want to keep it on more formal terms, /jɪriː/<Pronounce text="Jiri" /> is a much better shot than /dʒɪriː/.
+							In Czech, my name is pronounced /jɪr̝iː/<Pronounce text="Jiří" />, but good luck with that <a href="https://en.wikipedia.org/wiki/Voiced_dental,_alveolar_and_postalveolar_trills#Voiced_alveolar_fricative_trill">voiced alveolar fricative trill</a>. A&nbsp;more informal variant of the name that doesn&rsquo;t have that sound is Jirka /jɪrka/<Pronounce text="Jirka" />. If you want to keep it on more formal terms, /jɪriː/<Pronounce text="Jiri" /> is a&nbsp;much better shot than /dʒɪriː/.
 						</p>
 					</VoiceProvider>
 				</div>
 
-				<p>I&nbsp;started playing with PHP back in 2009 and have been developing in it professionally since 2012. I&nbsp;am most proficient with Nette Framework and Doctrine ORM. I&rsquo;ve also fallen in love with TypeScript, both client-side with React.js and server-side with Node.</p>
+				<p>I&nbsp;started playing with PHP back in 2009 and have been using it professionally since 2012. Over the years, I&rsquo;ve also picked up TypeScript, both client-side with React.js and server-side with Node, and more recently, I&rsquo;ve had the opportunity to try mobile development using Kotlin Multiplatform.</p>
 				<p>I&nbsp;use common sense at work and enjoy participating in the design process of web development as well. I&nbsp;strive to make websites as easy to use and navigate as possible. My primary focus is still development, though.</p>
 
 				<h2>Timeline</h2>

@@ -1,15 +1,11 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
-.heading {
-	h1 {
-		@include mainHeading;
-	}
+.mainHeading {
+	@include mainHeading;
 
-	p {
-		font-size: 1.2rem;
-		line-height: 1.6;
-		font-weight: normal;
+	a {
+		text-decoration: none;
 	}
 }
 
@@ -17,6 +13,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 2.5rem;
 
 	@media (max-width: $breakpoint) {
 		display: block;
@@ -59,7 +56,7 @@
 }
 
 .readingTime {
-	color: $color-dark;
+	color: grey;
 	display: flex;
 	align-items: center;
 	gap: .5rem;
@@ -74,7 +71,7 @@
 	}
 }
 
-.postBody {
+.post {
 	max-width: 800px;
 	margin: 2.5rem auto 0;
 	padding-left: 0;
@@ -84,7 +81,20 @@
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
+}
 
+.post h1 {
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+}
+
+.lead {
+	font-size: 1.25rem;
+	line-height: 1.5;
+	margin-bottom: 1.5rem;
+}
+
+.postBody {
 	h2 {
 		font-size: 1.4rem;
 		font-weight: bold;
@@ -124,6 +134,10 @@
 		border: none;
 		padding: 1rem;
 		margin: 0 -1rem 1.5rem;
+
+		code {
+			white-space: pre;
+		}
 	}
 
 	table {
