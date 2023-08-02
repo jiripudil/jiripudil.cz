@@ -1,7 +1,7 @@
 {
 	"title": "Generics in PHPStan",
 	"slidesUrl": "https://docs.google.com/presentation/d/1Hzc9pYYYNfYV1dCdLuCcAxgW3aoaPP_BSGFsL4N0tO8/edit",
-	"videoUrl": null,
+	"videoUrl": "https://www.youtube.com/watch?v=YlMZ3tlPkCM",
 	"description": "Generics: an ingenious tool of abstraction for some, a source of nightmares for some, and a great unknown for others. And yet, it's likely that most of us have used them. This talk explains what generics are and illustrates how to use them in PHP thanks to PHPStan.",
 	"language": "cs",
 	"event": "Péhápkáři Brno #42",
