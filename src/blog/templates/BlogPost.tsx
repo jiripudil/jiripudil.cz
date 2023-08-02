@@ -123,7 +123,7 @@ const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = (props) => {
 				<div className={styles.typo}>
 					<strong>Have you found a <span>tpyo</span> in the post?</strong>
 					{' '}
-					Please <a href={`https://github.com/jiripudil/jiripudil.cz/edit/master/src/blog/posts/${encodeURIComponent(post.fileAbsolutePath.split(/.*[\/|\\]/)[1])}`}>submit a pull request</a> with a fix :)
+					Please <a href={`https://github.com/jiripudil/jiripudil.cz/edit/main/src/blog/posts/${encodeURIComponent(post.fileAbsolutePath.split(/.*[\/|\\]/)[1])}`}>submit a pull request</a> with a fix :)
 				</div>
 			</div>
 
