@@ -3092,11 +3092,11 @@ __metadata:
   linkType: hard
 
 "@types/react-timeago@npm:^4.1.2":
-  version: 4.1.4
-  resolution: "@types/react-timeago@npm:4.1.4"
+  version: 4.1.5
+  resolution: "@types/react-timeago@npm:4.1.5"
   dependencies:
     "@types/react": "*"
-  checksum: acd97a5290f21477fb8b23c9cfb3e4bdfa4690f43a42ebd4d5bec89542ecac0d943f80fabe76032da263315cb42d90868b6b25be4eeef9ebf554d645437a9681
+  checksum: 0296241ae9c4988eea4def1c608fb76c9ead1dbfb6402daad60535593336a4bf483520d7156a73e11c7a738d5028cfccb1bada4cfd1baca8b803faa8f553dee3
   languageName: node
   linkType: hard
 
