@@ -1,7 +1,7 @@
 {
   "title": "Git as you (might not) know it",
   "slidesUrl": "https://docs.google.com/presentation/d/1uElsjI19Nka_gKPMwo74rW4r_8NQTZmb18nsbmqb1xU/edit?usp=sharing",
-  "videoUrl": null,
+  "videoUrl": "https://www.youtube.com/watch?v=tXAk7kfGHcU",
   "description": "Many of us have learned and keep learning Git on the go, at work or as a necessity in a programming course. Git is rarely the main thing; it's rare to have time to go deeper and explain not only the basic commands and options, but also the underlying concepts and principles. We will take the time for that and hopefully clear some misconceptions you may have about Git.",
   "language": "cs",
   "event": "Péhápkáři Brno #44",
