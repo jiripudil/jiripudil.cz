@@ -1,0 +1,10 @@
+{
+	"title": "What's coming in PHP 8.4",
+	"slidesUrl": "https://docs.google.com/presentation/d/1RaKXFvpzbT7bGuojbDDlYoPseLYGhbaz02UhwLlQxXk/edit?usp=sharing",
+	"videoUrl": null,
+	"description": "This talk introduces all the important updates to PHP in its upcoming version 8.4, ranging from minor changes and deprecations, to big new features that greatly empower properties and have the potential to change the way we write our code: property hooks, and asymmetric visibility.",
+	"language": "cs",
+	"event": "Poslední sobota s06e06",
+	"eventUrl": "https://www.meetup.com/pehapkari/events/303785014/",
+	"date": "2024-10-19"
+}
