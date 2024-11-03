@@ -1,4 +1,4 @@
-import {faGithub, faXTwitter} from '@fortawesome/free-brands-svg-icons';
+import {faBluesky, faGithub, faXTwitter} from '@fortawesome/free-brands-svg-icons';
 import {faAddressBook, faAddressCard, faBriefcase, faBuildingColumns, faChalkboardUser, faCode, faDatabase, faDesktop, faEnvelope, faEnvelopeOpenText, faGamepad, faGraduationCap, faGuitar, faKey, faLocationDot, faMobileAlt, faPeopleGroup, faPersonBiking, faPhone, faServer, faTerminal, faVolleyball, faVolumeLow} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Link} from 'gatsby';
@@ -217,6 +217,10 @@ const AboutPage: FunctionComponent = () => (
 						<li className={styles.twitter}>
 							<div><FontAwesomeIcon icon={faXTwitter} /></div>
 							<a href="https://twitter.com/jiripudil">jiripudil</a>
+						</li>
+						<li className={styles.bluesky}>
+							<div><FontAwesomeIcon icon={faBluesky} /></div>
+							<a href="https://bsky.app/profile/jiripudil.cz">jiripudil.cz</a>
 						</li>
 						<li className={styles.github}>
 							<div><FontAwesomeIcon icon={faGithub} /></div>

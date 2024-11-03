@@ -11,5 +11,6 @@ export const contactOuterWrapper: string;
 export const contactWrapper: string;
 export const contact: string;
 export const twitter: string;
+export const bluesky: string;
 export const github: string;
 export const legal: string;
