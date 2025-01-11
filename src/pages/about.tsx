@@ -84,17 +84,17 @@ const AboutPage: FunctionComponent = () => (
 							isCurrent: false,
 						},
 						{
-							year: '2020',
-							company: 'IVY assistant',
-							icon: faBriefcase,
-							description: <p>Late in 2019 I&nbsp;joined <a href="https://ivyassistant.com">IVY assistant</a>, a&nbsp;freshly born medicinal startup helping IVF patients stick to the scheduled treatment. I&nbsp;have worked on an event-sourced PHP backend, and built from scratch an administrative GUI for the clinics, written in TypeScript and React, and featuring a&nbsp;robust front-end encryption solution. I&nbsp;have also done some work on mobile apps powered by Kotlin Multiplatform Mobile.</p>,
-							isCurrent: true,
-						},
-						{
 							year: '2022',
 							company: 'Superkoders',
 							icon: faBriefcase,
 							description: <p>In January 2022, I&nbsp;shook hands with <a href="https://superkoders.com">Superkoders</a>, a&nbsp;Brno-based digital agency, to join them as a&nbsp;software architect, helping shape the future of their in-house content management solution.</p>,
+							isCurrent: false,
+						},
+						{
+							year: 'now',
+							company: 'IVY assistant',
+							icon: faBriefcase,
+							description: <p>Late in 2019 I&nbsp;joined <a href="https://ivyassistant.com">IVY assistant</a>, a&nbsp;freshly born medicinal startup helping IVF patients stick to the scheduled treatment. I&nbsp;have worked on an event-sourced PHP backend, and built from scratch an administrative GUI for the clinics, written in TypeScript and React, and featuring a&nbsp;robust front-end encryption solution. I&nbsp;have also done some work on mobile apps powered by Kotlin Multiplatform Mobile.</p>,
 							isCurrent: true,
 						},
 						{
