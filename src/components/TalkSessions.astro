@@ -1,0 +1,119 @@
+---
+import type {CollectionEntry} from 'astro:content';
+import {Icon} from 'astro-icon/components';
+
+interface Props {
+	sessions: CollectionEntry<'talks'>['data']['sessions'];
+}
+
+const {sessions} = Astro.props;
+
+const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short', day: 'numeric'});
+---
+<div class="sessions">
+	{sessions.map((session) => {
+		const date = new Date(session.date);
+		return (
+			<div class="session">
+				<time title={formatter.format(date)} datetime={date.toISOString()}>
+					{formatter.format(date)}
+				</time>
+
+				<div class="event">
+					<div class="eventName">
+						{session.url
+							? <a href={session.url}>{session.event}</a>
+							: session.event}
+
+						{session.language === 'cs' ? '🇨🇿' : '🇬🇧'}
+					</div>
+					<div class="location">
+						{session.location}
+					</div>
+				</div>
+
+				<div class="links">
+					{session.slidesUrl && (
+						<a href={session.slidesUrl} title="Slides">
+							<Icon name="fa6-solid:chalkboard" />
+						</a>
+					)}
+
+					{session.videoUrl && (
+						<a href={session.videoUrl} title={`Recording in ${session.language === 'cs' ? 'Czech' : 'English'}`}>
+							<Icon name="fa6-solid:video" />
+						</a>
+					)}
+				</div>
+			</div>
+		);
+	})}
+</div>
+
+<style>
+	.sessions {
+		width: 100%;
+		display: grid;
+		row-gap: .5rem;
+		column-gap: 2rem;
+		grid-template-columns: fit-content(8rem) 1fr fit-content(4rem);
+		grid-auto-flow: row;
+	}
+
+	.session {
+		display: grid;
+		grid-column: 1 / span 3;
+		grid-template-columns: subgrid;
+		align-items: baseline;
+		padding: .5rem 0;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--body-divider-color);
+		}
+
+		time {
+			grid-column-start: 1;
+			color: var(--body-diminished-color);
+			font-size: .9rem;
+		}
+
+		.event {
+			grid-column-start: 2;
+			display: flex;
+			flex-direction: column;
+			gap: .25rem;
+
+			.eventName {
+				font-size: 1.1rem;
+			}
+
+			.location {
+				font-size: .85rem;
+			}
+		}
+
+		.links {
+			grid-column-start: 3;
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+			font-size: 1.2rem;
+
+			a {
+				color: var(--body-diminished-color);
+
+				&:hover {
+					color: var(--body-text-color);
+				}
+			}
+		}
+	}
+
+	@media (max-width: 40rem) {
+		.session {
+			display: flex;
+			flex-direction: column;
+			gap: .5rem;
+		}
+	}
+</style>

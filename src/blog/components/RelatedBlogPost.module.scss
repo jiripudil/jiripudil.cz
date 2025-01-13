@@ -1,9 +1,0 @@
-@import '../../styles/mixins';
-@import '../../styles/variables';
-
-.relatedPost {
-	h2 {
-		@include mainHeading;
-		margin: 1.5rem 0 2.5rem;
-	}
-}

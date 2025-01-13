@@ -1,0 +1,15 @@
+{
+  "title": "The future is passwordless",
+  "annotation": "This talk introduces passkeys, a technology that brings a solution to all problems of passwords: their are unbelievably convenient to use, resistant to data breaches and phishing, and practically eliminate the possibility of human error. All this building upon open standards and existing APIs.",
+  "sessions": [
+    {
+      "date": "2023-09-30",
+      "event": "Poslední sobota s05e05",
+      "location": "České Budějovice, Czech Republic",
+      "url": "https://www.meetup.com/pehapkari/events/295888034/",
+      "slidesUrl": "https://docs.google.com/presentation/d/1MdJ6OWUyLJI0GJBqF5FOhui843kVGoXePDOOJa-YneY/edit",
+      "videoUrl": null,
+      "language": "cs"
+    }
+  ]
+}

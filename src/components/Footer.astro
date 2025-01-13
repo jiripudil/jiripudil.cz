@@ -1,0 +1,49 @@
+---
+import Container from './Container.astro';
+import {Icon} from 'astro-icon/components';
+---
+<div class="footer">
+	<Container>
+		Content licensed under
+		<a
+			href="https://creativecommons.org/licenses/by/4.0/"
+			title="Creative Commons Attribution 4.0 International"
+		>
+			<Icon name="fa6-brands:creative-commons" />
+			<Icon name="fa6-brands:creative-commons-by" />
+		</a>
+	</Container>
+</div>
+
+<style>
+	.footer {
+		background-color: var(--body-background-color);
+		text-align: center;
+		padding: 3rem 0 1rem;
+		font-size: .9rem;
+		color: var(--body-diminished-color);
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: .25rem;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			color: var(--body-diminished-color);
+
+			&:hover {
+				color: var(--body-text-color);
+			}
+
+			svg {
+				width: 1.1rem;
+				height: 1.1rem;
+				fill: currentColor;
+			}
+		}
+	}
+</style>

@@ -1,0 +1,16 @@
+{
+	"title": "Don’t just float, swim with the floating point",
+	"annotation": "They say you should understand floating-point precision by 35.0000000000014. This talk discusses how floats are (im)precise and why, demonstrates the problems you inevitably encounter when doing math with floats, and presents ways to prevent those problems by using more proper data types and structures.",
+	"highlighted": true,
+	"sessions": [
+		{
+			"date": "2019-05-15",
+			"event": "Péhápkáři Brno #28",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.meetup.com/Pehapkari-Brno/events/261169530/",
+			"slidesUrl": "https://docs.google.com/presentation/u/2/d/1WBWQqKmPmt0-Z5XMuJV-oO_9BjKVxy-328pZ3rjw9ME/edit?usp=sharing",
+			"videoUrl": "https://www.youtube.com/watch?v=YK_iGgzId3Y",
+			"language": "cs"
+		}
+	]
+}

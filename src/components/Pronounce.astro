@@ -1,0 +1,64 @@
+---
+import {Icon} from 'astro-icon/components';
+
+interface Props {
+	text: string;
+	ipa: string;
+}
+
+const {text, ipa} = Astro.props;
+---
+<span class="pronunciation" lang="cs" aria-label={text}>
+	{ipa}
+	<button class="pronounce" data-text={text} aria-hidden="true">
+		<Icon name="fa6-solid:volume-low" />
+	</button>
+</span>
+
+<style>
+	.pronunciation {
+		display: inline-flex;
+		align-items: center;
+		gap: .25rem;
+	}
+
+	.pronounce {
+		padding: .1rem;
+		background: none;
+		box-shadow: none;
+		border: 0;
+
+		font-size: .9rem;
+		vertical-align: middle;
+		color: var(--body-accent-color);
+		cursor: pointer;
+
+		&:disabled {
+			color: var(--body-diminished-color);
+			cursor: not-allowed;
+		}
+	}
+</style>
+
+<script>
+	const voice = window.speechSynthesis.getVoices().find((voice) => voice.lang === 'cs-CZ');
+
+	const buttons = document.querySelectorAll('button.pronounce');
+	buttons.forEach((button) => {
+		if ( ! (button instanceof HTMLButtonElement)) {
+			throw new Error();
+		}
+
+		if (voice === undefined) {
+			button.disabled = true;
+			return;
+		}
+
+		button.addEventListener('click', () => {
+			const utterance = new SpeechSynthesisUtterance(button.dataset.text);
+			utterance.lang = 'cs-CZ';
+			utterance.voice = voice;
+			window.speechSynthesis.speak(utterance);
+		});
+	});
+</script>

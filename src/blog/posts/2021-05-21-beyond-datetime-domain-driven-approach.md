@@ -25,7 +25,7 @@ This post is a condensed derivation of several talks that I've given at various 
 
 To understand in what ways time is complicated, we first need to understand time itself. We're lucky to have it explained by one of the biggest experts, [the Doctor](https://www.bbc.co.uk/programmes/b006q2x0). The Doctor comes from the race of Time Lords, a species that has mastered time travel, and routinely travels here and there across time and space to save humanity again and again. This is what the Doctor has to say about time:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cwdbLu_x0gY?controls=0&amp;start=33&amp;end=62" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="640" src="https://www.youtube.com/embed/cwdbLu_x0gY?controls=0&amp;start=33&amp;end=62" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Um, this wasn't particularly useful. But at least it confirms my point that time is 'complicated. Very complicated.'
 

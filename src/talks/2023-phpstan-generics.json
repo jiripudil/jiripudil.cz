@@ -1,0 +1,25 @@
+{
+	"title": "Generics in PHPStan from <A> to <Z>",
+	"annotation": "Generics: an ingenious tool of abstraction for some, a nightmare for others. And yet, it's likely that most of us have used them. This talk explains what generics are and illustrates how to use them in PHP thanks to PHPStan, covering everything from the most trivial situations to advanced use cases such as type bounds, variance, type projections, etc.",
+	"highlighted": true,
+	"sessions": [
+		{
+			"date": "2023-05-17",
+			"event": "Péhápkáři Brno #42",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.meetup.com/pehapkari-brno/events/287346447/",
+			"slidesUrl": "https://docs.google.com/presentation/d/1Hzc9pYYYNfYV1dCdLuCcAxgW3aoaPP_BSGFsL4N0tO8/edit?usp=sharing",
+			"videoUrl": "https://www.youtube.com/watch?v=YlMZ3tlPkCM",
+			"language": "cs"
+		},
+		{
+			"date": "2022-09-24",
+			"event": "Poslední sobota s04e06",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.facebook.com/events/1052414968807815",
+			"slidesUrl": "https://docs.google.com/presentation/d/1vynQhRlovUWqJOY1PqP1VRg_ewL7zxPubQIrDVY1OJc/edit",
+			"videoUrl": "https://www.youtube.com/watch?v=-tOCEtrQPww",
+			"language": "cs"
+		}
+	]
+}

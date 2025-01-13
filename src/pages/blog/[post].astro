@@ -1,0 +1,156 @@
+---
+import {getCollection, getEntry, render} from 'astro:content';
+import Giscus from '../../blog/components/Giscus.astro';
+import Container from '../../components/Container.astro';
+import PageSeo from '../../components/PageSeo.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts', (({data}) => !data.draft));
+	return posts.map(({data}) => ({
+		params: {post: data.slug},
+	}));
+}
+
+const slug = Astro.params.post;
+const post = await getEntry('posts', slug)!;
+const {Content} = await render(post);
+
+const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short', day: 'numeric'});
+---
+<Layout>
+	<PageSeo
+		slot="head"
+		title={`${post.data.title} – Blog`}
+	>
+		<meta property="og:type" content="article" />
+		<meta property="article:published_time" content={post.data.datetime.toISOString()} />
+		{post.data.tags.map((tag) => <meta property="article:tag" content={tag} />)}
+	</PageSeo>
+
+	<Container>
+		<div class="body">
+			<h1>{post.data.title}</h1>
+
+			<div class="metadata">
+				<ul>
+					{post.data.tags.map((tag) => (
+						<li>#{tag}</li>
+					))}
+				</ul>
+
+				<time datetime={post.data.datetime.toISOString()}>
+					{formatter.format(new Date(post.data.datetime))}
+				</time>
+			</div>
+
+			<p class="perex" set:html={post.data.perex} />
+
+			<div class="content">
+				<Content />
+			</div>
+
+			<div class="comments">
+				<Giscus />
+			</div>
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.body {
+		padding: 1.5rem 0;
+	}
+
+	h1 {
+		text-wrap: balance;
+	}
+
+	.metadata {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		gap: 1rem;
+
+		margin-bottom: 3rem;
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0 .5rem;
+
+			font-size: .9rem;
+			color: var(--body-diminished-color);
+		}
+
+		time {
+			flex-shrink: 0;
+			color: var(--body-diminished-color);
+		}
+	}
+
+	.perex {
+		font-size: 1.15rem;
+	}
+
+	.content {
+		h2 {
+			margin-top: 3rem;
+		}
+
+		h3 {
+			margin-top: 2.25rem;
+		}
+
+		p {
+			text-wrap: pretty;
+		}
+
+		blockquote {
+			position: relative;
+
+			&::before {
+				content: '“';
+				position: absolute;
+				left: -2.25rem;
+				top: 0;
+
+				color: var(--body-accent-color);
+				font-size: 4rem;
+			}
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		iframe {
+			max-width: 100%;
+			aspect-ratio: 16 / 9;
+		}
+
+		.astro-code {
+			margin: .5rem 0;
+			padding: .5rem;
+			font-size: .9rem;
+			tab-size: 4;
+		}
+	}
+
+	.comments {
+		margin-top: 3rem;
+	}
+
+	@media (max-width: 40rem) {
+		.metadata {
+			flex-direction: column;
+			align-items: start;
+			justify-content: start;
+		}
+	}
+</style>

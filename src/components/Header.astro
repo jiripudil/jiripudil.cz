@@ -1,0 +1,97 @@
+---
+import {Icon} from 'astro-icon/components';
+import Container from './Container.astro';
+---
+<div class="header">
+	<Container>
+		<div class="name">
+			<a href="/">
+				Jiří Pudil
+			</a>
+		</div>
+
+		<nav class="menu">
+			<ul>
+				<li>
+					<a href="/" title="Home" class:list={[{active: Astro.url.pathname === '/'}]}>
+						<Icon name="fa6-solid:house" />
+					</a>
+				</li>
+				<li>
+					<a href="/about" class:list={[{active: Astro.url.pathname.startsWith('/about')}]}>
+						About
+					</a>
+				</li>
+				<li>
+					<a href="/blog" class:list={[{active: Astro.url.pathname.startsWith('/blog')}]}>
+						Blog
+					</a>
+				</li>
+				<li>
+					<a href="/talks" class:list={[{active: Astro.url.pathname.startsWith('/talks')}]}>
+						Talks
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</Container>
+</div>
+
+<style>
+	.header {
+		padding: 1.5rem 0;
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	.name {
+		flex-shrink: 0;
+
+		a {
+			font-size: 1.25rem;
+			font-family: var(--body-heading-font-family);
+			font-weight: bold;
+			color: var(--body-augmented-color);
+			text-decoration: none;
+		}
+	}
+
+	.menu ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: 1.25rem;
+
+		a {
+			font-size: .95rem;
+			color: var(--body-text-color);
+			text-decoration: none;
+			padding: .125rem 0;
+			transition: border-color .25s ease;
+			border-bottom: .125rem solid transparent;
+
+			svg {
+				fill: currentColor;
+				height: 1rem;
+				aspect-ratio: 1;
+			}
+
+			&:hover {
+				border-color: var(--body-accent-color);
+			}
+
+			&.active {
+				font-weight: bold;
+				border-bottom-width: .25rem;
+				border-color: var(--body-accent-color);
+			}
+		}
+	}
+</style>

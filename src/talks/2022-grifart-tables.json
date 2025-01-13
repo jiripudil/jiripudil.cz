@@ -1,0 +1,15 @@
+{
+	"title": "Tables: statically typed access to database",
+	"annotation": "We've found a way to query the database – create, update, and delete rows, and fetch them based on complex conditions – in a way that can be statically analyzed and checked. And all this without writing a single line of boilperplate code. Co-presented with <a href=\"https://jankuchar.cz\">Honza Kuchař</a>.",
+	"sessions": [
+		{
+			"date": "2022-01-29",
+			"event": "Poslední sobota s04e01",
+			"location": "online stream",
+			"url": "https://www.facebook.com/events/979614842958484",
+			"slidesUrl": null,
+			"videoUrl": "https://www.youtube.com/watch?v=fE8nZdJPftI",
+			"language": "cs"
+		}
+	]
+}

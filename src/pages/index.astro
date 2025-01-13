@@ -1,0 +1,152 @@
+---
+import {Image} from 'astro:assets';
+import {getCollection} from 'astro:content';
+import {Icon} from 'astro-icon/components';
+import BlogPosts from '../blog/components/BlogPosts.astro';
+import Container from '../components/Container.astro';
+import PageSeo from '../components/PageSeo.astro';
+import Layout from '../layouts/Layout.astro';
+import profilePhoto from '../images/me.jpg';
+
+const posts = await getCollection('posts', (({data}) => !data.draft));
+const latestPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datetime)).slice(0, 3);
+---
+<Layout>
+	<PageSeo
+		slot="head"
+		title="Home"
+	/>
+
+	<div class="hero">
+		<Container>
+			<h1>
+				<Image src={profilePhoto} alt="Jiří Pudil's profile photo" class="portrait" />
+				<span>Hi, I&nbsp;am</span>
+				<strong>Jiří Pudil</strong>
+			</h1>
+
+			<div class="claim">
+				a&nbsp;software engineer from 🇨🇿 Brno
+			</div>
+
+			<div class="contacts">
+				<ul>
+					<li>
+						<a href="https://linkedin.com/in/jiripudil" title="LinkedIn">
+							<Icon name="fa6-brands:linkedin" />
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/jiripudil" title="GitHub">
+							<Icon name="fa6-brands:github" />
+						</a>
+					</li>
+					<li>
+						<a href="https://bsky.app/profile/jiripudil.cz" title="Bluesky">
+							<Icon name="fa6-brands:bluesky" />
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="introduction">
+				<p class="introductionLead">
+					<strong>I&rsquo;m a&nbsp;frequent flyer between client-side and server-side code.</strong> I&nbsp;have over <a href="/about">a&nbsp;decade of experience</a> with many aspects of software development for the web, which I&nbsp;enjoy sharing at <a href="/talks">meetups and conferences</a> as well as through <a href="/blog">a&nbsp;blog</a>.
+				</p>
+			</div>
+		</Container>
+	</div>
+
+	<div class="body">
+		<Container>
+			<h2>From my blog</h2>
+			<BlogPosts
+				posts={latestPosts}
+				showMore
+			/>
+		</Container>
+	</div>
+</Layout>
+
+<style>
+	.hero {
+		background: var(--body-background-color);
+		padding: 3rem 0 1.5rem;
+
+		h1 {
+			margin: 0;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			font-weight: normal;
+			color: var(--body-augmented-color);
+			font-family: var(--body-text-font-family);
+
+			.portrait {
+				max-width: 8rem;
+				max-height: 8rem;
+				aspect-ratio: 1;
+				border-radius: 50%;
+			}
+
+			span {
+				font-size: 1rem;
+				margin: 1.5rem 0 .5rem;
+			}
+
+			strong {
+				font-family: var(--body-heading-font-family);
+				font-size: 2.25rem;
+			}
+		}
+
+		.claim {
+			font-size: 1.25rem;
+			text-align: center;
+			color: var(--body-text-color);
+			margin: 1rem 0 1.5rem;
+		}
+
+		.contacts {
+			margin-bottom: 2.75rem;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				display: flex;
+				gap: 1rem;
+				align-items: center;
+				justify-content: center;
+			}
+
+			a {
+				color: var(--body-diminished-color);
+
+				&:hover {
+					color: var(--body-text-color);
+				}
+			}
+
+			svg {
+				width: 2rem;
+				height: 2rem;
+				aspect-ratio: 1;
+			}
+		}
+
+		.introduction {
+			font-size: 1.1rem;
+			color: var(--body-text-color);
+
+			p {
+				margin: 0 0 1rem;
+				text-wrap: pretty;
+				hyphens: auto;
+			}
+		}
+	}
+</style>

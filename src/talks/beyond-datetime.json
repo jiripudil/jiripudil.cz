@@ -1,0 +1,61 @@
+{
+	"title": "Beyond DateTime: a bulletproof approach to date and time",
+	"annotation": "",
+	"highlighted": true,
+	"sessions": [
+		{
+			"date": "2022-06-03",
+			"event": "php.live 2022",
+			"location": "Ostrava, Czech Republic",
+			"url": "https://www.phplive.cz/",
+			"slidesUrl": "https://docs.google.com/presentation/d/1bBGXqIdLdes1vSAAMX3wiXwMVzHHVpVXpiimuMdyy04/edit?usp=sharing",
+			"videoUrl": "https://www.youtube.com/watch?v=mMSDLvhHGDM",
+			"language": "cs"
+		},
+		{
+			"date": "2020-10-31",
+			"event": "Poslední sobota s02e04",
+			"location": "online stream",
+			"url": "https://www.facebook.com/events/337719873982919",
+			"slidesUrl": "https://docs.google.com/presentation/d/1g2md2heNe7IOt5ntXhnqn7nzzc5a-fspPCdJmCki6K4/edit?usp=sharing",
+			"videoUrl": "https://www.youtube.com/watch?v=SpGgyHcz2vU",
+			"language": "cs"
+		},
+		{
+			"date": "2020-05-30",
+			"event": "Web Science 2020",
+			"location": "online stream",
+			"url": "https://www.webscience.cz/konference/",
+			"slidesUrl": "https://docs.google.com/presentation/d/1gSJiUV11aIUW2oi1EZuLncudAm8Gc0cvmanCE3bs9ys/edit?usp=sharing",
+			"videoUrl": null,
+			"language": "cs"
+		},
+		{
+			"date": "2020-05-30",
+			"event": "PHP fwdays'20",
+			"location": "online stream",
+			"url": "https://fwdays.com/en/event/php-fwdays-2020",
+			"slidesUrl": "https://docs.google.com/presentation/d/1S19LRKBkyoighUPLylhqT1R3-sVOQ8bKZiOZ3l74o5o/edit?usp=sharing",
+			"videoUrl": "https://www.youtube.com/watch?v=OfY-Sb846ps",
+			"language": "en"
+		},
+		{
+			"date": "2019-10-16",
+			"event": "Péhápkáři Brno #31",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.meetup.com/Pehapkari-Brno/events/265402579/",
+			"slidesUrl": "https://docs.google.com/presentation/d/13kshwb5KjvsrPQa9D6zdW8rN7VHo2psFglVv9zkT8Ic/edit?usp=sharing",
+			"videoUrl": "https://www.youtube.com/watch?v=4ezAJooo_JY",
+			"language": "cs"
+		},
+		{
+			"date": "2018-03-21",
+			"event": "Péhápkáři Brno #17",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.facebook.com/events/2022808271300282/",
+			"slidesUrl": "https://docs.google.com/presentation/d/1U1fAoB04KYdpFijgIW6XWUl2UL5jU9L3x7I1pI2gL6Y/edit?usp=sharing",
+			"videoUrl": "https://www.facebook.com/pehapkari/videos/vl.1642240972537590/1630943313622139/?type=1",
+			"language": "cs"
+		}
+	]
+}

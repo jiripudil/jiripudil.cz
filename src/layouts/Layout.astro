@@ -1,0 +1,27 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import GlobalStyles from '../styles/GlobalStyles.astro';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#242428" media="(prefers-color-scheme: dark)" />
+
+		<GlobalStyles />
+
+		<slot name="head" />
+	</head>
+	<body>
+		<Header />
+
+		<slot />
+
+		<Footer />
+	</body>
+</html>

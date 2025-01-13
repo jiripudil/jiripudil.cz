@@ -1,0 +1,15 @@
+{
+	"title": "What's new in PHP 8+",
+	"annotation": "This talk shows all the new features of PHP 8, PHP 8.1 and the soo-to-be-released PHP 8.2, and discusses what's new in the ecosystem and funding of PHP's development. Most importantly, it argues why you should upgrade asap and keep upgrading often.",
+	"sessions": [
+		{
+			"date": "2022-11-24",
+			"event": "Talks & Beer",
+			"location": "Zlín, Czech Republic",
+			"url": "https://www.facebook.com/events/1516223182133373/",
+			"slidesUrl": "https://docs.google.com/presentation/d/1UuHhYPQlEfKBAx7Ii0BzVEACw7wGj6W9uLiasUzWLMU/edit",
+			"videoUrl": null,
+			"language": "cs"
+		}
+	]
+}

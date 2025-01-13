@@ -57,12 +57,14 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
-.cache/
-public
+# Generated types
+.astro/
 
 # Mac files
 .DS_Store
+
+# Production build
+dist/
 
 # Yarn
 .yarn/*

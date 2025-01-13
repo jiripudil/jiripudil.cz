@@ -1,0 +1,79 @@
+---
+import {type CollectionEntry, getCollection, getEntry} from 'astro:content';
+import TalkSessions from '../components/TalkSessions.astro';
+import Container from '../components/Container.astro';
+import PageSeo from '../components/PageSeo.astro';
+import Layout from '../layouts/Layout.astro';
+
+const beyondDateTime = await getEntry('talks', 'beyond-datetime')!;
+
+function sortTalks(talks: CollectionEntry<'talks'>[]) {
+	return talks.toSorted((a, b) => (+new Date(b.data.sessions[0]!.date)) - (+new Date(a.data.sessions[0]!.date)));
+}
+
+const highlightedTalks = sortTalks(await getCollection('talks', ({id, data}) => data.highlighted && id !== 'beyond-datetime'));
+const otherTalks = sortTalks(await getCollection('talks', ({data}) => !data.highlighted));
+---
+<Layout>
+	<PageSeo
+		slot="head"
+		title="Talks"
+	/>
+
+	<Container>
+		<div class="body">
+			<h1>Talks</h1>
+
+			<h2>Highlighted talks</h2>
+
+			<div class="talk">
+				<h3>Beyond <code>DateTime</code>: a bulletproof approach to date and time</h3>
+				<p>I’ve been obsessed with time ever since a tiny timezone mismatch in my code almost caused an ugly off-by-one-hour error in airport taxi orders for congress speakers.</p>
+				<p>It helped me realize that time is a domain present in every web application, and as such deserves proper attention. There are many very different temporal concepts, and we should have better abstractions for them than standard libraries – including PHP’s <code>DateTime</code> and JavaScript’s <code>Date</code> – provide.</p>
+				<p>This has become my favourite topic and I talk about it wherever people want (or are forced) to listen, including at:</p>
+				<TalkSessions sessions={beyondDateTime.data.sessions} />
+			</div>
+
+			{highlightedTalks.map((talk) => (
+				<div class="talk">
+					<h3>{talk.data.title}</h3>
+					<p set:html={talk.data.annotation} />
+					<TalkSessions sessions={talk.data.sessions} />
+				</div>
+			))}
+
+			<h2>Other talks</h2>
+			{otherTalks.map((talk) => (
+				<div class="talk">
+					<h3>{talk.data.title}</h3>
+					<TalkSessions sessions={talk.data.sessions} />
+				</div>
+			))}
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.body {
+		padding: 1.5rem 0;
+	}
+
+	h2 {
+		text-wrap: balance;
+		margin: 3rem 0 0;
+	}
+
+	h3 {
+		text-wrap: balance;
+		margin: 0;
+	}
+
+	p {
+		text-wrap: pretty;
+		hyphens: auto;
+	}
+
+	.talk {
+		margin-top: 3rem;
+	}
+</style>

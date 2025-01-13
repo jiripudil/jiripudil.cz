@@ -1,0 +1,113 @@
+---
+import type {CollectionEntry} from 'astro:content';
+
+interface Props {
+	posts: CollectionEntry<'posts'>[];
+	showMore?: boolean;
+}
+
+const {posts, showMore = false} = Astro.props;
+const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short', day: 'numeric'});
+---
+<div class="posts">
+	{posts.map(({data: post}) => (
+		<div class="post">
+			<time title={formatter.format(post.datetime)} datetime={post.datetime.toISOString()}>
+				{formatter.format(post.datetime)}
+			</time>
+
+			<div>
+				<a href={`/blog/${post.slug}`}>
+					{post.title}
+				</a>
+
+				<ul>
+					{post.tags.map((tag) => (
+						<li>#{tag}</li>
+					))}
+				</ul>
+			</div>
+		</div>
+	))}
+
+	{showMore && (
+		<div class="more">
+			<a href="/blog">
+				More posts &raquo;
+			</a>
+		</div>
+	)}
+</div>
+
+<style>
+	.posts {
+		width: 100%;
+		display: grid;
+		row-gap: .5rem;
+		column-gap: 2rem;
+		grid-template-columns: fit-content(8rem) 1fr;
+		grid-auto-flow: row;
+	}
+
+	.post {
+		display: grid;
+		grid-column: 1 / span 2;
+		grid-template-columns: subgrid;
+		align-items: baseline;
+		padding: .75rem 0;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--body-divider-color);
+		}
+
+		time {
+			grid-column-start: 1;
+			color: var(--body-diminished-color);
+			font-size: .9rem;
+		}
+
+		div {
+			display: block;
+			grid-column-start: 2;
+
+			a {
+				display: block;
+				font-family: var(--body-heading-font-family);
+				text-wrap: balance;
+				font-size: 1.1rem;
+				margin-bottom: .5rem;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0 .5rem;
+
+				font-size: .85rem;
+				color: var(--body-diminished-color);
+			}
+		}
+	}
+
+	.more {
+		grid-column-start: 2;
+		margin-top: 1rem;
+		font-size: 1.1rem;
+	}
+
+	@media (max-width: 40rem) {
+		.post {
+			display: flex;
+			flex-direction: column;
+			gap: .5rem;
+		}
+
+		.more {
+			grid-column-start: 1;
+		}
+	}
+</style>

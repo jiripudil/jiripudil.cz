@@ -1,0 +1,15 @@
+{
+	"title": "Webpack ♥ Nette Framework",
+	"annotation": "Webpack is a module bundler for more than just Javascript. This talk explains the concepts and usage of Webpack and introduces a library that helps integrate Webpack-built assets into Nette Framework in a way that both developers and users are happy.",
+	"sessions": [
+		{
+			"date": "2017-03-25",
+			"event": "Poslední sobota #87",
+			"location": "Prague, Czech Republic",
+			"url": "https://www.facebook.com/events/1247727315323628/",
+			"slidesUrl": "https://www.slideshare.net/jiripudil/nette-lt3-webpack",
+			"videoUrl": "https://www.facebook.com/pehapkari/videos/1285316211518186/",
+			"language": "cs"
+		}
+	]
+}

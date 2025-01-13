@@ -1,0 +1,16 @@
+{
+	"title": "Sealed classes in PHP",
+	"annotation": "A feature likely known to Kotlin developers, sealed classes and interfaces provide a way of enforcing restricted inheritance hierarchies. With the most recent versions of PHPStan, we can use statically analyzed sealed classes in PHP!",
+	"highlighted": true,
+	"sessions": [
+		{
+			"date": "2022-11-05",
+			"event": "Poslední sobota s04e07",
+			"location": "Prague, Czech Republic",
+			"url": "https://www.facebook.com/events/628903768976239/",
+			"slidesUrl": "https://docs.google.com/presentation/d/1-JC-Bhfm_WjFKwTvkpz4aFArQLHMRnwwN2NMU0w7QgE/edit?usp=sharing",
+			"videoUrl": null,
+			"language": "cs"
+		}
+	]
+}

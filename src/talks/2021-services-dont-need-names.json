@@ -1,0 +1,16 @@
+{
+	"title": "DI services don't need names",
+	"annotation": "In this talk, I discuss dependency injection and show how Nette Framework's DI container leverages PHP's type system to truly obsolete artificial service identifiers.",
+	"highlighted": true,
+	"sessions": [
+		{
+			"date": "2021-01-30",
+			"event": "Poslední sobota s03e01",
+			"location": "online stream",
+			"url": "https://www.facebook.com/events/924861438048145",
+			"slidesUrl": "https://docs.google.com/presentation/d/1rcL0XWj-UV0wUmZfNxQpZgQTzY-H9QKhycCHmA3Wq4U/edit?usp=sharing",
+			"videoUrl": "https://www.youtube.com/watch?v=-tEAi8JLC_o",
+			"language": "en"
+		}
+	]
+}

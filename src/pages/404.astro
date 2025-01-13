@@ -1,0 +1,34 @@
+---
+import Container from '../components/Container.astro';
+import PageSeo from '../components/PageSeo.astro';
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+	<PageSeo
+		slot="head"
+		title="Page Not Found"
+	/>
+
+	<Container>
+		<div class="body">
+			<h1>Page Not Found</h1>
+
+			<p>
+				<strong>The requested page could not be found on this website.</strong>
+				Please make sure you've typed the address right or clicked a correct link.
+			</p>
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.body {
+		padding: 1.5rem 0;
+	}
+
+	p {
+		font-size: 1.1rem;
+		text-wrap: pretty;
+		hyphens: auto;
+	}
+</style>

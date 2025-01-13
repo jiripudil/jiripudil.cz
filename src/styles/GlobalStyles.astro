@@ -1,0 +1,69 @@
+---
+import 'normalize.css';
+import '@fontsource-variable/libre-franklin';
+import '@fontsource-variable/montserrat';
+---
+<style is:global>
+	:root {
+		scroll-behavior: smooth;
+		color-scheme: light dark;
+		font-family: var(--body-text-font-family);
+
+		--body-text-font-family: 'Libre Franklin Variable', 'Libre Franklin', sans-serif;
+		--body-heading-font-family: 'Montserrat Variable', 'Montserrat', sans-serif;
+
+		--body-background-color: #242428;
+		--body-divider-color: #59595a;
+		--body-text-color: #f3f3ff;
+		--body-augmented-color: #fff;
+		--body-diminished-color: #d6d6d8;
+		--body-accent-color: #86c0ff;
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root {
+			--body-background-color: #fff;
+			--body-divider-color: #a9a9ae;
+			--body-text-color: #303030;
+			--body-augmented-color: #111;
+			--body-diminished-color: #59595a;
+			--body-accent-color: #007acc;
+		}
+	}
+
+	html, body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--body-background-color);
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	a {
+		color: var(--body-text-color);
+
+		&:hover {
+			color: var(--body-accent-color);
+		}
+	}
+
+	h1, h2, h3 {
+		font-family: var(--body-heading-font-family);
+	}
+
+	p {
+		line-height: 1.6;
+		text-wrap: pretty;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.astro-code, .astro-code span {
+			color: var(--shiki-dark) !important;
+			background-color: var(--shiki-dark-bg) !important;
+		}
+	}
+</style>

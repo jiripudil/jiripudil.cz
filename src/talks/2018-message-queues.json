@@ -1,0 +1,15 @@
+{
+	"title": "Message queues: Leave the hard work for later",
+	"annotation": "This talk is basically a message queues 101. It introduces the concept of message queues, discusses when and how they are useful, and talks about various message queue implementations and their bindings to both vanilla PHP and some of the most popular PHP frameworks.",
+	"sessions": [
+		{
+			"date": "2018-06-20",
+			"event": "Péhápkaři Brno #20",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.facebook.com/events/225075271422896/",
+			"slidesUrl": "https://goo.gl/MfTkWk",
+			"videoUrl": "https://www.youtube.com/watch?v=_KJ-IiSOhdA",
+			"language": "cs"
+		}
+	]
+}

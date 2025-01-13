@@ -1,0 +1,22 @@
+<div id="giscus-container"></div>
+
+<script>
+	const giscus = document.createElement('script');
+	giscus.src = 'https://giscus.app/client.js';
+	giscus.crossOrigin = 'anonymous';
+	giscus.async = true;
+
+	giscus.setAttribute('data-repo', 'jiripudil/jiripudil.cz');
+	giscus.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkyNTI5NzY3Nw==');
+	giscus.setAttribute('data-category', 'Blog discussions');
+	giscus.setAttribute('data-category-id', 'DIC_kwDOAYIDDc4CAfUM');
+	giscus.setAttribute('data-mapping', 'og:title');
+	giscus.setAttribute('data-reactions-enabled', '1');
+	giscus.setAttribute('data-emit-metadata', '0');
+	giscus.setAttribute('data-theme', 'preferred_color_scheme');
+	giscus.setAttribute('data-lang', 'en');
+	giscus.setAttribute('data-loading', 'lazy');
+
+	const container = document.getElementById('giscus-container');
+	container!.appendChild(giscus);
+</script>

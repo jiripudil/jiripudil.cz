@@ -1,0 +1,15 @@
+{
+	"title": "Don’t be afraid of JavaScript",
+	"annotation": "I have been slowly transitioning from PHP towards JavaScript. I had to overcome the so-called Javascript fatigue and learn my way around the plethora of packages. This talk walks you through the essentials of the modern JS ecosystem and why they are needed.",
+	"sessions": [
+		{
+			"date": "2018-02-24",
+			"event": "Poslední sobota #94",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.facebook.com/events/540535689663477/",
+			"slidesUrl": "https://goo.gl/XVedcZ",
+			"videoUrl": "https://www.facebook.com/pehapkari/videos/1603977729652031/",
+			"language": "cs"
+		}
+	]
+}

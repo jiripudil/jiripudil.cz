@@ -1,0 +1,39 @@
+---
+import {getCollection} from 'astro:content';
+import BlogPosts from '../../blog/components/BlogPosts.astro';
+import Container from '../../components/Container.astro';
+import PageSeo from '../../components/PageSeo.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('posts', (({data}) => !data.draft));
+const sortedPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datetime));
+const postsByYear = Map.groupBy(sortedPosts, (post) => post.data.datetime.getFullYear());
+---
+<Layout>
+	<PageSeo
+		slot="head"
+		title="Blog"
+	/>
+
+	<Container>
+		<div class="body">
+			<h1>Blog</h1>
+
+			{Array.from(postsByYear).map(([year, posts]) => (
+				<h2>{year}</h2>
+				<BlogPosts posts={posts} />
+			))}
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.body {
+		padding: 1.5rem 0;
+	}
+
+	h2 {
+		text-wrap: balance;
+		margin: 3rem 0 0;
+	}
+</style>

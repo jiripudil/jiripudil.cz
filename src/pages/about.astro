@@ -1,0 +1,311 @@
+---
+import {Image} from 'astro:assets';
+import {Icon} from 'astro-icon/components';
+import Container from '../components/Container.astro';
+import PageSeo from '../components/PageSeo.astro';
+import Pronounce from '../components/Pronounce.astro';
+import Layout from '../layouts/Layout.astro';
+import profilePhoto from '../images/me.jpg';
+---
+<Layout title="About me">
+	<PageSeo
+		slot="head"
+		title="About me"
+	/>
+
+	<Container>
+		<div class="body">
+			<div class="top">
+				<div>
+					<h1>About me</h1>
+					<p class="perex">
+						My name is <strong>Jiří Pudil.</strong> I am a software engineer from 🇨🇿 Brno.
+					</p>
+				</div>
+
+				<Image src={profilePhoto} alt="Jiří Pudil's profile photo" class="portrait" />
+			</div>
+
+			<p class="pronunciation">
+				In Czech, my name is pronounced <Pronounce text="Jiří" ipa="/jɪr̝iː/" />, but good luck with that <a href="https://en.wikipedia.org/wiki/Voiced_dental,_alveolar_and_postalveolar_trills#Voiced_alveolar_fricative_trill">voiced alveolar fricative trill</a>. A&nbsp;more informal variant of the name that doesn’t have that sound is <Pronounce text="Jirka" ipa="/jɪrka/" />. If you want to keep it on more formal terms, <Pronounce text="Jiri" ipa="/jɪriː/" /> will do.
+			</p>
+
+			<p>I started playing with <strong>PHP</strong> back in 2009 and have been using it professionally since 2012. Over the years, I’ve picked up <strong>TypeScript,</strong> both client-side with <strong>React,</strong> and server-side with Node. Most recently, I’ve gained some experience with mobile development using <strong>Kotlin Multiplatform.</strong></p>
+
+			<div class="timeline">
+				<h2>Timeline</h2>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2012</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">PeckaDesign</span>
+						</h3>
+					</summary>
+
+					<p>I started my professional career at <a href="https://peckadesign.cz">PeckaDesign</a> in Brno. I spent the vast majority of my three years there working on Megapixel.cz, a leading Czech e-commerce site for photographers.</p>
+					<p>I helped rethink and refactor the community gallery code, and implemented an online photolab service, handling large amounts of uploaded files via modern JavaScript (XHR2) and Nginx’s file upload module.</p>
+				</details>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2015</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">Rohlík.cz</span>
+						</h3>
+					</summary>
+
+					<p>Starting mid-2015, I spent a year at <a href="https://www.rohlik.cz">Rohlík.cz</a>, a Czech electronic grocery store, at the time dispatching over 1500 orders each day in the Czech Republic’s two largest cities, Prague and Brno.</p>
+					<p>I worked mostly on day-to-day operations and bugfixes. In addition to the daily routine, I&nbsp;helped migrate the checkout process to ČSOB’s then brand new card payment solution.</p>
+				</details>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2016</span>
+							<Icon name="fa6-solid:graduation-cap" />
+							<span class="company">Masaryk University</span>
+						</h3>
+					</summary>
+
+					<p>In the middle of 2016, I passed my state exams and graduated with a bachelor’s degree in Social Informatics, a programme bridging the gap between IT and social sciences.</p>
+					<p>I used my thesis as an opportunity to learn React, and implemented a single-page chatting app. I integrated Google’s Web Speech API into it so that users could navigate the app, dictate messages and have them read, all without using the keyboard.</p>
+				</details>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2016</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">Grifart</span>
+						</h3>
+					</summary>
+
+					<p>Since 2016 I had been helping <a href="https://grifart.cz">Grifart</a>, a Brno-based company organizing medicinal congresses, rebuild their attendee registration system so that all the processes that can be automated are automated.</p>
+					<p>I also worked on several React front-ends, and have helped set up infrastructure components including an Nginx-based reverse proxy server, or a logging server built with the Elastic stack.</p>
+				</details>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2018</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">Smartlook</span>
+						</h3>
+					</summary>
+
+					<p>In mid-2018 I started working with <a href="https://smartlook.com">Smartlook</a>, a Czech startup providing website and mobile app analytics based on visitor recordings.</p>
+					<p>With PHP being only a small part of the whole cloud-based solution, I also got in touch with React and Node applications written in TypeScript, and I’ve got to know Docker better.</p>
+				</details>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2022</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">SuperKoders</span>
+						</h3>
+					</summary>
+
+					<p>In January 2022, I shook hands with <a href="https://superkoders.com">Superkoders</a>, a Brno-based digital agency, to help them shape the future of their in-house content management solution.</p>
+					<p>I was part of many major architectural decisions. I helped bring the codebase up to date with the assistance of static analysis, configured an automated continuous delivery pipeline, and prepared a Docker setup for local development.</p>
+				</details>
+
+				<details open>
+					<summary>
+						<h3>
+							<span class="year">now</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">Ivy Assistant</span>
+						</h3>
+					</summary>
+
+					<p>Late in 2019 I’ve joined <a href="https://ivyassistant.com">Ivy Assistant</a>, a healthcare startup helping IVF patients stick to the scheduled treatment.</p>
+					<p>I have taken part in the design and implementation of key parts of the product, including an event-sourced PHP backend, an administrative GUI for the clinics, multiplatform mobile applications, and a robust end-to-end encryption solution in-between.</p>
+				</details>
+
+				<h3>Always giving back to the community</h3>
+				<p>The community has given me so much that it’s only natural that I give back to it whenever I can. I try to help people on <a href="https://forum.nette.org/cs/profile.php?id=3206">Nette forum</a>, write <a href="/blog">this blog</a>, <a href="/talks">speak at meetups</a>, and contribute to or even maintain a number of <a href="https://github.com/jiripudil">open-source projects</a>.</p>
+			</div>
+
+			<div class="bottom">
+				<div class="contacts">
+					<h2>Contact</h2>
+
+					<div class="contact">
+						<Icon name="fa6-solid:envelope" />
+						<a href="mailto:me@jiripudil.cz">me@jiripudil.cz</a>
+					</div>
+
+					<div class="contact">
+						<Icon name="fa6-solid:phone" />
+						<a href="tel:+420606351567">+420 606 351 567</a>
+					</div>
+
+					<div class="socials">
+						<a href="https://linkedin.com/in/jiripudil" title="LinkedIn">
+							<Icon name="fa6-brands:linkedin" />
+						</a>
+						<a href="https://github.com/jiripudil" title="GitHub">
+							<Icon name="fa6-brands:github" />
+						</a>
+						<a href="https://bsky.app/profile/jiripudil.cz" title="Bluesky">
+							<Icon name="fa6-brands:bluesky" />
+						</a>
+					</div>
+				</div>
+
+				<div class="legal">
+					<h2>Legal</h2>
+
+					<div>
+						<strong>Jiří Pudil</strong><br />
+						Hálkova 926<br />
+						39601 Humpolec<br />
+						Czech Republic
+					</div>
+
+					<div>
+						Registered in the Trade Register.<br />
+						Reg. no. <a href="https://ares.gov.cz/ekonomicke-subjekty/res/04299604">04299604</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.body {
+		padding: 1.5rem 0;
+	}
+
+	.top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.portrait {
+		display: block;
+		max-width: 6rem;
+		max-height: 6rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+	}
+
+	.perex {
+		font-size: 1.1rem;
+	}
+
+	.pronunciation {
+		margin: 0 0 1.5rem;
+		font-size: .9rem;
+		line-height: 1.4;
+	}
+
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-top: 1.5rem;
+
+		details {
+			h3 {
+				margin: 0;
+				display: inline-flex;
+				align-items: center;
+				gap: 1rem;
+				font-weight: normal;
+				font-size: 1.25rem;
+
+				.year {
+					font-size: 1.1rem;
+					font-weight: bold;
+					flex: 1 0 3rem;
+				}
+
+				svg {
+					flex: 0 0 1.5rem;
+					color: var(--body-accent-color);
+				}
+
+				.company {
+					flex: 1 0 auto;
+				}
+			}
+
+			p {
+				font-size: .95rem;
+				margin-left: 1.25rem;
+				text-wrap: pretty;
+				hyphens: auto;
+			}
+		}
+
+		h3 {
+			margin-bottom: 0;
+		}
+	}
+
+	.bottom {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-top: 3rem;
+
+		h2 {
+			font-size: 1.25rem;
+		}
+
+		.contact {
+			svg {
+				fill: var(--body-accent-color);
+			}
+
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+		}
+
+		.socials {
+			margin-top: 1.5rem;
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+
+			a {
+				text-decoration: none;
+				color: var(--body-diminished-color);
+
+				&:hover {
+					color: var(--body-text-color);
+				}
+			}
+
+			svg {
+				width: 1.5rem;
+				height: 1.5rem;
+				fill: currentColor;
+			}
+		}
+
+		.legal {
+			div {
+				margin-bottom: 1rem;
+				font-size: .9rem;
+			}
+		}
+	}
+
+	@media (max-width: 40rem) {
+		.bottom {
+			flex-direction: column;
+		}
+	}
+</style>

@@ -1,0 +1,15 @@
+{
+  "title": "Naja 3.0",
+  "annotation": "The web platform is ever-evolving. In this talk, I discuss what that has meant for Naja in the recent years, which new features led to a new major release, and what backwards incompatible changes you should be aware of when upgrading. And by the end of the talk, I had released Naja 3.0 into the wild.",
+  "sessions": [
+    {
+      "date": "2024-02-24",
+      "event": "Poslední sobota s06e02",
+      "location": "Brno, Czech Republic",
+      "url": "https://www.meetup.com/pehapkari/events/299173234/",
+      "slidesUrl": "https://docs.google.com/presentation/d/1p3BLVvu6VpETs6Y3mK3dShJOiY4LemidAhBJo939OXI/edit?usp=sharing",
+      "videoUrl": "https://www.youtube.com/watch?v=90RhvBP3ubo",
+      "language": "cs"
+    }
+  ]
+}

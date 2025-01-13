@@ -1,0 +1,14 @@
+---
+interface Props {
+	title: string;
+}
+
+const {title} = Astro.props;
+---
+<title>{`${title} – Jiří Pudil`}</title>
+
+<meta name="google-site-verification" content="7fHBkeNq7LXO24W8IjCc37NT9MX-6RJxD3Co5F-bRQw" />
+
+<meta property="og:site_name" content="Jiří Pudil" />
+<meta property="og:title" content={title} />
+<slot />

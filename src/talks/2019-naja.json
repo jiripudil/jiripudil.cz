@@ -1,0 +1,15 @@
+{
+	"title": "Naja: thin, modern AJAX library for Nette",
+	"annotation": "A year and a half after I had introduced first public release of Naja, a tiny AJAX library for Nette Framework, this talk gives a recap of what the library can and cannot do, and provides a sneak peek into its future.",
+	"sessions": [
+		{
+			"date": "2019-02-23",
+			"event": "Poslední sobota #102",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.facebook.com/events/799941073678290/",
+			"slidesUrl": "https://docs.google.com/presentation/d/13ZtycRbjLDu25PC1C9ikssi6Sz_R-RdBtks4bB3MbtE/edit?usp=sharing",
+			"videoUrl": null,
+			"language": "en"
+		}
+	]
+}
