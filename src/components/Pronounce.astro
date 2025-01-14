@@ -50,7 +50,7 @@ const {text, ipa} = Astro.props;
 		}
 
 		if (voice === undefined) {
-			button.disabled = true;
+			button.remove();
 			return;
 		}
 
