@@ -32,7 +32,7 @@ jobs:
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
-          keep_history: true
+          keep_history: false
           build_dir: dist/
           fqdn: jiripudil.cz
           jekyll: false
