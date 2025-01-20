@@ -8,8 +8,10 @@ interface Props {
 
 const {text, ipa} = Astro.props;
 ---
-<span class="pronunciation" lang="cs" aria-label={text}>
-	{ipa}
+<span class="pronunciation">
+	<span lang="cs-CZ" aria-label={text}>
+		{ipa}
+	</span>
 	<button class="pronounce" data-text={text} aria-hidden="true">
 		<Icon name="fa6-solid:volume-low" />
 	</button>

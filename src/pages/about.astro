@@ -19,7 +19,8 @@ import profilePhoto from '../images/me.jpg';
 				<div>
 					<h1>About me</h1>
 					<p class="perex">
-						My name is <strong>Jiří Pudil.</strong> I am a software engineer from 🇨🇿 Brno.
+						Hi, I am <strong>Jiří Pudil</strong>
+						<span class="pronouns">(he/him)</span>
 					</p>
 				</div>
 
@@ -30,61 +31,35 @@ import profilePhoto from '../images/me.jpg';
 				In Czech, my name is pronounced <Pronounce text="Jiří" ipa="/jɪr̝iː/" />, but good luck with that <a href="https://en.wikipedia.org/wiki/Voiced_dental,_alveolar_and_postalveolar_trills#Voiced_alveolar_fricative_trill">voiced alveolar fricative trill</a>. A&nbsp;more informal variant of the name that doesn’t have that sound is <Pronounce text="Jirka" ipa="/jɪrka/" />. If you want to keep it on more formal terms, <Pronounce text="Jiri" ipa="/jɪriː/" /> will do.
 			</p>
 
-			<p>I started playing with <strong>PHP</strong> back in 2009 and have been using it professionally since 2012. Over the years, I’ve picked up <strong>TypeScript,</strong> both client-side with <strong>React,</strong> and server-side with Node. Most recently, I’ve gained some experience with mobile development using <strong>Kotlin Multiplatform.</strong></p>
+			<p>I started playing with <strong>PHP</strong> back in 2009 and have been using it professionally since 2012. Over the years, I’ve picked up <strong>TypeScript,</strong> both client-side with <strong>React,</strong> and server-side with <strong>Node.js</strong>. Most recently, I’ve gained some experience with mobile development using <strong>Kotlin Multiplatform.</strong></p>
 
 			<div class="timeline">
 				<h2>Timeline</h2>
 
-				<details>
+				<details open>
 					<summary>
 						<h3>
-							<span class="year">2012</span>
+							<span class="year">now</span>
 							<Icon name="fa6-solid:briefcase" />
-							<span class="company">PeckaDesign</span>
+							<span class="company">Ivy Assistant</span>
 						</h3>
 					</summary>
 
-					<p>I started my professional career at <a href="https://peckadesign.cz">PeckaDesign</a> in Brno. I spent the vast majority of my three years there working on Megapixel.cz, a leading Czech e-commerce site for photographers.</p>
-					<p>I helped rethink and refactor the community gallery code, and implemented an online photolab service, handling large amounts of uploaded files via modern JavaScript (XHR2) and Nginx’s file upload module.</p>
+					<p>Late in 2019 I’ve joined <a href="https://ivyassistant.com">Ivy Assistant</a>, a healthcare startup helping IVF patients stick to the scheduled treatment.</p>
+					<p>I have taken part in the design and implementation of key parts of the product, including an event-sourced PHP backend, an administrative GUI for the clinics, multiplatform mobile applications, and a robust end-to-end encryption solution in-between.</p>
 				</details>
 
 				<details>
 					<summary>
 						<h3>
-							<span class="year">2015</span>
+							<span class="year">2022</span>
 							<Icon name="fa6-solid:briefcase" />
-							<span class="company">Rohlík.cz</span>
+							<span class="company">SuperKoders</span>
 						</h3>
 					</summary>
 
-					<p>Starting mid-2015, I spent a year at <a href="https://www.rohlik.cz">Rohlík.cz</a>, a Czech electronic grocery store, at the time dispatching over 1500 orders each day in the Czech Republic’s two largest cities, Prague and Brno.</p>
-					<p>I worked mostly on day-to-day operations and bugfixes. In addition to the daily routine, I&nbsp;helped migrate the checkout process to ČSOB’s then brand new card payment solution.</p>
-				</details>
-
-				<details>
-					<summary>
-						<h3>
-							<span class="year">2016</span>
-							<Icon name="fa6-solid:graduation-cap" />
-							<span class="company">Masaryk University</span>
-						</h3>
-					</summary>
-
-					<p>In the middle of 2016, I passed my state exams and graduated with a bachelor’s degree in Social Informatics, a programme bridging the gap between IT and social sciences.</p>
-					<p>I used my thesis as an opportunity to learn React, and implemented a single-page chatting app. I integrated Google’s Web Speech API into it so that users could navigate the app, dictate messages and have them read, all without using the keyboard.</p>
-				</details>
-
-				<details>
-					<summary>
-						<h3>
-							<span class="year">2016</span>
-							<Icon name="fa6-solid:briefcase" />
-							<span class="company">Grifart</span>
-						</h3>
-					</summary>
-
-					<p>Since 2016 I had been helping <a href="https://grifart.cz">Grifart</a>, a Brno-based company organizing medicinal congresses, rebuild their attendee registration system so that all the processes that can be automated are automated.</p>
-					<p>I also worked on several React front-ends, and have helped set up infrastructure components including an Nginx-based reverse proxy server, or a logging server built with the Elastic stack.</p>
+					<p>In January 2022, I shook hands with <a href="https://superkoders.com">Superkoders</a>, a Brno-based digital agency, to help them shape the future of their in-house content management solution.</p>
+					<p>I was part of many major architectural decisions. I helped bring the codebase up to date with the assistance of static analysis, configured an automated continuous delivery pipeline, and prepared a Docker setup for local development.</p>
 				</details>
 
 				<details>
@@ -103,27 +78,53 @@ import profilePhoto from '../images/me.jpg';
 				<details>
 					<summary>
 						<h3>
-							<span class="year">2022</span>
+							<span class="year">2016</span>
 							<Icon name="fa6-solid:briefcase" />
-							<span class="company">SuperKoders</span>
+							<span class="company">Grifart</span>
 						</h3>
 					</summary>
 
-					<p>In January 2022, I shook hands with <a href="https://superkoders.com">Superkoders</a>, a Brno-based digital agency, to help them shape the future of their in-house content management solution.</p>
-					<p>I was part of many major architectural decisions. I helped bring the codebase up to date with the assistance of static analysis, configured an automated continuous delivery pipeline, and prepared a Docker setup for local development.</p>
+					<p>Since 2016 I had been helping <a href="https://grifart.cz">Grifart</a>, a Brno-based company organizing medicinal congresses, rebuild their attendee registration system so that all the processes that can be automated are automated.</p>
+					<p>I also worked on several React front-ends, and have helped set up infrastructure components including an Nginx-based reverse proxy server, or a logging server built with the Elastic stack.</p>
 				</details>
 
-				<details open>
+				<details>
 					<summary>
 						<h3>
-							<span class="year">now</span>
-							<Icon name="fa6-solid:briefcase" />
-							<span class="company">Ivy Assistant</span>
+							<span class="year">2016</span>
+							<Icon name="fa6-solid:graduation-cap" />
+							<span class="company">Masaryk University</span>
 						</h3>
 					</summary>
 
-					<p>Late in 2019 I’ve joined <a href="https://ivyassistant.com">Ivy Assistant</a>, a healthcare startup helping IVF patients stick to the scheduled treatment.</p>
-					<p>I have taken part in the design and implementation of key parts of the product, including an event-sourced PHP backend, an administrative GUI for the clinics, multiplatform mobile applications, and a robust end-to-end encryption solution in-between.</p>
+					<p>In the middle of 2016, I passed my state exams and graduated with a bachelor’s degree in Social Informatics, a programme bridging the gap between IT and social sciences.</p>
+					<p>I used my thesis as an opportunity to learn React, implementing a single-page chatting app. I integrated Google’s Web Speech API into it so that users could navigate the app, dictate messages and have them read, all without using the keyboard.</p>
+				</details>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2015</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">Rohlík.cz</span>
+						</h3>
+					</summary>
+
+					<p>Starting mid-2015, I spent a year at <a href="https://www.rohlik.cz">Rohlík.cz</a>, a Czech electronic grocery store, at the time dispatching over 1500 orders each day in Czechia’s two largest cities, Prague and Brno.</p>
+					<p>I worked mostly on day-to-day operations and bugfixes. In addition to the daily routine, I&nbsp;helped migrate the checkout process to ČSOB’s then brand new card payment solution.</p>
+				</details>
+
+				<details>
+					<summary>
+						<h3>
+							<span class="year">2012</span>
+							<Icon name="fa6-solid:briefcase" />
+							<span class="company">PeckaDesign</span>
+						</h3>
+					</summary>
+
+					<p>I started my professional career at <a href="https://peckadesign.cz">PeckaDesign</a> in Brno. I spent the vast majority of my three years there working on Megapixel.cz, a leading Czech e-commerce site for photographers.</p>
+					<p>I helped rethink and refactor the community gallery code, and implemented an online photolab service, handling large amounts of uploaded files via modern JavaScript (XHR2) and Nginx’s file upload module.</p>
 				</details>
 
 				<h3>Always giving back to the community</h3>
@@ -133,6 +134,11 @@ import profilePhoto from '../images/me.jpg';
 			<div class="bottom">
 				<div class="contacts">
 					<h2>Contact</h2>
+
+					<div class="contact">
+						<Icon name="fa6-solid:location-dot" />
+						Brno, Czech Republic
+					</div>
 
 					<div class="contact">
 						<Icon name="fa6-solid:envelope" />
@@ -201,6 +207,11 @@ import profilePhoto from '../images/me.jpg';
 		font-size: 1.1rem;
 	}
 
+	.pronouns {
+		font-size: .9rem;
+		color: var(--body-diminished-color);
+	}
+
 	.pronunciation {
 		margin: 0 0 1.5rem;
 		font-size: .9rem;
@@ -264,6 +275,7 @@ import profilePhoto from '../images/me.jpg';
 
 		.contact {
 			svg {
+				width: 1.25rem;
 				fill: var(--body-accent-color);
 			}
 
