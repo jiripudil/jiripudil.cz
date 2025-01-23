@@ -7,6 +7,7 @@
 		"node": ">=22.0"
 	},
 	"dependencies": {
+		"@astrojs/sitemap": "^3.2.1",
 		"@fontsource-variable/libre-franklin": "^5.1.2",
 		"@fontsource-variable/montserrat": "^5.1.1",
 		"@iconify-json/fa6-brands": "^1.2.5",
