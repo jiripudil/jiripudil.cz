@@ -72,6 +72,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/rss@npm:^4.0.11":
+  version: 4.0.11
+  resolution: "@astrojs/rss@npm:4.0.11"
+  dependencies:
+    fast-xml-parser: "npm:^4.5.0"
+    kleur: "npm:^4.1.5"
+  checksum: 10/703b2dc9657eec1cb4351364e640989570370867a1b795f9cd3e01bf172b7ebb0ee2a79c383223eeb81d846e394d01e8465259eaccd011b6600ef50b0caa9bb1
+  languageName: node
+  linkType: hard
+
 "@astrojs/sitemap@npm:^3.2.1":
   version: 3.2.1
   resolution: "@astrojs/sitemap@npm:3.2.1"
@@ -2390,6 +2400,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-xml-parser@npm:^4.5.0":
+  version: 4.5.1
+  resolution: "fast-xml-parser@npm:4.5.1"
+  dependencies:
+    strnum: "npm:^1.0.5"
+  bin:
+    fxparser: src/cli/cli.js
+  checksum: 10/17ce5908e798de1b6d12a39d26f04ac3b582ea9ce28f3a6e3b9c401edcb74790f28df84d75377608af53308ff8caad2b244ba1283cc4b5b4cf4cc7bd532a9983
+  languageName: node
+  linkType: hard
+
 "fastq@npm:^1.6.0":
   version: 1.15.0
   resolution: "fastq@npm:1.15.0"
@@ -3055,6 +3076,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jiripudil.cz@workspace:."
   dependencies:
+    "@astrojs/rss": "npm:^4.0.11"
     "@astrojs/sitemap": "npm:^3.2.1"
     "@fontsource-variable/libre-franklin": "npm:^5.1.2"
     "@fontsource-variable/montserrat": "npm:^5.1.1"
@@ -5018,6 +5040,13 @@ __metadata:
   version: 3.0.0
   resolution: "strip-bom@npm:3.0.0"
   checksum: 10/8d50ff27b7ebe5ecc78f1fe1e00fcdff7af014e73cf724b46fb81ef889eeb1015fc5184b64e81a2efe002180f3ba431bdd77e300da5c6685d702780fbf0c8d5b
+  languageName: node
+  linkType: hard
+
+"strnum@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "strnum@npm:1.0.5"
+  checksum: 10/d3117975db8372d4d7b2c07601ed2f65bf21cc48d741f37a8617b76370d228f2ec26336e53791ebc3638264d23ca54e6c241f57f8c69bd4941c63c79440525ca
   languageName: node
   linkType: hard
 
