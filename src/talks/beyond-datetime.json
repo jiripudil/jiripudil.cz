@@ -4,6 +4,15 @@
 	"highlighted": true,
 	"sessions": [
 		{
+			"date": "2025-03-12",
+			"event":  "Frontendisti.cz Meetup",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.meetup.com/frontendisti/events/306253481/",
+			"slidesUrl": null,
+			"videoUrl": null,
+			"language": "cs"
+		},
+		{
 			"date": "2022-06-03",
 			"event": "php.live 2022",
 			"location": "Ostrava, Czech Republic",
@@ -25,7 +34,7 @@
 			"date": "2020-05-30",
 			"event": "Web Science 2020",
 			"location": "online stream",
-			"url": "https://www.webscience.cz/konference/",
+			"url": "https://www.webscience.cz/#2020",
 			"slidesUrl": "https://docs.google.com/presentation/d/1gSJiUV11aIUW2oi1EZuLncudAm8Gc0cvmanCE3bs9ys/edit?usp=sharing",
 			"videoUrl": null,
 			"language": "cs"

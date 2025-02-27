@@ -4,6 +4,15 @@
 	"highlighted": true,
 	"sessions": [
 		{
+			"date": "2025-06-10",
+			"event":  "Web Science 2025",
+			"location": "Brno, Czech Republic",
+			"url": "https://www.webscience.cz/",
+			"slidesUrl": null,
+			"videoUrl": null,
+			"language": "cs"
+		},
+		{
 			"date": "2023-02-15",
 			"event": "Péhápkáři Brno #39",
 			"location": "Brno, Czech Republic",
