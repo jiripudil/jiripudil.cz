@@ -77,3 +77,13 @@ const otherTalks = sortTalks(await getCollection('talks', ({data}) => !data.high
 		margin-top: 3rem;
 	}
 </style>
+
+<script>
+	const times = document.querySelectorAll<HTMLTimeElement>('.talk time');
+	times.forEach((time) => {
+		const now = new Date();
+		if (new Date(time.dateTime) > now) {
+			time.dataset.upcoming = 'true';
+		}
+	})
+</script>

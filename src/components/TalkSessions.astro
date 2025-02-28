@@ -75,6 +75,11 @@ const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short'
 			grid-column-start: 1;
 			color: var(--body-diminished-color);
 			font-size: .9rem;
+
+			&[data-upcoming] {
+				color: var(--body-accent-color);
+				font-weight: bold;
+			}
 		}
 
 		.event {
