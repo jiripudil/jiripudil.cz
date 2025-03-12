@@ -4,6 +4,15 @@
 	"highlighted": true,
 	"sessions": [
 		{
+			"date": "2025-05-06",
+			"event": "Vienna PHP",
+			"location": "Vienna, Austria",
+			"url": "https://www.meetup.com/viennaphp/events/304058960/",
+			"slidesUrl": null,
+			"videoUrl": null,
+			"language": "en"
+		},
+		{
 			"date": "2025-03-12",
 			"event":  "Frontendisti.cz Meetup",
 			"location": "Brno, Czech Republic",
