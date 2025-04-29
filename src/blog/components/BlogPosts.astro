@@ -3,79 +3,64 @@ import type {CollectionEntry} from 'astro:content';
 
 interface Props {
 	posts: CollectionEntry<'posts'>[];
-	showMore?: boolean;
 }
 
-const {posts, showMore = false} = Astro.props;
+const {posts} = Astro.props;
 const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short', day: 'numeric'});
 ---
 <div class="posts">
 	{posts.map(({data: post}) => (
 		<div class="post">
-			<time title={formatter.format(post.datetime)} datetime={post.datetime.toISOString()}>
-				{formatter.format(post.datetime)}
-			</time>
+			<a href={`/blog/${post.slug}`}>
+				<h2>{post.title}</h2>
+			</a>
 
-			<div>
-				<a href={`/blog/${post.slug}`}>
-					{post.title}
-				</a>
-
+			<div class="metadata">
 				<ul>
 					{post.tags.map((tag) => (
-						<li>#{tag}</li>
+						<li><a href={`/blog/tag/${tag}`}>#{tag}</a></li>
 					))}
 				</ul>
+
+				<time title={formatter.format(post.datetime)} datetime={post.datetime.toISOString()}>
+					{formatter.format(post.datetime)}
+				</time>
 			</div>
+
+			<p class="perex" set:html={post.perex} />
 		</div>
 	))}
-
-	{showMore && (
-		<div class="more">
-			<a href="/blog">
-				More posts &raquo;
-			</a>
-		</div>
-	)}
 </div>
 
 <style>
 	.posts {
 		width: 100%;
-		display: grid;
-		row-gap: .5rem;
-		column-gap: 2rem;
-		grid-template-columns: fit-content(8rem) 1fr;
-		grid-auto-flow: row;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
 	}
 
 	.post {
-		display: grid;
-		grid-column: 1 / span 2;
-		grid-template-columns: subgrid;
-		align-items: baseline;
-		padding: .75rem 0;
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
 
-		&:not(:last-child) {
-			border-bottom: 1px solid var(--body-divider-color);
+		h2 {
+			font-family: var(--body-heading-font-family);
+			text-wrap: balance;
+			font-size: 1.3rem;
+			margin-bottom: .5rem;
 		}
 
-		time {
-			grid-column-start: 1;
-			color: var(--body-diminished-color);
-			font-size: .9rem;
-		}
+		.metadata {
+			display: flex;
+			align-items: start;
+			justify-content: space-between;
 
-		div {
-			display: block;
-			grid-column-start: 2;
-
-			a {
-				display: block;
-				font-family: var(--body-heading-font-family);
-				text-wrap: balance;
-				font-size: 1.1rem;
-				margin-bottom: .5rem;
+			time {
+				flex-shrink: 0;
+				color: var(--body-diminished-color);
+				font-size: .9rem;
 			}
 
 			ul {
@@ -88,15 +73,21 @@ const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short'
 				gap: 0 .5rem;
 
 				font-size: .85rem;
-				color: var(--body-diminished-color);
+
+				a {
+					color: var(--body-diminished-color);
+					&:hover {
+						color: var(--body-text-color);
+					}
+				}
 			}
 		}
-	}
 
-	.more {
-		grid-column-start: 2;
-		margin-top: 1rem;
-		font-size: 1.1rem;
+		.perex {
+			font-size: .95rem;
+			text-wrap: pretty;
+			hyphens: auto
+		}
 	}
 
 	@media (max-width: 40rem) {
@@ -104,10 +95,6 @@ const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short'
 			display: flex;
 			flex-direction: column;
 			gap: .5rem;
-		}
-
-		.more {
-			grid-column-start: 1;
 		}
 	}
 </style>

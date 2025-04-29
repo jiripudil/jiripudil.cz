@@ -1,0 +1,39 @@
+---
+import {getCollection} from 'astro:content';
+import BlogPosts from '../../../blog/components/BlogPosts.astro';
+import PageSeo from '../../../components/PageSeo.astro';
+import Layout from '../../../layouts/Layout.astro';
+import Container from '../../../components/Container.astro';
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('posts', (({data}) => !data.draft));
+	const allTags = new Set(allPosts.flatMap(({data}) => data.tags));
+	return Array.from(allTags).map((tag) => ({
+		params: {tag},
+	}));
+}
+
+const tag = Astro.params.tag;
+const allPosts = await getCollection('posts', (({data}) => !data.draft));
+const posts = allPosts.filter((post) => post.data.tags.includes(tag));
+const sortedPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datetime));
+---
+<Layout>
+	<PageSeo
+		slot="head"
+		title={`Posts tagged #${tag} – Blog`}
+	/>
+
+	<Container>
+		<div class="body">
+			<h1>Posts tagged #{tag}</h1>
+			<BlogPosts posts={sortedPosts} />
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.body {
+		padding: 1.5rem 0;
+	}
+</style>

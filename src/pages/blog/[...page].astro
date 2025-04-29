@@ -1,13 +1,22 @@
 ---
+import {type GetStaticPathsOptions} from 'astro';
 import {getCollection} from 'astro:content';
 import BlogPosts from '../../blog/components/BlogPosts.astro';
+import Pagination from '../../blog/components/Pagination.astro';
 import Container from '../../components/Container.astro';
 import PageSeo from '../../components/PageSeo.astro';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = await getCollection('posts', (({data}) => !data.draft));
-const sortedPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datetime));
-const postsByYear = Map.groupBy(sortedPosts, (post) => post.data.datetime.getFullYear());
+export async function getStaticPaths({paginate}: GetStaticPathsOptions) {
+	const posts = await getCollection('posts', (({data}) => !data.draft));
+	const sortedPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datetime));
+	return paginate(sortedPosts, {
+		pageSize: 7,
+	});
+}
+
+const {page} = Astro.props;
+const posts = page.data;
 ---
 <Layout>
 	<PageSeo
@@ -18,11 +27,8 @@ const postsByYear = Map.groupBy(sortedPosts, (post) => post.data.datetime.getFul
 	<Container>
 		<div class="body">
 			<h1>Blog</h1>
-
-			{Array.from(postsByYear).map(([year, posts]) => (
-				<h2>{year}</h2>
-				<BlogPosts posts={posts} />
-			))}
+			<BlogPosts posts={posts} />
+			<Pagination page={page} />
 		</div>
 	</Container>
 </Layout>

@@ -1,15 +1,10 @@
 ---
 import {Image} from 'astro:assets';
-import {getCollection} from 'astro:content';
 import {Icon} from 'astro-icon/components';
-import BlogPosts from '../blog/components/BlogPosts.astro';
 import Container from '../components/Container.astro';
 import PageSeo from '../components/PageSeo.astro';
 import Layout from '../layouts/Layout.astro';
 import profilePhoto from '../images/me.jpg';
-
-const posts = await getCollection('posts', (({data}) => !data.draft));
-const latestPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datetime)).slice(0, 3);
 ---
 <Layout>
 	<PageSeo
@@ -17,7 +12,7 @@ const latestPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datet
 		title="Home"
 	/>
 
-	<div class="hero">
+	<div class="body">
 		<Container>
 			<h1>
 				<Image src={profilePhoto} alt="Jiří Pudil's profile photo" class="portrait" />
@@ -32,17 +27,17 @@ const latestPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datet
 			<div class="contacts">
 				<ul>
 					<li>
-						<a href="https://linkedin.com/in/jiripudil" title="LinkedIn">
+						<a href="https://linkedin.com/in/jiripudil" title="LinkedIn" aria-label="LinkedIn">
 							<Icon name="fa6-brands:linkedin" />
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/jiripudil" title="GitHub">
+						<a href="https://github.com/jiripudil" title="GitHub" aria-label="GitHub">
 							<Icon name="fa6-brands:github" />
 						</a>
 					</li>
 					<li>
-						<a href="https://bsky.app/profile/jiripudil.cz" title="Bluesky">
+						<a href="https://bsky.app/profile/jiripudil.cz" title="Bluesky" aria-label="Bluesky">
 							<Icon name="fa6-brands:bluesky" />
 						</a>
 					</li>
@@ -56,20 +51,10 @@ const latestPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datet
 			</div>
 		</Container>
 	</div>
-
-	<div class="body">
-		<Container>
-			<h2>From my blog</h2>
-			<BlogPosts
-				posts={latestPosts}
-				showMore
-			/>
-		</Container>
-	</div>
 </Layout>
 
 <style>
-	.hero {
+	.body {
 		background: var(--body-background-color);
 		padding: 3rem 0 1.5rem;
 
@@ -139,7 +124,7 @@ const latestPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datet
 		}
 
 		.introduction {
-			font-size: 1.1rem;
+			font-size: 1.15rem;
 			color: var(--body-text-color);
 
 			p {

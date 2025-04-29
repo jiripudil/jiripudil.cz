@@ -1,0 +1,33 @@
+---
+import {type Page} from 'astro';
+
+interface Props {
+	page: Page;
+}
+
+const {page} = Astro.props;
+---
+<div class="pagination">
+	{page.currentPage > 1 && <a href={page.url.prev}>&larr; Newer posts</a>}
+
+	<div class="numbers">
+		{page.currentPage} / {page.lastPage}
+	</div>
+
+	{page.currentPage < page.lastPage && <a href={page.url.next}>Older posts &rarr;</a>}
+</div>
+
+<style>
+	.pagination {
+		margin-top: 3rem;
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	.numbers {
+		font-size: .9rem;
+		color: var(--body-diminished-color);
+	}
+</style>
