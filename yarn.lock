@@ -341,16 +341,16 @@ __metadata:
   linkType: hard
 
 "@fontsource-variable/libre-franklin@npm:^5.1.2":
-  version: 5.1.2
-  resolution: "@fontsource-variable/libre-franklin@npm:5.1.2"
-  checksum: 10/1d0cac8e75f38010feb54bb96150022977b12425cbadc6dc15e842bd8d3508bf76c0b5b03e15a6c396766732b385a5e7f76056586653ee73a09ea57947b18a1c
+  version: 5.2.5
+  resolution: "@fontsource-variable/libre-franklin@npm:5.2.5"
+  checksum: 10/a2e0a4f0acf25d75b1dcfdc4e7d8b65fc638e7affd604191e003f955db44fd495aedbc9af7313a93ce40ebdae23eda0de713c431c176da3014aecf10804b54ac
   languageName: node
   linkType: hard
 
 "@fontsource-variable/montserrat@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "@fontsource-variable/montserrat@npm:5.1.1"
-  checksum: 10/6ce7a118d2d922b8061f5206fe3421318576cf6f84b260c94920d2c6379d63308b2f4b0ad4f195ec68bebe6a3d5166e877ef572b6798e45eae1790eee7cfdcfa
+  version: 5.2.5
+  resolution: "@fontsource-variable/montserrat@npm:5.2.5"
+  checksum: 10/e8833f19cf2a4b7a120d93d897ff34730ea35a0d348601a868e394ff874f89d45a54d1a699c5e99631af01e60265a427eec582a15b32c57d7b016c74fcd0e174
   languageName: node
   linkType: hard
 
