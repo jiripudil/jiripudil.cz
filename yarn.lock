@@ -1152,14 +1152,14 @@ __metadata:
   linkType: hard
 
 "astro-favicons@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "astro-favicons@npm:3.1.4"
+  version: 3.1.5
+  resolution: "astro-favicons@npm:3.1.5"
   dependencies:
     favilib: "npm:^1.0.5"
     ultrahtml: "npm:^1.5.3"
   peerDependencies:
     astro: ">= 4.0.0"
-  checksum: 10/c045c39c5687946a4c7955d9e6cb18a047feba2a6025906cc69e3db0fcf54e8fc9cfc2f79f468a04151b96e6e0bfee83354d7d50fe8973b16efa4bff87e865cc
+  checksum: 10/096e641a8482b90fb0924a348b853e243d3a9719e8849dc1f87f4716b536107ca641406c699eb3ae9e4d32f8ce89a8c787f95065c88ddab66b778406c4c1f4b5
   languageName: node
   linkType: hard
 
