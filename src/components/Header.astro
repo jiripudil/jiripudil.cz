@@ -1,20 +1,13 @@
 ---
-import {Icon} from 'astro-icon/components';
 import Container from './Container.astro';
 ---
 <div class="header">
 	<Container>
-		<div class="name">
-			<a href="/">
-				Jiří Pudil
-			</a>
-		</div>
-
 		<nav class="menu">
 			<ul>
-				<li>
+				<li class="name">
 					<a href="/" title="Home" class:list={[{active: Astro.url.pathname === '/'}]}>
-						<Icon name="fa6-solid:house" title="Home" />
+						Jiří Pudil
 					</a>
 				</li>
 				<li>
@@ -25,6 +18,11 @@ import Container from './Container.astro';
 				<li>
 					<a href="/blog" class:list={[{active: Astro.url.pathname.startsWith('/blog')}]}>
 						Blog
+					</a>
+				</li>
+				<li>
+					<a href="/notes" class:list={[{active: Astro.url.pathname.startsWith('/notes')}]}>
+						Notes
 					</a>
 				</li>
 				<li>
@@ -40,24 +38,6 @@ import Container from './Container.astro';
 <style>
 	.header {
 		padding: 1.5rem 0;
-
-		.container {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-	}
-
-	.name {
-		flex-shrink: 0;
-
-		a {
-			font-size: 1.25rem;
-			font-family: var(--body-heading-font-family);
-			font-weight: bold;
-			color: var(--body-augmented-color);
-			text-decoration: none;
-		}
 	}
 
 	.menu ul {
@@ -91,6 +71,27 @@ import Container from './Container.astro';
 				font-weight: bold;
 				border-bottom-width: .25rem;
 				border-color: var(--body-accent-color);
+			}
+		}
+
+		.name {
+			margin-right: auto;
+
+			a {
+				font-size: 1.25rem;
+				font-family: var(--body-heading-font-family);
+				font-weight: bold;
+				color: var(--body-augmented-color);
+				text-decoration: none;
+			}
+		}
+
+		@media (max-width: 40rem) {
+			flex-wrap: wrap;
+			justify-content: start;
+
+			.name {
+				flex-basis: 100%;
 			}
 		}
 	}

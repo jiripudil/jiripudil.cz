@@ -3,18 +3,19 @@ import {type Page} from 'astro';
 
 interface Props {
 	page: Page;
+	type: string;
 }
 
-const {page} = Astro.props;
+const {page, type} = Astro.props;
 ---
 <div class="pagination">
-	{page.currentPage > 1 && <a href={page.url.prev}>&larr; Newer posts</a>}
+	{page.currentPage > 1 && <a href={page.url.prev}>&larr; Newer {type}</a>}
 
 	<div class="numbers">
 		{page.currentPage} / {page.lastPage}
 	</div>
 
-	{page.currentPage < page.lastPage && <a href={page.url.next}>Older posts &rarr;</a>}
+	{page.currentPage < page.lastPage && <a href={page.url.next}>Older {type} &rarr;</a>}
 </div>
 
 <style>

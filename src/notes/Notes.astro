@@ -1,0 +1,111 @@
+---
+import {type CollectionEntry, render} from 'astro:content';
+
+interface Props {
+	notes: CollectionEntry<'notes'>[];
+}
+
+const {notes} = Astro.props;
+const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short', day: 'numeric'});
+---
+<div class="notes">
+	{notes.map(async (note) => {
+		const {Content} = await render(note);
+
+		return (
+			<div class="note">
+				<span id={`note-${note.id}`}></span>
+
+				<a href={note.data.url}>
+					<h2>
+						{note.data.title}
+					</h2>
+				</a>
+
+				<div class="domain">
+					{new URL(note.data.url).hostname}
+				</div>
+
+				<div class="meta">
+					<span class="date">
+						{formatter.format(note.data.date)}
+					</span>
+
+					<span class="tags">
+						{note.data.tags.map((tag) => `#${tag}`).join(', ')}
+					</span>
+				</div>
+
+				<div class="content">
+					<Content />
+				</div>
+			</div>
+		);
+	})}
+</div>
+
+<style>
+	.notes {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.note {
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+
+		h2 {
+			font-family: var(--body-heading-font-family);
+			text-wrap: balance;
+			margin-bottom: 0;
+		}
+
+		.domain {
+			color: var(--body-diminished-color);
+		}
+
+		.meta {
+			font-size: .9rem;
+			margin-top: .5rem;
+
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+
+			.date {
+				color: var(--body-accent-color);
+			}
+
+			.tags {
+				color: var(--body-diminished-color);
+			}
+		}
+
+		.content {
+			p {
+				text-wrap: pretty;
+				hyphens: auto;
+			}
+
+			:is(ul, ol) li {
+				line-height: 1.6;
+			}
+
+			blockquote {
+				position: relative;
+
+				&::before {
+					content: '"';
+					position: absolute;
+					left: -2.25rem;
+
+					color: var(--body-accent-color);
+					font-size: 4rem;
+				}
+			}
+		}
+	}
+</style>

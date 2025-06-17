@@ -1,34 +1,41 @@
 ---
 import {type GetStaticPathsOptions} from 'astro';
 import {getCollection} from 'astro:content';
-import BlogPosts from '../../blog/components/BlogPosts.astro';
 import Pagination from '../../blog/components/Pagination.astro';
 import Container from '../../components/Container.astro';
 import PageSeo from '../../components/PageSeo.astro';
 import Layout from '../../layouts/Layout.astro';
+import Notes from '../../notes/Notes.astro';
 
 export async function getStaticPaths({paginate}: GetStaticPathsOptions) {
-	const posts = await getCollection('posts', (({data}) => !data.draft));
-	const sortedPosts = posts.toSorted((a, b) => (+b.data.datetime) - (+a.data.datetime));
-	return paginate(sortedPosts, {
+	const notes = await getCollection('notes');
+	const sortedNotes = notes.toSorted((a, b) => (+b.data.date) - (+a.data.date));
+	return paginate(sortedNotes, {
 		pageSize: 7,
 	});
 }
 
 const {page} = Astro.props;
-const posts = page.data;
+const notes = page.data;
 ---
 <Layout>
 	<PageSeo
 		slot="head"
-		title="Blog"
+		title="Notes"
 	/>
 
 	<Container>
 		<div class="body">
-			<h1>Blog</h1>
-			<BlogPosts posts={posts} />
-			<Pagination page={page} type="posts" />
+			<h1>
+				Notes
+			</h1>
+
+			<p class="intro">
+				This is where I link to content that caught my eye on the Internet, and add my two cents to it. <a href="/blog/public-notebook">Find out why.</a>
+			</p>
+
+			<Notes notes={notes} />
+			<Pagination page={page} type="notes" />
 		</div>
 	</Container>
 </Layout>
@@ -38,8 +45,7 @@ const posts = page.data;
 		padding: 1.5rem 0;
 	}
 
-	h2 {
-		text-wrap: balance;
-		margin: 3rem 0 0;
+	.intro {
+		margin: 1.5rem 0;
 	}
 </style>

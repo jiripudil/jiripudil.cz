@@ -33,4 +33,14 @@ const talks = defineCollection({
 	}),
 });
 
-export const collections = {posts, talks};
+const notes = defineCollection({
+	loader: glob({pattern: '*.md', base: './src/notes'}),
+	schema: z.object({
+		title: z.string(),
+		url: z.string().url(),
+		date: z.date(),
+		tags: z.array(z.string()).default([]),
+	}),
+});
+
+export const collections = {posts, talks, notes};
