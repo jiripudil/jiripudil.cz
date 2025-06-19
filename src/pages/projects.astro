@@ -1,0 +1,126 @@
+---
+import { Icon } from 'astro-icon/components';
+import Container from '../components/Container.astro';
+import PageSeo from '../components/PageSeo.astro';
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+	<PageSeo
+		slot="head"
+		title="Projects"
+	/>
+
+	<Container>
+		<div class="body">
+			<h1>Projects</h1>
+
+			<div class="intro">
+				<p>
+					I'm the author and maintainer of several open-source tools. I also contribute to packages that I use, whenever I find a bug or come up with a feature I'd like the package to have. This page lists the highlights.
+				</p>
+				<p>
+					Check out my <a href="https://github.com/jiripudil"><Icon name="fa6-brands:github" /> GitHub profile</a> for more bits and pieces, both mine and those I have contributed to.
+				</p>
+			</div>
+
+			<div class="projects">
+				<div class="project">
+					<img src="https://github.com/phpstan.png" alt="PHPStan logo" />
+					<div class="details">
+						<h2>
+							<a href="https://github.com/phpstan/phpstan-src">phpstan/phpstan-src</a>
+						</h2>
+						<p>I have contributed a couple of significant features, as well as some bugfixes and small enhancements, to <a href="https://phpstan.org">PHPStan</a>, a popular PHP static analyzer. These include:</p>
+						<ul>
+							<li>local type aliases (<a href="https://github.com/phpstan/phpstan-src/pull/460">#460</a>);</li>
+							<li>restricting class hierarchies (<a href="https://github.com/phpstan/phpstan-src/pull/1477">#1477</a>) that I used to build <a href="https://github.com/jiripudil/phpstan-sealed-classes">phpstan-sealed-classes</a>;</li>
+							<li>contravariant template types (<a href="https://github.com/phpstan/phpstan-src/pull/2051">#2051</a>);</li>
+							<li>template default types (<a href="https://github.com/phpstan/phpstan-src/pull/3457">#3457</a>);</li>
+							<li>call-site variance / type projections (<a href="https://github.com/phpstan/phpstan-src/pull/2471">#2471</a>, <a href="https://github.com/phpstan/phpstan-src/pull/2481">#2481</a>, <a href="https://github.com/phpstan/phpstan-src/pull/2485">#2485</a>).</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="project">
+					<img src="https://github.com/naja-js.png" alt="Naja logo" />
+					<div class="details">
+						<h2>
+							<a href="https://github.com/naja-js/naja">naja-js/naja</a>
+						</h2>
+						<p>Back in early 2017, I could not find a modern, maintained solution for AJAX in <a href="https://nette.org">Nette Framework</a>, so I <a href="/blog/announcing-three-new-open-source-projects/#a-modern-ajax-library-for-nette-framework">built Naja</a> and have been maintaining and developing it ever since.</p>
+						<p>Naja got quite popular, now has Nette Framework&rsquo;s endorsement, and still oscillates around 19k monthly downloads (as of April 2025), which I consider to be quite an achievement.</p>
+					</div>
+				</div>
+
+				<div class="project">
+					<img src="https://github.com/grifart.png" alt="Grifart logo" />
+					<div class="details">
+						<h2>
+							<a href="https://github.com/grifart/tables">grifart/tables</a>
+						</h2>
+						<p>I have been helping maintain and develop this little library to access and manipulate database records.</p>
+						<p>Its biggest charm is that it uses database schema introspection and generates a statically-typed set of classes for each table. That way, the IDE helps you with writing database queries, and tools such as PHPStan can ensure that they are type-safe.</p>
+					</div>
+				</div>
+
+				<div class="project">
+					<img src="https://github.com/contributte.png" alt="Contributte logo" />
+					<div class="details">
+						<h2>
+							<a href="https://github.com/contributte/webpack">contributte/webpack</a>
+						</h2>
+						<p>Back in the age of single-page applications, it wasn&rsquo;t uncommon to combine a client-side application with a non-JavaScript backend, implemented for instance in PHP with Nette Framework.</p>
+						<p>For this particular toolset, I built this adapter that would analyze Webpack's artifacts and communicate with Webpack's dev server to serve the appropriate asset from the appropriate source both during development and in a production environment.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.body {
+		padding: 1.5rem 0;
+	}
+
+	.intro {
+		margin: 1.5rem 0;
+	}
+
+	.projects {
+		margin-top: 3rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+
+	.project {
+		display: flex;
+		align-items: start;
+		gap: 1.5rem;
+
+		img {
+			max-width: 3rem;
+			aspect-ratio: 1;
+			border-radius: .5rem;
+		}
+
+		h2 {
+			text-wrap: balance;
+			margin: 0 0 1.5rem;
+		}
+
+		p {
+			margin: 1rem 0;
+		}
+
+		ul {
+			margin: 1rem 0 0;
+			padding: 0;
+
+			li {
+				margin: 0 0 .5rem 1.5rem;
+			}
+		}
+	}
+</style>

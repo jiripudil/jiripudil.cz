@@ -16,6 +16,11 @@ import Container from './Container.astro';
 					</a>
 				</li>
 				<li>
+					<a href="/projects" class:list={[{active: Astro.url.pathname.startsWith('/projects')}]}>
+						Projects
+					</a>
+				</li>
+				<li>
 					<a href="/blog" class:list={[{active: Astro.url.pathname.startsWith('/blog')}]}>
 						Blog
 					</a>
