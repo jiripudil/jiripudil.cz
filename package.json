@@ -33,5 +33,5 @@
 		"type": "git",
 		"url": "https://github.com/jiripudil/jiripudil.cz"
 	},
-	"packageManager": "yarn@4.6.0"
+	"packageManager": "yarn@4.11.0"
 }
