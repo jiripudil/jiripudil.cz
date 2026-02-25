@@ -11,6 +11,7 @@ const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short'
 <div class="notes">
 	{notes.map(async (note) => {
 		const {Content} = await render(note);
+		const {hostname} = new URL(note.data.url);
 
 		return (
 			<div class="note">
@@ -23,7 +24,12 @@ const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short'
 				</a>
 
 				<div class="domain">
-					{new URL(note.data.url).hostname}
+					<img
+						src={`https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(hostname)}`}
+						alt={`Favicon of ${hostname}`}
+						class="favicon"
+					/>
+					{hostname}
 				</div>
 
 				<div class="meta">
@@ -65,6 +71,14 @@ const formatter = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short'
 
 		.domain {
 			color: var(--body-diminished-color);
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+		}
+
+		.favicon {
+			width: 1rem;
+			height: 1rem;
 		}
 
 		.meta {
