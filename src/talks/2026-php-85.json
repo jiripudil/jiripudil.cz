@@ -1,0 +1,15 @@
+{
+	"title": "PHP 8.5 and beyond",
+	"annotation": "This talk introduces all the important updates that have arrived in PHP 8.5, but from a broader perspective: it looks both in the near past and the near future and tries to identify and even predict the trends in the development of PHP as a language.",
+	"sessions": [
+		{
+			"date": "2026-01-28",
+			"event": "TechMeetup #39: PHP",
+			"location": "Ostrava, Czech Republic",
+			"url": "https://www.meetup.com/techmeetupostrava/events/312805131/",
+			"slidesUrl": "https://docs.google.com/presentation/d/134ICMXGPN72Ftq18e1BUCNrPLJZgbaSXecq3GZOMT2E/edit?usp=sharing",
+			"videoUrl": null,
+			"language": "cs"
+		}
+	]
+}
