@@ -16,7 +16,7 @@ export async function GET(context: APIContext) {
 			const page = Math.floor(index / pageSize) + 1;
 
 			return {
-				title: note.data.title,
+				title: `${note.data.title} (${new URL(note.data.url).hostname})`,
 				pubDate: note.data.date,
 				link: `/notes/${page > 1 ? `${page}/` : ''}#note-${note.id}`,
 				customData: `<guid isPermaLink="false">${context.site}notes/#note-${note.id}</guid>`,
