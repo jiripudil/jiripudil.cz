@@ -355,11 +355,11 @@ __metadata:
   linkType: hard
 
 "@iconify-json/fa6-brands@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "@iconify-json/fa6-brands@npm:1.2.5"
+  version: 1.2.6
+  resolution: "@iconify-json/fa6-brands@npm:1.2.6"
   dependencies:
     "@iconify/types": "npm:*"
-  checksum: 10/79a2634be2f8fbba4d8ae1c718d76a56885431cf962757892d4d783869a29a6e613c5d46cc4d53a1ae5c3aeaddc5d0b48e09685c1519ae79335a3f6260dfef13
+  checksum: 10/52511e68922ad991796240d140be469cd525b09f497b4e1d45192e59ea4ebbbe81905307492b3f632fbd34231e9bea2f5123bc1acd79937388c66877faad7b11
   languageName: node
   linkType: hard
 
