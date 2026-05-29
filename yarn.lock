@@ -364,11 +364,11 @@ __metadata:
   linkType: hard
 
 "@iconify-json/fa6-solid@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@iconify-json/fa6-solid@npm:1.2.3"
+  version: 1.2.4
+  resolution: "@iconify-json/fa6-solid@npm:1.2.4"
   dependencies:
     "@iconify/types": "npm:*"
-  checksum: 10/316e0d7f8133aa549bb9e8fd8fb93d493aaf33c3c605e340abb0298900018ff06e26cb215399f280ccf43f0b60d790bbd74fe40b98cdca60fe5511d0c60c95a2
+  checksum: 10/e6f5682f897f2331d15c64aa3ca2f2bd6449e0dc366e69a00992c95fa05f01c1835a1e186f7525df26cc005c92a313fee286badd368ed2e9ea03b3968994baed
   languageName: node
   linkType: hard
 
