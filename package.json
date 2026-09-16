@@ -13,7 +13,7 @@
 		"@fontsource-variable/montserrat": "^5.1.1",
 		"@iconify-json/fa6-brands": "^1.2.5",
 		"@iconify-json/fa6-solid": "^1.2.3",
-		"astro": "^5.7.8",
+		"astro": "^7.0.0",
 		"astro-favicons": "^3.1.4",
 		"astro-icon": "^1.1.5",
 		"normalize.css": "^8.0.1"
