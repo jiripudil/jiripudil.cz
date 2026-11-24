@@ -4,23 +4,23 @@
 	"private": true,
 	"type": "module",
 	"engines": {
-		"node": ">=22.0"
+		"node": ">=26.0"
 	},
 	"dependencies": {
-		"@astrojs/rss": "^4.0.11",
-		"@astrojs/sitemap": "^3.3.1",
-		"@fontsource-variable/libre-franklin": "^5.1.2",
-		"@fontsource-variable/montserrat": "^5.1.1",
-		"@iconify-json/fa6-brands": "^1.2.5",
-		"@iconify-json/fa6-solid": "^1.2.3",
-		"astro": "^5.7.8",
-		"astro-favicons": "^3.1.4",
-		"astro-icon": "^1.1.5",
+		"@astrojs/rss": "4.0.19",
+		"@astrojs/sitemap": "3.7.6",
+		"@fontsource-variable/libre-franklin": "^5.3.0",
+		"@fontsource-variable/montserrat": "^5.3.0",
+		"@iconify-json/fa6-brands": "^1.2.6",
+		"@iconify-json/fa6-solid": "^1.2.4",
+		"astro": "7.4.13",
+		"astro-favicons": "^3.1.8",
+		"astro-icon": "^1.2.0",
 		"normalize.css": "^8.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "^22.10.5",
-		"typescript": "^5.7.3"
+		"@types/node": "^26.6.6",
+		"typescript": "^7.0.2"
 	},
 	"license": "BSD-3-Clause",
 	"scripts": {
@@ -33,5 +33,5 @@
 		"type": "git",
 		"url": "https://github.com/jiripudil/jiripudil.cz"
 	},
-	"packageManager": "yarn@4.6.0"
+	"packageManager": "yarn@4.19.0"
 }
